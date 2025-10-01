@@ -6,10 +6,9 @@ import argparse
 import os
 import getpass
 import time
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Iterable, List, Optional, Tuple, Dict, Any, Set
-import csv
-import time
 import math
 
 try:
@@ -37,6 +36,280 @@ def truncate_text(t: str, limit: int = 200) -> str:
 _STOPWORDS = {
     'a','an','the','and','or','of','in','on','to','for','by','with','as','at','from','now','i','you','we','they','is','are'
 }
+
+
+@dataclass
+class CsvItem:
+    title: str
+    synonyms: List[str] = field(default_factory=list)
+    external_ids: Dict[str, str] = field(default_factory=dict)
+    status: Optional[str] = None
+    last_read_chapter: Optional[str] = None
+    last_read_at: Optional[str] = None
+    rating: Optional[str] = None
+    source: str = "unknown"
+    raw: Dict[str, Any] = field(default_factory=dict)
+
+
+CSV_KIND_COMICK = "comick"
+CSV_KIND_MANGANATO = "manganato"
+CSV_KIND_AUTO = "auto"
+
+
+def _split_synonyms(raw: str) -> List[str]:
+    vals: List[str] = []
+    for token in re.split(r"[,;]", raw or ""):
+        token = token.strip()
+        if token and token not in vals:
+            vals.append(token)
+    return vals
+
+
+def _normalize_chapter_hint(raw: Any) -> Optional[str]:
+    if raw is None:
+        return None
+    text = str(raw).strip()
+    if not text:
+        return None
+    lowered = text.lower()
+    lowered = lowered.replace("chapter", "").replace("chap", "")
+    lowered = lowered.replace("#", "").strip()
+    return lowered or text
+
+
+def _normalize_last_read(raw: Any) -> Optional[str]:
+    if raw is None:
+        return None
+    text = str(raw).strip()
+    if not text:
+        return None
+    if text in {"0000:00:00", "0000-00-00", "0", "1970-01-01"}:
+        return None
+    return text
+
+
+def _parse_chapter_hint_to_float(raw: Optional[str]) -> Optional[float]:
+    if not raw:
+        return None
+    match = re.search(r"(\d+(?:\.\d+)?)", raw)
+    if not match:
+        return None
+    try:
+        return float(match.group(1))
+    except Exception:
+        return None
+
+
+def detect_csv_kind(path: Path, forced: str = CSV_KIND_AUTO) -> str:
+    if forced and forced.lower() != CSV_KIND_AUTO:
+        return forced.lower()
+    header: List[str] = []
+    sample: List[str] = []
+    try:
+        with path.open(newline='', encoding='utf-8', errors='ignore') as f:
+            reader = csv.reader(f)
+            header = next(reader, [])
+            sample = next(reader, [])
+    except Exception:
+        header = []
+        sample = []
+    lower = [h.strip().lower() for h in header if h]
+    if 'hid' in lower and 'title' in lower and 'synonyms' in lower:
+        return CSV_KIND_COMICK
+    if 'title' in lower and 'url' in lower:
+        return CSV_KIND_MANGANATO
+    # Fallback: inspect sample row for site hints
+    joined_sample = " ".join(sample).lower()
+    if 'manganato' in joined_sample:
+        return CSV_KIND_MANGANATO
+    # Default to comick when hid present even without synonyms
+    if 'hid' in lower:
+        return CSV_KIND_COMICK
+    return CSV_KIND_AUTO
+
+
+def parse_comick_csv(path: Path) -> List[CsvItem]:
+    items: List[CsvItem] = []
+    with path.open(newline='', encoding='utf-8', errors='ignore') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            title = (row.get('title') or '').strip()
+            if not title:
+                continue
+            synonyms = _split_synonyms(row.get('synonyms') or '')
+            external_ids: Dict[str, str] = {}
+            hid = (row.get('hid') or '').strip()
+            if hid:
+                external_ids['comick'] = hid
+            for key in ('mal', 'anilist', 'mangaupdates'):
+                val = (row.get(key) or '').strip()
+                if val:
+                    external_ids[key] = val
+            status = (row.get('type') or row.get('status') or '').strip() or None
+            items.append(
+                CsvItem(
+                    title=title,
+                    synonyms=synonyms,
+                    external_ids=external_ids,
+                    status=status.lower() if status else None,
+                    last_read_chapter=_normalize_chapter_hint(row.get('read')),
+                    last_read_at=_normalize_last_read(row.get('last_read')),
+                    rating=(row.get('rating') or '').strip() or None,
+                    source=CSV_KIND_COMICK,
+                    raw=row,
+                )
+            )
+    return items
+
+
+def parse_manganato_csv(path: Path, column_map: Optional[Dict[str, str]] = None) -> List[CsvItem]:
+    items: List[CsvItem] = []
+    col = {'title': 'Title', 'url': 'URL', 'viewed': 'Viewed'}
+    if column_map:
+        col.update({k: v for k, v in column_map.items() if k in {'title', 'url', 'viewed'}})
+    with path.open(newline='', encoding='utf-8', errors='ignore') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            title = (row.get(col['title']) or '').strip()
+            if not title:
+                continue
+            url_val = (row.get(col['url']) or '').strip()
+            external_ids: Dict[str, str] = {}
+            if url_val:
+                external_ids['manganato'] = url_val
+            viewed = (row.get(col['viewed']) or '').strip()
+            items.append(
+                CsvItem(
+                    title=title,
+                    external_ids=external_ids,
+                    status=None,
+                    last_read_chapter=_normalize_chapter_hint(viewed),
+                    last_read_at=None,
+                    rating=None,
+                    source=CSV_KIND_MANGANATO,
+                    raw=row,
+                )
+            )
+    return items
+
+
+def load_csv_items(path: Path, forced_kind: str = CSV_KIND_AUTO, column_map: Optional[Dict[str, str]] = None) -> Tuple[str, List[CsvItem]]:
+    if not path.exists():
+        raise FileNotFoundError(f"CSV file not found: {path}")
+    detected = detect_csv_kind(path, forced_kind)
+    if detected == CSV_KIND_COMICK:
+        return CSV_KIND_COMICK, parse_comick_csv(path)
+    if detected == CSV_KIND_MANGANATO:
+        return CSV_KIND_MANGANATO, parse_manganato_csv(path, column_map)
+    # Default: try Comick parser first, fallback to generic row reader
+    try:
+        return CSV_KIND_COMICK, parse_comick_csv(path)
+    except Exception:
+        return CSV_KIND_MANGANATO, parse_manganato_csv(path, column_map)
+
+
+def parse_csv_column_map(overrides: Optional[List[str]]) -> Dict[str, str]:
+    result: Dict[str, str] = {}
+    if not overrides:
+        return result
+    for spec in overrides:
+        if not spec:
+            continue
+        parts = [p for p in spec.split(',') if p.strip()]
+        for part in parts:
+            if '=' not in part:
+                raise ValueError(f"Invalid column map entry '{part}', expected key=value")
+            key, value = part.split('=', 1)
+            key = key.strip().lower()
+            value = value.strip()
+            if not key or not value:
+                raise ValueError(f"Invalid column map entry '{part}', missing key or value")
+            result[key] = value
+    return result
+
+
+def _extract_md_titles(entry: Dict[str, Any]) -> List[str]:
+    titles: List[str] = []
+    attrs = entry.get('attributes') if isinstance(entry, dict) else None
+    if isinstance(attrs, dict):
+        title_map = attrs.get('title')
+        if isinstance(title_map, dict):
+            for val in title_map.values():
+                if isinstance(val, str) and val:
+                    titles.append(val)
+        alt_titles = attrs.get('altTitles')
+        if isinstance(alt_titles, list):
+            for alt in alt_titles:
+                if isinstance(alt, dict):
+                    for val in alt.values():
+                        if isinstance(val, str) and val:
+                            titles.append(val)
+        if isinstance(attrs.get('originalLanguage'), str):
+            orig_title = attrs.get('originalLanguageTitle')
+            if isinstance(orig_title, str) and orig_title:
+                titles.append(orig_title)
+    name = entry.get('name') if isinstance(entry, dict) else None
+    if isinstance(name, str) and name:
+        titles.append(name)
+    return titles
+
+
+def _search_mangadex_titles(query: str, limit: int = 10) -> List[Dict[str, Any]]:
+    params = {
+        'title': query,
+        'limit': max(1, min(limit, 20)),
+        'order[relevance]': 'desc',
+    }
+    try:
+        resp = requests.get(f"{MANGADEX_API}/manga", params=params, timeout=20)
+        if resp.status_code != 200:
+            return []
+        data = resp.json().get('data')
+        if isinstance(data, list):
+            return [d for d in data if isinstance(d, dict)]
+    except Exception:
+        return []
+    return []
+
+
+def find_mangadex_match_for_item(item: CsvItem, threshold: float = 0.6, strict_exact: bool = False) -> Optional[Tuple[str, str, float]]:
+    queries: List[str] = []
+    if item.title:
+        queries.append(item.title)
+    for syn in item.synonyms:
+        if syn and syn not in queries:
+            queries.append(syn)
+    seen: Set[str] = set()
+    best: Optional[Tuple[str, str, float]] = None
+    for query in queries:
+        slug = query.strip()
+        if not slug:
+            continue
+        norm = slug.lower()
+        if norm in seen:
+            continue
+        seen.add(norm)
+        candidates = _search_mangadex_titles(slug)
+        for cand in candidates:
+            md_id = cand.get('id')
+            if not isinstance(md_id, str):
+                continue
+            for cand_title in _extract_md_titles(cand):
+                if not cand_title:
+                    continue
+                if strict_exact:
+                    if not _is_title_match(slug, cand_title, threshold=threshold, strict_exact=True):
+                        continue
+                    score = 1.0 if _normalize_title_tokens(slug) == _normalize_title_tokens(cand_title) else threshold
+                else:
+                    score = _title_similarity(slug, cand_title)
+                    if score < threshold:
+                        continue
+                if best is None or score > best[2]:
+                    best = (md_id, cand_title, score)
+        if best and best[2] >= 0.92:
+            break
+    return best
 
 def _normalize_title_tokens(s: str) -> List[str]:
     """Normalize title to comparable tokens.
@@ -951,7 +1224,7 @@ def import_ids(
     lists_category_map: Optional[Dict[str, int]] = None,
     lists_ignore_set: Optional[set] = None,
     rehome_conf: Optional[Dict[str, Any]] = None,
-) -> Tuple[int, int, List[Tuple[str, str]]]:
+) -> Tuple[int, int, List[Tuple[str, str]], List[Tuple[str, int]]]:
     client._auth()
     sources = client.get_sources()
     source_id = find_mangadex_source_id(sources)
@@ -961,6 +1234,7 @@ def import_ids(
     added = 0
     failed = 0
     failures: List[Tuple[str, str]] = []
+    added_entries: List[Tuple[str, int]] = []
 
     total = len(ids)
     for idx, md in enumerate(ids, 1):
@@ -1016,6 +1290,7 @@ def import_ids(
                         else:
                             print(f"{prefix}STATUS {(display or '(none)')} -> no mapping (dry-run)")
                 added += 1
+                added_entries.append((md, manga_id))
                 if show_progress:
                     print(f"{prefix}OK (dry-run) {md}")
                 continue
@@ -1201,6 +1476,7 @@ def import_ids(
                                 # stop after first successful alt add attempt
                                 break
                 added += 1
+                added_entries.append((md, manga_id))
                 if show_progress:
                     if category_id is not None:
                         print(f"{prefix}OK added {md} (category {'ok' if cat_result else 'fail'})")
@@ -1219,7 +1495,7 @@ def import_ids(
                 print(f"{prefix}ERROR {md}: {e}")
         if throttle > 0:
             time.sleep(throttle)
-    return added, failed, failures
+    return added, failed, failures, added_entries
 
 # ---------------- MangaDex follows helpers (defined BEFORE main so they exist when called) ---------------- #
 
@@ -1957,6 +2233,14 @@ def compute_md_missing_stats(client: SuwayomiClient, session_token: str, md_id: 
 def main(argv: Optional[List[str]] = None) -> int:
     p = argparse.ArgumentParser(description="Import MangaDex bookmarks / follows into Suwayomi library.")
     p.add_argument("input_file", type=Path, nargs="?", help="Optional path to bookmarks file (txt/csv/xlsx/json/html). Omit when using --from-follows only.")
+    p.add_argument("--from-csv", dest="csv_files", action="append", type=Path, help="Path to a CSV export (Comick/Manganato). Repeat to import multiple files.")
+    p.add_argument("--csv-kind", choices=[CSV_KIND_AUTO, CSV_KIND_COMICK, CSV_KIND_MANGANATO], default=CSV_KIND_AUTO, help="Force CSV schema detection for --from-csv (default: auto detect).")
+    p.add_argument("--csv-col-map", action="append", help="Override CSV column names (key=value, comma-separated). Repeatable.")
+    p.add_argument("--csv-status-to-category", help="Map CSV status values to category IDs (e.g. reading=5,completed=9).")
+    p.add_argument("--csv-title-threshold", type=float, default=0.6, help="Similarity threshold (0..1) when matching CSV rows to MangaDex titles (default 0.6).")
+    p.add_argument("--csv-title-strict", action="store_true", help="Require near-exact normalized title matches for CSV rows (disables fuzzy-only matches).")
+    p.add_argument("--csv-apply-read-progress", action="store_true", help="Record last read chapter hints from CSV rows for later read-sync attempts.")
+    p.add_argument("--csv-prefer-existing", action=argparse.BooleanOptionalAction, default=False, help="Skip CSV rows when a matching title already exists in Suwayomi (default: off). Use --csv-prefer-existing to enable or --no-csv-prefer-existing to disable explicitly.")
     p.add_argument("--base-url", required=True, help="Suwayomi base URL, e.g. http://localhost:4567")
     p.add_argument("--auth-mode", choices=["auto", "basic", "simple", "bearer"], default="auto")
     p.add_argument("--username", help="Username for BASIC or SIMPLE login (if applicable)")
@@ -2066,6 +2350,34 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     args = p.parse_args(argv)
 
+    try:
+        csv_col_map = parse_csv_column_map(getattr(args, 'csv_col_map', None))
+    except ValueError as e:
+        print(f"CSV column map error: {e}")
+        return 2
+
+    csv_items: List[CsvItem] = []
+    csv_total_rows = 0
+    csv_status_map: Dict[str, str] = {}
+    csv_progress_map: Dict[str, str] = {}
+    csv_resolution_failures: List[Tuple[CsvItem, str]] = []
+    csv_resolved_source: Dict[str, CsvItem] = {}
+    if getattr(args, 'csv_files', None):
+        for csv_path in args.csv_files:
+            try:
+                kind, parsed = load_csv_items(csv_path, args.csv_kind, csv_col_map)
+            except FileNotFoundError as fnf:
+                print(f"CSV error: {fnf}")
+                return 2
+            except Exception as exc:
+                print(f"Failed to parse CSV '{csv_path}': {exc}")
+                return 2
+            csv_total_rows += len(parsed)
+            for item in parsed:
+                if not item.source or item.source == "unknown":
+                    item.source = kind
+            csv_items.extend(parsed)
+
     # Enable early debug traces as soon as possible
     try:
         global READ_SYNC_DEBUG
@@ -2152,6 +2464,29 @@ def main(argv: Optional[List[str]] = None) -> int:
             print("Failed to authenticate with MangaDex." + (f" Reason: {login_err}" if login_err else ""))
             return 3
 
+    if csv_items:
+        seen_ids: Set[str] = set(ids)
+        threshold = max(0.0, min(1.0, float(getattr(args, 'csv_title_threshold', 0.6))))
+        for item in csv_items:
+            match = find_mangadex_match_for_item(item, threshold=threshold, strict_exact=bool(args.csv_title_strict))
+            if match is None:
+                csv_resolution_failures.append((item, "no match above threshold"))
+                continue
+            md_id, matched_title, score = match
+            csv_resolved_source[md_id] = item
+            if item.status:
+                csv_status_map[md_id] = item.status.lower()
+            if args.csv_apply_read_progress and item.last_read_chapter:
+                csv_progress_map[md_id] = item.last_read_chapter
+            if md_id not in seen_ids:
+                ids.append(md_id)
+                seen_ids.add(md_id)
+            if READ_SYNC_DEBUG:
+                try:
+                    print(f"[csv-debug] matched '{item.title}' -> {md_id} ({matched_title}) score={score:.2f}")
+                except Exception:
+                    pass
+
     # Optionally merge or replace with all-statuses library set
     library_statuses_all: Dict[str, str] = {}
     if (args.include_library_statuses or args.library_statuses_only):
@@ -2209,6 +2544,22 @@ def main(argv: Optional[List[str]] = None) -> int:
                 status_map[k.strip().lower()] = int(v)
             except ValueError:
                 print(f"Warning: invalid category id in map entry '{part}'")
+    csv_status_category_map: Dict[str, int] = {}
+    if args.csv_status_to_category:
+        for part in args.csv_status_to_category.split(','):
+            part = part.strip()
+            if not part:
+                continue
+            if '=' not in part:
+                print(f"Warning: ignoring malformed csv-status entry '{part}'")
+                continue
+            k, v = part.split('=', 1)
+            try:
+                csv_status_category_map[k.strip().lower()] = int(v)
+            except ValueError:
+                print(f"Warning: invalid csv-status category id in entry '{part}'")
+    if csv_status_category_map:
+        status_map.update(csv_status_category_map)
     reading_statuses: Dict[str, str] = {}
     lists_membership: Dict[str, List[str]] = {}
     lists_category_map: Dict[str, int] = {}
@@ -2320,6 +2671,11 @@ def main(argv: Optional[List[str]] = None) -> int:
                             removed += 1
                     if args.debug_status:
                         print(f"[debug-status] Removed {removed} entries due to ignore-statuses filter {sorted(ignore_set)}")
+
+    if csv_status_map:
+        for mid, st in csv_status_map.items():
+            if st:
+                reading_statuses[mid] = st.lower()
 
     # Optionally export the final statuses used for mapping (after ignore filters)
     if args.export_statuses:
@@ -2460,6 +2816,83 @@ def main(argv: Optional[List[str]] = None) -> int:
             print("[read-debug] marker: after missing_report setup", flush=True)
         except Exception:
             pass
+
+    csv_existing_skips: List[Tuple[str, str]] = []
+    csv_existing_internal: Dict[str, int] = {}
+    if csv_resolved_source and getattr(args, 'csv_prefer_existing', False):
+        existing_entries: List[Dict[str, Any]] = []
+        try:
+            existing_entries = client.get_library_graphql() or client.get_library() or []
+        except Exception as e:
+            if READ_SYNC_DEBUG:
+                print(f"[csv-debug] existing library fetch failed: {e}")
+            existing_entries = []
+        normalized_existing: Set[str] = set()
+        existing_by_norm: Dict[str, int] = {}
+
+        def _register_existing_entry(payload: Dict[str, Any]) -> None:
+            raw_id = payload.get('id') or payload.get('mangaId') or payload.get('manga_id')
+            try:
+                mid_int = int(raw_id)
+            except Exception:
+                return
+            titles: List[str] = []
+            for key in ("title", "name"):
+                val = payload.get(key)
+                if isinstance(val, str) and val.strip():
+                    titles.append(val)
+            manga_info = payload.get('manga')
+            if isinstance(manga_info, dict):
+                for key in ("title", "name"):
+                    val = manga_info.get(key)
+                    if isinstance(val, str) and val.strip():
+                        titles.append(val)
+            for title in titles:
+                norm = " ".join(_normalize_title_tokens(title))
+                if norm:
+                    normalized_existing.add(norm)
+                    existing_by_norm.setdefault(norm, mid_int)
+
+        for entry in existing_entries:
+            if isinstance(entry, dict):
+                _register_existing_entry(entry)
+        if normalized_existing:
+            filtered_ids: List[str] = []
+            for md in ids:
+                csv_item = csv_resolved_source.get(md)
+                if not csv_item:
+                    filtered_ids.append(md)
+                    continue
+                norms = set()
+                primary = " ".join(_normalize_title_tokens(csv_item.title))
+                if primary:
+                    norms.add(primary)
+                for syn in csv_item.synonyms:
+                    norm_syn = " ".join(_normalize_title_tokens(syn))
+                    if norm_syn:
+                        norms.add(norm_syn)
+                if any(norm in normalized_existing for norm in norms if norm):
+                    csv_existing_skips.append((md, csv_item.title))
+                    for norm in norms:
+                        internal_id = existing_by_norm.get(norm)
+                        if internal_id is not None:
+                            csv_existing_internal[md] = internal_id
+                            break
+                    continue
+                filtered_ids.append(md)
+            if len(filtered_ids) != len(ids):
+                ids = filtered_ids
+                if READ_SYNC_DEBUG:
+                    print(f"[csv-debug] prefer-existing skipped {len(csv_existing_skips)} items")
+        # Trim CSV metadata to current ids and any entries kept for existing-library reconciliation
+        active_md_ids = set(ids) | set(csv_existing_internal.keys())
+        if csv_status_map:
+            csv_status_map = {md: status for md, status in csv_status_map.items() if md in active_md_ids}
+        if csv_progress_map:
+            csv_progress_map = {md: hint for md, hint in csv_progress_map.items() if md in active_md_ids}
+        csv_resolved_source = {md: item for md, item in csv_resolved_source.items() if md in active_md_ids}
+        if csv_existing_internal:
+            csv_existing_internal = {md: internal for md, internal in csv_existing_internal.items() if md in active_md_ids}
 
     if args.list_categories:
         try:
@@ -3149,6 +3582,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         except Exception:
             pass
     sync_stats: List[Dict[str, Any]] = []
+    added_entries: List[Tuple[str, int]] = []
 
     if READ_SYNC_DEBUG:
         try:
@@ -3157,6 +3591,7 @@ def main(argv: Optional[List[str]] = None) -> int:
             pass
     if args.no_add_library:
         added, failed, failures = (0, 0, [])
+        added_entries = []
         if READ_SYNC_DEBUG:
             try:
                 print("[read-debug] --no-add-library path: will skip adds and proceed to reporting+sync", flush=True)
@@ -3165,7 +3600,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         if not args.no_progress:
             print("Skipping add-to-library because --no-add-library is set; proceeding to reporting and read sync only.")
     else:
-        added, failed, failures = import_ids(
+        added, failed, failures, added_entries = import_ids(
             client,
             ids,
             dry_run=args.dry_run,
@@ -3205,6 +3640,103 @@ def main(argv: Optional[List[str]] = None) -> int:
             print(f"  {md}: {reason}")
         if len(failures) > 50:
             print(f"  ... and {len(failures) - 50} more")
+
+    if csv_total_rows:
+        matched = len(csv_resolved_source)
+        unmatched = max(0, csv_total_rows - matched)
+        print(f"CSV summary: rows={csv_total_rows}, matched={matched}, unmatched={unmatched}")
+        if csv_existing_skips:
+            print(f"CSV entries already present in library (skipped add): {len(csv_existing_skips)}")
+        if csv_resolution_failures:
+            print("CSV resolution failures:")
+            for item, reason in csv_resolution_failures[:10]:
+                print(f"  {item.title}: {reason}")
+            if len(csv_resolution_failures) > 10:
+                print(f"  ... and {len(csv_resolution_failures) - 10} more")
+
+    csv_progress_applied = 0
+    csv_progress_skipped = 0
+    if csv_progress_map and args.csv_apply_read_progress:
+        md_to_internal: Dict[str, int] = {}
+        for md, internal in added_entries:
+            if internal is None:
+                continue
+            md_to_internal[str(md)] = int(internal)
+        for md, internal in csv_existing_internal.items():
+            md_to_internal[str(md)] = int(internal)
+        missing_progress_ids = [md for md in csv_progress_map.keys() if str(md) not in md_to_internal]
+        library_norm_map: Dict[str, int] = {}
+        if missing_progress_ids:
+            try:
+                library_entries = client.get_library_graphql() or client.get_library() or []
+            except Exception as e:
+                library_entries = []
+                if READ_SYNC_DEBUG:
+                    print(f"[csv-progress] library fetch failed during progress mapping: {e}")
+            for entry in library_entries:
+                if not isinstance(entry, dict):
+                    continue
+                raw_id = entry.get('id') or entry.get('mangaId') or entry.get('manga_id')
+                try:
+                    internal_id = int(raw_id)
+                except Exception:
+                    continue
+                titles: List[str] = []
+                for key in ("title", "name"):
+                    val = entry.get(key)
+                    if isinstance(val, str) and val.strip():
+                        titles.append(val)
+                manga_info = entry.get('manga')
+                if isinstance(manga_info, dict):
+                    for key in ("title", "name"):
+                        val = manga_info.get(key)
+                        if isinstance(val, str) and val.strip():
+                            titles.append(val)
+                for title in titles:
+                    norm = " ".join(_normalize_title_tokens(title))
+                    if norm and norm not in library_norm_map:
+                        library_norm_map[norm] = internal_id
+            for md in missing_progress_ids:
+                item = csv_resolved_source.get(md)
+                if not item:
+                    continue
+                candidates = [item.title] + list(item.synonyms)
+                for cand in candidates:
+                    norm = " ".join(_normalize_title_tokens(cand))
+                    internal_id = library_norm_map.get(norm) if norm else None
+                    if internal_id is not None:
+                        md_to_internal[str(md)] = internal_id
+                        break
+        rpm_limit = int(chapter_sync_conf.get('rpm', 300)) if chapter_sync_conf else 300
+        dry_mark = bool(args.dry_run or (chapter_sync_conf and chapter_sync_conf.get('dry_run')))
+        for md, hint in csv_progress_map.items():
+            md_key = str(md)
+            target = _parse_chapter_hint_to_float(hint)
+            if target is None:
+                csv_progress_skipped += 1
+                continue
+            internal_id = md_to_internal.get(md_key)
+            if internal_id is None:
+                csv_progress_skipped += 1
+                if READ_SYNC_DEBUG:
+                    print(f"[csv-progress] missing internal id for {md_key}; skipping")
+                continue
+            if dry_mark:
+                csv_progress_applied += 1
+                if not args.no_progress:
+                    print(f"[csv-progress] (dry-run) would mark {md_key} up to chapter {hint}")
+                continue
+            try:
+                _mark_entry_up_to_number(client, internal_id, target, rpm_limit, dry_run=False)
+                csv_progress_applied += 1
+                if not args.no_progress:
+                    print(f"[csv-progress] Marked {md_key} up to chapter {hint}")
+            except Exception as exc:
+                csv_progress_skipped += 1
+                if READ_SYNC_DEBUG:
+                    print(f"[csv-progress] failed for {md_key}: {exc}")
+        if csv_progress_applied or csv_progress_skipped:
+            print(f"CSV read progress applied={csv_progress_applied}, skipped={csv_progress_skipped}")
 
     if READ_SYNC_DEBUG:
         try:
