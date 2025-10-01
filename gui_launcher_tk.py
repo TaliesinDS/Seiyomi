@@ -23,8 +23,8 @@ try:
 except Exception:
     _HAS_MD = False
 
-SCRIPT_NAME = "import_mangadex_bookmarks_to_suwayomi.py"
-PACKAGED_CLI = "import_mangadex_bookmarks_to_suwayomi.exe"
+SCRIPT_NAME = "import_mangadex_bookmarks_to_suwayomi_refactored.py"
+PACKAGED_CLI = "import_mangadex_bookmarks_to_suwayomi_refactored.exe"
 
 # App metadata (update as needed for releases)
 APP_VERSION = "dev"
@@ -191,6 +191,31 @@ def build_args(v: dict) -> List[str]:
             args += ["--verify-id", vid]
     if v.get('export_statuses') and v['export_statuses'].get().strip():
         args += ["--export-statuses", v['export_statuses'].get().strip()]
+
+    # CSV import
+    csv_files = [p for p in v.get('_csv_files', []) if isinstance(p, str) and p.strip()]
+    if v.get('csv_enabled') and v['csv_enabled'].get() and csv_files:
+        for path in csv_files:
+            args += ["--from-csv", path]
+        csv_kind = v['csv_kind'].get().strip().lower() if v.get('csv_kind') else ''
+        if csv_kind and csv_kind != 'auto':
+            args += ["--csv-kind", csv_kind]
+        raw_col_map = v['csv_col_map'].get().strip() if v.get('csv_col_map') else ''
+        if raw_col_map:
+            for entry in [seg.strip() for seg in raw_col_map.replace(';', '\n').splitlines() if seg.strip()]:
+                args += ["--csv-col-map", entry]
+        raw_status_map = v['csv_status_to_category'].get().strip() if v.get('csv_status_to_category') else ''
+        if raw_status_map:
+            args += ["--csv-status-to-category", raw_status_map]
+        threshold = v['csv_title_threshold'].get().strip() if v.get('csv_title_threshold') else ''
+        if threshold and threshold != '0.6':
+            args += ["--csv-title-threshold", threshold]
+        if v.get('csv_title_strict') and v['csv_title_strict'].get():
+            args += ["--csv-title-strict"]
+        if v.get('csv_apply_read_progress') and v['csv_apply_read_progress'].get():
+            args += ["--csv-apply-read-progress"]
+        if v.get('csv_prefer_existing') and v['csv_prefer_existing'].get():
+            args += ["--csv-prefer-existing"]
 
     # Read chapters
     if v['import_read'].get():
@@ -757,8 +782,8 @@ def main():
         'base_url': tk.StringVar(value='http://127.0.0.1:4567'),
         'dry_run': tk.BooleanVar(value=True),
         'debug': tk.BooleanVar(value=False),
-    'save_log': tk.BooleanVar(value=False),
-    'external_terminal': tk.BooleanVar(value=False),
+        'save_log': tk.BooleanVar(value=False),
+        'external_terminal': tk.BooleanVar(value=False),
         'log_path': tk.StringVar(value=''),
         'preset': tk.StringVar(value=''),
         # Input file (optional)
@@ -810,6 +835,15 @@ def main():
         'read_delay': tk.StringVar(value='1'),
         'max_read_requests_per_minute': tk.StringVar(value='300'),
         'category_id': tk.StringVar(value=''),
+        # CSV Import
+        'csv_enabled': tk.BooleanVar(value=False),
+        'csv_kind': tk.StringVar(value='auto'),
+        'csv_col_map': tk.StringVar(value=''),
+        'csv_status_to_category': tk.StringVar(value=''),
+        'csv_title_threshold': tk.StringVar(value='0.6'),
+        'csv_title_strict': tk.BooleanVar(value=False),
+        'csv_apply_read_progress': tk.BooleanVar(value=False),
+        'csv_prefer_existing': tk.BooleanVar(value=False),
         # Migrate
         'migrate_lib': tk.BooleanVar(value=False),
         'migrate_threshold': tk.StringVar(value='1'),
@@ -827,12 +861,12 @@ def main():
         'lang_fallback': tk.BooleanVar(value=False),
         'prefer_sources': tk.StringVar(value='asura,flame,genz,utoons'),
         'prefer_boost': tk.StringVar(value='3'),
-    'migrate_title_threshold': tk.StringVar(value='0.6'),
-    'migrate_title_strict': tk.BooleanVar(value=False),
-    'keep_both': tk.BooleanVar(value=False),
+        'migrate_title_threshold': tk.StringVar(value='0.6'),
+        'migrate_title_strict': tk.BooleanVar(value=False),
+        'keep_both': tk.BooleanVar(value=False),
         'keep_both_min': tk.StringVar(value='1'),
-    # Default to non-destructive removal
-    'remove_original': tk.BooleanVar(value=False),
+        # Default to non-destructive removal
+        'remove_original': tk.BooleanVar(value=False),
         'migrate_remove_if_duplicate': tk.BooleanVar(value=False),
         'migrate_timeout': tk.StringVar(value='20.0'),
         'migrate_max_sources_per_site': tk.StringVar(value='3'),
@@ -990,6 +1024,119 @@ def main():
     # Target category
     ttk.Label(fw, text='Category ID (optional)').grid(row=r, column=0, sticky='w'); en_cat_id = ttk.Entry(fw, textvariable=vals['category_id'], width=10); en_cat_id.grid(row=r, column=1, sticky='w'); r+=1
     attach_tip(en_cat_id, 'Assign all added manga to this Suwayomi category ID (optional).')
+
+    # CSV Import tab
+    csv_tab = ttk.Frame(nb)
+    nb.add(csv_tab, text='CSV Import')
+    csv_tab.grid_columnconfigure(0, weight=1)
+    csv_tab.grid_columnconfigure(1, weight=1)
+    r = 0
+    desc_csv = ttk.Frame(csv_tab); desc_csv.grid(row=r, column=0, columnspan=4, sticky='we', pady=(4, 6))
+    ttk.Label(desc_csv, text='Import bookmark CSV exports (Comick, Manganato) and merge with MangaDex lookups and Suwayomi library.', foreground='#444').pack(side='left')
+    ttk.Button(desc_csv, text='Help', width=5, command=lambda: (_save_config({**_load_config(), 'manual_find_text': 'CSV Import'}), show_manual_popup())).pack(side='right'); r += 1
+    cb_csv_enable = ttk.Checkbutton(csv_tab, text='Enable CSV Import', variable=vals['csv_enabled'])
+    cb_csv_enable.grid(row=r, column=0, sticky='w'); r += 1
+    attach_tip(cb_csv_enable, 'When enabled, include the selected CSV files in the import pipeline. See manual: CSV Import.')
+
+    vals['_csv_files'] = []
+
+    csv_files_box = ttk.LabelFrame(csv_tab, text='CSV Files')
+    csv_files_box.grid(row=r, column=0, columnspan=4, sticky='nsew', pady=(0, 6))
+    csv_files_box.grid_columnconfigure(0, weight=1)
+    csv_files_box.grid_rowconfigure(0, weight=1)
+
+    csv_listbox = tk.Listbox(csv_files_box, height=5, selectmode='extended', exportselection=False)
+    csv_listbox.grid(row=0, column=0, rowspan=4, sticky='nsew')
+    csv_scroll = ttk.Scrollbar(csv_files_box, orient='vertical', command=csv_listbox.yview)
+    csv_scroll.grid(row=0, column=1, rowspan=4, sticky='ns')
+    csv_listbox.configure(yscrollcommand=csv_scroll.set)
+
+    def _csv_add_files():
+        paths = filedialog.askopenfilenames(title='Select CSV files', filetypes=[('CSV files', '*.csv'), ('All files', '*.*')])
+        if not paths:
+            return
+        current = vals.get('_csv_files', [])
+        changed = False
+        for path in paths:
+            if path and path not in current:
+                current.append(path)
+                csv_listbox.insert('end', path)
+                changed = True
+        if changed:
+            root.after(0, _update_preview)
+
+    def _csv_remove_selected():
+        selection = list(csv_listbox.curselection())
+        if not selection:
+            return
+        current = vals.get('_csv_files', [])
+        for idx in reversed(selection):
+            try:
+                item = csv_listbox.get(idx)
+            except Exception:
+                continue
+            csv_listbox.delete(idx)
+            try:
+                current.remove(item)
+            except ValueError:
+                pass
+        root.after(0, _update_preview)
+
+    def _csv_clear():
+        vals['_csv_files'] = []
+        csv_listbox.delete(0, 'end')
+        root.after(0, _update_preview)
+
+    bt_csv_add = ttk.Button(csv_files_box, text='Add...', command=_csv_add_files)
+    bt_csv_add.grid(row=0, column=2, sticky='we', padx=(6, 0))
+    attach_tip(bt_csv_add, 'Select one or more CSV files to include. You can add both Comick and Manganato exports.')
+    bt_csv_remove = ttk.Button(csv_files_box, text='Remove Selected', command=_csv_remove_selected)
+    bt_csv_remove.grid(row=1, column=2, sticky='we', padx=(6, 0), pady=(4, 0))
+    attach_tip(bt_csv_remove, 'Remove the highlighted entries from the CSV list.')
+    bt_csv_clear = ttk.Button(csv_files_box, text='Clear List', command=_csv_clear)
+    bt_csv_clear.grid(row=2, column=2, sticky='we', padx=(6, 0), pady=(4, 0))
+    attach_tip(bt_csv_clear, 'Remove all CSV files from the list.')
+
+    r += 1
+    csv_opts = ttk.LabelFrame(csv_tab, text='Options')
+    csv_opts.grid(row=r, column=0, columnspan=4, sticky='nsew', pady=(0, 6))
+    csv_opts.grid_columnconfigure(1, weight=1)
+    rr = 0
+    ttk.Label(csv_opts, text='CSV kind').grid(row=rr, column=0, sticky='w')
+    cb_csv_kind = ttk.Combobox(csv_opts, textvariable=vals['csv_kind'], values=['auto', 'comick', 'manganato'], state='readonly', width=12)
+    cb_csv_kind.grid(row=rr, column=1, sticky='w')
+    attach_tip(cb_csv_kind, 'Force the CSV schema detection (auto by default).')
+    ttk.Label(csv_opts, text='Title threshold (0..1)').grid(row=rr, column=2, sticky='e')
+    en_csv_thresh = ttk.Entry(csv_opts, textvariable=vals['csv_title_threshold'], width=8)
+    en_csv_thresh.grid(row=rr, column=3, sticky='w'); rr += 1
+    attach_tip(en_csv_thresh, 'Similarity threshold for matching CSV titles to MangaDex (default 0.6).')
+
+    cb_csv_strict = ttk.Checkbutton(csv_opts, text='Title strict (normalized exact only)', variable=vals['csv_title_strict'])
+    cb_csv_strict.grid(row=rr, column=0, columnspan=2, sticky='w')
+    attach_tip(cb_csv_strict, 'Require near-exact normalized matches instead of fuzzy matching.')
+    cb_csv_prefer = ttk.Checkbutton(csv_opts, text='Prefer existing library entries', variable=vals['csv_prefer_existing'])
+    cb_csv_prefer.grid(row=rr, column=2, columnspan=2, sticky='w'); rr += 1
+    attach_tip(cb_csv_prefer, 'Skip adding CSV rows when a matching title already exists in Suwayomi.')
+
+    ttk.Label(csv_opts, text='Status→Category map').grid(row=rr, column=0, sticky='w')
+    en_csv_status_map = ttk.Entry(csv_opts, textvariable=vals['csv_status_to_category'], width=60)
+    en_csv_status_map.grid(row=rr, column=1, columnspan=3, sticky='we'); rr += 1
+    attach_tip(en_csv_status_map, 'Example: reading=2,completed=5. Applied to CSV statuses only.')
+
+    ttk.Label(csv_opts, text='Column overrides').grid(row=rr, column=0, sticky='w')
+    en_csv_colmap = ttk.Entry(csv_opts, textvariable=vals['csv_col_map'], width=60)
+    en_csv_colmap.grid(row=rr, column=1, columnspan=3, sticky='we'); rr += 1
+    attach_tip(en_csv_colmap, 'Override CSV column names (key=value pairs, comma-separated per entry). Use ; or newline to add multiple overrides.')
+
+    cb_csv_progress = ttk.Checkbutton(csv_opts, text='Apply read progress hints', variable=vals['csv_apply_read_progress'])
+    cb_csv_progress.grid(row=rr, column=0, sticky='w')
+    attach_tip(cb_csv_progress, 'Record last read chapter hints from CSV rows and apply them after import.')
+    rr += 1
+
+    csv_note = ttk.Label(csv_opts, text='CSV options run together with MangaDex/ID imports. Leave the tab unchecked to ignore CSV files.', foreground='#666')
+    csv_note.grid(row=rr, column=0, columnspan=4, sticky='w', pady=(4, 0))
+
+    r += 1
 
     # Migrate tab
     mig = ttk.Frame(nb)
@@ -1313,9 +1460,10 @@ def main():
         nb.insert(0, mig)
         nb.insert(1, pr)
         nb.insert(2, fw)
-        nb.insert(3, db)
-        nb.insert(4, ms)
-        nb.insert(5, about)
+        nb.insert(3, csv_tab)
+        nb.insert(4, db)
+        nb.insert(5, ms)
+        nb.insert(6, about)
     except Exception:
         pass
     nb.pack(fill='both', expand=True, padx=8, pady=(8, 4))
@@ -1398,7 +1546,7 @@ def main():
         for k, var in vals.items():
             if isinstance(var, tk.BooleanVar):
                 var.set(False)
-            else:
+            elif hasattr(var, 'set'):
                 var.set('')
         vals['base_url'].set('http://127.0.0.1:4567')
         vals['dry_run'].set(True)
@@ -1407,6 +1555,19 @@ def main():
         vals['prefer_sources'].set('asura,flame,genz,utoons')
         vals['prefer_boost'].set('3')
         vals['read_delay'].set('1')
+        vals['csv_enabled'].set(False)
+        vals['csv_kind'].set('auto')
+        vals['csv_col_map'].set('')
+        vals['csv_status_to_category'].set('')
+        vals['csv_title_threshold'].set('0.6')
+        vals['csv_title_strict'].set(False)
+        vals['csv_apply_read_progress'].set(False)
+        vals['csv_prefer_existing'].set(False)
+        vals['_csv_files'] = []
+        try:
+            csv_listbox.delete(0, 'end')
+        except Exception:
+            pass
     vals['keep_both_min'].set('1')
     vals['prune_thresh'].set('1')
     vals['prune_lang_thresh'].set('1')

@@ -6,6 +6,8 @@ For a feature overview and quick-start summary, see the README in this repositor
 
 ---
 
+> **Heads-up:** The refactored command-line entry point is `import_mangadex_bookmarks_to_suwayomi_refactored.py`. If you are still running the legacy `import_mangadex_bookmarks_to_suwayomi.py`, the arguments are identical—just swap the filename in the examples below.
+
 ## 1. What This Tool Does
 
 It can:
@@ -15,6 +17,13 @@ It can:
 - (Optional) Mark chapters as read in Suwayomi to match what you have already read on MangaDex
 - (Optional) Use a local bookmarks/list file instead of live follows (txt/csv/xlsx/json/html)
 - Migrate entries already in your Suwayomi library to alternative sources (e.g., MangaPark, Weeb Central) when the original source has 0 or very few chapters
+
+### CSV Bookmark Imports (Comick / Manganato)
+
+- Open the new **CSV Import** tab in the GUI to add one or more bookmarks CSV exports alongside MangaDex data. Use **Add...** to load files and the check-box to enable or disable the batch.
+- Optional controls let you override column names (`--csv-col-map`), map CSV reading statuses to Suwayomi categories (`--csv-status-to-category`), adjust title matching (`--csv-title-threshold`, `--csv-title-strict`), prefer existing library copies (`--csv-prefer-existing`), and apply per-title read hints from the CSV (`--csv-apply-read-progress`).
+- The GUI mirrors the CLI flags: each CSV file results in a `--from-csv <path>` argument. Kind detection matches automatically, but you can force `comick` or `manganato` via the drop-down (`--csv-kind`). Separate multiple column overrides with semicolons or newlines (each becomes its own `--csv-col-map` argument).
+- CSV progress hints target the Suwayomi library both for newly added entries and ones you already have; skipped rows report to the console so you can adjust mappings if needed.
 
 It does **not**:
 
@@ -155,7 +164,7 @@ Troubleshooting
 
 ## 3. Download / Place the Files
 
-1. Put the script files (`import_mangadex_bookmarks_to_suwayomi.py`, `run_importer.bat`, and this `USER_MANUAL.md`) together in a folder. For example: `C:\MangaDexImport`.
+1. Put the script files (`import_mangadex_bookmarks_to_suwayomi_refactored.py`, `run_importer.bat`, and this `USER_MANUAL.md`) together in a folder. If you keep the legacy `import_mangadex_bookmarks_to_suwayomi.py`, store it alongside the new file so existing shortcuts continue to work. For example: `C:\MangaDexImport`.
 2. (Optional) Create a shortcut to `run_importer.bat` on your Desktop so you can double‑click it.
 ---
 
