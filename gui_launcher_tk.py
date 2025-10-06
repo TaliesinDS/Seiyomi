@@ -87,6 +87,23 @@ def _pwsh_binary() -> str:
     return "powershell"
 
 
+def _quote_pwsh_arg(arg: str) -> str:
+    escaped = arg.replace("'", "''")
+    return f"'{escaped}'"
+
+
+def _build_pwsh_command(args: List[str], tee_path: Optional[str] = None) -> str:
+    if not args:
+        return ""
+    quoted_args = [_quote_pwsh_arg(a) for a in args]
+    command = f"& {quoted_args[0]}"
+    if len(quoted_args) > 1:
+        command += " " + " ".join(quoted_args[1:])
+    if tee_path:
+        command += f" | Tee-Object -FilePath {_quote_pwsh_arg(tee_path)}"
+    return command
+
+
 def build_args(v: dict) -> List[str]:
     # Positional args first
     positional: List[str] = []
@@ -194,6 +211,7 @@ def build_args(v: dict) -> List[str]:
 
     # CSV import
     csv_files = [p for p in v.get('_csv_files', []) if isinstance(p, str) and p.strip()]
+    csv_apply_progress = bool(v.get('csv_apply_read_progress') and v['csv_apply_read_progress'].get())
     if v.get('csv_enabled') and v['csv_enabled'].get() and csv_files:
         for path in csv_files:
             args += ["--from-csv", path]
@@ -216,27 +234,29 @@ def build_args(v: dict) -> List[str]:
             args += ["--csv-apply-read-progress"]
         if v.get('csv_prefer_existing') and v['csv_prefer_existing'].get():
             args += ["--csv-prefer-existing"]
+        args += ["--csv-no-mangadex"]
 
-    # Read chapters
-    if v['import_read'].get():
+    # Read chapters (MangaDex session-dependent)
+    import_read_enabled = bool(v.get('import_read') and v['import_read'].get())
+    if import_read_enabled:
         args += ["--import-read-chapters"]
-    if v.get('read_chapters_dry_run') and v['read_chapters_dry_run'].get():
-        args += ["--read-chapters-dry-run"]
-    if v.get('read_delay') and v['read_delay'].get().strip() and v['read_delay'].get().strip() != '0.0':
-        args += ["--read-sync-delay", v['read_delay'].get().strip()]
-    if v.get('max_read_requests_per_minute') and v['max_read_requests_per_minute'].get().strip() and v['max_read_requests_per_minute'].get().strip() != '300':
-        args += ["--max-read-requests-per-minute", v['max_read_requests_per_minute'].get().strip()]
-    if v.get('read_sync_number_fallback') and v['read_sync_number_fallback'].get():
-        args += ["--read-sync-number-fallback"]
-    if v.get('read_sync_across_sources'):
-        if v['read_sync_across_sources'].get():
+        if v.get('read_chapters_dry_run') and v['read_chapters_dry_run'].get():
+            args += ["--read-chapters-dry-run"]
+        if v.get('read_delay') and v['read_delay'].get().strip() and v['read_delay'].get().strip() != '0.0':
+            args += ["--read-sync-delay", v['read_delay'].get().strip()]
+        if v.get('max_read_requests_per_minute') and v['max_read_requests_per_minute'].get().strip() and v['max_read_requests_per_minute'].get().strip() != '300':
+            args += ["--max-read-requests-per-minute", v['max_read_requests_per_minute'].get().strip()]
+        if v.get('read_sync_number_fallback') and v['read_sync_number_fallback'].get():
+            args += ["--read-sync-number-fallback"]
+        if v.get('missing_report') and v['missing_report'].get().strip():
+            args += ["--missing-report", v['missing_report'].get().strip()]
+
+    # Shared read-sync modifiers (MangaDex or CSV apply-progress)
+    if import_read_enabled or csv_apply_progress:
+        if v.get('read_sync_across_sources') and v['read_sync_across_sources'].get():
             args += ["--read-sync-across-sources"]
-        else:
-            args += ["--no-read-sync-across-sources"]
-    if v.get('read_sync_only_if_ahead') and v['read_sync_only_if_ahead'].get():
-        args += ["--read-sync-only-if-ahead"]
-    if v.get('missing_report') and v['missing_report'].get().strip():
-        args += ["--missing-report", v['missing_report'].get().strip()]
+        if v.get('read_sync_only_if_ahead') and v['read_sync_only_if_ahead'].get():
+            args += ["--read-sync-only-if-ahead"]
 
     filter_title_arg = v['filter_title'].get().strip() if v.get('filter_title') else ''
 
@@ -348,30 +368,28 @@ def launch_command(cmd_list: List[str], save_log: bool, log_path: Optional[str],
     pwsh = _pwsh_binary()
     cli_exe = find_cli_executable()
     CREATE_NO_WINDOW = 0x08000000 if os.name == 'nt' else 0
+    CREATE_NEW_CONSOLE = 0x00000010 if os.name == 'nt' else 0
 
     if external_terminal:
         # Visible terminal with live output
+        creation_flag = CREATE_NEW_CONSOLE
         if cli_exe is not None:
             full_cmd = [str(cli_exe), *cmd_list]
-            ps_cmd = ' '.join([shlex.quote(p) for p in full_cmd])
-            if save_log and log_path:
-                ps_cmd = ps_cmd + f" | Tee-Object -FilePath {shlex.quote(log_path)}"
-            subprocess.Popen([pwsh, "-NoExit", "-Command", ps_cmd])
+            ps_cmd = _build_pwsh_command(full_cmd, log_path if (save_log and log_path) else None)
+            subprocess.Popen([pwsh, "-NoExit", "-Command", ps_cmd], creationflags=creation_flag)
             return
         py = python_executable()
         script = str(Path(__file__).parent / SCRIPT_NAME)
         full_cmd = [py, script, *cmd_list]
-        ps_cmd = ' '.join([shlex.quote(p) for p in full_cmd])
-        if save_log and log_path:
-            ps_cmd = ps_cmd + f" | Tee-Object -FilePath {shlex.quote(log_path)}"
-        subprocess.Popen([pwsh, "-NoExit", "-Command", ps_cmd])
+        ps_cmd = _build_pwsh_command(full_cmd, log_path if (save_log and log_path) else None)
+        subprocess.Popen([pwsh, "-NoExit", "-Command", ps_cmd], creationflags=creation_flag)
         return
 
     # Quiet mode: no external terminal; support logging via hidden pipeline
     if cli_exe is not None:
         full_cmd = [str(cli_exe), *cmd_list]
         if save_log and log_path:
-            ps_cmd = ' '.join([shlex.quote(p) for p in full_cmd]) + f" | Tee-Object -FilePath {shlex.quote(log_path)}"
+            ps_cmd = _build_pwsh_command(full_cmd, log_path)
             subprocess.Popen([pwsh, "-Command", ps_cmd], creationflags=CREATE_NO_WINDOW)
         else:
             subprocess.Popen(full_cmd, creationflags=CREATE_NO_WINDOW)
@@ -380,7 +398,7 @@ def launch_command(cmd_list: List[str], save_log: bool, log_path: Optional[str],
     script = str(Path(__file__).parent / SCRIPT_NAME)
     full_cmd = [py, script, *cmd_list]
     if save_log and log_path:
-        ps_cmd = ' '.join([shlex.quote(p) for p in full_cmd]) + f" | Tee-Object -FilePath {shlex.quote(log_path)}"
+        ps_cmd = _build_pwsh_command(full_cmd, log_path)
         subprocess.Popen([pwsh, "-Command", ps_cmd], creationflags=CREATE_NO_WINDOW)
     else:
         subprocess.Popen(full_cmd, creationflags=CREATE_NO_WINDOW)
@@ -422,12 +440,12 @@ def apply_preset(v: dict, name: str):
         v['read_chapters_dry_run'].set(False)
         v['read_delay'].set('2')
         v['max_read_requests_per_minute'].set('240')
-        v.setdefault('read_sync_number_fallback', tk.BooleanVar(value=True)).set(True)
-        v.setdefault('read_sync_across_sources', tk.BooleanVar(value=True)).set(True)
-        v.setdefault('read_sync_only_if_ahead', tk.BooleanVar(value=True)).set(True)
+        v['read_sync_number_fallback'].set(True)
+        v['read_sync_across_sources'].set(True)
+        v['read_sync_only_if_ahead'].set(True)
         # Pre-fill a default missing-report path if blank
-        if not v.setdefault('missing_report', tk.StringVar(value=str(Path.cwd()/ 'reports' / 'md_missing_reads.csv'))).get().strip():
-            v['missing_report'].set(str(Path.cwd()/ 'reports' / 'md_missing_reads.csv'))
+        if not v['missing_report'].get().strip():
+            v['missing_report'].set(str(Path.cwd() / 'reports' / 'md_missing_reads.csv'))
 
 
 # ---- Config helpers ----
@@ -834,6 +852,10 @@ def main():
         'read_chapters_dry_run': tk.BooleanVar(value=False),
         'read_delay': tk.StringVar(value='1'),
         'max_read_requests_per_minute': tk.StringVar(value='300'),
+    'read_sync_number_fallback': tk.BooleanVar(value=False),
+    'read_sync_across_sources': tk.BooleanVar(value=False),
+    'read_sync_only_if_ahead': tk.BooleanVar(value=True),
+    'missing_report': tk.StringVar(value=str(Path.cwd() / 'reports' / 'md_missing_reads.csv')),
         'category_id': tk.StringVar(value=''),
         # CSV Import
         'csv_enabled': tk.BooleanVar(value=False),
@@ -1003,18 +1025,18 @@ def main():
     attach_tip(en_rc_rpm, 'Throttle for chapter read-mark requests. Default 300.')
 
     # Cross-source sync options
-    cb_num_fallback = ttk.Checkbutton(rc, text='Number fallback', variable=vals.setdefault('read_sync_number_fallback', tk.BooleanVar(value=False)))
+    cb_num_fallback = ttk.Checkbutton(rc, text='Number fallback', variable=vals['read_sync_number_fallback'])
     cb_num_fallback.grid(row=rr, column=0, sticky='w')
     attach_tip(cb_num_fallback, 'When UUIDs don\'t match, mark chapters by chapter number (for migrated entries).')
-    cb_across = ttk.Checkbutton(rc, text='Across sources', variable=vals.setdefault('read_sync_across_sources', tk.BooleanVar(value=False)))
+    cb_across = ttk.Checkbutton(rc, text='Across sources', variable=vals['read_sync_across_sources'])
     cb_across.grid(row=rr, column=1, sticky='w')
-    attach_tip(cb_across, 'Also apply read marks to same-title entries under other sources (by chapter number).')
-    cb_only_ahead = ttk.Checkbutton(rc, text='Only if ahead', variable=vals.setdefault('read_sync_only_if_ahead', tk.BooleanVar(value=True)))
+    attach_tip(cb_across, 'Also apply read marks to same-title entries under other sources (by chapter number) for MangaDex sync and CSV read hints.')
+    cb_only_ahead = ttk.Checkbutton(rc, text='Only if ahead', variable=vals['read_sync_only_if_ahead'])
     cb_only_ahead.grid(row=rr, column=2, sticky='w'); rr+=1
-    attach_tip(cb_only_ahead, 'Only apply read marks when MangaDex progress is ahead of the target entry.')
+    attach_tip(cb_only_ahead, 'Only apply read marks when the source progress is ahead of the target entry (works for MangaDex sync and CSV read hints).')
 
     ttk.Label(rc, text='Missing report (CSV)').grid(row=rr, column=0, sticky='w')
-    en_miss = ttk.Entry(rc, textvariable=vals.setdefault('missing_report', tk.StringVar(value=str(Path.cwd()/ 'reports' / 'md_missing_reads.csv'))), width=50); en_miss.grid(row=rr, column=1, columnspan=2, sticky='we')
+    en_miss = ttk.Entry(rc, textvariable=vals['missing_report'], width=50); en_miss.grid(row=rr, column=1, columnspan=2, sticky='we')
     attach_tip(en_miss, 'Write a CSV of titles where read sync is missing chapters or chapters not yet loaded (updated live).')
     bt_miss = ttk.Button(rc, text='Browse...', command=lambda: vals['missing_report'].set(filedialog.asksaveasfilename(defaultextension='.csv', filetypes=[('CSV','*.csv')])))
     bt_miss.grid(row=rr, column=3, sticky='w'); rr+=1
@@ -1116,7 +1138,7 @@ def main():
     attach_tip(cb_csv_strict, 'Require near-exact normalized matches instead of fuzzy matching.')
     cb_csv_prefer = ttk.Checkbutton(csv_opts, text='Prefer existing library entries', variable=vals['csv_prefer_existing'])
     cb_csv_prefer.grid(row=rr, column=2, columnspan=2, sticky='w'); rr += 1
-    attach_tip(cb_csv_prefer, 'Skip adding CSV rows when a matching title already exists in Suwayomi.')
+    attach_tip(cb_csv_prefer, 'Only update CSV titles that already exist in Suwayomi; new titles from the CSV will not be added when this is checked.')
 
     ttk.Label(csv_opts, text='Status→Category map').grid(row=rr, column=0, sticky='w')
     en_csv_status_map = ttk.Entry(csv_opts, textvariable=vals['csv_status_to_category'], width=60)
@@ -1128,13 +1150,40 @@ def main():
     en_csv_colmap.grid(row=rr, column=1, columnspan=3, sticky='we'); rr += 1
     attach_tip(en_csv_colmap, 'Override CSV column names (key=value pairs, comma-separated per entry). Use ; or newline to add multiple overrides.')
 
-    cb_csv_progress = ttk.Checkbutton(csv_opts, text='Apply read progress hints', variable=vals['csv_apply_read_progress'])
+    cb_csv_progress = ttk.Checkbutton(csv_opts, text='Apply CSV read progress hints', variable=vals['csv_apply_read_progress'])
     cb_csv_progress.grid(row=rr, column=0, sticky='w')
-    attach_tip(cb_csv_progress, 'Record last read chapter hints from CSV rows and apply them after import.')
+    attach_tip(cb_csv_progress, 'Apply last-read chapter numbers coming from the CSV directly onto matching Suwayomi entries (no MangaDex session required).')
     rr += 1
 
-    csv_note = ttk.Label(csv_opts, text='CSV options run together with MangaDex/ID imports. Leave the tab unchecked to ignore CSV files.', foreground='#666')
+    csv_note = ttk.Label(csv_opts, text='CSV options run alongside MangaDex features. CSV rows are matched directly against your Suwayomi sources by default.', foreground='#666')
     csv_note.grid(row=rr, column=0, columnspan=4, sticky='w', pady=(4, 0))
+
+    r += 1
+
+    csv_statuses = ttk.LabelFrame(csv_tab, text='Statuses & Categories (optional)')
+    csv_statuses.grid(row=r, column=0, columnspan=4, sticky='nsew', pady=(0, 6))
+    csv_statuses.grid_columnconfigure(1, weight=1)
+    rr = 0
+    cb_csv_import_status = ttk.Checkbutton(csv_statuses, text='Import reading statuses (apply status map)', variable=vals['import_status'])
+    cb_csv_import_status.grid(row=rr, column=0, sticky='w')
+    attach_tip(cb_csv_import_status, 'Apply status/category mapping to CSV items (and MangaDex follows when enabled).')
+    ttk.Label(csv_statuses, text='Status→Category map').grid(row=rr, column=1, sticky='e')
+    en_csv_status_map2 = ttk.Entry(csv_statuses, textvariable=vals['status_map'], width=40)
+    en_csv_status_map2.grid(row=rr, column=2, columnspan=2, sticky='we'); rr += 1
+    attach_tip(en_csv_status_map2, 'Example: reading=2,completed=5. Applies to any source that sets statuses.')
+    ttk.Label(csv_statuses, text='Default category id').grid(row=rr, column=1, sticky='e')
+    en_csv_status_default = ttk.Entry(csv_statuses, textvariable=vals['status_default_category'], width=10)
+    en_csv_status_default.grid(row=rr, column=2, sticky='w'); rr += 1
+    attach_tip(en_csv_status_default, 'Fallback category when a status has no explicit mapping.')
+    cb_csv_status_summary = ttk.Checkbutton(csv_statuses, text='Print status summary', variable=vals['print_status_summary'])
+    cb_csv_status_summary.grid(row=rr, column=0, sticky='w')
+    attach_tip(cb_csv_status_summary, 'Summarize mapped statuses after import.')
+    cb_csv_status_debug = ttk.Checkbutton(csv_statuses, text='Map debug', variable=vals['status_map_debug'])
+    cb_csv_status_debug.grid(row=rr, column=1, sticky='w')
+    attach_tip(cb_csv_status_debug, 'Verbose output for status-to-category mapping decisions.')
+    cb_csv_debug_status = ttk.Checkbutton(csv_statuses, text='Debug status fetch', variable=vals['debug_status'])
+    cb_csv_debug_status.grid(row=rr, column=2, sticky='w')
+    attach_tip(cb_csv_debug_status, 'Print raw status JSON or logs to diagnose issues.'); rr += 1
 
     r += 1
 
@@ -1157,7 +1206,7 @@ def main():
     ttk.Label(mig, text='Exclude categories (ids/names, comma)').grid(row=r, column=0, sticky='w'); en_excl_cats = ttk.Entry(mig, textvariable=vals['migrate_exclude_categories'], width=50); en_excl_cats.grid(row=r, column=1, sticky='we'); r+=1
     attach_tip(en_excl_cats, 'Exclude these categories (names or IDs), comma-separated.')
     ttk.Label(mig, text='Preferred sources (comma)').grid(row=r, column=0, sticky='w'); en_mig_src = ttk.Entry(mig, textvariable=vals['migrate_sources'], width=50); en_mig_src.grid(row=r, column=1, sticky='we'); r+=1
-    attach_tip(en_mig_src, 'Comma-separated preferred alternative sources to try (name fragments).')
+    attach_tip(en_mig_src, 'Comma-separated preferred alternative sources to try (name fragments). Recommended to list a few high-quality sites so migration doesn’t scan every source.')
     ttk.Label(mig, text='Exclude sources (comma)').grid(row=r, column=0, sticky='w'); en_mig_excl = ttk.Entry(mig, textvariable=vals['exclude_sources'], width=50); en_mig_excl.grid(row=r, column=1, sticky='we'); r+=1
     attach_tip(en_mig_excl, 'Sources to always exclude (e.g. comick,hitomi).')
     cb_pref_only = ttk.Checkbutton(mig, text='Preferred only', variable=vals['migrate_pref_only']); cb_pref_only.grid(row=r, column=0, sticky='w')
@@ -1607,33 +1656,30 @@ def main():
         pwsh = _pwsh_binary()
         cmd_str = ''
         external = vals['external_terminal'].get()
+        log_path = vals['log_path'].get().strip()
+        tee_path = log_path if (vals['save_log'].get() and log_path) else None
         if cli_exe is not None:
             full_cmd = [str(cli_exe), *args]
             if external:
-                if vals['save_log'].get() and vals['log_path'].get().strip():
-                    ps_cmd = ' '.join([shlex.quote(p) for p in full_cmd]) + f" | Tee-Object -FilePath {shlex.quote(vals['log_path'].get().strip())}"
-                    cmd_str = ' '.join([pwsh, '-NoExit', '-Command', ps_cmd])
-                else:
-                    cmd_str = ' '.join([pwsh, '-NoExit', '-Command', ' '.join([shlex.quote(p) for p in full_cmd])])
+                ps_cmd = _build_pwsh_command(full_cmd, tee_path)
+                cmd_str = f"{pwsh} -NoExit -Command \"{ps_cmd}\""
             else:
-                if vals['save_log'].get() and vals['log_path'].get().strip():
-                    ps_cmd = ' '.join([shlex.quote(p) for p in full_cmd]) + f" | Tee-Object -FilePath {shlex.quote(vals['log_path'].get().strip())}"
-                    cmd_str = ' '.join([pwsh, '-Command', ps_cmd])
+                if tee_path:
+                    ps_cmd = _build_pwsh_command(full_cmd, tee_path)
+                    cmd_str = f"{pwsh} -Command \"{ps_cmd}\""
                 else:
                     cmd_str = ' '.join([shlex.quote(p) for p in full_cmd])
         else:
             py = python_executable()
             script = str(Path(__file__).parent / SCRIPT_NAME)
             full_cmd = [py, script, *args]
-            ps_cmd = ' '.join([shlex.quote(p) for p in full_cmd])
             if external:
-                if vals['save_log'].get() and vals['log_path'].get().strip():
-                    ps_cmd = ps_cmd + f" | Tee-Object -FilePath {shlex.quote(vals['log_path'].get().strip())}"
-                cmd_str = ' '.join([pwsh, '-NoExit', '-Command', ps_cmd])
+                ps_cmd = _build_pwsh_command(full_cmd, tee_path)
+                cmd_str = f"{pwsh} -NoExit -Command \"{ps_cmd}\""
             else:
-                if vals['save_log'].get() and vals['log_path'].get().strip():
-                    ps_cmd = ps_cmd + f" | Tee-Object -FilePath {shlex.quote(vals['log_path'].get().strip())}"
-                    cmd_str = ' '.join([pwsh, '-Command', ps_cmd])
+                if tee_path:
+                    ps_cmd = _build_pwsh_command(full_cmd, tee_path)
+                    cmd_str = f"{pwsh} -Command \"{ps_cmd}\""
                 else:
                     cmd_str = ' '.join([shlex.quote(p) for p in full_cmd])
 

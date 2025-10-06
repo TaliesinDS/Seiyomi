@@ -1,0 +1,9 @@
+- [x] Investigate PowerShell quoting issue in GUI command preview
+- [x] Adjust command preview construction for external terminal mode
+- [ ] Retest GUI command launch after fix
+- [ ] Summarize findings for user
+- [x] Reorganize GUI CSV tab so shared options don’t require toggles on MangaDex tab
+- [x] Add CLI flag to skip MangaDex when importing CSV
+- [x] Implement CSV direct-to-Suwayomi flow when skipping MangaDex
+- [ ] Update GUI to expose new CSV matching toggle
+- [x] Document CSV direct import behavior in GUI README / user manual snippet

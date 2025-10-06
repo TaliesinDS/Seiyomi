@@ -1,0 +1,189 @@
+--import-read-chapters requires a MangaDex session (use --from-follows or --md-login-only). Disabling.
+[CSV 1/995] (dry-run) would mark up to chapter 39.0
+[CSV 2/995] SKIP 'The Returning Devil Lives a Good Life' (prefer-existing)
+[CSV 3/995] SKIP 'Hello, Mr. Veterinarian!' (prefer-existing)
+[CSV 5/995] (dry-run) would mark up to chapter 6.0
+[CSV 7/995] (dry-run) would mark up to chapter 365.0
+[CSV 8/995] (dry-run) would mark up to chapter 61.0
+[CSV 9/995] (dry-run) would mark up to chapter 173.0
+[CSV 10/995] (dry-run) would mark up to chapter 39.0
+[CSV 11/995] (dry-run) would mark up to chapter 49.0
+[CSV 12/995] (dry-run) would mark up to chapter 51.0
+[CSV 13/995] SKIP 'Your Talent is Mine' (prefer-existing)
+[CSV 14/995] (dry-run) would mark up to chapter 103.0
+[CSV 15/995] (dry-run) would mark up to chapter 131.0
+[CSV 16/995] (dry-run) would mark up to chapter 226.0
+[CSV 17/995] (dry-run) would mark up to chapter 138.0
+[CSV 18/995] (dry-run) would mark up to chapter 37.0
+[CSV 19/995] (dry-run) would mark up to chapter 97.0
+[CSV 20/995] SKIP 'Isekai Shachuuhaku Monogatari - Outrunner PHEV' (prefer-existing)
+[CSV 21/995] (dry-run) would mark up to chapter 36.0
+[CSV 22/995] (dry-run) would mark up to chapter 102.0
+[CSV 23/995] SKIP 'My Brother and His Gift' (prefer-existing)
+[CSV 24/995] (dry-run) would mark up to chapter 24.0
+[CSV 25/995] (dry-run) would mark up to chapter 19.0
+[CSV 26/995] (dry-run) would mark up to chapter 43.0
+[CSV 27/995] (dry-run) would mark up to chapter 15.0
+[CSV 28/995] SKIP 'Surviving a Fantasy Adventure Comic' (prefer-existing)
+[CSV 29/995] SKIP 'Zensei de Tsurai Omoi o Shita no de, Kamisama ga Shazai ni Kimashita' (prefer-existing)
+[CSV 30/995] (dry-run) would mark up to chapter 43.0
+[CSV 31/995] SKIP 'ChronoGo' (prefer-existing)
+[CSV 32/995] SKIP 'Ruri Dragon' (prefer-existing)
+[CSV 33/995] (dry-run) would mark up to chapter 24.0
+[CSV 34/995] (dry-run) would mark up to chapter 163.0
+[CSV 35/995] SKIP 'The Wicked Little Princess' (prefer-existing)
+[CSV 36/995] SKIP 'Second Life of a Trash Princess' (prefer-existing)
+[CSV 37/995] (dry-run) would mark up to chapter 30.0
+[CSV 38/995] (dry-run) would mark up to chapter 167.0
+[CSV 39/995] (dry-run) would mark up to chapter 67.0
+[CSV 40/995] SKIP 'Isekai de Slow Life wo (Ganbou)' (prefer-existing)
+[CSV 41/995] SKIP 'Ao no Hako' (prefer-existing)
+[CSV 42/995] (dry-run) would mark up to chapter 85.0
+[CSV 43/995] (dry-run) would mark up to chapter 75.0
+[CSV 44/995] (dry-run) would mark up to chapter 80.0
+[CSV 45/995] (dry-run) would mark up to chapter 44.0
+[CSV 46/995] (dry-run) would mark up to chapter 24.0
+[CSV 47/995] SKIP 'Countach' (prefer-existing)
+[CSV 48/995] (dry-run) would mark up to chapter 47.0
+[CSV 49/995] (dry-run) would mark up to chapter 75.0
+[CSV 50/995] (dry-run) would mark up to chapter 199.0
+[CSV 51/995] SKIP 'Azure Legacy' (prefer-existing)
+[CSV 52/995] (dry-run) would mark up to chapter 243.0
+[CSV 53/995] SKIP 'I, The Invincible Villain Master With My Apprentices' (prefer-existing)
+[CSV 54/995] (dry-run) would mark up to chapter 42.0
+[CSV 55/995] (dry-run) would mark up to chapter 99.0
+[CSV 56/995] SKIP 'The Baengri Clan's Unwanted Granddaughter' (prefer-existing)
+[CSV 57/995] (dry-run) would mark up to chapter 134.0
+[CSV 58/995] (dry-run) would mark up to chapter 79.0
+[CSV 59/995] (dry-run) would mark up to chapter 80.0
+[CSV 60/995] (dry-run) would mark up to chapter 168.0
+[CSV 61/995] (dry-run) would mark up to chapter 36.0
+[CSV 62/995] (dry-run) would mark up to chapter 17.0
+[CSV 63/995] (dry-run) would mark up to chapter 16.0
+[CSV 64/995] SKIP 'Monogatari no Kuromaku ni Tensei shite' (prefer-existing)
+[CSV 65/995] (dry-run) would mark up to chapter 58.0
+[CSV 66/995] SKIP 'Villainesses Have More Fun' (prefer-existing)
+[CSV 67/995] SKIP 'The Ghost Doctor' (prefer-existing)
+[CSV 68/995] (dry-run) would mark up to chapter 32.0
+[CSV 69/995] (dry-run) would mark up to chapter 143.0
+[CSV 70/995] (dry-run) would mark up to chapter 105.0
+[CSV 71/995] (dry-run) would mark up to chapter 72.0
+[CSV 72/995] (dry-run) would mark up to chapter 16.0
+[CSV 73/995] (dry-run) would mark up to chapter 38.0
+[CSV 74/995] SKIP 'Return of the Scholar' (prefer-existing)
+[CSV 75/995] SKIP 'Reborn to be a Supreme Emperor' (prefer-existing)
+[CSV 76/995] SKIP 'Kojiin Tamer' (prefer-existing)
+[CSV 77/995] (dry-run) would mark up to chapter 15.0
+[CSV 78/995] (dry-run) would mark up to chapter 55.0
+[CSV 79/995] (dry-run) would mark up to chapter 20.2
+[CSV 80/995] SKIP 'Wo, Jinhua, Emo' (prefer-existing)
+[CSV 81/995] (dry-run) would mark up to chapter 78.0
+[CSV 82/995] (dry-run) would mark up to chapter 222.0
+[CSV 83/995] (dry-run) would mark up to chapter 60.0
+[CSV 84/995] (dry-run) would mark up to chapter 106.0
+[CSV 85/995] (dry-run) would mark up to chapter 26.1
+[CSV 86/995] (dry-run) would mark up to chapter 36.0
+[CSV 87/995] (dry-run) would mark up to chapter 68.0
+[CSV 88/995] (dry-run) would mark up to chapter 178.5
+[CSV 89/995] SKIP 'Futari Solo Camp' (prefer-existing)
+[CSV 90/995] (dry-run) would mark up to chapter 95.0
+[CSV 91/995] (dry-run) would mark up to chapter 119.0
+[CSV 92/995] (dry-run) would mark up to chapter 25.0
+[CSV 93/995] (dry-run) would mark up to chapter 54.0
+[CSV 94/995] (dry-run) would mark up to chapter 41.0
+[CSV 95/995] (dry-run) would mark up to chapter 93.3
+[CSV 96/995] (dry-run) would mark up to chapter 40.0
+[CSV 97/995] SKIP 'Unnamed Memory' (prefer-existing)
+[CSV 98/995] (dry-run) would mark up to chapter 119.0
+[CSV 99/995] (dry-run) would mark up to chapter 434.0
+[CSV 100/995] (dry-run) would mark up to chapter 101.0
+[CSV 101/995] SKIP 'Taida na Akujoku Kizoku ni Tensei Shita Ore, Scenario o Bukkowa Shitara Kikaku-gai no Maryoku de Saikyou ni Natta' (prefer-existing)
+[CSV 102/995] (dry-run) would mark up to chapter 21.0
+[CSV 103/995] (dry-run) would mark up to chapter 49.0
+[CSV 105/995] SKIP 'Two Moon' (prefer-existing)
+[CSV 106/995] (dry-run) would mark up to chapter 32.0
+[CSV 107/995] SKIP 'Absolute Resonance' (prefer-existing)
+[CSV 108/995] SKIP 'Don't Mind Me, Daddy' (prefer-existing)
+[CSV 109/995] (dry-run) would mark up to chapter 23.0
+[CSV 110/995] SKIP 'Living a Laid-Back Second Life on the Island of the Strongest Species (Official)' (prefer-existing)
+[CSV 111/995] SKIP 'Trauma Center: Dr. Baek' (prefer-existing)
+[CSV 112/995] SKIP 'Star of Beethoven' (prefer-existing)
+[CSV 113/995] (dry-run) would mark up to chapter 25.0
+[CSV 114/995] (dry-run) would mark up to chapter 21.0
+[CSV 115/995] (dry-run) would mark up to chapter 12.0
+[CSV 116/995] (dry-run) would mark up to chapter 12.0
+[CSV 117/995] (dry-run) would mark up to chapter 20.0
+[CSV 119/995] SKIP 'My Marriage to Saneka' (prefer-existing)
+[CSV 120/995] (dry-run) would mark up to chapter 206.0
+[CSV 121/995] SKIP 'Eiyuu to Kenja no Tensei Kon' (prefer-existing)
+[CSV 122/995] SKIP 'The Coppersmith's Bride' (prefer-existing)
+[CSV 123/995] SKIP 'Night of the Soulless Heathens' (prefer-existing)
+[CSV 124/995] SKIP 'Kunigei - Okuni University Art Department Film Program' (prefer-existing)
+[CSV 125/995] SKIP 'Girl Meets Rock!' (prefer-existing)
+[CSV 126/995] SKIP 'My Mom's a Superstar' (prefer-existing)
+[CSV 127/995] SKIP 'Girl Crush' (prefer-existing)
+[CSV 128/995] SKIP 'Tomehane!' (prefer-existing)
+[CSV 129/995] SKIP 'Akane-banashi' (prefer-existing)
+[CSV 130/995] SKIP 'Street Workout' (prefer-existing)
+[CSV 131/995] SKIP 'Let's Play' (prefer-existing)
+[CSV 132/995] SKIP 'Hajirau Kimi ga Mitainda' (prefer-existing)
+[CSV 133/995] SKIP 'Monochrome Days' (prefer-existing)
+[CSV 134/995] (dry-run) would mark up to chapter 13.0
+[CSV 135/995] (dry-run) would mark up to chapter 22.0
+[CSV 136/995] (dry-run) would mark up to chapter 12.0
+[CSV 137/995] (dry-run) would mark up to chapter 28.0
+[CSV 139/995] (dry-run) would mark up to chapter 17.0
+[CSV 140/995] (dry-run) would mark up to chapter 29.0
+[CSV 141/995] (dry-run) would mark up to chapter 21.0
+[CSV 142/995] SKIP 'Black Fox: Sword Master of Mount Kunlun' (prefer-existing)
+[CSV 143/995] SKIP 'Frozen Warrior' (prefer-existing)
+[CSV 144/995] (dry-run) would mark up to chapter 17.0
+[CSV 145/995] (dry-run) would mark up to chapter 15.0
+[CSV 146/995] (dry-run) would mark up to chapter 20.0
+[CSV 147/995] (dry-run) would mark up to chapter 16.0
+[CSV 148/995] SKIP 'The Genius Prismatic Mage' (prefer-existing)
+[CSV 149/995] (dry-run) would mark up to chapter 7.0
+[CSV 155/995] SKIP 'Dungeon-tou de Yadoya wo Yarou!: Souzou Mahou wo Moratta Ore no Hosoude Hanjouki' (prefer-existing)
+[CSV 157/995] SKIP 'Joban de Shinu Saikyou no Sub Chara ni Tensei Shita no de, Game Chishiki de Musou Suru' (prefer-existing)
+[CSV 162/995] (dry-run) would mark up to chapter 207.0
+[CSV 164/995] SKIP 'VTuber Legend: How I Went Viral after Forgetting to Turn Off My Stream' (prefer-existing)
+[CSV 166/995] SKIP 'Wind Breaker' (prefer-existing)
+[CSV 168/995] (dry-run) would mark up to chapter 63.0
+[CSV 170/995] (dry-run) would mark up to chapter 66.0
+[CSV 171/995] (dry-run) would mark up to chapter 25.0
+[CSV 172/995] (dry-run) would mark up to chapter 15.0
+[CSV 173/995] SKIP 'I'm Not the Villain' (prefer-existing)
+[CSV 174/995] SKIP 'Sekai Saikyou no Kishi wa, Kanarazu Shinu Heroine wo Sukuu Tame Isekai Demo Saikyou no Kishi to Naru ~Ryoutei ni Hana wo, Ryoute ni Ken wo~' (prefer-existing)
+[CSV 175/995] SKIP 'Food Truck "Deli-joy" - Shasou Kara Isekai e Umaimono Mitsuyu Hanbaichuu!' (prefer-existing)
+[CSV 176/995] (dry-run) would mark up to chapter 9.0
+[CSV 177/995] (dry-run) would mark up to chapter 43.0
+[CSV 178/995] (dry-run) would mark up to chapter 100.0
+[CSV 179/995] (dry-run) would mark up to chapter 87.0
+[CSV 180/995] (dry-run) would mark up to chapter 172.0
+[CSV 181/995] (dry-run) would mark up to chapter 139.0
+[CSV 182/995] (dry-run) would mark up to chapter 80.0
+[CSV 183/995] (dry-run) would mark up to chapter 46.0
+[CSV 184/995] (dry-run) would mark up to chapter 38.0
+[CSV 185/995] (dry-run) would mark up to chapter 107.0
+[CSV 186/995] SKIP 'Nimotsu Mochi no Noukin Musou' (prefer-existing)
+[CSV 187/995] SKIP 'S-geup Hunter-neun Agyeong Gongnyeoga Doegi Silseumnida' (prefer-existing)
+[CSV 188/995] (dry-run) would mark up to chapter 50.0
+[CSV 189/995] (dry-run) would mark up to chapter 12.0
+[CSV 190/995] (dry-run) would mark up to chapter 175.0
+[CSV 191/995] (dry-run) would mark up to chapter 151.0
+[CSV 192/995] (dry-run) would mark up to chapter 78.0
+[CSV 193/995] (dry-run) would mark up to chapter 356.0
+[CSV 194/995] (dry-run) would mark up to chapter 26.0
+[CSV 195/995] (dry-run) would mark up to chapter 22.0
+[CSV 196/995] (dry-run) would mark up to chapter 90.0
+[CSV 197/995] (dry-run) would mark up to chapter 98.0
+[CSV 198/995] (dry-run) would mark up to chapter 51.0
+[CSV 199/995] SKIP 'Best Teacher Baek' (prefer-existing)
+[CSV 200/995] (dry-run) would mark up to chapter 90.0
+[CSV 201/995] (dry-run) would mark up to chapter 370.0
+[CSV 202/995] (dry-run) would mark up to chapter 61.0
+[CSV 203/995] (dry-run) would mark up to chapter 67.0
+[CSV 204/995] (dry-run) would mark up to chapter 490.0
+[CSV 205/995] SKIP 'Nise Seijo Kuso of the Year - Risou no Seijo? Zannen, Nise Seijo deshita!' (prefer-existing)
+[CSV 206/995] SKIP 'Return of the Calamity-Class Death Knight' (prefer-existing)
+[CSV 210/995] SKIP 'The S-Rank Hunter's Healing Life with Monsters' (prefer-existing)

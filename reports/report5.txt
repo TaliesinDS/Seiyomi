@@ -1,0 +1,41 @@
+CSV direct import mode: 995 rows queued (CSV-only=True, MangaDex IDs=0).
+[CSV] Preparing library snapshot for 995 CSV items...
+[CSV] Library snapshot loaded (3733 entries).
+[CSV] Fetching configured sources from Suwayomi...
+[CSV] Source list ready (377 entries).
+[CSV 1/995] (dry-run) would mark up to chapter 39.0
+[CSV 2/995] Resolving 'The Returning Devil Lives a Good Life' against Suwayomi sources...
+[CSV 2/995] (dry-run) would add 'The Returning Devil Lives a Good Life' via Bato.to -> 'The Regressed Demon Lord Is Kind [Official]' score 1.00
+[CSV 3/995] Resolving 'Hello, Mr. Veterinarian!' against Suwayomi sources...
+[CSV 3/995] (dry-run) would add 'Hello, Mr. Veterinarian!' via MangaDex -> 'Hello, Mr. Veterinarian!' score 1.00
+[CSV 5/995] (dry-run) would mark up to chapter 6.0
+[CSV 7/995] (dry-run) would mark up to chapter 365.0
+[CSV 8/995] (dry-run) would mark up to chapter 61.0
+[CSV 9/995] (dry-run) would mark up to chapter 173.0
+[CSV 10/995] (dry-run) would mark up to chapter 39.0
+[CSV 11/995] (dry-run) would mark up to chapter 49.0
+[CSV 12/995] (dry-run) would mark up to chapter 51.0
+[CSV 13/995] Resolving 'Your Talent is Mine' against Suwayomi sources...
+[CSV 13/995] (dry-run) would add 'Your Talent is Mine' via MangaDex -> 'Your Talent is Mine' score 1.00
+[CSV 14/995] (dry-run) would mark up to chapter 103.0
+[CSV 15/995] (dry-run) would mark up to chapter 131.0
+[CSV 16/995] (dry-run) would mark up to chapter 226.0
+[CSV 17/995] (dry-run) would mark up to chapter 138.0
+[CSV 18/995] (dry-run) would mark up to chapter 37.0
+[CSV 19/995] (dry-run) would mark up to chapter 97.0
+[CSV 20/995] Resolving 'Isekai Shachuuhaku Monogatari - Outrunner PHEV' against Suwayomi sources...
+[CSV 20/995] (dry-run) would add 'Isekai Shachuuhaku Monogatari - Outrunner PHEV' via MangaDex -> 'Isekai Shachuuhaku Monogatari - Outrunner PHEV' score 1.00
+[CSV 21/995] (dry-run) would mark up to chapter 36.0
+[CSV 22/995] (dry-run) would mark up to chapter 102.0
+[CSV 23/995] Resolving 'My Brother and His Gift' against Suwayomi sources...
+[CSV 23/995] (dry-run) would add 'My Brother and His Gift' via MangaDex -> 'My Brother and His Gift' score 1.00
+[CSV 24/995] (dry-run) would mark up to chapter 24.0
+[CSV 25/995] (dry-run) would mark up to chapter 19.0
+[CSV 26/995] (dry-run) would mark up to chapter 43.0
+[CSV 27/995] (dry-run) would mark up to chapter 15.0
+[CSV 28/995] Resolving 'Surviving a Fantasy Adventure Comic' against Suwayomi sources...
+[CSV 28/995] (dry-run) would add 'Surviving a Fantasy Adventure Comic' via MangaDex -> 'Surviving a Fantasy Adventure Comic' score 1.00
+[CSV 29/995] Resolving 'Zensei de Tsurai Omoi o Shita no de, Kamisama ga Shazai ni Kimashita' against Suwayomi sources...
+[CSV 29/995] (dry-run) would add 'Zensei de Tsurai Omoi o Shita no de, Kamisama ga Shazai ni Kimashita' via MangaDex -> 'Zensei de Tsurai Omoi o Shita no de, Kamisama ga Shazai ni Kimashita' score 1.00
+[CSV 30/995] (dry-run) would mark up to chapter 43.0
+[CSV 31/995] Resolving 'ChronoGo' against Suwayomi sources...

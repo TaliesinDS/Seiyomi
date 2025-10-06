@@ -1,0 +1,1318 @@
+CSV direct import mode: 995 rows queued (CSV-only=True, MangaDex IDs=0).
+[CSV] Preparing library snapshot for 995 CSV items...
+[CSV] Library snapshot loaded (3733 entries).
+[CSV] Fetching configured sources from Suwayomi...
+[CSV] Source list ready (377 entries).
+[CSV 1/995] (dry-run) would mark up to chapter 39.0
+[CSV 2/995] Resolving 'The Returning Devil Lives a Good Life' against Suwayomi sources...
+[CSV 2/995] (dry-run) would add 'The Returning Devil Lives a Good Life' via Bato.to -> 'The Regressed Demon Lord Is Kind [Official]' score 1.00
+[CSV 3/995] Resolving 'Hello, Mr. Veterinarian!' against Suwayomi sources...
+[CSV 3/995] (dry-run) would add 'Hello, Mr. Veterinarian!' via MangaDex -> 'Hello, Mr. Veterinarian!' score 1.00
+[CSV 5/995] (dry-run) would mark up to chapter 6.0
+[CSV 7/995] (dry-run) would mark up to chapter 365.0
+[CSV 8/995] (dry-run) would mark up to chapter 61.0
+[CSV 9/995] (dry-run) would mark up to chapter 173.0
+[CSV 10/995] (dry-run) would mark up to chapter 39.0
+[CSV 11/995] (dry-run) would mark up to chapter 49.0
+[CSV 12/995] (dry-run) would mark up to chapter 51.0
+[CSV 13/995] Resolving 'Your Talent is Mine' against Suwayomi sources...
+[CSV 13/995] (dry-run) would add 'Your Talent is Mine' via MangaDex -> 'Your Talent is Mine' score 1.00
+[CSV 14/995] (dry-run) would mark up to chapter 103.0
+[CSV 15/995] (dry-run) would mark up to chapter 131.0
+[CSV 16/995] (dry-run) would mark up to chapter 226.0
+[CSV 17/995] (dry-run) would mark up to chapter 138.0
+[CSV 18/995] (dry-run) would mark up to chapter 37.0
+[CSV 19/995] (dry-run) would mark up to chapter 97.0
+[CSV 20/995] Resolving 'Isekai Shachuuhaku Monogatari - Outrunner PHEV' against Suwayomi sources...
+[CSV 20/995] (dry-run) would add 'Isekai Shachuuhaku Monogatari - Outrunner PHEV' via MangaDex -> 'Isekai Shachuuhaku Monogatari - Outrunner PHEV' score 1.00
+[CSV 21/995] (dry-run) would mark up to chapter 36.0
+[CSV 22/995] (dry-run) would mark up to chapter 102.0
+[CSV 23/995] Resolving 'My Brother and His Gift' against Suwayomi sources...
+[CSV 23/995] (dry-run) would add 'My Brother and His Gift' via MangaDex -> 'My Brother and His Gift' score 1.00
+[CSV 24/995] (dry-run) would mark up to chapter 24.0
+[CSV 25/995] (dry-run) would mark up to chapter 19.0
+[CSV 26/995] (dry-run) would mark up to chapter 43.0
+[CSV 27/995] (dry-run) would mark up to chapter 15.0
+[CSV 28/995] Resolving 'Surviving a Fantasy Adventure Comic' against Suwayomi sources...
+[CSV 28/995] (dry-run) would add 'Surviving a Fantasy Adventure Comic' via MangaDex -> 'Surviving a Fantasy Adventure Comic' score 1.00
+[CSV 29/995] Resolving 'Zensei de Tsurai Omoi o Shita no de, Kamisama ga Shazai ni Kimashita' against Suwayomi sources...
+[CSV 29/995] (dry-run) would add 'Zensei de Tsurai Omoi o Shita no de, Kamisama ga Shazai ni Kimashita' via MangaDex -> 'Zensei de Tsurai Omoi o Shita no de, Kamisama ga Shazai ni Kimashita' score 1.00
+[CSV 30/995] (dry-run) would mark up to chapter 43.0
+[CSV 31/995] Resolving 'ChronoGo' against Suwayomi sources...
+[CSV 31/995] (dry-run) would add 'ChronoGo' via MangaDex -> 'ChronoGo' score 1.00
+[CSV 32/995] Resolving 'Ruri Dragon' against Suwayomi sources...
+[CSV 32/995] (dry-run) would add 'Ruri Dragon' via MangaDex -> 'Ruri Dragon' score 1.00
+[CSV 33/995] (dry-run) would mark up to chapter 24.0
+[CSV 34/995] (dry-run) would mark up to chapter 163.0
+[CSV 35/995] Resolving 'The Wicked Little Princess' against Suwayomi sources...
+[CSV 35/995] (dry-run) would add 'The Wicked Little Princess' via MangaDex -> 'The Wicked Little Princess' score 1.00
+[CSV 36/995] Resolving 'Second Life of a Trash Princess' against Suwayomi sources...
+[CSV 36/995] (dry-run) would add 'Second Life of a Trash Princess' via MangaDex -> 'Crowning a Spoiled Prince' score 1.00
+[CSV 37/995] (dry-run) would mark up to chapter 30.0
+[CSV 38/995] (dry-run) would mark up to chapter 167.0
+[CSV 39/995] (dry-run) would mark up to chapter 67.0
+[CSV 40/995] Resolving 'Isekai de Slow Life wo (Ganbou)' against Suwayomi sources...
+[CSV 40/995] (dry-run) would add 'Isekai de Slow Life wo (Ganbou)' via MangaPark -> 'I have a slow living in different world (I wish)' score 1.00
+[CSV 41/995] Resolving 'Ao no Hako' against Suwayomi sources...
+[CSV 41/995] (dry-run) would add 'Ao no Hako' via MangaDex -> 'Ao no Hako' score 1.00
+[CSV 42/995] (dry-run) would mark up to chapter 85.0
+[CSV 43/995] (dry-run) would mark up to chapter 75.0
+[CSV 44/995] (dry-run) would mark up to chapter 80.0
+[CSV 45/995] (dry-run) would mark up to chapter 44.0
+[CSV 46/995] (dry-run) would mark up to chapter 24.0
+[CSV 47/995] Resolving 'Countach' against Suwayomi sources...
+[CSV 47/995] (dry-run) would add 'Countach' via MangaDex -> 'Countach' score 1.00
+[CSV 48/995] (dry-run) would mark up to chapter 47.0
+[CSV 49/995] (dry-run) would mark up to chapter 75.0
+[CSV 50/995] (dry-run) would mark up to chapter 199.0
+[CSV 51/995] Resolving 'Azure Legacy' against Suwayomi sources...
+[CSV 51/995] (dry-run) would add 'Azure Legacy' via MangaDex -> 'Azure Legacy' score 1.00
+[CSV 52/995] (dry-run) would mark up to chapter 243.0
+[CSV 53/995] Resolving 'I, The Invincible Villain Master With My Apprentices' against Suwayomi sources...
+[CSV 53/995] (dry-run) would add 'I, The Invincible Villain Master With My Apprentices' via MangaDex -> 'I, The Invincible Villain Master With My Apprentices' score 1.00
+[CSV 54/995] (dry-run) would mark up to chapter 42.0
+[CSV 55/995] (dry-run) would mark up to chapter 99.0
+[CSV 56/995] Resolving 'The Baengri Clan's Unwanted Granddaughter' against Suwayomi sources...
+[CSV 56/995] (dry-run) would add 'The Baengri Clan's Unwanted Granddaughter' via MangaDex -> 'The Baengri Clan's Unwanted Granddaughter' score 1.00
+[CSV 57/995] (dry-run) would mark up to chapter 134.0
+[CSV 58/995] (dry-run) would mark up to chapter 79.0
+[CSV 59/995] (dry-run) would mark up to chapter 80.0
+[CSV 60/995] (dry-run) would mark up to chapter 168.0
+[CSV 61/995] (dry-run) would mark up to chapter 36.0
+[CSV 62/995] (dry-run) would mark up to chapter 17.0
+[CSV 63/995] (dry-run) would mark up to chapter 16.0
+[CSV 64/995] Resolving 'Monogatari no Kuromaku ni Tensei shite' against Suwayomi sources...
+[CSV 64/995] (dry-run) would add 'Monogatari no Kuromaku ni Tensei shite' via MangaDex -> 'Reincarnated as the Mastermind Behind the Story: Overwhelm Everything with the Ever-Evolving Demon Sword and Game Knowledge' score 1.00
+[CSV 65/995] (dry-run) would mark up to chapter 58.0
+[CSV 66/995] Resolving 'Villainesses Have More Fun' against Suwayomi sources...
+[CSV 66/995] (dry-run) would add 'Villainesses Have More Fun' via MangaDex -> 'Villainesses Have More Fun' score 1.00
+[CSV 67/995] Resolving 'The Ghost Doctor' against Suwayomi sources...
+[CSV 67/995] (dry-run) would add 'The Ghost Doctor' via MangaDex -> 'The Ghost Doctor' score 1.00
+[CSV 68/995] (dry-run) would mark up to chapter 32.0
+[CSV 69/995] (dry-run) would mark up to chapter 143.0
+[CSV 70/995] (dry-run) would mark up to chapter 105.0
+[CSV 71/995] (dry-run) would mark up to chapter 72.0
+[CSV 72/995] (dry-run) would mark up to chapter 16.0
+[CSV 73/995] (dry-run) would mark up to chapter 38.0
+[CSV 74/995] Resolving 'Return of the Scholar' against Suwayomi sources...
+[CSV 74/995] (dry-run) would add 'Return of the Scholar' via MangaDex -> 'Return of the Scholar' score 1.00
+[CSV 75/995] Resolving 'Reborn to be a Supreme Emperor' against Suwayomi sources...
+[CSV 75/995] (dry-run) would add 'Reborn to be a Supreme Emperor' via MangaDex -> 'Reborn to be a Supreme Emperor' score 1.00
+[CSV 76/995] Resolving 'Kojiin Tamer' against Suwayomi sources...
+[CSV 76/995] (dry-run) would add 'Kojiin Tamer' via MangaDex -> 'The Orphanage's Tamer' score 1.00
+[CSV 77/995] (dry-run) would mark up to chapter 15.0
+[CSV 78/995] (dry-run) would mark up to chapter 55.0
+[CSV 79/995] (dry-run) would mark up to chapter 20.2
+[CSV 80/995] Resolving 'Wo, Jinhua, Emo' against Suwayomi sources...
+[CSV 80/995] (dry-run) would add 'Wo, Jinhua, Emo' via MangaDex -> 'Wo, Jinhua, Emo' score 1.00
+[CSV 81/995] (dry-run) would mark up to chapter 78.0
+[CSV 82/995] (dry-run) would mark up to chapter 222.0
+[CSV 83/995] (dry-run) would mark up to chapter 60.0
+[CSV 84/995] (dry-run) would mark up to chapter 106.0
+[CSV 85/995] (dry-run) would mark up to chapter 26.1
+[CSV 86/995] (dry-run) would mark up to chapter 36.0
+[CSV 87/995] (dry-run) would mark up to chapter 68.0
+[CSV 88/995] (dry-run) would mark up to chapter 178.5
+[CSV 89/995] Resolving 'Futari Solo Camp' against Suwayomi sources...
+[CSV 89/995] (dry-run) would add 'Futari Solo Camp' via MangaDex -> 'Futari Solo Camp' score 1.00
+[CSV 90/995] (dry-run) would mark up to chapter 95.0
+[CSV 91/995] (dry-run) would mark up to chapter 119.0
+[CSV 92/995] (dry-run) would mark up to chapter 25.0
+[CSV 93/995] (dry-run) would mark up to chapter 54.0
+[CSV 94/995] (dry-run) would mark up to chapter 41.0
+[CSV 95/995] (dry-run) would mark up to chapter 93.3
+[CSV 96/995] (dry-run) would mark up to chapter 40.0
+[CSV 97/995] Resolving 'Unnamed Memory' against Suwayomi sources...
+[CSV 97/995] (dry-run) would add 'Unnamed Memory' via MangaDex -> 'Unnamed Memory' score 1.00
+[CSV 98/995] (dry-run) would mark up to chapter 119.0
+[CSV 99/995] (dry-run) would mark up to chapter 434.0
+[CSV 100/995] (dry-run) would mark up to chapter 101.0
+[CSV 101/995] Resolving 'Taida na Akujoku Kizoku ni Tensei Shita Ore, Scenario o Bukkowa Shitara Kikaku-gai no Maryoku de Saikyou ni Natta' against Suwayomi sources...
+[CSV 101/995] (dry-run) would add 'Taida na Akujoku Kizoku ni Tensei Shita Ore, Scenario o Bukkowa Shitara Kikaku-gai no Maryoku de Saikyou ni Natta' via MangaDex -> 'Taida na Akujoku Kizoku ni Tensei Shita Ore, Scenario o Bukkowa Shitara Kikaku-gai no Maryoku de Saikyou ni Natta' score 1.00
+[CSV 102/995] (dry-run) would mark up to chapter 21.0
+[CSV 103/995] (dry-run) would mark up to chapter 49.0
+[CSV 105/995] Resolving 'Two Moon' against Suwayomi sources...
+[CSV 105/995] (dry-run) would add 'Two Moon' via MangaDex -> 'Two Moon' score 1.00
+[CSV 106/995] (dry-run) would mark up to chapter 32.0
+[CSV 107/995] Resolving 'Absolute Resonance' against Suwayomi sources...
+[CSV 107/995] (dry-run) would add 'Absolute Resonance' via MangaDex -> 'King of Manifestations' score 1.00
+[CSV 108/995] Resolving 'Don't Mind Me, Daddy' against Suwayomi sources...
+[CSV 108/995] (dry-run) would add 'Don't Mind Me, Daddy' via MangaDex -> 'Don't Mind Me, Daddy' score 1.00
+[CSV 109/995] (dry-run) would mark up to chapter 23.0
+[CSV 110/995] Resolving 'Living a Laid-Back Second Life on the Island of the Strongest Species (Official)' against Suwayomi sources...
+[CSV 110/995] (dry-run) would add 'Living a Laid-Back Second Life on the Island of the Strongest Species (Official)' via MangaDex -> 'Living a Laid-Back Second Life on the Island of the Strongest Species' score 1.00
+[CSV 111/995] Resolving 'Trauma Center: Dr. Baek' against Suwayomi sources...
+[CSV 111/995] (dry-run) would add 'Trauma Center: Dr. Baek' via MangaDex -> 'Trauma Center: Dr. Baek' score 1.00
+[CSV 112/995] Resolving 'Star of Beethoven' against Suwayomi sources...
+[CSV 112/995] (dry-run) would add 'Star of Beethoven' via MangaDex -> 'Star of Beethoven' score 1.00
+[CSV 113/995] (dry-run) would mark up to chapter 25.0
+[CSV 114/995] (dry-run) would mark up to chapter 21.0
+[CSV 115/995] (dry-run) would mark up to chapter 12.0
+[CSV 116/995] (dry-run) would mark up to chapter 12.0
+[CSV 117/995] (dry-run) would mark up to chapter 20.0
+[CSV 119/995] Resolving 'My Marriage to Saneka' against Suwayomi sources...
+[CSV 119/995] (dry-run) would add 'My Marriage to Saneka' via MangaDex -> 'My Marriage to Saneka' score 1.00
+[CSV 120/995] (dry-run) would mark up to chapter 206.0
+[CSV 121/995] Resolving 'Eiyuu to Kenja no Tensei Kon' against Suwayomi sources...
+[CSV 121/995] (dry-run) would add 'Eiyuu to Kenja no Tensei Kon' via MangaDex -> 'Eiyuu to Kenja no Tensei Kon ~Katsute no Koutekishu to Kon'yakushite Saikyou Fuufu ni Narimashita~' score 1.00
+[CSV 122/995] Resolving 'The Coppersmith's Bride' against Suwayomi sources...
+[CSV 122/995] (dry-run) would add 'The Coppersmith's Bride' via MangaDex -> 'The Coppersmith's Bride' score 1.00
+[CSV 123/995] Resolving 'Night of the Soulless Heathens' against Suwayomi sources...
+[CSV 123/995] (dry-run) would add 'Night of the Soulless Heathens' via MangaDex -> 'Night of the Soulless Heathens' score 1.00
+[CSV 124/995] Resolving 'Kunigei - Okuni University Art Department Film Program' against Suwayomi sources...
+[CSV 124/995] (dry-run) would add 'Kunigei - Okuni University Art Department Film Program' via MangaDex -> 'Kunigei - Okuni University Art Department Film Program' score 1.00
+[CSV 125/995] Resolving 'Girl Meets Rock!' against Suwayomi sources...
+[CSV 125/995] (dry-run) would add 'Girl Meets Rock!' via MangaDex -> 'Girl Meets Rock!' score 1.00
+[CSV 126/995] Resolving 'My Mom's a Superstar' against Suwayomi sources...
+[CSV 126/995] (dry-run) would add 'My Mom's a Superstar' via Bato.to -> 'My Mom's a Superstar' score 1.00
+[CSV 127/995] Resolving 'Girl Crush' against Suwayomi sources...
+[CSV 127/995] (dry-run) would add 'Girl Crush' via MangaDex -> 'Girl Crush' score 1.00
+[CSV 128/995] Resolving 'Tomehane!' against Suwayomi sources...
+[CSV 128/995] (dry-run) would add 'Tomehane!' via MangaDex -> 'Tomehane!' score 1.00
+[CSV 129/995] Resolving 'Akane-banashi' against Suwayomi sources...
+[CSV 129/995] (dry-run) would add 'Akane-banashi' via MangaDex -> 'Akane-banashi' score 1.00
+[CSV 130/995] Resolving 'Street Workout' against Suwayomi sources...
+[CSV 130/995] (dry-run) would add 'Street Workout' via MangaDex -> 'Street Workout' score 1.00
+[CSV 131/995] Resolving 'Let's Play' against Suwayomi sources...
+[CSV 131/995] (dry-run) would add 'Let's Play' via Bato.to -> 'Let's Play' score 1.00
+[CSV 132/995] Resolving 'Hajirau Kimi ga Mitainda' against Suwayomi sources...
+[CSV 132/995] (dry-run) would add 'Hajirau Kimi ga Mitainda' via MangaPark -> 'Hajirau Kimi Ga Mitainda' score 1.00
+[CSV 133/995] Resolving 'Monochrome Days' against Suwayomi sources...
+[CSV 133/995] (dry-run) would add 'Monochrome Days' via MangaDex -> 'Monochrome Days' score 1.00
+[CSV 134/995] (dry-run) would mark up to chapter 13.0
+[CSV 135/995] (dry-run) would mark up to chapter 22.0
+[CSV 136/995] (dry-run) would mark up to chapter 12.0
+[CSV 137/995] (dry-run) would mark up to chapter 28.0
+[CSV 139/995] (dry-run) would mark up to chapter 17.0
+[CSV 140/995] (dry-run) would mark up to chapter 29.0
+[CSV 141/995] (dry-run) would mark up to chapter 21.0
+[CSV 142/995] Resolving 'Black Fox: Sword Master of Mount Kunlun' against Suwayomi sources...
+[CSV 142/995] (dry-run) would add 'Black Fox: Sword Master of Mount Kunlun' via MangaDex -> 'Black Fox: Sword Master of Mount Kunlun' score 1.00
+[CSV 143/995] Resolving 'Frozen Warrior' against Suwayomi sources...
+[CSV 143/995] (dry-run) would add 'Frozen Warrior' via MangaDex -> 'Frozen Warrior' score 1.00
+[CSV 144/995] (dry-run) would mark up to chapter 17.0
+[CSV 145/995] (dry-run) would mark up to chapter 15.0
+[CSV 146/995] (dry-run) would mark up to chapter 20.0
+[CSV 147/995] (dry-run) would mark up to chapter 16.0
+[CSV 148/995] Resolving 'The Genius Prismatic Mage' against Suwayomi sources...
+[CSV 148/995] (dry-run) would add 'The Genius Prismatic Mage' via MangaDex -> 'The Genius Prismatic Mage' score 1.00
+[CSV 149/995] (dry-run) would mark up to chapter 7.0
+[CSV 155/995] Resolving 'Dungeon-tou de Yadoya wo Yarou!: Souzou Mahou wo Moratta Ore no Hosoude Hanjouki' against Suwayomi sources...
+[CSV 155/995] (dry-run) would add 'Dungeon-tou de Yadoya wo Yarou!: Souzou Mahou wo Moratta Ore no Hosoude Hanjouki' via MangaPark -> 'Dungeon Tou de Yadoya wo Yarou! Souzou Mahou wo Moratta Ore no Hosoude Hanjouki' score 1.00
+[CSV 157/995] Resolving 'Joban de Shinu Saikyou no Sub Chara ni Tensei Shita no de, Game Chishiki de Musou Suru' against Suwayomi sources...
+[CSV 157/995] (dry-run) would add 'Joban de Shinu Saikyou no Sub Chara ni Tensei Shita no de, Game Chishiki de Musou Suru' via MangaDex -> 'Joban de Shinu Saikyou no Sub Chara ni Tensei Shita no de, Game Chishiki de Musou Suru' score 1.00
+[CSV 162/995] (dry-run) would mark up to chapter 207.0
+[CSV 164/995] Resolving 'VTuber Legend: How I Went Viral after Forgetting to Turn Off My Stream' against Suwayomi sources...
+[CSV 164/995] (dry-run) would add 'VTuber Legend: How I Went Viral after Forgetting to Turn Off My Stream' via MangaDex -> 'VTuber Legend: How I Went Viral after Forgetting to Turn Off My Stream' score 1.00
+[CSV 166/995] Resolving 'Wind Breaker' against Suwayomi sources...
+[CSV 166/995] (dry-run) would add 'Wind Breaker' via MangaDex -> 'Wind Breaker' score 1.00
+[CSV 168/995] (dry-run) would mark up to chapter 63.0
+[CSV 170/995] (dry-run) would mark up to chapter 66.0
+[CSV 171/995] (dry-run) would mark up to chapter 25.0
+[CSV 172/995] (dry-run) would mark up to chapter 15.0
+[CSV 173/995] Resolving 'I'm Not the Villain' against Suwayomi sources...
+[CSV 173/995] (dry-run) would add 'I'm Not the Villain' via Bato.to -> 'IÆm Not the Villain' score 1.00
+[CSV 174/995] Resolving 'Sekai Saikyou no Kishi wa, Kanarazu Shinu Heroine wo Sukuu Tame Isekai Demo Saikyou no Kishi to Naru ~Ryoutei ni Hana wo, Ryoute ni Ken wo~' against Suwayomi sources...
+[CSV 174/995] (dry-run) would add 'Sekai Saikyou no Kishi wa, Kanarazu Shinu Heroine wo Sukuu Tame Isekai Demo Saikyou no Kishi to Naru ~Ryoutei ni Hana wo, Ryoute ni Ken wo~' via MangaDex -> 'Sekai Saikyou no Kishi wa, Kanarazu Shinu Heroine wo Sukuu Tame Isekai Demo Saikyou no Kishi to Naru ~Ryoutei ni Hana wo, Ryoute ni Ken wo~' score 1.00
+[CSV 175/995] Resolving 'Food Truck "Deli-joy" - Shasou Kara Isekai e Umaimono Mitsuyu Hanbaichuu!' against Suwayomi sources...
+[CSV 175/995] (dry-run) would add 'Food Truck "Deli-joy" - Shasou Kara Isekai e Umaimono Mitsuyu Hanbaichuu!' via MangaDex -> 'Food Truck "Deli-joy" - Shasou Kara Isekai e Umaimono Mitsuyu Hanbaichuu!' score 1.00
+[CSV 176/995] (dry-run) would mark up to chapter 9.0
+[CSV 177/995] (dry-run) would mark up to chapter 43.0
+[CSV 178/995] (dry-run) would mark up to chapter 100.0
+[CSV 179/995] (dry-run) would mark up to chapter 87.0
+[CSV 180/995] (dry-run) would mark up to chapter 172.0
+[CSV 181/995] (dry-run) would mark up to chapter 139.0
+[CSV 182/995] (dry-run) would mark up to chapter 80.0
+[CSV 183/995] (dry-run) would mark up to chapter 46.0
+[CSV 184/995] (dry-run) would mark up to chapter 38.0
+[CSV 185/995] (dry-run) would mark up to chapter 107.0
+[CSV 186/995] Resolving 'Nimotsu Mochi no Noukin Musou' against Suwayomi sources...
+[CSV 186/995] (dry-run) would add 'Nimotsu Mochi no Noukin Musou' via MangaDex -> 'Nimotsu Mochi no Noukin Musou' score 1.00
+[CSV 187/995] Resolving 'S-geup Hunter-neun Agyeong Gongnyeoga Doegi Silseumnida' against Suwayomi sources...
+[CSV 187/995] (dry-run) would add 'S-geup Hunter-neun Agyeong Gongnyeoga Doegi Silseumnida' via MangaDex -> 'The S-Class Hunter Doesn't Want to Be a Villainous Princess (Promo)' score 1.00
+[CSV 188/995] (dry-run) would mark up to chapter 50.0
+[CSV 189/995] (dry-run) would mark up to chapter 12.0
+[CSV 190/995] (dry-run) would mark up to chapter 175.0
+[CSV 191/995] (dry-run) would mark up to chapter 151.0
+[CSV 192/995] (dry-run) would mark up to chapter 78.0
+[CSV 193/995] (dry-run) would mark up to chapter 356.0
+[CSV 194/995] (dry-run) would mark up to chapter 26.0
+[CSV 195/995] (dry-run) would mark up to chapter 22.0
+[CSV 196/995] (dry-run) would mark up to chapter 90.0
+[CSV 197/995] (dry-run) would mark up to chapter 98.0
+[CSV 198/995] (dry-run) would mark up to chapter 51.0
+[CSV 199/995] Resolving 'Best Teacher Baek' against Suwayomi sources...
+[CSV 199/995] (dry-run) would add 'Best Teacher Baek' via MangaDex -> 'Best Teacher Baek' score 1.00
+[CSV 200/995] (dry-run) would mark up to chapter 90.0
+[CSV 201/995] (dry-run) would mark up to chapter 370.0
+[CSV 202/995] (dry-run) would mark up to chapter 61.0
+[CSV 203/995] (dry-run) would mark up to chapter 67.0
+[CSV 204/995] (dry-run) would mark up to chapter 490.0
+[CSV 205/995] Resolving 'Nise Seijo Kuso of the Year - Risou no Seijo? Zannen, Nise Seijo deshita!' against Suwayomi sources...
+[CSV 205/995] (dry-run) would add 'Nise Seijo Kuso of the Year - Risou no Seijo? Zannen, Nise Seijo deshita!' via MangaDex -> 'Fake Saint of the Year: You Wanted the Perfect Saint? Too Bad!' score 1.00
+[CSV 206/995] Resolving 'Return of the Calamity-Class Death Knight' against Suwayomi sources...
+[CSV 206/995] (dry-run) would add 'Return of the Calamity-Class Death Knight' via MangaDex -> 'Return of the Calamity-Class Death Knight' score 1.00
+[CSV 210/995] Resolving 'The S-Rank Hunter's Healing Life with Monsters' against Suwayomi sources...
+[CSV 210/995] (dry-run) would add 'The S-Rank Hunter's Healing Life with Monsters' via MangaDex -> 'An S-Rank Hunter's Healing Journey With Monsters' score 1.00
+[CSV 213/995] Resolving 'Qußnzhφ JuΘx?ng' against Suwayomi sources...
+[CSV 213/995] (dry-run) would add 'Qußnzhφ JuΘx?ng' via MangaDex -> 'Full-Time Awakening' score 1.00
+[CSV 215/995] (dry-run) would mark up to chapter 31.0
+[CSV 216/995] (dry-run) would mark up to chapter 61.0
+[CSV 217/995] (dry-run) would mark up to chapter 152.5
+[CSV 218/995] (dry-run) would mark up to chapter 54.0
+[CSV 219/995] (dry-run) would mark up to chapter 67.0
+[CSV 220/995] (dry-run) would mark up to chapter 83.0
+[CSV 221/995] (dry-run) would mark up to chapter 57.0
+[CSV 222/995] (dry-run) would mark up to chapter 117.0
+[CSV 223/995] (dry-run) would mark up to chapter 126.0
+[CSV 224/995] (dry-run) would mark up to chapter 56.0
+[CSV 225/995] Resolving 'My Farm by the Palace' against Suwayomi sources...
+[CSV 225/995] (dry-run) would add 'My Farm by the Palace' via MangaDex -> 'My Farm by the Palace' score 1.00
+[CSV 226/995] (dry-run) would mark up to chapter 125.0
+[CSV 227/995] (dry-run) would mark up to chapter 122.0
+[CSV 228/995] Resolving 'Biography of Hwiyeong Sword' against Suwayomi sources...
+[CSV 228/995] (dry-run) would add 'Biography of Hwiyeong Sword' via MangaDex -> 'Biography of Hwiyeong Sword' score 1.00
+[CSV 229/995] (dry-run) would mark up to chapter 36.0
+[CSV 230/995] (dry-run) would mark up to chapter 82.0
+[CSV 231/995] Resolving 'I Wasn't the Cinderella' against Suwayomi sources...
+[CSV 231/995] (dry-run) would add 'I Wasn't the Cinderella' via MangaDex -> 'I Wasn't the Cinderella' score 1.00
+[CSV 232/995] Resolving 'Log into the Future' against Suwayomi sources...
+[CSV 232/995] (dry-run) would add 'Log into the Future' via MangaDex -> 'Log into the Future' score 1.00
+[CSV 233/995] (dry-run) would mark up to chapter 129.0
+[CSV 234/995] (dry-run) would mark up to chapter 42.0
+[CSV 235/995] (dry-run) would mark up to chapter 79.0
+[CSV 236/995] (dry-run) would mark up to chapter 214.0
+[CSV 237/995] (dry-run) would mark up to chapter 205.0
+[CSV 238/995] (dry-run) would mark up to chapter 184.0
+[CSV 239/995] (dry-run) would mark up to chapter 37.0
+[CSV 240/995] (dry-run) would mark up to chapter 141.0
+[CSV 241/995] (dry-run) would mark up to chapter 69.0
+[CSV 242/995] (dry-run) would mark up to chapter 18.1
+[CSV 243/995] (dry-run) would mark up to chapter 94.0
+[CSV 244/995] Resolving 'Road to Stardom' against Suwayomi sources...
+[CSV 244/995] (dry-run) would add 'Road to Stardom' via MangaDex -> 'Road to Stardom' score 1.00
+[CSV 245/995] (dry-run) would mark up to chapter 276.0
+[CSV 246/995] (dry-run) would mark up to chapter 132.0
+[CSV 247/995] (dry-run) would mark up to chapter 281.0
+[CSV 248/995] (dry-run) would mark up to chapter 116.0
+[CSV 249/995] (dry-run) would mark up to chapter 46.0
+[CSV 250/995] (dry-run) would mark up to chapter 35.0
+[CSV 251/995] (dry-run) would mark up to chapter 134.0
+[CSV 253/995] (dry-run) would mark up to chapter 69.0
+[CSV 254/995] (dry-run) would mark up to chapter 35.0
+[CSV 255/995] Resolving 'Ultimate Son-in-law' against Suwayomi sources...
+[CSV 255/995] (dry-run) would add 'Ultimate Son-in-law' via MangaDex -> 'Ultimate Son-in-law' score 1.00
+[CSV 256/995] (dry-run) would mark up to chapter 42.0
+[CSV 257/995] (dry-run) would mark up to chapter 48.0
+[CSV 258/995] (dry-run) would mark up to chapter 142.0
+[CSV 259/995] (dry-run) would mark up to chapter 131.0
+[CSV 260/995] (dry-run) would mark up to chapter 51.0
+[CSV 261/995] (dry-run) would mark up to chapter 7.0
+[CSV 262/995] (dry-run) would mark up to chapter 28.0
+[CSV 263/995] Resolving 'Dragon Master' against Suwayomi sources...
+[CSV 263/995] (dry-run) would add 'Dragon Master' via Bato.to -> 'The Dragon Master' score 1.00
+[CSV 264/995] Resolving 'The Legendary Beasts Animal Hospital' against Suwayomi sources...
+[CSV 264/995] (dry-run) would add 'The Legendary Beasts Animal Hospital' via MangaDex -> 'The Legendary Beasts Animal Hospital' score 1.00
+[CSV 265/995] (dry-run) would mark up to chapter 50.0
+[CSV 266/995] Resolving 'The Archduke's Adopted Saint' against Suwayomi sources...
+[CSV 266/995] (dry-run) would add 'The Archduke's Adopted Saint' via MangaDex -> 'The Archduke's Adopted Saint' score 1.00
+[CSV 267/995] (dry-run) would mark up to chapter 31.0
+[CSV 268/995] (dry-run) would mark up to chapter 27.0
+[CSV 269/995] (dry-run) would mark up to chapter 22.0
+[CSV 270/995] (dry-run) would mark up to chapter 113.0
+[CSV 271/995] Resolving 'I'm a Part-Timer for the Gods' against Suwayomi sources...
+[CSV 271/995] (dry-run) would add 'I'm a Part-Timer for the Gods' via MangaDex -> 'I'm a Part-Timer for the Gods' score 1.00
+[CSV 272/995] (dry-run) would mark up to chapter 75.0
+[CSV 273/995] Resolving 'The Silent Warrior' against Suwayomi sources...
+[CSV 273/995] (dry-run) would add 'The Silent Warrior' via MangaDex -> 'The Silent Warrior' score 1.00
+[CSV 274/995] (dry-run) would mark up to chapter 48.0
+[CSV 275/995] (dry-run) would mark up to chapter 80.0
+[CSV 276/995] Resolving 'Scoring the Sacred Body of the Ancients from the Get-go' against Suwayomi sources...
+[CSV 276/995] (dry-run) would add 'Scoring the Sacred Body of the Ancients from the Get-go' via MangaDex -> 'Scoring the Sacred Body of the Ancients from the Get-go' score 1.00
+[CSV 277/995] Resolving 'Life Changer Voice Phishing' against Suwayomi sources...
+[CSV 277/995] (dry-run) would add 'Life Changer Voice Phishing' via MangaDex -> 'Life Changer Voice Phishing' score 1.00
+[CSV 278/995] Resolving 'Ie ga Moete Jinsei Dou Demo Yoku Natta kara, Nokotta Nakenashi no Kin de Dark Elf no Dorei o Katta.' against Suwayomi sources...
+[CSV 278/995] (dry-run) would add 'Ie ga Moete Jinsei Dou Demo Yoku Natta kara, Nokotta Nakenashi no Kin de Dark Elf no Dorei o Katta.' via MangaPark -> 'Ie ga Moete Jinsei Dou Demo Yoku Natta kara, Nokotta Nakenashi no Kin de Dark Elf no Dorei o Katta' score 1.00
+[CSV 279/995] (dry-run) would mark up to chapter 260.0
+[CSV 280/995] (dry-run) would mark up to chapter 33.0
+[CSV 281/995] (dry-run) would mark up to chapter 57.0
+[CSV 282/995] (dry-run) would mark up to chapter 47.0
+[CSV 283/995] (dry-run) would mark up to chapter 83.0
+[CSV 284/995] Resolving 'Nebula's Civilization' against Suwayomi sources...
+[CSV 284/995] (dry-run) would add 'Nebula's Civilization' via MangaDex -> 'Nebula's Civilization' score 1.00
+[CSV 285/995] (dry-run) would mark up to chapter 8.1
+[CSV 286/995] Resolving 'IÆm the Girl With the Hacks!' against Suwayomi sources...
+[CSV 286/995] (dry-run) would add 'IÆm the Girl With the Hacks!' via MangaDex -> 'IÆm the Girl With the Hacks!' score 1.00
+[CSV 287/995] (dry-run) would mark up to chapter 106.0
+[CSV 288/995] (dry-run) would mark up to chapter 70.0
+[CSV 289/995] (dry-run) would mark up to chapter 144.0
+[CSV 290/995] Resolving 'Hima-Ten!' against Suwayomi sources...
+[CSV 290/995] (dry-run) would add 'Hima-Ten!' via MangaDex -> 'Hima-Ten!' score 1.00
+[CSV 291/995] Resolving 'I'm Not a Villain' against Suwayomi sources...
+[CSV 291/995] (dry-run) would add 'I'm Not a Villain' via Bato.to -> 'IÆm Really Not A Supervillain' score 1.00
+[CSV 292/995] Resolving 'Yuusha Party wo Tsuihousareta Shiro Madoushi, S Rank Boukensha ni Hirowareru ~Kono Shiro Madoushi ga Kikakugai Sugiru~' against Suwayomi sources...
+[CSV 292/995] (dry-run) would add 'Yuusha Party wo Tsuihousareta Shiro Madoushi, S Rank Boukensha ni Hirowareru ~Kono Shiro Madoushi ga Kikakugai Sugiru~' via MangaDex -> 'La nouvelle vie du mage blanc' score 1.00
+[CSV 293/995] Resolving 'Get Schooled' against Suwayomi sources...
+[CSV 293/995] (dry-run) would add 'Get Schooled' via MangaDex -> 'Get Schooled' score 1.00
+[CSV 294/995] (dry-run) would mark up to chapter 144.0
+[CSV 295/995] (dry-run) would mark up to chapter 93.0
+[CSV 296/995] (dry-run) would mark up to chapter 105.0
+[CSV 297/995] (dry-run) would mark up to chapter 126.0
+[CSV 298/995] (dry-run) would mark up to chapter 28.0
+[CSV 299/995] (dry-run) would mark up to chapter 61.0
+[CSV 300/995] Resolving 'Villain to Kill' against Suwayomi sources...
+[CSV 300/995] (dry-run) would add 'Villain to Kill' via MangaDex -> 'Villain to Kill' score 1.00
+[CSV 301/995] (dry-run) would mark up to chapter 62.0
+[CSV 302/995] (dry-run) would mark up to chapter 108.0
+[CSV 303/995] (dry-run) would mark up to chapter 85.0
+[CSV 304/995] (dry-run) would mark up to chapter 7.0
+[CSV 305/995] (dry-run) would mark up to chapter 34.0
+[CSV 306/995] (dry-run) would mark up to chapter 66.0
+[CSV 307/995] (dry-run) would mark up to chapter 95.0
+[CSV 308/995] (dry-run) would mark up to chapter 298.0
+[CSV 309/995] (dry-run) would mark up to chapter 91.0
+[CSV 310/995] (dry-run) would mark up to chapter 340.0
+[CSV 311/995] (dry-run) would mark up to chapter 23.0
+[CSV 312/995] Resolving 'TenPuru -No One Can Live on Loneliness-' against Suwayomi sources...
+[CSV 312/995] (dry-run) would add 'TenPuru -No One Can Live on Loneliness-' via MangaDex -> 'TenPuru -No One Can Live on Loneliness-' score 1.00
+[CSV 313/995] (dry-run) would mark up to chapter 17.0
+[CSV 314/995] (dry-run) would mark up to chapter 101.0
+[CSV 315/995] (dry-run) would mark up to chapter 42.0
+[CSV 316/995] Resolving 'Paranoid Mage' against Suwayomi sources...
+[CSV 316/995] (dry-run) would add 'Paranoid Mage' via MangaDex -> 'Paranoid Mage' score 1.00
+[CSV 317/995] (dry-run) would mark up to chapter 26.0
+[CSV 318/995] (dry-run) would mark up to chapter 243.0
+[CSV 319/995] (dry-run) would mark up to chapter 66.0
+[CSV 320/995] Resolving 'The Blood Princess and the Knight' against Suwayomi sources...
+[CSV 320/995] (dry-run) would add 'The Blood Princess and the Knight' via MangaDex -> 'The Blood Princess and the Knight' score 1.00
+[CSV 321/995] Resolving 'The Diary of a Middle-Aged Teacher's Carefree Life in Another World' against Suwayomi sources...
+[CSV 321/995] (dry-run) would add 'The Diary of a Middle-Aged Teacher's Carefree Life in Another World' via MangaDex -> 'The Diary of a Middle-Aged TeacherÆs Carefree Life in Another World' score 1.00
+[CSV 322/995] (dry-run) would mark up to chapter 71.0
+[CSV 323/995] (dry-run) would mark up to chapter 183.0
+[CSV 324/995] Resolving 'THE ISEKAI DOCTOR?Any sufficiently advanced medical science is indistinguishable from magic.' against Suwayomi sources...
+[CSV 324/995] (dry-run) would add 'THE ISEKAI DOCTOR?Any sufficiently advanced medical science is indistinguishable from magic.' via MangaDex -> 'THE ISEKAI DOCTOR?Any sufficiently advanced medical science is indistinguishable from magic.' score 1.00
+[CSV 325/995] Resolving 'Ore Dake Saikyou Chouetsusha - Zen Sekai no Cheat Shishou ni Mitomerareta' against Suwayomi sources...
+[CSV 325/995] (dry-run) would add 'Ore Dake Saikyou Chouetsusha - Zen Sekai no Cheat Shishou ni Mitomerareta' via MangaDex -> 'Ore Dake Saikyou Chouetsusha - Zen Sekai no Cheat Shishou ni Mitomerareta' score 1.00
+[CSV 326/995] (dry-run) would mark up to chapter 108.0
+[CSV 327/995] (dry-run) would mark up to chapter 42.0
+[CSV 328/995] Resolving 'Blooming Love' against Suwayomi sources...
+[CSV 328/995] (dry-run) would add 'Blooming Love' via MangaDex -> 'Blooming Love' score 1.00
+[CSV 329/995] Resolving 'Yoku Wakaranai Keredo Isekai ni Tensei Shiteita You Desu' against Suwayomi sources...
+[CSV 329/995] WARN search MangaBuddy: HTTPConnectionPool(host='127.0.0.1', port=4567): Read timed out. (read timeout=12.0)
+[CSV 329/995] WARN search MangaBuddy: HTTPConnectionPool(host='127.0.0.1', port=4567): Read timed out. (read timeout=12.0)
+[CSV 329/995] WARN search MangaBuddy: HTTPConnectionPool(host='127.0.0.1', port=4567): Read timed out. (read timeout=12.0)
+[CSV 329/995] WARN search MangaBuddy: HTTPConnectionPool(host='127.0.0.1', port=4567): Read timed out. (read timeout=12.0)
+[CSV 329/995] WARN search MangaBuddy: HTTPConnectionPool(host='127.0.0.1', port=4567): Read timed out. (read timeout=12.0)
+[CSV 329/995] WARN search MangaBuddy: HTTPConnectionPool(host='127.0.0.1', port=4567): Read timed out. (read timeout=12.0)
+[CSV 329/995] WARN search MangaBuddy: HTTPConnectionPool(host='127.0.0.1', port=4567): Read timed out. (read timeout=12.0)
+[CSV 329/995] (dry-run) would add 'Yoku Wakaranai Keredo Isekai ni Tensei Shiteita You Desu' via Mangakakalot -> 'Yoku Wakaranai keredo Isekai ni Tensei Shiteita You Desu' score 1.00
+[CSV 330/995] (dry-run) would mark up to chapter 30.0
+[CSV 331/995] (dry-run) would mark up to chapter 83.0
+[CSV 332/995] (dry-run) would mark up to chapter 30.1
+[CSV 333/995] (dry-run) would mark up to chapter 33.0
+[CSV 334/995] (dry-run) would mark up to chapter 175.0
+[CSV 335/995] (dry-run) would mark up to chapter 31.0
+[CSV 336/995] Resolving 'Cassmire: The Loyal Sword' against Suwayomi sources...
+[CSV 336/995] (dry-run) would add 'Cassmire: The Loyal Sword' via MangaDex -> 'Cassmire: The Loyal Sword' score 1.00
+[CSV 337/995] (dry-run) would mark up to chapter 150.0
+[CSV 338/995] (dry-run) would mark up to chapter 47.0
+[CSV 339/995] Resolving 'M?njφ Chu?nyuΦ de W? WΦishΘnme Sh∞ M∙sh? Xi?oji? a' against Suwayomi sources...
+[CSV 339/995] (dry-run) would add 'M?njφ Chu?nyuΦ de W? WΦishΘnme Sh∞ M∙sh? Xi?oji? a' via MangaDex -> 'Why Am I a Max-Level Priestess After Crossing into Another World?' score 1.00
+[CSV 340/995] (dry-run) would mark up to chapter 41.0
+[CSV 341/995] (dry-run) would mark up to chapter 97.0
+[CSV 342/995] (dry-run) would mark up to chapter 29.0
+[CSV 343/995] (dry-run) would mark up to chapter 92.0
+[CSV 344/995] Resolving 'Sigrid' against Suwayomi sources...
+[CSV 344/995] (dry-run) would add 'Sigrid' via MangaDex -> 'Sigrid' score 1.00
+[CSV 345/995] (dry-run) would mark up to chapter 29.0
+[CSV 346/995] (dry-run) would mark up to chapter 154.0
+[CSV 347/995] (dry-run) would mark up to chapter 22.0
+[CSV 348/995] (dry-run) would mark up to chapter 133.0
+[CSV 349/995] (dry-run) would mark up to chapter 33.0
+[CSV 350/995] Resolving 'Keikenchi Chochiku de Nonbiri Shoushin Ryokou: Yuusha to Koibito ni Tsuihou Sareta Senshi no Mujikaku Zamaa' against Suwayomi sources...
+[CSV 350/995] (dry-run) would add 'Keikenchi Chochiku de Nonbiri Shoushin Ryokou: Yuusha to Koibito ni Tsuihou Sareta Senshi no Mujikaku Zamaa' via MangaPark -> 'Keikenchi Chochiku De Nonbiri Shoushin Ryokou' score 1.00
+[CSV 351/995] (dry-run) would mark up to chapter 58.0
+[CSV 352/995] (dry-run) would mark up to chapter 54.0
+[CSV 353/995] (dry-run) would mark up to chapter 21.0
+[CSV 354/995] (dry-run) would mark up to chapter 35.0
+[CSV 355/995] (dry-run) would mark up to chapter 224.0
+[CSV 356/995] Resolving 'The Unholy Paladin (Official)' against Suwayomi sources...
+[CSV 356/995] (dry-run) would add 'The Unholy Paladin (Official)' via MangaPark -> 'Ankoku Kishi no Ore desu Ga Saikyou no Seikishi wo Mezashimasu' score 1.00
+[CSV 357/995] Resolving 'Second Try Idol' against Suwayomi sources...
+[CSV 357/995] (dry-run) would add 'Second Try Idol' via MangaDex -> 'Second Try Idol' score 1.00
+[CSV 358/995] (dry-run) would mark up to chapter 86.0
+[CSV 359/995] Resolving 'Philomel the Fake' against Suwayomi sources...
+[CSV 359/995] (dry-run) would add 'Philomel the Fake' via MangaDex -> 'Philomel the Fake' score 1.00
+[CSV 360/995] (dry-run) would mark up to chapter 62.0
+[CSV 361/995] (dry-run) would mark up to chapter 97.0
+[CSV 362/995] (dry-run) would mark up to chapter 2.0
+[CSV 363/995] (dry-run) would mark up to chapter 128.0
+[CSV 364/995] Resolving 'The Baby Divine Beast' against Suwayomi sources...
+[CSV 364/995] (dry-run) would add 'The Baby Divine Beast' via MangaDex -> 'The Baby Divine Beast' score 1.00
+[CSV 365/995] (dry-run) would mark up to chapter 114.0
+[CSV 366/995] Resolving 'The Status Window to the Soul' against Suwayomi sources...
+[CSV 366/995] (dry-run) would add 'The Status Window to the Soul' via MangaDex -> 'The Status Window to the Soul' score 1.00
+[CSV 367/995] (dry-run) would mark up to chapter 75.0
+[CSV 368/995] (dry-run) would mark up to chapter 48.0
+[CSV 369/995] (dry-run) would mark up to chapter 121.0
+[CSV 370/995] (dry-run) would mark up to chapter 296.0
+[CSV 371/995] (dry-run) would mark up to chapter 138.0
+[CSV 372/995] (dry-run) would mark up to chapter 454.0
+[CSV 373/995] (dry-run) would mark up to chapter 13.0
+[CSV 374/995] (dry-run) would mark up to chapter 115.0
+[CSV 375/995] Resolving 'The Male LeadÆs Little Lion Daughter' against Suwayomi sources...
+[CSV 375/995] (dry-run) would add 'The Male LeadÆs Little Lion Daughter' via MangaDex -> 'The Male Lead's Little Lion Daughter' score 1.00
+[CSV 376/995] (dry-run) would mark up to chapter 32.0
+[CSV 377/995] (dry-run) would mark up to chapter 44.0
+[CSV 378/995] (dry-run) would mark up to chapter 132.0
+[CSV 379/995] (dry-run) would mark up to chapter 61.0
+[CSV 380/995] Resolving 'There Are No Bad Warriors in This World' against Suwayomi sources...
+[CSV 380/995] (dry-run) would add 'There Are No Bad Warriors in This World' via MangaDex -> 'There Are No Bad Warriors in This World' score 1.00
+[CSV 381/995] (dry-run) would mark up to chapter 484.0
+[CSV 382/995] (dry-run) would mark up to chapter 1.0
+[CSV 383/995] (dry-run) would mark up to chapter 282.0
+[CSV 384/995] (dry-run) would mark up to chapter 136.0
+[CSV 385/995] (dry-run) would mark up to chapter 208.0
+[CSV 386/995] Resolving 'The Dawn in Moscow' against Suwayomi sources...
+[CSV 386/995] (dry-run) would add 'The Dawn in Moscow' via MangaDex -> 'The Dawn in Moscow' score 1.00
+[CSV 387/995] (dry-run) would mark up to chapter 77.0
+[CSV 388/995] (dry-run) would mark up to chapter 32.0
+[CSV 389/995] (dry-run) would mark up to chapter 24.0
+[CSV 390/995] (dry-run) would mark up to chapter 38.0
+[CSV 391/995] (dry-run) would mark up to chapter 88.0
+[CSV 392/995] (dry-run) would mark up to chapter 96.0
+[CSV 393/995] Resolving 'Super God System' against Suwayomi sources...
+[CSV 393/995] (dry-run) would add 'Super God System' via MangaDex -> 'Super God System' score 1.00
+[CSV 394/995] (dry-run) would mark up to chapter 137.0
+[CSV 395/995] (dry-run) would mark up to chapter 32.0
+[CSV 396/995] (dry-run) would mark up to chapter 18.0
+[CSV 397/995] Resolving 'The Archvillain's Daughter-in-Law' against Suwayomi sources...
+[CSV 397/995] (dry-run) would add 'The Archvillain's Daughter-in-Law' via MangaDex -> 'The Archvillain's Daughter-in-Law' score 1.00
+[CSV 398/995] (dry-run) would mark up to chapter 34.0
+[CSV 399/995] Resolving 'Stellar Mom' against Suwayomi sources...
+[CSV 399/995] (dry-run) would add 'Stellar Mom' via MangaDex -> 'Stellar Mom' score 1.00
+[CSV 400/995] (dry-run) would mark up to chapter 30.0
+[CSV 401/995] (dry-run) would mark up to chapter 76.0
+[CSV 402/995] Resolving 'Your Majesty, Please Spare Me This Time' against Suwayomi sources...
+[CSV 402/995] (dry-run) would add 'Your Majesty, Please Spare Me This Time' via MangaDex -> 'Your Majesty, Please Spare Me This Time' score 1.00
+[CSV 403/995] (dry-run) would mark up to chapter 57.0
+[CSV 404/995] (dry-run) would mark up to chapter 52.0
+[CSV 405/995] (dry-run) would mark up to chapter 106.0
+[CSV 406/995] (dry-run) would mark up to chapter 48.0
+[CSV 407/995] (dry-run) would mark up to chapter 53.0
+[CSV 408/995] (dry-run) would mark up to chapter 8.0
+[CSV 409/995] (dry-run) would mark up to chapter 16.0
+[CSV 410/995] (dry-run) would mark up to chapter 143.0
+[CSV 411/995] (dry-run) would mark up to chapter 27.0
+[CSV 412/995] (dry-run) would mark up to chapter 21.5
+[CSV 413/995] Resolving 'Cultivation Chat Group' against Suwayomi sources...
+[CSV 413/995] (dry-run) would add 'Cultivation Chat Group' via MangaDex -> 'Cultivation Chat Group' score 1.00
+[CSV 414/995] (dry-run) would mark up to chapter 86.0
+[CSV 415/995] (dry-run) would mark up to chapter 63.0
+[CSV 416/995] Resolving '"SHOPSKILL" Sae Areba, Dungeon ka Sita Sekaidemo Rakusyou da ~Hakugai Sareta Shounen no Saikyou Zamaa Life~' against Suwayomi sources...
+[CSV 416/995] (dry-run) would add '"SHOPSKILL" Sae Areba, Dungeon ka Sita Sekaidemo Rakusyou da ~Hakugai Sareta Shounen no Saikyou Zamaa Life~' via MangaDex -> '"SHOPSKILL" Sae Areba, Dungeon ka Sita Sekaidemo Rakusyou da ~Hakugai Sareta Shounen no Saikyou Zamaa Life~' score 1.00
+[CSV 417/995] (dry-run) would mark up to chapter 187.0
+[CSV 418/995] (dry-run) would mark up to chapter 134.0
+[CSV 419/995] (dry-run) would mark up to chapter 103.0
+[CSV 420/995] Resolving 'The Blue Flowers, and the Ceramic Forest' against Suwayomi sources...
+[CSV 420/995] (dry-run) would add 'The Blue Flowers, and the Ceramic Forest' via MangaDex -> 'The Blue Flowers, and the Ceramic Forest' score 1.00
+[CSV 421/995] Resolving 'Aura of a Genius Actor' against Suwayomi sources...
+[CSV 421/995] (dry-run) would add 'Aura of a Genius Actor' via MangaDex -> 'Aura of a Genius Actor' score 1.00
+[CSV 422/995] (dry-run) would mark up to chapter 114.0
+[CSV 423/995] Resolving 'The Perks of Being a Villainess' against Suwayomi sources...
+[CSV 423/995] (dry-run) would add 'The Perks of Being a Villainess' via MangaDex -> 'The Perks of Being a Villainess' score 1.00
+[CSV 424/995] Resolving 'Wind Breaker' against Suwayomi sources...
+[CSV 424/995] (dry-run) would add 'Wind Breaker' via MangaDex -> 'Wind Breaker' score 1.00
+[CSV 425/995] (dry-run) would mark up to chapter 17.0
+[CSV 426/995] Resolving 'Becoming Overpowered by Solo Eating' against Suwayomi sources...
+[CSV 426/995] (dry-run) would add 'Becoming Overpowered by Solo Eating' via MangaDex -> 'Becoming Overpowered by Solo Eating' score 1.00
+[CSV 427/995] Resolving 'The Genius Assassin Who Takes It All' against Suwayomi sources...
+[CSV 427/995] (dry-run) would add 'The Genius Assassin Who Takes It All' via MangaDex -> 'The Genius Assassin Who Takes It All' score 1.00
+[CSV 429/995] Resolving 'Secret Lady' against Suwayomi sources...
+[CSV 429/995] (dry-run) would add 'Secret Lady' via MangaDex -> 'Secret Lady' score 1.00
+[CSV 430/995] (dry-run) would mark up to chapter 11.0
+[CSV 431/995] Resolving 'Demon in Mount Hua' against Suwayomi sources...
+[CSV 431/995] (dry-run) would add 'Demon in Mount Hua' via MangaDex -> 'Demon in Mount Hua' score 1.00
+[CSV 432/995] (dry-run) would mark up to chapter 10.0
+[CSV 433/995] Resolving 'The Ember Knight' against Suwayomi sources...
+[CSV 433/995] (dry-run) would add 'The Ember Knight' via MangaDex -> 'The Ember Knight' score 1.00
+[CSV 434/995] (dry-run) would mark up to chapter 26.0
+[CSV 435/995] (dry-run) would mark up to chapter 129.0
+[CSV 436/995] (dry-run) would mark up to chapter 67.0
+[CSV 437/995] (dry-run) would mark up to chapter 178.0
+[CSV 438/995] (dry-run) would mark up to chapter 58.0
+[CSV 439/995] (dry-run) would mark up to chapter 16.0
+[CSV 440/995] Resolving 'Swallowed Star' against Suwayomi sources...
+[CSV 440/995] (dry-run) would add 'Swallowed Star' via MangaDex -> 'Swallowed Star' score 1.00
+[CSV 441/995] Resolving 'The Invincible Banished Shadow Archer' against Suwayomi sources...
+[CSV 441/995] (dry-run) would add 'The Invincible Banished Shadow Archer' via MangaDex -> 'The Invincible Banished Shadow Archer' score 1.00
+[CSV 442/995] (dry-run) would mark up to chapter 107.0
+[CSV 443/995] (dry-run) would mark up to chapter 89.0
+[CSV 444/995] (dry-run) would mark up to chapter 51.0
+[CSV 445/995] Resolving 'Resurrected Demon King' against Suwayomi sources...
+[CSV 445/995] (dry-run) would add 'Resurrected Demon King' via Bato.to -> 'Resurrected Demon King' score 1.00
+[CSV 446/995] (dry-run) would mark up to chapter 56.0
+[CSV 447/995] (dry-run) would mark up to chapter 80.0
+[CSV 448/995] (dry-run) would mark up to chapter 109.0
+[CSV 449/995] Resolving 'Goblin's Ascent: From Loser to Winner' against Suwayomi sources...
+[CSV 449/995] (dry-run) would add 'Goblin's Ascent: From Loser to Winner' via MangaDex -> 'Goblin's Ascent: From Loser to Winner' score 1.00
+[CSV 450/995] Resolving 'Chairman Kang, the New Employee' against Suwayomi sources...
+[CSV 450/995] (dry-run) would add 'Chairman Kang, the New Employee' via MangaDex -> 'Chairman Kang, the New Employee' score 1.00
+[CSV 451/995] (dry-run) would mark up to chapter 32.0
+[CSV 452/995] (dry-run) would mark up to chapter 92.0
+[CSV 453/995] (dry-run) would mark up to chapter 84.0
+[CSV 454/995] (dry-run) would mark up to chapter 65.0
+[CSV 455/995] (dry-run) would mark up to chapter 47.0
+[CSV 456/995] (dry-run) would mark up to chapter 62.0
+[CSV 457/995] (dry-run) would mark up to chapter 409.0
+[CSV 458/995] (dry-run) would mark up to chapter 33.0
+[CSV 459/995] (dry-run) would mark up to chapter 109.0
+[CSV 460/995] (dry-run) would mark up to chapter 209.0
+[CSV 461/995] (dry-run) would mark up to chapter 76.0
+[CSV 462/995] (dry-run) would mark up to chapter 21.0
+[CSV 463/995] Resolving 'The Curious Case of Chronicle' against Suwayomi sources...
+[CSV 463/995] (dry-run) would add 'The Curious Case of Chronicle' via MangaDex -> 'The Curious Case of Chronicle' score 1.00
+[CSV 464/995] (dry-run) would mark up to chapter 56.0
+[CSV 465/995] Resolving 'Precious Daughter of the Greatest Martial Arts Villain' against Suwayomi sources...
+[CSV 465/995] (dry-run) would add 'Precious Daughter of the Greatest Martial Arts Villain' via MangaDex -> 'Precious Daughter of the Greatest Martial Arts Villain' score 1.00
+[CSV 466/995] (dry-run) would mark up to chapter 9.1
+[CSV 467/995] (dry-run) would mark up to chapter 25.0
+[CSV 468/995] (dry-run) would mark up to chapter 34.0
+[CSV 469/995] Resolving 'Teihen Boukensha Dakedo Mahou wo Kiwamete Miru Koto ni Shita ~Munou Skill kara Kami Skill ni Shinka Shita "Mahou Souzou" to "Item Sakusei" de Musou Suru~' against Suwayomi sources...
+[CSV 469/995] (dry-run) would add 'Teihen Boukensha Dakedo Mahou wo Kiwamete Miru Koto ni Shita ~Munou Skill kara Kami Skill ni Shinka Shita "Mahou Souzou" to "Item Sakusei" de Musou Suru~' via MangaDex -> 'Teihen Boukensha Dakedo Mahou wo Kiwamete Miru Koto ni Shita ~Munou Skill kara Kami Skill ni Shinka Shita "Mahou Souzou" to "Item Sakusei" de Musou Suru~' score 1.00
+[CSV 470/995] Resolving 'Act Like a Boss Monster, Mr. Swallow!' against Suwayomi sources...
+[CSV 470/995] (dry-run) would add 'Act Like a Boss Monster, Mr. Swallow!' via MangaDex -> 'Act Like a Boss Monster, Mr. Swallow!' score 1.00
+[CSV 471/995] (dry-run) would mark up to chapter 189.0
+[CSV 472/995] (dry-run) would mark up to chapter 42.0
+[CSV 473/995] (dry-run) would mark up to chapter 91.0
+[CSV 474/995] Resolving 'Fushi no Kami: Rebuilding Civilization Starts with a Village' against Suwayomi sources...
+[CSV 474/995] (dry-run) would add 'Fushi no Kami: Rebuilding Civilization Starts with a Village' via MangaDex -> 'Fushi no Kami: Rebuilding Civilization Starts with a Village' score 1.00
+[CSV 475/995] (dry-run) would mark up to chapter 66.0
+[CSV 476/995] Resolving 'Senmetsumadou no Saikyou Kenja - Musai no Kenja, Madou wo Kiwame Saikyou e Itaru' against Suwayomi sources...
+[CSV 476/995] (dry-run) would add 'Senmetsumadou no Saikyou Kenja - Musai no Kenja, Madou wo Kiwame Saikyou e Itaru' via MangaDex -> 'Senmetsumadou no Saikyou Kenja - Musai no Kenja, Madou wo Kiwame Saikyou e Itaru' score 1.00
+[CSV 477/995] (dry-run) would mark up to chapter 48.0
+[CSV 478/995] Resolving 'Good Doctor' against Suwayomi sources...
+[CSV 478/995] (dry-run) would add 'Good Doctor' via MangaDex -> 'Good Doctor' score 1.00
+[CSV 479/995] (dry-run) would mark up to chapter 89.0
+[CSV 480/995] (dry-run) would mark up to chapter 15.0
+[CSV 481/995] Resolving 'The Self-Disciplined Me Is Practically Invincible' against Suwayomi sources...
+[CSV 481/995] (dry-run) would add 'The Self-Disciplined Me Is Practically Invincible' via MangaDex -> 'The Self-Disciplined Me Is Practically Invincible' score 1.00
+[CSV 482/995] (dry-run) would mark up to chapter 9.0
+[CSV 483/995] (dry-run) would mark up to chapter 163.0
+[CSV 484/995] (dry-run) would mark up to chapter 120.0
+[CSV 485/995] Resolving 'Ochikobore Kuni o Deru: Jitsu wa Sekai de 4-ninme no Fuyojutsushi datta Ken ni Tsuite' against Suwayomi sources...
+[CSV 485/995] (dry-run) would add 'Ochikobore Kuni o Deru: Jitsu wa Sekai de 4-ninme no Fuyojutsushi datta Ken ni Tsuite' via MangaDex -> 'Homeland Dropout: The Time I was Reincarnated as the Fourth Enchanter in the Entire World' score 1.00
+[CSV 486/995] Resolving 'Tensei Shite High Elf ni Narimashitaga, Slow Life wa 120-nen de Akimashita - Highelf with a Long Life' against Suwayomi sources...
+[CSV 486/995] (dry-run) would add 'Tensei Shite High Elf ni Narimashitaga, Slow Life wa 120-nen de Akimashita - Highelf with a Long Life' via MangaDex -> 'Tensei Shite High Elf ni Narimashitaga, Slow Life wa 120-nen de Akimashita - Highelf with a Long Life' score 1.00
+[CSV 487/995] (dry-run) would mark up to chapter 25.0
+[CSV 488/995] (dry-run) would mark up to chapter 155.0
+[CSV 489/995] (dry-run) would mark up to chapter 30.0
+[CSV 490/995] Resolving 'Hilde Takes House Arpeggio' against Suwayomi sources...
+[CSV 490/995] (dry-run) would add 'Hilde Takes House Arpeggio' via MangaDex -> 'Hilde Takes House Arpeggio' score 1.00
+[CSV 491/995] (dry-run) would mark up to chapter 58.0
+[CSV 492/995] Resolving 'Yuusha Shoukan ni Makikomareta kedo, Isekai wa Heiwa deshita' against Suwayomi sources...
+[CSV 492/995] (dry-run) would add 'Yuusha Shoukan ni Makikomareta kedo, Isekai wa Heiwa deshita' via MangaDex -> 'Yuusha Shoukan ni Makikomareta kedo, Isekai wa Heiwa deshita' score 1.00
+[CSV 493/995] Resolving 'My Insanely Strong Henchmen' against Suwayomi sources...
+[CSV 493/995] (dry-run) would add 'My Insanely Strong Henchmen' via MangaDex -> 'My Insanely Strong Henchmen' score 1.00
+[CSV 494/995] Resolving 'Even with a Magical Power of 0.06, the Strongest Hunter Proves His Greatness with the Slingshot' against Suwayomi sources...
+[CSV 494/995] (dry-run) would add 'Even with a Magical Power of 0.06, the Strongest Hunter Proves His Greatness with the Slingshot' via MangaDex -> 'Even with a Magical Power of 0.06, the Strongest Hunter Proves His Greatness with the Slingshot' score 1.00
+[CSV 495/995] Resolving 'I Became a Ruined Character in a Dark Fantasy' against Suwayomi sources...
+[CSV 495/995] (dry-run) would add 'I Became a Ruined Character in a Dark Fantasy' via MangaDex -> 'I Became a Ruined Character in a Dark Fantasy' score 1.00
+[CSV 496/995] (dry-run) would mark up to chapter 102.0
+[CSV 497/995] Resolving 'Maou to Yuusha no Tatakai no Ura de' against Suwayomi sources...
+[CSV 497/995] (dry-run) would add 'Maou to Yuusha no Tatakai no Ura de' via MangaDex -> 'Maou to Yuusha no Tatakai no Ura de' score 1.00
+[CSV 499/995] (dry-run) would mark up to chapter 7.0
+[CSV 500/995] (dry-run) would mark up to chapter 21.0
+[CSV 501/995] (dry-run) would mark up to chapter 60.0
+[CSV 502/995] Resolving 'The Evil Princess Dreams of a Gingerbread House' against Suwayomi sources...
+[CSV 502/995] (dry-run) would add 'The Evil Princess Dreams of a Gingerbread House' via MangaDex -> 'The Evil Princess Dreams of a Gingerbread House' score 1.00
+[CSV 503/995] (dry-run) would mark up to chapter 82.0
+[CSV 504/995] (dry-run) would mark up to chapter 8.0
+[CSV 505/995] Resolving 'An Extraordinary Guardian' against Suwayomi sources...
+[CSV 505/995] (dry-run) would add 'An Extraordinary Guardian' via Bato.to -> 'extraordinary guardian' score 1.00
+[CSV 506/995] Resolving 'King of the Labyrinth' against Suwayomi sources...
+[CSV 506/995] (dry-run) would add 'King of the Labyrinth' via MangaDex -> 'King of the Labyrinth' score 1.00
+[CSV 507/995] (dry-run) would mark up to chapter 34.0
+[CSV 508/995] (dry-run) would mark up to chapter 24.0
+[CSV 509/995] Resolving 'The Hero's Ready to Retire' against Suwayomi sources...
+[CSV 509/995] (dry-run) would add 'The Hero's Ready to Retire' via MangaDex -> 'The Hero's Ready to Retire' score 1.00
+[CSV 510/995] (dry-run) would mark up to chapter 99.0
+[CSV 511/995] Resolving 'The Time of Rebirth' against Suwayomi sources...
+[CSV 511/995] (dry-run) would add 'The Time of Rebirth' via Bato.to -> 'The Time Of Rebirth' score 1.00
+[CSV 512/995] (dry-run) would mark up to chapter 13.0
+[CSV 513/995] Resolving 'Gendai Shakai de Otome Game no Akuyaku Reijou wo Suru no wa Chotto Taihen' against Suwayomi sources...
+[CSV 513/995] (dry-run) would add 'Gendai Shakai de Otome Game no Akuyaku Reijou wo Suru no wa Chotto Taihen' via MangaDex -> 'Gendai Shakai de Otome Game no Akuyaku Reijou wo Suru no wa Chotto Taihen' score 1.00
+[CSV 514/995] Resolving 'Drunken D-Rank Pulls Out the Legendary Sword (Official)' against Suwayomi sources...
+[CSV 514/995] WARN search MangaBuddy: HTTPConnectionPool(host='127.0.0.1', port=4567): Read timed out. (read timeout=12.0)
+[CSV 514/995] WARN search MangaBuddy: HTTPConnectionPool(host='127.0.0.1', port=4567): Read timed out. (read timeout=12.0)
+[CSV 514/995] WARN search Mangakakalot: 500 Server Error: Server Error for url: http://127.0.0.1:4567/api/v1/source/2528986671771677900/search?searchTerm=%E4%B8%87%E5%B9%B4D%E3%83%A9%E3%83%B3%E3%82%AF%E3%81%AE%E4%B8%AD%E5%B9%B4%E5%86%92%E9%99%BA%E8%80%85%E3%80%81%E9%85%94%E3%81%A3%E3%81%9F%E5%8B%A2%E3%81%84%E3%81%A7%E4%BC%9D%E8%AA%AC%E3%81%AE%E5%89%A3%E3%82%92%E5%BC%95%E3%81%A3%E3%81%93%E6%8A%9C%E3%81%8F&pageNum=1
+[CSV 514/995] WARN search Mangakakalot: 500 Server Error: Server Error for url: http://127.0.0.1:4567/api/v1/source/2528986671771677900/search?searchTerm=%E4%B8%87%E5%B9%B4D%E7%BA%A7%E7%9A%84%E4%B8%AD%E5%B9%B4%E5%86%92%E9%99%A9%E8%80%85%E3%80%81%E5%80%9F%E7%9D%80%E9%85%92%E5%8A%BF%E6%8B%94%E5%87%BA%E4%BA%86%E4%BC%A0%E8%AF%B4%E4%B9%8B%E5%89%91&pageNum=1
+[CSV 514/995] WARN search Mangakakalot: 500 Server Error: Server Error for url: http://127.0.0.1:4567/api/v1/source/2528986671771677900/search?searchTerm=Drunken+D+Rank+Pulls+Out+the+Legendary+Sword&pageNum=1
+[CSV 514/995] WARN search Manganato: 500 Server Error: Server Error for url: http://127.0.0.1:4567/api/v1/source/1024627298672457456/search?searchTerm=%E4%B8%87%E5%B9%B4D%E7%BA%A7%E7%9A%84%E4%B8%AD%E5%B9%B4%E5%86%92%E9%99%A9%E8%80%85%E3%80%81%E5%80%9F%E7%9D%80%E9%85%92%E5%8A%BF%E6%8B%94%E5%87%BA%E4%BA%86%E4%BC%A0%E8%AF%B4%E4%B9%8B%E5%89%91&pageNum=1
+[CSV 514/995] WARN search Manganato: 500 Server Error: Server Error for url: http://127.0.0.1:4567/api/v1/source/1024627298672457456/search?searchTerm=Drunken+D+Rank+Pulls+Out+the+Legendary+Sword&pageNum=1
+[CSV 514/995] (dry-run) would add 'Drunken D-Rank Pulls Out the Legendary Sword (Official)' via MangaFire -> 'Drunken D-Rank Pulls Out the Legendary Sword' score 1.00
+[CSV 515/995] (dry-run) would mark up to chapter 30.0
+[CSV 516/995] (dry-run) would mark up to chapter 55.0
+[CSV 517/995] Resolving 'The Princess in the Attic' against Suwayomi sources...
+[CSV 517/995] (dry-run) would add 'The Princess in the Attic' via MangaDex -> 'The Princess in the Attic' score 1.00
+[CSV 518/995] (dry-run) would mark up to chapter 16.0
+[CSV 519/995] (dry-run) would mark up to chapter 5.5
+[CSV 520/995] (dry-run) would mark up to chapter 160.0
+[CSV 521/995] Resolving 'Isekai de Mizu no Dai Seirei Yattemasu' against Suwayomi sources...
+[CSV 521/995] (dry-run) would add 'Isekai de Mizu no Dai Seirei Yattemasu' via MangaDex -> 'Isekai de Mizu no Dai Seirei Yattemasu' score 1.00
+[CSV 522/995] Resolving 'Karsearin: Adventures of a Red Dragon' against Suwayomi sources...
+[CSV 522/995] (dry-run) would add 'Karsearin: Adventures of a Red Dragon' via MangaDex -> 'Karsearin: Adventures of a Red Dragon' score 1.00
+[CSV 523/995] (dry-run) would mark up to chapter 15.1
+[CSV 524/995] (dry-run) would mark up to chapter 45.0
+[CSV 525/995] Resolving 'Space Brothers' against Suwayomi sources...
+[CSV 525/995] (dry-run) would add 'Space Brothers' via MangaDex -> 'Space Brothers' score 1.00
+[CSV 527/995] (dry-run) would mark up to chapter 26.0
+[CSV 528/995] (dry-run) would mark up to chapter 50.0
+[CSV 529/995] Resolving 'It Starts With a Mountain' against Suwayomi sources...
+[CSV 529/995] (dry-run) would add 'It Starts With a Mountain' via MangaDex -> 'It Starts With a Mountain' score 1.00
+[CSV 530/995] (dry-run) would mark up to chapter 24.0
+[CSV 531/995] Resolving 'Chouetsu-sha to Natta Ossan wa My Pace ni Isekai wo Sansaku Suru' against Suwayomi sources...
+[CSV 531/995] (dry-run) would add 'Chouetsu-sha to Natta Ossan wa My Pace ni Isekai wo Sansaku Suru' via MangaDex -> 'Chouetsu-sha to Natta Ossan wa My Pace ni Isekai wo Sansaku Suru' score 1.00
+[CSV 532/995] Resolving 'There's Something Wrong With this Account' against Suwayomi sources...
+[CSV 532/995] (dry-run) would add 'There's Something Wrong With this Account' via MangaDex -> 'There's Something Wrong With this Account' score 1.00
+[CSV 533/995] Resolving 'Drawing: Saikyou Mangaka wa Oekaki Skill de Isekai Musou Suru!' against Suwayomi sources...
+[CSV 533/995] (dry-run) would add 'Drawing: Saikyou Mangaka wa Oekaki Skill de Isekai Musou Suru!' via MangaDex -> 'Drawing: The Greatest Mangaka Becomes a Skilled "Martial Artist" in Another World' score 1.00
+[CSV 534/995] Resolving 'How to Clear a Dating Sim as a Side Character' against Suwayomi sources...
+[CSV 534/995] (dry-run) would add 'How to Clear a Dating Sim as a Side Character' via MangaDex -> 'How to Clear a Dating Sim as a Side Character' score 1.00
+[CSV 535/995] Resolving 'Toaru Chiisana Mura no Cheat na Kajiya-san' against Suwayomi sources...
+[CSV 535/995] (dry-run) would add 'Toaru Chiisana Mura no Cheat na Kajiya-san' via MangaDex -> 'Toaru Chiisana Mura no Cheat na Kajiya-san' score 1.00
+[CSV 536/995] Resolving 'Souzou Renkinjutsushi wa Jiyuu wo Ouka suru: Kokyou wo Tsuihou saretara, Maou no Ohizamoto de Chouzetsu Kouka no Magic Item Tsukuri-houdai ni Narimashita' against Suwayomi sources...
+[CSV 536/995] (dry-run) would add 'Souzou Renkinjutsushi wa Jiyuu wo Ouka suru: Kokyou wo Tsuihou saretara, Maou no Ohizamoto de Chouzetsu Kouka no Magic Item Tsukuri-houdai ni Narimashita' via MangaDex -> 'Souzou Renkinjutsushi wa Jiyuu wo Ouka suru - Kokyou wo Tsuihou saretara, Maou no Ohizamoto de Chouzetsu Kouka no Magic Item Tsukuri-houdai ni Narimashita' score 1.00
+[CSV 537/995] Resolving 'Respawn: Usurping the Imperial Throne with my Extra Lives' against Suwayomi sources...
+[CSV 537/995] (dry-run) would add 'Respawn: Usurping the Imperial Throne with my Extra Lives' via Bato.to -> 'Respawn: Usurping the Imperial Throne with my Extra Lives [Rage Scans]' score 1.00
+[CSV 538/995] Resolving 'I Was Called Inept at Home, but Turns Out I'm Super Adept Compared to the Rest of the World' against Suwayomi sources...
+[CSV 538/995] (dry-run) would add 'I Was Called Inept at Home, but Turns Out I'm Super Adept Compared to the Rest of the World' via Bato.to -> 'I Was Called Inept at Home, but Turns Out IÆm Super Adept Compared to the Rest of the World (Official)' score 1.00
+[CSV 539/995] (dry-run) would mark up to chapter 72.0
+[CSV 540/995] Resolving 'Tensei Babaa wa Misugosenai! Moto Akutoku Jotei no Nishuume Life' against Suwayomi sources...
+[CSV 540/995] (dry-run) would add 'Tensei Babaa wa Misugosenai! Moto Akutoku Jotei no Nishuume Life' via MangaDex -> 'Tensei Babaa wa Misugosenai! Moto Akutoku Jotei no Nishuume Life' score 1.00
+[CSV 541/995] (dry-run) would mark up to chapter 59.0
+[CSV 542/995] Resolving 'I'm the Tyrant's Secretary' against Suwayomi sources...
+[CSV 542/995] (dry-run) would add 'I'm the Tyrant's Secretary' via MangaDex -> 'I'm the Tyrant's Secretary' score 1.00
+[CSV 543/995] Resolving 'Sasen Sareta Saikyou Kenja, Kyoushi ni Natte Muteki no Class wo Tsukuriageru' against Suwayomi sources...
+[CSV 543/995] (dry-run) would add 'Sasen Sareta Saikyou Kenja, Kyoushi ni Natte Muteki no Class wo Tsukuriageru' via MangaDex -> 'Sasen Sareta Saikyou Kenja, Kyoushi ni Natte Muteki no Class wo Tsukuriageru' score 1.00
+[CSV 544/995] (dry-run) would mark up to chapter 42.0
+[CSV 545/995] (dry-run) would mark up to chapter 45.0
+[CSV 546/995] (dry-run) would mark up to chapter 36.0
+[CSV 547/995] (dry-run) would mark up to chapter 31.0
+[CSV 548/995] (dry-run) would mark up to chapter 17.0
+[CSV 549/995] (dry-run) would mark up to chapter 55.0
+[CSV 550/995] Resolving 'Bannou "Murazukuri" Cheat de Otegaru Slow Life: Mura desu ga Nani ka?' against Suwayomi sources...
+[CSV 550/995] (dry-run) would add 'Bannou "Murazukuri" Cheat de Otegaru Slow Life: Mura desu ga Nani ka?' via MangaDex -> 'Bannou "Murazukuri" Cheat de Otegaru Slow Life ~Mura desu ga Nani ka?~' score 1.00
+[CSV 551/995] Resolving 'I Can Do It' against Suwayomi sources...
+[CSV 551/995] (dry-run) would add 'I Can Do It' via MangaDex -> 'I Can Do It' score 1.00
+[CSV 552/995] (dry-run) would mark up to chapter 39.0
+[CSV 553/995] (dry-run) would mark up to chapter 76.0
+[CSV 554/995] (dry-run) would mark up to chapter 18.0
+[CSV 555/995] Resolving 'Infinite Devouring: From Zero to Hero' against Suwayomi sources...
+[CSV 555/995] (dry-run) would add 'Infinite Devouring: From Zero to Hero' via MangaDex -> 'Infinite Devouring: From Zero to Hero' score 1.00
+[CSV 556/995] (dry-run) would mark up to chapter 34.0
+[CSV 557/995] (dry-run) would mark up to chapter 68.0
+[CSV 558/995] (dry-run) would mark up to chapter 17.0
+[CSV 559/995] Resolving 'Blue Orchestra' against Suwayomi sources...
+[CSV 559/995] (dry-run) would add 'Blue Orchestra' via MangaDex -> 'Blue Orchestra' score 1.00
+[CSV 560/995] (dry-run) would mark up to chapter 90.0
+[CSV 561/995] Resolving 'Bad Guy' against Suwayomi sources...
+[CSV 561/995] (dry-run) would add 'Bad Guy' via MangaDex -> 'Bad Guy' score 1.00
+[CSV 562/995] (dry-run) would mark up to chapter 109.0
+[CSV 563/995] (dry-run) would mark up to chapter 27.0
+[CSV 564/995] Resolving 'The Beloved Fake Saint' against Suwayomi sources...
+[CSV 564/995] (dry-run) would add 'The Beloved Fake Saint' via MangaDex -> 'The Beloved Fake Saint' score 1.00
+[CSV 565/995] (dry-run) would mark up to chapter 22.0
+[CSV 567/995] (dry-run) would mark up to chapter 16.0
+[CSV 568/995] (dry-run) would mark up to chapter 14.1
+[CSV 569/995] Resolving 'Hottoite kudasai - Juma to Cheat Life Tanoshimitai!' against Suwayomi sources...
+[CSV 569/995] (dry-run) would add 'Hottoite kudasai - Juma to Cheat Life Tanoshimitai!' via MangaDex -> 'Hottoite kudasai - Juma to Cheat Life Tanoshimitai!' score 1.00
+[CSV 570/995] (dry-run) would mark up to chapter 133.0
+[CSV 571/995] Resolving 'Bouken-sha wo Kubi ni Nattanode, Renkinjutsu-shi to Shite Denaoshimasu! - Henkyou Kaitaku? Yoshi, Ore ni Makase Toke!' against Suwayomi sources...
+[CSV 571/995] (dry-run) would add 'Bouken-sha wo Kubi ni Nattanode, Renkinjutsu-shi to Shite Denaoshimasu! - Henkyou Kaitaku? Yoshi, Ore ni Makase Toke!' via MangaDex -> 'Leave it to me S╫S' score 1.00
+[CSV 572/995] (dry-run) would mark up to chapter 104.0
+[CSV 573/995] (dry-run) would mark up to chapter 120.0
+[CSV 574/995] (dry-run) would mark up to chapter 58.0
+[CSV 575/995] (dry-run) would mark up to chapter 40.0
+[CSV 576/995] (dry-run) would mark up to chapter 40.0
+[CSV 577/995] Resolving 'My Blade Will Lead the Way! Abandoned in a Labyrinth as a Directionally Challenged S-Rank Swordsman' against Suwayomi sources...
+[CSV 577/995] (dry-run) would add 'My Blade Will Lead the Way! Abandoned in a Labyrinth as a Directionally Challenged S-Rank Swordsman' via MangaDex -> 'My Blade Will Lead the Way! Abandoned in a Labyrinth as a Directionally Challenged S-Rank Swordsman' score 1.00
+[CSV 578/995] (dry-run) would mark up to chapter 32.0
+[CSV 579/995] (dry-run) would mark up to chapter 28.0
+[CSV 580/995] Resolving 'Dangerous Dungeon Escape' against Suwayomi sources...
+[CSV 580/995] (dry-run) would add 'Dangerous Dungeon Escape' via MangaDex -> 'Dangerous Dungeon Escape' score 1.00
+[CSV 581/995] Resolving 'Moon Slayer' against Suwayomi sources...
+[CSV 581/995] (dry-run) would add 'Moon Slayer' via MangaDex -> 'Moon Slayer' score 1.00
+[CSV 582/995] Resolving 'After Ten Years of Chopping Wood, Immortals Begged To Become My Disciples' against Suwayomi sources...
+[CSV 582/995] (dry-run) would add 'After Ten Years of Chopping Wood, Immortals Begged To Become My Disciples' via MangaDex -> 'After Ten Years of Chopping Wood, Immortals Begged To Become My Disciples' score 1.00
+[CSV 583/995] (dry-run) would mark up to chapter 65.0
+[CSV 584/995] (dry-run) would mark up to chapter 32.0
+[CSV 585/995] (dry-run) would mark up to chapter 63.0
+[CSV 586/995] (dry-run) would mark up to chapter 31.0
+[CSV 587/995] Resolving 'The Exiled Duke Wanted to Take it Easy On the Frontier and Work the Fields.' against Suwayomi sources...
+[CSV 587/995] (dry-run) would add 'The Exiled Duke Wanted to Take it Easy On the Frontier and Work the Fields.' via MangaPark -> 'The Exiled Duke Wanted to Take it Easy On the Frontier and Work the Fields.' score 1.00
+[CSV 588/995] (dry-run) would mark up to chapter 139.0
+[CSV 589/995] (dry-run) would mark up to chapter 13.0
+[CSV 590/995] Resolving 'Osananajimi no S-kyuu Party kara Tsuihou sareta Seijuutsukai.: Bannou Shien Mahou to Nakama wo Fuyashite Saikyou e!' against Suwayomi sources...
+[CSV 590/995] (dry-run) would add 'Osananajimi no S-kyuu Party kara Tsuihou sareta Seijuutsukai.: Bannou Shien Mahou to Nakama wo Fuyashite Saikyou e!' via MangaDex -> 'Osananajimi no S-kyuu Party kara Tsuihou sareta Seijuutsukai.: Bannou Shien Mahou to Nakama wo Fuyashite Saikyou e!' score 1.00
+[CSV 591/995] (dry-run) would mark up to chapter 163.0
+[CSV 592/995] (dry-run) would mark up to chapter 113.0
+[CSV 593/995] (dry-run) would mark up to chapter 169.0
+[CSV 594/995] (dry-run) would mark up to chapter 64.3
+[CSV 595/995] Resolving 'The Blood KnightÆs Villains' against Suwayomi sources...
+[CSV 595/995] (dry-run) would add 'The Blood KnightÆs Villains' via MangaDex -> 'The Blood KnightÆs Villains' score 1.00
+[CSV 596/995] (dry-run) would mark up to chapter 23.0
+[CSV 597/995] (dry-run) would mark up to chapter 84.0
+[CSV 598/995] Resolving 'Regenerate Top Players' against Suwayomi sources...
+[CSV 598/995] (dry-run) would add 'Regenerate Top Players' via MangaDex -> 'Regenerate Top Players' score 1.00
+[CSV 599/995] (dry-run) would mark up to chapter 98.0
+[CSV 600/995] (dry-run) would mark up to chapter 51.0
+[CSV 601/995] (dry-run) would mark up to chapter 41.0
+[CSV 602/995] (dry-run) would mark up to chapter 66.0
+[CSV 603/995] (dry-run) would mark up to chapter 41.0
+[CSV 604/995] Resolving 'Cultivator Against Hero Society' against Suwayomi sources...
+[CSV 604/995] (dry-run) would add 'Cultivator Against Hero Society' via MangaDex -> 'Cultivator Against Hero Society' score 1.00
+[CSV 605/995] (dry-run) would mark up to chapter 119.0
+[CSV 606/995] Resolving 'Takane no Hana wa Midaresaki' against Suwayomi sources...
+[CSV 606/995] (dry-run) would add 'Takane no Hana wa Midaresaki' via MangaDex -> 'Takane no Hana wa Midaresaki' score 1.00
+[CSV 607/995] (dry-run) would mark up to chapter 29.0
+[CSV 608/995] Resolving 'The Ten Thousand Clans Invasion: Guardian of the Rear' against Suwayomi sources...
+[CSV 608/995] (dry-run) would add 'The Ten Thousand Clans Invasion: Guardian of the Rear' via Bato.to -> 'The Ten Thousand Clans Invasion: Guardian of the Rear' score 1.00
+[CSV 609/995] (dry-run) would mark up to chapter 94.0
+[CSV 610/995] Resolving 'Office Worker Who Sees Fate' against Suwayomi sources...
+[CSV 610/995] (dry-run) would add 'Office Worker Who Sees Fate' via MangaDex -> 'Office Worker Who Sees Fate' score 1.00
+[CSV 615/995] Resolving 'Monarch of Death' against Suwayomi sources...
+[CSV 615/995] (dry-run) would add 'Monarch of Death' via MangaDex -> 'Monarch of Death' score 1.00
+[CSV 616/995] Resolving 'The Legendary Hunter Becomes Young Again' against Suwayomi sources...
+[CSV 616/995] (dry-run) would add 'The Legendary Hunter Becomes Young Again' via MangaDex -> 'The Legendary Hunter Becomes Young Again' score 1.00
+[CSV 618/995] Resolving ''Cause Calypso Can' against Suwayomi sources...
+[CSV 618/995] (dry-run) would add ''Cause Calypso Can' via MangaDex -> ''Cause Calypso Can' score 1.00
+[CSV 620/995] (dry-run) would mark up to chapter 50.0
+[CSV 621/995] (dry-run) would mark up to chapter 38.0
+[CSV 623/995] Resolving 'Dead Mount Death Play' against Suwayomi sources...
+[CSV 623/995] (dry-run) would add 'Dead Mount Death Play' via MangaDex -> 'Dead Mount Death Play' score 1.00
+[CSV 624/995] (dry-run) would mark up to chapter 139.0
+[CSV 625/995] Resolving 'The Son of the First Emperor Kills Enemies and Becomes a God' against Suwayomi sources...
+[CSV 625/995] (dry-run) would add 'The Son of the First Emperor Kills Enemies and Becomes a God' via Bato.to -> 'The Son Of The First Emperor Kills Enemies And Becomes A God' score 1.00
+[CSV 626/995] Resolving 'Dai Dark' against Suwayomi sources...
+[CSV 626/995] (dry-run) would add 'Dai Dark' via MangaDex -> 'Dai Dark' score 1.00
+[CSV 627/995] (dry-run) would mark up to chapter 180.0
+[CSV 629/995] Resolving 'I'm Really Not Targeting the Mages' against Suwayomi sources...
+[CSV 629/995] (dry-run) would add 'I'm Really Not Targeting the Mages' via MangaDex -> 'I'm Really Not Targeting the Mages' score 1.00
+[CSV 630/995] Resolving 'God's Gambit' against Suwayomi sources...
+[CSV 630/995] (dry-run) would add 'God's Gambit' via MangaDex -> 'God's Gambit' score 1.00
+[CSV 631/995] (dry-run) would mark up to chapter 148.0
+[CSV 632/995] (dry-run) would mark up to chapter 49.0
+[CSV 633/995] Resolving 'Shokubutsu Monster Musume Nikki ~Seijo datta Watashi ga Uragirareta Hate ni Aruraune ni Tensei Shite Shimatta node, kore kara wa Kougousei wo Shinagara Shizuka ni Shokubutsu Life wo Sugoshimasu~' against Suwayomi sources...
+[CSV 633/995] (dry-run) would add 'Shokubutsu Monster Musume Nikki ~Seijo datta Watashi ga Uragirareta Hate ni Aruraune ni Tensei Shite Shimatta node, kore kara wa Kougousei wo Shinagara Shizuka ni Shokubutsu Life wo Sugoshimasu~' via MangaDex -> 'Shokubutsu Monster Musume Nikki ~Seijo datta Watashi ga Uragirareta Hate ni Aruraune ni Tensei Shite Shimatta node, kore kara wa Kougousei wo Shinagara Shizuka ni Shokubutsu Life wo Sugoshimasu~' score 1.00
+[CSV 634/995] Resolving 'The Flower Dances and the Wind Sings' against Suwayomi sources...
+[CSV 634/995] (dry-run) would add 'The Flower Dances and the Wind Sings' via MangaDex -> 'The Flower Dances and the Wind Sings' score 1.00
+[CSV 635/995] Resolving 'I Can See Your Death' against Suwayomi sources...
+[CSV 635/995] (dry-run) would add 'I Can See Your Death' via MangaDex -> 'I Can See Your Death' score 1.00
+[CSV 636/995] (dry-run) would mark up to chapter 53.0
+[CSV 637/995] Resolving 'Mother's Contract Marriage' against Suwayomi sources...
+[CSV 637/995] (dry-run) would add 'Mother's Contract Marriage' via MangaDex -> 'Mother's Contract Marriage' score 1.00
+[CSV 638/995] (dry-run) would mark up to chapter 24.2
+[CSV 639/995] (dry-run) would mark up to chapter 63.0
+[CSV 640/995] (dry-run) would mark up to chapter 92.0
+[CSV 641/995] (dry-run) would mark up to chapter 15.4
+[CSV 642/995] Resolving 'The Red Knight Seeks No Reward' against Suwayomi sources...
+[CSV 642/995] (dry-run) would add 'The Red Knight Seeks No Reward' via MangaDex -> 'The Red Knight Seeks No Reward' score 1.00
+[CSV 643/995] (dry-run) would mark up to chapter 5.3
+[CSV 644/995] Resolving 'Zombie Fight' against Suwayomi sources...
+[CSV 644/995] (dry-run) would add 'Zombie Fight' via MangaDex -> 'Zombie Fight' score 1.00
+[CSV 645/995] Resolving 'Eternal Club' against Suwayomi sources...
+[CSV 645/995] (dry-run) would add 'Eternal Club' via MangaDex -> 'Eternal Club' score 1.00
+[CSV 646/995] (dry-run) would mark up to chapter 72.0
+[CSV 647/995] Resolving 'The Tomb of Famed Swords' against Suwayomi sources...
+[CSV 647/995] (dry-run) would add 'The Tomb of Famed Swords' via Bato.to -> 'The Tomb of Famed Swords' score 1.00
+[CSV 648/995] Resolving 'TomorrowÆs Disaster' against Suwayomi sources...
+[CSV 648/995] (dry-run) would add 'TomorrowÆs Disaster' via MangaDex -> 'TomorrowÆs Disaster' score 1.00
+[CSV 649/995] Resolving 'Genius Corpse-Collecting Warrior' against Suwayomi sources...
+[CSV 649/995] (dry-run) would add 'Genius Corpse-Collecting Warrior' via MangaDex -> 'Genius Corpse-Collecting Warrior' score 1.00
+[CSV 650/995] (dry-run) would mark up to chapter 80.0
+[CSV 651/995] (dry-run) would mark up to chapter 53.0
+[CSV 653/995] Resolving 'This Game Is Too Realistic' against Suwayomi sources...
+[CSV 653/995] (dry-run) would add 'This Game Is Too Realistic' via MangaDex -> 'This Game Is Too Realistic' score 1.00
+[CSV 654/995] Resolving 'Legendary RankerÆs Comeback' against Suwayomi sources...
+[CSV 654/995] (dry-run) would add 'Legendary RankerÆs Comeback' via MangaDex -> 'Legendary RankerÆs Comeback' score 1.00
+[CSV 655/995] (dry-run) would mark up to chapter 6.0
+[CSV 656/995] (dry-run) would mark up to chapter 17.0
+[CSV 657/995] (dry-run) would mark up to chapter 87.0
+[CSV 658/995] (dry-run) would mark up to chapter 89.0
+[CSV 659/995] Resolving 'Jukokuin no Tensei Boukensha: Saikyou Kenja, Jiyuu ni Ikiru' against Suwayomi sources...
+[CSV 659/995] (dry-run) would add 'Jukokuin no Tensei Boukensha: Saikyou Kenja, Jiyuu ni Ikiru' via MangaDex -> 'Jukokuin no Tensei Boukensha: Saikyou Kenja, Jiyuu ni Ikiru' score 1.00
+[CSV 660/995] Resolving 'Book Eater' against Suwayomi sources...
+[CSV 660/995] (dry-run) would add 'Book Eater' via MangaDex -> 'Book Eater' score 1.00
+[CSV 661/995] Resolving 'My Favorite Novel Has a Weird Epilogue' against Suwayomi sources...
+[CSV 661/995] (dry-run) would add 'My Favorite Novel Has a Weird Epilogue' via MangaDex -> 'My Favorite Novel Has a Weird Epilogue' score 1.00
+[CSV 663/995] (dry-run) would mark up to chapter 45.0
+[CSV 664/995] Resolving 'Young Master Is Too Righteous' against Suwayomi sources...
+[CSV 664/995] (dry-run) would add 'Young Master Is Too Righteous' via MangaDex -> 'Young Master Is Too Righteous' score 1.00
+[CSV 665/995] (dry-run) would mark up to chapter 76.0
+[CSV 666/995] (dry-run) would mark up to chapter 84.0
+[CSV 667/995] Resolving 'The Little Lady Behind the Villain' against Suwayomi sources...
+[CSV 667/995] (dry-run) would add 'The Little Lady Behind the Villain' via MangaDex -> 'The Little Lady Behind the Villain' score 1.00
+[CSV 668/995] Resolving 'Second Life Millionaire' against Suwayomi sources...
+[CSV 668/995] (dry-run) would add 'Second Life Millionaire' via MangaDex -> 'Second Life Millionaire' score 1.00
+[CSV 669/995] Resolving 'Star Player Supporter' against Suwayomi sources...
+[CSV 669/995] (dry-run) would add 'Star Player Supporter' via MangaDex -> 'Star Player Supporter' score 1.00
+[CSV 670/995] (dry-run) would mark up to chapter 33.0
+[CSV 671/995] (dry-run) would mark up to chapter 16.0
+[CSV 672/995] (dry-run) would mark up to chapter 30.0
+[CSV 673/995] Resolving 'Rebirth of the Strongest Sword God' against Suwayomi sources...
+[CSV 673/995] (dry-run) would add 'Rebirth of the Strongest Sword God' via MangaDex -> 'Rebirth of the Strongest Sword God' score 1.00
+[CSV 674/995] Resolving 'Over the Top' against Suwayomi sources...
+[CSV 674/995] (dry-run) would add 'Over the Top' via MangaDex -> 'Over the Top' score 1.00
+[CSV 675/995] (dry-run) would mark up to chapter 12.0
+[CSV 676/995] (dry-run) would mark up to chapter 165.0
+[CSV 677/995] Resolving 'Ya Boy Kongming!' against Suwayomi sources...
+[CSV 677/995] (dry-run) would add 'Ya Boy Kongming!' via MangaDex -> 'Ya Boy Kongming!' score 1.00
+[CSV 678/995] Resolving 'Point Gifter "Keikenchi Bunpai Nouryokusha" no Isekai Saikyou Solo Life' against Suwayomi sources...
+[CSV 678/995] (dry-run) would add 'Point Gifter "Keikenchi Bunpai Nouryokusha" no Isekai Saikyou Solo Life' via MangaDex -> 'Point Gifter "Keikenchi Bunpai Nouryokusha" no Isekai Saikyou Solo Life' score 1.00
+[CSV 679/995] (dry-run) would mark up to chapter 19.0
+[CSV 680/995] (dry-run) would mark up to chapter 67.0
+[CSV 681/995] (dry-run) would mark up to chapter 97.0
+[CSV 682/995] Resolving 'Rise From the Rubble' against Suwayomi sources...
+[CSV 682/995] (dry-run) would add 'Rise From the Rubble' via MangaDex -> 'Rise From the Rubble' score 1.00
+[CSV 683/995] (dry-run) would mark up to chapter 106.0
+[CSV 684/995] Resolving 'Dark and Light Martial Emperor' against Suwayomi sources...
+[CSV 684/995] (dry-run) would add 'Dark and Light Martial Emperor' via MangaDex -> 'Dark and Light Martial Emperor' score 1.00
+[CSV 685/995] Resolving 'Survive on a Deserted Island with Beautiful Girls' against Suwayomi sources...
+[CSV 685/995] (dry-run) would add 'Survive on a Deserted Island with Beautiful Girls' via MangaDex -> 'Survive on a Deserted Island with Beautiful Girls' score 1.00
+[CSV 686/995] Resolving 'Egret: The Great Sage' against Suwayomi sources...
+[CSV 686/995] (dry-run) would add 'Egret: The Great Sage' via MangaDex -> 'Egret: The Great Sage' score 1.00
+[CSV 687/995] (dry-run) would mark up to chapter 71.0
+[CSV 688/995] Resolving 'Storm Inn' against Suwayomi sources...
+[CSV 688/995] (dry-run) would add 'Storm Inn' via MangaDex -> 'Storm Inn' score 1.00
+[CSV 689/995] (dry-run) would mark up to chapter 53.0
+[CSV 690/995] Resolving 'Hunter AcademyÆs Strongest Battle God' against Suwayomi sources...
+[CSV 690/995] (dry-run) would add 'Hunter AcademyÆs Strongest Battle God' via MangaDex -> 'Hunter AcademyÆs Strongest Battle God' score 1.00
+[CSV 691/995] Resolving 'One Step Forward to the Flower Path' against Suwayomi sources...
+[CSV 691/995] (dry-run) would add 'One Step Forward to the Flower Path' via MangaDex -> 'One Step Forward to the Flower Path' score 1.00
+[CSV 692/995] (dry-run) would mark up to chapter 90.0
+[CSV 693/995] (dry-run) would mark up to chapter 73.0
+[CSV 694/995] (dry-run) would mark up to chapter 22.0
+[CSV 695/995] (dry-run) would mark up to chapter 142.0
+[CSV 696/995] (dry-run) would mark up to chapter 53.0
+[CSV 697/995] Resolving 'This Martial Saint Is Way Too Generous' against Suwayomi sources...
+[CSV 697/995] (dry-run) would add 'This Martial Saint Is Way Too Generous' via MangaDex -> 'This Martial Saint Is Way Too Generous' score 1.00
+[CSV 698/995] (dry-run) would mark up to chapter 64.0
+[CSV 699/995] Resolving 'Zatsuyou Fuyo Jutsushi ga Jibun no Saikyou ni Kizuku made' against Suwayomi sources...
+[CSV 699/995] (dry-run) would add 'Zatsuyou Fuyo Jutsushi ga Jibun no Saikyou ni Kizuku made' via MangaDex -> 'Zatsuyou Fuyo Jutsushi ga Jibun no Saikyou ni Kizuku made' score 1.00
+[CSV 700/995] (dry-run) would mark up to chapter 96.0
+[CSV 701/995] (dry-run) would mark up to chapter 73.0
+[CSV 702/995] Resolving 'Log in With Max Level' against Suwayomi sources...
+[CSV 702/995] (dry-run) would add 'Log in With Max Level' via MangaDex -> 'The Savior's 30-Day Unstoppable Streak' score 1.00
+[CSV 703/995] Resolving 'Assassin in Another World' against Suwayomi sources...
+[CSV 703/995] (dry-run) would add 'Assassin in Another World' via MangaDex -> 'Assassin in Another World' score 1.00
+[CSV 704/995] (dry-run) would mark up to chapter 66.0
+[CSV 705/995] Resolving '"Hon'yaku" no Sainou de Ore Dake ga Sekai o Kaihen Dekiru Ken: Hazure Sainou "Hon'yaku" de Kizukeba Sekai Saikyou ni Nattemashita' against Suwayomi sources...
+[CSV 705/995] (dry-run) would add '"Hon'yaku" no Sainou de Ore Dake ga Sekai o Kaihen Dekiru Ken: Hazure Sainou "Hon'yaku" de Kizukeba Sekai Saikyou ni Nattemashita' via MangaDex -> '"Hon'yaku" no Sainou de Ore Dake ga Sekai o Kaihen Dekiru Ken: Hazure Sainou "Hon'yaku" de Kizukeba Sekai Saikyou ni Nattemashita' score 1.00
+[CSV 706/995] (dry-run) would mark up to chapter 268.0
+[CSV 707/995] Resolving 'The Supreme Way' against Suwayomi sources...
+[CSV 707/995] (dry-run) would add 'The Supreme Way' via MangaDex -> 'The Supreme Way' score 1.00
+[CSV 708/995] Resolving 'Lucky Striker' against Suwayomi sources...
+[CSV 708/995] (dry-run) would add 'Lucky Striker' via MangaDex -> 'Lucky Striker' score 1.00
+[CSV 709/995] (dry-run) would mark up to chapter 114.0
+[CSV 710/995] (dry-run) would mark up to chapter 168.0
+[CSV 711/995] (dry-run) would mark up to chapter 46.0
+[CSV 712/995] (dry-run) would mark up to chapter 48.0
+[CSV 713/995] Resolving 'The Iron-Blooded Necromancer Has Returned' against Suwayomi sources...
+[CSV 713/995] (dry-run) would add 'The Iron-Blooded Necromancer Has Returned' via Bato.to -> 'The Iron-Blooded Necromancer Has Returned' score 1.00
+[CSV 714/995] (dry-run) would mark up to chapter 35.0
+[CSV 715/995] Resolving 'Estio' against Suwayomi sources...
+[CSV 715/995] (dry-run) would add 'Estio' via MangaDex -> 'Estio' score 1.00
+[CSV 716/995] Resolving 'The 6-Year-Old Sage Wants to Hide in the Shadows (Official)' against Suwayomi sources...
+[CSV 716/995] (dry-run) would add 'The 6-Year-Old Sage Wants to Hide in the Shadows (Official)' via MangaDex -> 'The 6-Year-Old Sage Wants to Hide in the Shadows' score 1.00
+[CSV 717/995] Resolving 'Lu Bu's Life Simulator' against Suwayomi sources...
+[CSV 717/995] (dry-run) would add 'Lu Bu's Life Simulator' via MangaDex -> 'Lu Bu's Life Simulator' score 1.00
+[CSV 718/995] Resolving 'Paying Cash to Become Immortal' against Suwayomi sources...
+[CSV 718/995] (dry-run) would add 'Paying Cash to Become Immortal' via MangaDex -> 'Paying Cash to Become Immortal' score 1.00
+[CSV 719/995] Resolving 'My 1000th lifetime as a furnace' against Suwayomi sources...
+[CSV 719/995] (dry-run) would add 'My 1000th lifetime as a furnace' via MangaDex -> 'My 1000th lifetime as a furnace' score 1.00
+[CSV 720/995] Resolving 'The Martial Emperor's Life After Seclusion' against Suwayomi sources...
+[CSV 720/995] (dry-run) would add 'The Martial Emperor's Life After Seclusion' via MangaDex -> 'The Martial Emperor's Life After Seclusion' score 1.00
+[CSV 721/995] (dry-run) would mark up to chapter 159.0
+[CSV 722/995] Resolving 'A True Martial World' against Suwayomi sources...
+[CSV 722/995] (dry-run) would add 'A True Martial World' via MangaDex -> 'A True Martial World' score 1.00
+[CSV 723/995] Resolving 'Soul of Burning Steel' against Suwayomi sources...
+[CSV 723/995] (dry-run) would add 'Soul of Burning Steel' via MangaDex -> 'Soul of Burning Steel' score 1.00
+[CSV 724/995] Resolving 'Mage Again' against Suwayomi sources...
+[CSV 724/995] (dry-run) would add 'Mage Again' via MangaDex -> 'Mage Again' score 1.00
+[CSV 725/995] (dry-run) would mark up to chapter 39.0
+[CSV 726/995] (dry-run) would mark up to chapter 176.0
+[CSV 727/995] (dry-run) would mark up to chapter 60.0
+[CSV 728/995] Resolving 'Everyone Regressed Except Me' against Suwayomi sources...
+[CSV 728/995] (dry-run) would add 'Everyone Regressed Except Me' via MangaDex -> 'Everyone Regressed Except Me' score 1.00
+[CSV 729/995] Resolving 'Above Ten Thousand People' against Suwayomi sources...
+[CSV 729/995] (dry-run) would add 'Above Ten Thousand People' via MangaDex -> 'Above Ten Thousand People' score 1.00
+[CSV 730/995] Resolving 'L.A.G' against Suwayomi sources...
+[CSV 730/995] (dry-run) would add 'L.A.G' via MangaDex -> 'Passifs infinis' score 1.00
+[CSV 731/995] (dry-run) would mark up to chapter 448.0
+[CSV 732/995] Resolving 'Real World Mobile' against Suwayomi sources...
+[CSV 732/995] (dry-run) would add 'Real World Mobile' via MangaDex -> 'Real World Mobile' score 1.00
+[CSV 733/995] Resolving 'Success Rate' against Suwayomi sources...
+[CSV 733/995] (dry-run) would add 'Success Rate' via Bato.to -> 'I CAN SEE THE SUCCESS RATE' score 1.00
+[CSV 734/995] (dry-run) would mark up to chapter 10.0
+[CSV 735/995] (dry-run) would mark up to chapter 53.0
+[CSV 736/995] Resolving 'Library of Heaven's Path' against Suwayomi sources...
+[CSV 736/995] (dry-run) would add 'Library of Heaven's Path' via MangaDex -> 'Library of Heaven's Path' score 1.00
+[CSV 737/995] (dry-run) would mark up to chapter 38.0
+[CSV 738/995] Resolving 'The Housekeeper of the Dungeon' against Suwayomi sources...
+[CSV 738/995] (dry-run) would add 'The Housekeeper of the Dungeon' via MangaDex -> 'The Housekeeper of the Dungeon' score 1.00
+[CSV 739/995] (dry-run) would mark up to chapter 99.0
+[CSV 740/995] Resolving 'Big Spender in a Busted Game' against Suwayomi sources...
+[CSV 740/995] (dry-run) would add 'Big Spender in a Busted Game' via MangaDex -> 'Big Spender in a Busted Game' score 1.00
+[CSV 741/995] Resolving 'Absolute Master of the Senate' against Suwayomi sources...
+[CSV 741/995] (dry-run) would add 'Absolute Master of the Senate' via MangaDex -> 'Absolute Master of the Senate' score 1.00
+[CSV 742/995] Resolving 'All Rounder' against Suwayomi sources...
+[CSV 742/995] (dry-run) would add 'All Rounder' via MangaDex -> 'All Rounder' score 1.00
+[CSV 743/995] (dry-run) would mark up to chapter 12.5
+[CSV 744/995] Resolving 'The Exclusive Contractor's Quitting Chronicles' against Suwayomi sources...
+[CSV 744/995] (dry-run) would add 'The Exclusive Contractor's Quitting Chronicles' via MangaDex -> 'The Exclusive Contractor's Quitting Chronicles' score 1.00
+[CSV 745/995] Resolving 'Beyond the Sky' against Suwayomi sources...
+[CSV 745/995] (dry-run) would add 'Beyond the Sky' via MangaDex -> 'Beyond the Sky' score 1.00
+[CSV 746/995] Resolving 'I Upgrade by Rewarding Apprentices' against Suwayomi sources...
+[CSV 746/995] (dry-run) would add 'I Upgrade by Rewarding Apprentices' via MangaDex -> 'I Upgrade by Rewarding Apprentices' score 1.00
+[CSV 747/995] Resolving 'I Am the Dengle' against Suwayomi sources...
+[CSV 747/995] (dry-run) would add 'I Am the Dengle' via MangaDex -> 'I Am the Dengle' score 1.00
+[CSV 748/995] Resolving 'Picked up From Another World' against Suwayomi sources...
+[CSV 748/995] (dry-run) would add 'Picked up From Another World' via MangaDex -> 'Picked up From Another World' score 1.00
+[CSV 749/995] Resolving 'Denounce' against Suwayomi sources...
+[CSV 749/995] (dry-run) would add 'Denounce' via MangaDex -> 'Denounce' score 1.00
+[CSV 750/995] (dry-run) would mark up to chapter 178.0
+[CSV 751/995] Resolving 'Was Manager Seo Disposed of as an Industrial Accident?' against Suwayomi sources...
+[CSV 751/995] (dry-run) would add 'Was Manager Seo Disposed of as an Industrial Accident?' via MangaDex -> 'Was Manager Seo Disposed of as an Industrial Accident?' score 1.00
+[CSV 752/995] (dry-run) would mark up to chapter 63.0
+[CSV 753/995] Resolving 'Monster Hunter' against Suwayomi sources...
+[CSV 753/995] (dry-run) would add 'Monster Hunter' via MangaDex -> 'Monster Hunter' score 1.00
+[CSV 754/995] Resolving 'The Healing Solaris Cleric' against Suwayomi sources...
+[CSV 754/995] (dry-run) would add 'The Healing Solaris Cleric' via MangaDex -> 'The Healing Solaris Cleric' score 1.00
+[CSV 755/995] Resolving 'The Book of Lagier' against Suwayomi sources...
+[CSV 755/995] (dry-run) would add 'The Book of Lagier' via MangaDex -> 'The Book of Lagier' score 1.00
+[CSV 756/995] Resolving 'Superstar Associate Manager' against Suwayomi sources...
+[CSV 756/995] (dry-run) would add 'Superstar Associate Manager' via Bato.to -> 'Superstar Associate Manager (Official)' score 1.00
+[CSV 757/995] (dry-run) would mark up to chapter 50.0
+[CSV 758/995] Resolving 'My Cultivator Girlfriend' against Suwayomi sources...
+[CSV 758/995] (dry-run) would add 'My Cultivator Girlfriend' via Bato.to -> 'My Cultivator Girlfriend' score 1.00
+[CSV 759/995] Resolving 'I Just Want to Game in Peace' against Suwayomi sources...
+[CSV 759/995] (dry-run) would add 'I Just Want to Game in Peace' via MangaDex -> 'I Just Want to Game in Peace' score 1.00
+[CSV 760/995] (dry-run) would mark up to chapter 7.2
+[CSV 761/995] (dry-run) would mark up to chapter 79.0
+[CSV 762/995] Resolving 'Martial God Asura' against Suwayomi sources...
+[CSV 762/995] (dry-run) would add 'Martial God Asura' via MangaDex -> 'Martial God Asura' score 1.00
+[CSV 763/995] Resolving 'Off to an Invincible Start' against Suwayomi sources...
+[CSV 763/995] (dry-run) would add 'Off to an Invincible Start' via MangaDex -> 'Already Invincible at the Beginning' score 1.00
+[CSV 764/995] Resolving 'Shadow Hack' against Suwayomi sources...
+[CSV 764/995] (dry-run) would add 'Shadow Hack' via MangaDex -> 'Shadow Hack' score 1.00
+[CSV 765/995] (dry-run) would mark up to chapter 84.0
+[CSV 766/995] (dry-run) would mark up to chapter 187.0
+[CSV 767/995] Resolving 'Yi Gwol: The Grand Commander' against Suwayomi sources...
+[CSV 767/995] (dry-run) would add 'Yi Gwol: The Grand Commander' via MangaDex -> 'Yi Gwol: The Grand Commander' score 1.00
+[CSV 768/995] Resolving 'Five-Dimensional Zone' against Suwayomi sources...
+[CSV 768/995] (dry-run) would add 'Five-Dimensional Zone' via MangaDex -> 'Five-Dimensional Zone' score 1.00
+[CSV 769/995] Resolving 'I Get Stronger By Doing Nothing' against Suwayomi sources...
+[CSV 769/995] (dry-run) would add 'I Get Stronger By Doing Nothing' via MangaDex -> 'I Get Stronger By Doing Nothing' score 1.00
+[CSV 770/995] Resolving 'You Didn't Say the Start of the Regression Was a Gate' against Suwayomi sources...
+[CSV 770/995] (dry-run) would add 'You Didn't Say the Start of the Regression Was a Gate' via MangaDex -> 'You Didn't Say the Start of the Regression Was a Gate' score 1.00
+[CSV 771/995] (dry-run) would mark up to chapter 49.0
+[CSV 772/995] (dry-run) would mark up to chapter 47.0
+[CSV 773/995] Resolving 'Time Roulette' against Suwayomi sources...
+[CSV 773/995] (dry-run) would add 'Time Roulette' via MangaDex -> 'Time Roulette' score 1.00
+[CSV 774/995] Resolving 'My Sister is a Big Star' against Suwayomi sources...
+[CSV 774/995] (dry-run) would add 'My Sister is a Big Star' via MangaDex -> 'My Sister is a Big Star' score 1.00
+[CSV 775/995] (dry-run) would mark up to chapter 197.0
+[CSV 776/995] Resolving 'Master of the Martial Arts Library' against Suwayomi sources...
+[CSV 776/995] (dry-run) would add 'Master of the Martial Arts Library' via MangaDex -> 'Master of the Martial Arts Library' score 1.00
+[CSV 777/995] (dry-run) would mark up to chapter 26.0
+[CSV 778/995] Resolving 'Story of a "Jobless" Champion and a Princess Who Together Find Their Happiness' against Suwayomi sources...
+[CSV 778/995] (dry-run) would add 'Story of a "Jobless" Champion and a Princess Who Together Find Their Happiness' via MangaDex -> 'Story of a "Jobless" Champion and a Princess Who Together Find Their Happiness' score 1.00
+[CSV 779/995] Resolving 'The Gourmet Gamer' against Suwayomi sources...
+[CSV 779/995] (dry-run) would add 'The Gourmet Gamer' via MangaDex -> 'The Gourmet Gamer' score 1.00
+[CSV 780/995] Resolving 'Devil Sword King' against Suwayomi sources...
+[CSV 780/995] (dry-run) would add 'Devil Sword King' via MangaDex -> 'Devil Sword King' score 1.00
+[CSV 781/995] Resolving 'Climbing the Tower That Even the Regressor Couldn't' against Suwayomi sources...
+[CSV 781/995] (dry-run) would add 'Climbing the Tower That Even the Regressor Couldn't' via MangaDex -> 'Climbing the Tower That Even the Regressor Couldn't' score 1.00
+[CSV 782/995] Resolving 'Keyboard Immortal' against Suwayomi sources...
+[CSV 782/995] (dry-run) would add 'Keyboard Immortal' via MangaDex -> 'Keyboard Immortal' score 1.00
+[CSV 783/995] Resolving 'Doctor Player' against Suwayomi sources...
+[CSV 783/995] (dry-run) would add 'Doctor Player' via MangaDex -> 'Doctor Player' score 1.00
+[CSV 784/995] (dry-run) would mark up to chapter 160.0
+[CSV 785/995] (dry-run) would mark up to chapter 115.0
+[CSV 786/995] Resolving 'Hazure Aka Madoushi wa Kenja Time ni Musou Suru' against Suwayomi sources...
+[CSV 786/995] (dry-run) would add 'Hazure Aka Madoushi wa Kenja Time ni Musou Suru' via MangaPark -> 'Hazure Aka Madoushi wa Kenja Time ni Musou suru' score 1.00
+[CSV 788/995] Resolving 'Apocalyptic Forecast' against Suwayomi sources...
+[CSV 788/995] (dry-run) would add 'Apocalyptic Forecast' via MangaDex -> 'Apocalyptic Forecast' score 1.00
+[CSV 789/995] (dry-run) would mark up to chapter 164.0
+[CSV 790/995] Resolving 'Shachiku, Dungeon Darake no Sekai de Koyuu Skill "Gouyoku" wo Te ni Irete Saikyou no Balance Breaker ni Naru' against Suwayomi sources...
+[CSV 790/995] (dry-run) would add 'Shachiku, Dungeon Darake no Sekai de Koyuu Skill "Gouyoku" wo Te ni Irete Saikyou no Balance Breaker ni Naru' via MangaDex -> 'Shachiku, Dungeon Darake no Sekai de Koyuu Skill "Gouyoku" wo Te ni Irete Saikyou no Balance Breaker ni Naru' score 1.00
+[CSV 791/995] Resolving 'A Sword's Evolution Begins From Killing' against Suwayomi sources...
+[CSV 791/995] (dry-run) would add 'A Sword's Evolution Begins From Killing' via MangaDex -> 'A Sword's Evolution Begins From Killing' score 1.00
+[CSV 792/995] Resolving 'The Last Cultivator' against Suwayomi sources...
+[CSV 792/995] (dry-run) would add 'The Last Cultivator' via MangaDex -> 'The Last Cultivator' score 1.00
+[CSV 793/995] (dry-run) would mark up to chapter 43.0
+[CSV 794/995] Resolving 'A Monstrous First Day' against Suwayomi sources...
+[CSV 794/995] (dry-run) would add 'A Monstrous First Day' via MangaDex -> 'A Monstrous First Day' score 1.00
+[CSV 795/995] Resolving 'Useless Wizard' against Suwayomi sources...
+[CSV 795/995] (dry-run) would add 'Useless Wizard' via MangaDex -> 'Useless Wizard' score 1.00
+[CSV 796/995] (dry-run) would mark up to chapter 45.0
+[CSV 797/995] (dry-run) would mark up to chapter 46.0
+[CSV 798/995] Resolving 'Holy Chef, Crazy Empress' against Suwayomi sources...
+[CSV 798/995] (dry-run) would add 'Holy Chef, Crazy Empress' via MangaDex -> 'Holy Chef, Crazy Empress' score 1.00
+[CSV 799/995] (dry-run) would mark up to chapter 43.0
+[CSV 800/995] Resolving 'Celebrating the Remaining Life' against Suwayomi sources...
+[CSV 800/995] (dry-run) would add 'Celebrating the Remaining Life' via Bato.to -> 'Joy of Life' score 1.00
+[CSV 801/995] (dry-run) would mark up to chapter 27.1
+[CSV 802/995] (dry-run) would mark up to chapter 476.0
+[CSV 803/995] Resolving 'My Senior Brother Is Too Steady' against Suwayomi sources...
+[CSV 803/995] (dry-run) would add 'My Senior Brother Is Too Steady' via MangaDex -> 'My Senior Brother Is Too Steady' score 1.00
+[CSV 804/995] Resolving 'Eternal Kingdom (2022)' against Suwayomi sources...
+[CSV 804/995] (dry-run) would add 'Eternal Kingdom (2022)' via MangaDex -> 'Eternal Kingdom (2022)' score 1.00
+[CSV 805/995] Resolving 'Mushroom Hero' against Suwayomi sources...
+[CSV 805/995] (dry-run) would add 'Mushroom Hero' via MangaDex -> 'Mushroom Hero' score 1.00
+[CSV 806/995] Resolving 'Gakuen Kishi no Level up!' against Suwayomi sources...
+[CSV 806/995] (dry-run) would add 'Gakuen Kishi no Level up!' via MangaDex -> '???????????????1000?????????????????????????????' score 1.00
+[CSV 807/995] (dry-run) would mark up to chapter 28.0
+[CSV 808/995] Resolving 'This Human Immortal Is Too Serious' against Suwayomi sources...
+[CSV 808/995] (dry-run) would add 'This Human Immortal Is Too Serious' via MangaDex -> 'This Human Immortal Is Too Serious' score 1.00
+[CSV 809/995] Resolving 'Please Repent, Your Grace!' against Suwayomi sources...
+[CSV 809/995] (dry-run) would add 'Please Repent, Your Grace!' via MangaDex -> 'Please Repent, Your Grace!' score 1.00
+[CSV 810/995] Resolving 'Botsuraku Kizoku no Ore ga Hazure (?) Skill Cho Kiyo Binbo de Dai-Kenja to Yobareru made' against Suwayomi sources...
+[CSV 810/995] (dry-run) would add 'Botsuraku Kizoku no Ore ga Hazure (?) Skill Cho Kiyo Binbo de Dai-Kenja to Yobareru made' via MangaDex -> 'Botsuraku Kizoku no Ore ga Hazure (?) Skill Cho Kiyo Binbo de Dai-Kenja to Yobareru made' score 1.00
+[CSV 811/995] Resolving 'The Unyielding Ancient Cultivator' against Suwayomi sources...
+[CSV 811/995] (dry-run) would add 'The Unyielding Ancient Cultivator' via MangaDex -> 'The Unyielding Ancient Cultivator' score 1.00
+[CSV 812/995] Resolving 'Shaman' against Suwayomi sources...
+[CSV 812/995] (dry-run) would add 'Shaman' via MangaDex -> 'Shaman' score 1.00
+[CSV 813/995] Resolving 'Lose Control of Myself' against Suwayomi sources...
+[CSV 813/995] (dry-run) would add 'Lose Control of Myself' via MangaPark -> 'System Trusteeship' score 1.00
+[CSV 814/995] (dry-run) would mark up to chapter 30.0
+[CSV 815/995] Resolving 'Udon no Kuni no Kin'iro Kemari' against Suwayomi sources...
+[CSV 815/995] (dry-run) would add 'Udon no Kuni no Kin'iro Kemari' via MangaDex -> 'Udon no Kuni no Kin'iro Kemari' score 1.00
+[CSV 816/995] Resolving 'Return of the Youngest Grandmaster' against Suwayomi sources...
+[CSV 816/995] (dry-run) would add 'Return of the Youngest Grandmaster' via MangaPark -> 'Return of the Youngest Grandmaster' score 1.00
+[CSV 817/995] (dry-run) would mark up to chapter 197.0
+[CSV 818/995] Resolving 'Dawn Empire' against Suwayomi sources...
+[CSV 818/995] (dry-run) would add 'Dawn Empire' via MangaDex -> 'Dawn Empire' score 1.00
+[CSV 819/995] Resolving 'Three Kingdoms' against Suwayomi sources...
+[CSV 819/995] (dry-run) would add 'Three Kingdoms' via MangaDex -> 'Three Kingdoms' score 1.00
+[CSV 820/995] Resolving 'Emperor LingTian' against Suwayomi sources...
+[CSV 820/995] (dry-run) would add 'Emperor LingTian' via MangaDex -> 'Emperor LingTian' score 1.00
+[CSV 821/995] Resolving 'Magic Scholar' against Suwayomi sources...
+[CSV 821/995] (dry-run) would add 'Magic Scholar' via MangaDex -> 'Magic Scholar' score 1.00
+[CSV 822/995] (dry-run) would mark up to chapter 77.0
+[CSV 823/995] Resolving 'Return Survival' against Suwayomi sources...
+[CSV 823/995] (dry-run) would add 'Return Survival' via MangaDex -> 'Return Survival' score 1.00
+[CSV 824/995] Resolving 'Return of the Elemental Lord' against Suwayomi sources...
+[CSV 824/995] (dry-run) would add 'Return of the Elemental Lord' via MangaDex -> 'Return of the Elemental Lord' score 1.00
+[CSV 825/995] Resolving 'Legend Reboot' against Suwayomi sources...
+[CSV 825/995] (dry-run) would add 'Legend Reboot' via MangaDex -> 'Legend Reboot' score 1.00
+[CSV 826/995] Resolving 'Cat System: The Emperor Is a Cat Lover' against Suwayomi sources...
+[CSV 826/995] (dry-run) would add 'Cat System: The Emperor Is a Cat Lover' via Bato.to -> 'Cat System The Emperor Is A Cat Lover' score 1.00
+[CSV 827/995] (dry-run) would mark up to chapter 296.0
+[CSV 828/995] (dry-run) would mark up to chapter 34.0
+[CSV 829/995] Resolving 'Dungeon Athlete' against Suwayomi sources...
+[CSV 829/995] (dry-run) would add 'Dungeon Athlete' via MangaDex -> 'Dungeon Athlete' score 1.00
+[CSV 830/995] Resolving 'The Devil Ring' against Suwayomi sources...
+[CSV 830/995] (dry-run) would add 'The Devil Ring' via MangaDex -> 'The Devil Ring' score 1.00
+[CSV 831/995] Resolving 'The Millennium Alchemist' against Suwayomi sources...
+[CSV 831/995] (dry-run) would add 'The Millennium Alchemist' via Bato.to -> 'Millennium Spinning' score 1.00
+[CSV 832/995] Resolving 'My Three Thousand Years To The Sky' against Suwayomi sources...
+[CSV 832/995] (dry-run) would add 'My Three Thousand Years To The Sky' via MangaDex -> 'My Three Thousand Years To The Sky' score 1.00
+[CSV 833/995] Resolving 'The Long Way of the Warrior' against Suwayomi sources...
+[CSV 833/995] (dry-run) would add 'The Long Way of the Warrior' via MangaDex -> 'The Long Way of the Warrior' score 1.00
+[CSV 834/995] (dry-run) would mark up to chapter 13.0
+[CSV 835/995] Resolving 'Immortal WorldÆs First Undercover Agent' against Suwayomi sources...
+[CSV 835/995] (dry-run) would add 'Immortal WorldÆs First Undercover Agent' via MangaDex -> 'Immortal WorldÆs First Undercover Agent' score 1.00
+[CSV 836/995] Resolving 'Asirhart Kingdom Aide' against Suwayomi sources...
+[CSV 836/995] (dry-run) would add 'Asirhart Kingdom Aide' via MangaDex -> 'Asirhart Kingdom Aide' score 1.00
+[CSV 837/995] (dry-run) would mark up to chapter 88.0
+[CSV 838/995] Resolving 'IÆm the Only One Loved by the Constellations!' against Suwayomi sources...
+[CSV 838/995] (dry-run) would add 'IÆm the Only One Loved by the Constellations!' via MangaDex -> 'IÆm the Only One Loved by the Constellations!' score 1.00
+[CSV 839/995] Resolving 'Hitman' against Suwayomi sources...
+[CSV 839/995] (dry-run) would add 'Hitman' via MangaPark -> 'Hitman' score 1.00
+[CSV 840/995] Resolving 'Kuro no Senki: Isekai Teni Shita Boku ga Saikyou na no wa Bed no Ue dake no You desu' against Suwayomi sources...
+[CSV 840/995] (dry-run) would add 'Kuro no Senki: Isekai Teni Shita Boku ga Saikyou na no wa Bed no Ue dake no You desu' via MangaPark -> 'Record Of Kurono's War' score 1.00
+[CSV 841/995] Resolving 'Teenage Swordsman' against Suwayomi sources...
+[CSV 841/995] (dry-run) would add 'Teenage Swordsman' via MangaDex -> 'Teenage Swordsman' score 1.00
+[CSV 842/995] Resolving 'Marginal Operation' against Suwayomi sources...
+[CSV 842/995] (dry-run) would add 'Marginal Operation' via MangaDex -> 'Marginal Operation' score 1.00
+[CSV 843/995] Resolving 'The WorldÆs Finest Escort Bureau' against Suwayomi sources...
+[CSV 843/995] (dry-run) would add 'The WorldÆs Finest Escort Bureau' via MangaDex -> 'The WorldÆs Finest Escort Bureau' score 1.00
+[CSV 844/995] (dry-run) would mark up to chapter 38.0
+[CSV 845/995] Resolving 'Snake Immortal: The Tale of a Snake's Cultivation to Immortality' against Suwayomi sources...
+[CSV 845/995] (dry-run) would add 'Snake Immortal: The Tale of a Snake's Cultivation to Immortality' via MangaDex -> 'Snake Immortal: The Tale of a Snake's Cultivation to Immortality' score 1.00
+[CSV 846/995] Resolving 'My [Repair] Skill Became a Versatile Cheat, So I Think IÆll Open a Weapon Shop' against Suwayomi sources...
+[CSV 846/995] (dry-run) would add 'My [Repair] Skill Became a Versatile Cheat, So I Think IÆll Open a Weapon Shop' via MangaDex -> 'My [Repair] Skill Became a Versatile Cheat, So I Think IÆll Open a Weapon Shop' score 1.00
+[CSV 847/995] Resolving 'The Heavenly Demon Will Turn the World Upside Down' against Suwayomi sources...
+[CSV 847/995] (dry-run) would add 'The Heavenly Demon Will Turn the World Upside Down' via MangaDex -> 'The Heavenly Demon Will Turn the World Upside Down' score 1.00
+[CSV 848/995] (dry-run) would mark up to chapter 35.0
+[CSV 849/995] (dry-run) would mark up to chapter 47.0
+[CSV 850/995] Resolving 'Shattering the Laws of Plot Armor!' against Suwayomi sources...
+[CSV 850/995] (dry-run) would add 'Shattering the Laws of Plot Armor!' via MangaDex -> 'Shattering the Laws of Plot Armor!' score 1.00
+[CSV 851/995] Resolving 'The Enchanting Villainess' against Suwayomi sources...
+[CSV 851/995] (dry-run) would add 'The Enchanting Villainess' via MangaDex -> 'The Enchanting Villainess' score 1.00
+[CSV 852/995] Resolving 'A Tidal Wave of Glory' against Suwayomi sources...
+[CSV 852/995] (dry-run) would add 'A Tidal Wave of Glory' via MangaDex -> 'A Tidal Wave of Glory' score 1.00
+[CSV 853/995] (dry-run) would mark up to chapter 48.0
+[CSV 854/995] (dry-run) would mark up to chapter 13.0
+[CSV 855/995] Resolving 'Ore wa Seikan Kokka no Akutoku Ryoshu!' against Suwayomi sources...
+[CSV 855/995] (dry-run) would add 'Ore wa Seikan Kokka no Akutoku Ryoshu!' via MangaDex -> 'Ore wa Seikan Kokka no Akutoku Ryoshu!' score 1.00
+[CSV 856/995] (dry-run) would mark up to chapter 21.0
+[CSV 857/995] (dry-run) would mark up to chapter 68.0
+[CSV 858/995] (dry-run) would mark up to chapter 15.3
+[CSV 859/995] (dry-run) would mark up to chapter 55.0
+[CSV 860/995] (dry-run) would mark up to chapter 50.0
+[CSV 861/995] Resolving 'Abnormal Immortal Record of Spooky Daoist' against Suwayomi sources...
+[CSV 861/995] (dry-run) would add 'Abnormal Immortal Record of Spooky Daoist' via MangaDex -> 'Dao do Imortal Bizarro' score 1.00
+[CSV 862/995] (dry-run) would mark up to chapter 129.0
+[CSV 863/995] Resolving 'Way To Heaven' against Suwayomi sources...
+[CSV 863/995] (dry-run) would add 'Way To Heaven' via MangaDex -> 'Way To Heaven' score 1.00
+[CSV 864/995] (dry-run) would mark up to chapter 222.0
+[CSV 865/995] (dry-run) would mark up to chapter 38.0
+[CSV 866/995] (dry-run) would mark up to chapter 13.2
+[CSV 867/995] (dry-run) would mark up to chapter 96.0
+[CSV 868/995] (dry-run) would mark up to chapter 99.0
+[CSV 869/995] (dry-run) would mark up to chapter 87.0
+[CSV 870/995] (dry-run) would mark up to chapter 51.0
+[CSV 871/995] (dry-run) would mark up to chapter 62.0
+[CSV 872/995] (dry-run) would mark up to chapter 13.2
+[CSV 873/995] (dry-run) would mark up to chapter 22.0
+[CSV 874/995] (dry-run) would mark up to chapter 35.0
+[CSV 875/995] (dry-run) would mark up to chapter 38.0
+[CSV 876/995] (dry-run) would mark up to chapter 68.0
+[CSV 877/995] (dry-run) would mark up to chapter 62.0
+[CSV 878/995] (dry-run) would mark up to chapter 76.0
+[CSV 879/995] (dry-run) would mark up to chapter 76.0
+[CSV 880/995] (dry-run) would mark up to chapter 138.0
+[CSV 881/995] (dry-run) would mark up to chapter 170.0
+[CSV 882/995] (dry-run) would mark up to chapter 58.0
+[CSV 883/995] (dry-run) would mark up to chapter 124.0
+[CSV 884/995] Resolving 'Sweet Reincarnation' against Suwayomi sources...
+[CSV 884/995] (dry-run) would add 'Sweet Reincarnation' via MangaDex -> 'Sweet Reincarnation' score 1.00
+[CSV 885/995] (dry-run) would mark up to chapter 8.0
+[CSV 886/995] Resolving 'Life, Once Again!' against Suwayomi sources...
+[CSV 886/995] (dry-run) would add 'Life, Once Again!' via MangaDex -> 'Life, Once Again!' score 1.00
+[CSV 887/995] (dry-run) would mark up to chapter 19.0
+[CSV 888/995] Resolving 'Cheat Mode Farming in Another World (Official)' against Suwayomi sources...
+[CSV 888/995] (dry-run) would add 'Cheat Mode Farming in Another World (Official)' via MangaPark -> 'Cheat Mode Farming in Another World' score 1.00
+[CSV 889/995] (dry-run) would mark up to chapter 210.0
+[CSV 890/995] Resolving 'The Heavenly Demon's Descendant' against Suwayomi sources...
+[CSV 890/995] (dry-run) would add 'The Heavenly Demon's Descendant' via MangaDex -> 'The Heavenly Demon's Descendant' score 1.00
+[CSV 891/995] Resolving 'X Ten' against Suwayomi sources...
+[CSV 891/995] (dry-run) would add 'X Ten' via MangaDex -> 'X Ten' score 1.00
+[CSV 892/995] (dry-run) would mark up to chapter 46.0
+[CSV 893/995] (dry-run) would mark up to chapter 175.0
+[CSV 894/995] (dry-run) would mark up to chapter 70.0
+[CSV 895/995] (dry-run) would mark up to chapter 53.0
+[CSV 896/995] Resolving 'The Genius Prince's Way to Raising a Nation Out of Debt (Official)' against Suwayomi sources...
+[CSV 896/995] (dry-run) would add 'The Genius Prince's Way to Raising a Nation Out of Debt (Official)' via Bato.to -> 'The Genius Prince's Guide to Raising a Nation Out of Debt (Official)' score 1.00
+[CSV 897/995] Resolving 'I Am the Rising Villain' against Suwayomi sources...
+[CSV 897/995] (dry-run) would add 'I Am the Rising Villain' via MangaDex -> 'I Am the Rising Villain' score 1.00
+[CSV 898/995] Resolving 'Isekai Saikyou no Daimaou, Tensei Shi Boukensha ni Naru' against Suwayomi sources...
+[CSV 898/995] (dry-run) would add 'Isekai Saikyou no Daimaou, Tensei Shi Boukensha ni Naru' via MangaDex -> 'Isekai Saikyou no Daimaou, Tensei Shi Boukensha ni Naru' score 1.00
+[CSV 899/995] Resolving 'Tyranny of the Gale' against Suwayomi sources...
+[CSV 899/995] (dry-run) would add 'Tyranny of the Gale' via MangaDex -> 'Tyranny of the Gale' score 1.00
+[CSV 901/995] (dry-run) would mark up to chapter 50.0
+[CSV 903/995] (dry-run) would mark up to chapter 11.0
+[CSV 905/995] (dry-run) would mark up to chapter 28.0
+[CSV 906/995] (dry-run) would mark up to chapter 100.0
+[CSV 907/995] Resolving 'MagiLumiere Co., Ltd.' against Suwayomi sources...
+[CSV 907/995] (dry-run) would add 'MagiLumiere Co., Ltd.' via MangaDex -> 'MagiLumiere Co., Ltd.' score 1.00
+[CSV 909/995] Resolving 'Sasaki to Pii-chan: Isekai de Slow Life wo Tanoshimou to Shitara, Gendai de Inou Battle ni Makikomareta Ken - Mahou Shoujo ga Up wo Hajimeta you desu' against Suwayomi sources...
+[CSV 909/995] (dry-run) would add 'Sasaki to Pii-chan: Isekai de Slow Life wo Tanoshimou to Shitara, Gendai de Inou Battle ni Makikomareta Ken - Mahou Shoujo ga Up wo Hajimeta you desu' via MangaDex -> 'Sasaki and P-chan' score 1.00
+[CSV 910/995] Resolving 'Warrior Executioner' against Suwayomi sources...
+[CSV 910/995] (dry-run) would add 'Warrior Executioner' via MangaDex -> 'Warrior Executioner' score 1.00
+[CSV 911/995] Resolving 'Hana wa Saku, Shura no Gotoku' against Suwayomi sources...
+[CSV 911/995] (dry-run) would add 'Hana wa Saku, Shura no Gotoku' via MangaDex -> 'Hana wa Saku, Shura no Gotoku' score 1.00
+[CSV 912/995] Resolving 'Iken Senki V÷lundio' against Suwayomi sources...
+[CSV 912/995] (dry-run) would add 'Iken Senki V÷lundio' via MangaDex -> 'Iken Senki V÷lundio' score 1.00
+[CSV 913/995] Resolving 'The Primordial World: Starting by Taking the Minghe as My Adopted Stepdaughter' against Suwayomi sources...
+[CSV 913/995] (dry-run) would add 'The Primordial World: Starting by Taking the Minghe as My Adopted Stepdaughter' via MangaDex -> 'The Primordial World: Starting by Taking the Minghe as My Adopted Stepdaughter' score 1.00
+[CSV 914/995] (dry-run) would mark up to chapter 29.0
+[CSV 915/995] Resolving 'Reincarnation Coliseum: The Weakest Skill Conquers the Strongest Women and Creates a Harem' against Suwayomi sources...
+[CSV 915/995] (dry-run) would add 'Reincarnation Coliseum: The Weakest Skill Conquers the Strongest Women and Creates a Harem' via MangaPark -> 'Reincarnation Colosseum - Using the Weakest Skills in Order to Defeat the Strongest Women and Create a Slave Harem' score 1.00
+[CSV 916/995] (dry-run) would mark up to chapter 20.0
+[CSV 917/995] (dry-run) would mark up to chapter 25.0
+[CSV 918/995] (dry-run) would mark up to chapter 25.0
+[CSV 919/995] (dry-run) would mark up to chapter 6.0
+[CSV 920/995] Resolving 'The Death-Returning Demon King-Class Player: Lost Man' against Suwayomi sources...
+[CSV 920/995] (dry-run) would add 'The Death-Returning Demon King-Class Player: Lost Man' via Bato.to -> 'Reincarnating Demon King-Class Player: Lostman' score 1.00
+[CSV 921/995] (dry-run) would mark up to chapter 36.0
+[CSV 922/995] (dry-run) would mark up to chapter 32.0
+[CSV 923/995] (dry-run) would mark up to chapter 38.0
+[CSV 924/995] (dry-run) would mark up to chapter 33.0
+[CSV 925/995] Resolving 'I Raided the Demon God's Treasure Trove' against Suwayomi sources...
+[CSV 925/995] (dry-run) would add 'I Raided the Demon God's Treasure Trove' via MangaDex -> 'I Raided the Demon God's Treasure Trove' score 1.00
+[CSV 926/995] (dry-run) would mark up to chapter 51.0
+[CSV 927/995] (dry-run) would mark up to chapter 27.0
+[CSV 928/995] Resolving 'Growth-Type Superhero' against Suwayomi sources...
+[CSV 928/995] (dry-run) would add 'Growth-Type Superhero' via MangaDex -> 'Growth-Type Superhero' score 1.00
+[CSV 929/995] (dry-run) would mark up to chapter 116.0
+[CSV 930/995] (dry-run) would mark up to chapter 56.0
+[CSV 931/995] (dry-run) would mark up to chapter 67.0
+[CSV 932/995] (dry-run) would mark up to chapter 57.0
+[CSV 933/995] (dry-run) would mark up to chapter 36.0
+[CSV 934/995] Resolving 'Centuria' against Suwayomi sources...
+[CSV 934/995] (dry-run) would add 'Centuria' via MangaDex -> 'Centuria' score 1.00
+[CSV 935/995] (dry-run) would mark up to chapter 36.0
+[CSV 936/995] (dry-run) would mark up to chapter 34.0
+[CSV 937/995] (dry-run) would mark up to chapter 36.0
+[CSV 938/995] (dry-run) would mark up to chapter 25.0
+[CSV 939/995] (dry-run) would mark up to chapter 21.0
+[CSV 940/995] (dry-run) would mark up to chapter 23.0
+[CSV 942/995] (dry-run) would mark up to chapter 40.0
+[CSV 944/995] (dry-run) would mark up to chapter 44.0
+[CSV 945/995] (dry-run) would mark up to chapter 32.0
+[CSV 946/995] (dry-run) would mark up to chapter 29.0
+[CSV 948/995] Resolving 'The Legendary Assassin Reincarnated as the Beloved Youngest Daughter of a Royal Family' against Suwayomi sources...
+[CSV 948/995] (dry-run) would add 'The Legendary Assassin Reincarnated as the Beloved Youngest Daughter of a Royal Family' via MangaDex -> 'The Legendary Assassin Reincarnated as the Beloved Youngest Daughter of a Royal Family' score 1.00
+[CSV 949/995] (dry-run) would mark up to chapter 15.0
+[CSV 950/995] (dry-run) would mark up to chapter 20.0
+[CSV 951/995] (dry-run) would mark up to chapter 16.0
+[CSV 952/995] Resolving 'The Birth of Ramen' against Suwayomi sources...
+[CSV 952/995] (dry-run) would add 'The Birth of Ramen' via MangaDex -> 'The Birth of Ramen' score 1.00
+[CSV 953/995] (dry-run) would mark up to chapter 12.0
+[CSV 955/995] Resolving 'Everyone Loves Her' against Suwayomi sources...
+[CSV 955/995] (dry-run) would add 'Everyone Loves Her' via MangaDex -> 'Everyone Loves Her' score 1.00
+[CSV 957/995] Resolving 'Martial Evolution: Start by Awakening the King of Monsters' against Suwayomi sources...
+[CSV 957/995] (dry-run) would add 'Martial Evolution: Start by Awakening the King of Monsters' via MangaDex -> 'Martial Evolution: Start by Awakening the King of Monsters' score 1.00
+[CSV 958/995] Resolving 'Invincible Starts with a Severed Hand' against Suwayomi sources...
+[CSV 958/995] (dry-run) would add 'Invincible Starts with a Severed Hand' via MangaDex -> 'Invincible Starts with a Severed Hand' score 1.00
+[CSV 959/995] Resolving 'Everyone Was Obsessed With Me After I Became the Youngest Princess' Favourite' against Suwayomi sources...
+[CSV 959/995] (dry-run) would add 'Everyone Was Obsessed With Me After I Became the Youngest Princess' Favourite' via MangaDex -> 'Everyone Was Obsessed With Me After I Became the Youngest Princess' Favourite' score 1.00
+[CSV 961/995] (dry-run) would mark up to chapter 19.0
+[CSV 963/995] (dry-run) would mark up to chapter 284.0
+[CSV 965/995] (dry-run) would mark up to chapter 43.0
+[CSV 966/995] Resolving 'The Students of Illip Arts High' against Suwayomi sources...
+[CSV 966/995] (dry-run) would add 'The Students of Illip Arts High' via MangaDex -> 'The Students of Illip Arts High' score 1.00
+[CSV 968/995] (dry-run) would mark up to chapter 39.0
+[CSV 969/995] Resolving 'The Fake Master Who Accidentally Became the Strongest' against Suwayomi sources...
+[CSV 969/995] (dry-run) would add 'The Fake Master Who Accidentally Became the Strongest' via MangaPark -> 'The Fake Master Who Accidentally Became the Strongest' score 1.00
+[CSV 970/995] (dry-run) would mark up to chapter 27.0
+[CSV 971/995] Resolving 'King of Gacha ~GodÆs Gamer~' against Suwayomi sources...
+[CSV 971/995] (dry-run) would add 'King of Gacha ~GodÆs Gamer~' via MangaDex -> 'King of Gacha ~GodÆs Gamer~' score 1.00
+[CSV 972/995] (dry-run) would mark up to chapter 10.0
+[CSV 973/995] Resolving 'The Demon Lord Reincarnated as a Slave ~Rising to the Top to Rewrite History~' against Suwayomi sources...
+[CSV 973/995] (dry-run) would add 'The Demon Lord Reincarnated as a Slave ~Rising to the Top to Rewrite History~' via MangaDex -> 'The Demon Lord Reincarnated as a Slave ~Rising to the Top to Rewrite History~' score 1.00
+[CSV 976/995] (dry-run) would mark up to chapter 35.0
+[CSV 978/995] (dry-run) would mark up to chapter 193.0
+[CSV 979/995] (dry-run) would mark up to chapter 21.0
+[CSV 981/995] Resolving 'Apocalypse: Cockroaches Gives Me Buff' against Suwayomi sources...
+[CSV 981/995] (dry-run) would add 'Apocalypse: Cockroaches Gives Me Buff' via MangaDex -> 'Apocalypse: Cockroaches Gives Me Buff' score 1.00
+[CSV 984/995] (dry-run) would mark up to chapter 6.0
+[CSV 985/995] (dry-run) would mark up to chapter 90.0
+[CSV 986/995] (dry-run) would mark up to chapter 20.0
+[CSV 987/995] Resolving 'Magician' against Suwayomi sources...
+[CSV 987/995] (dry-run) would add 'Magician' via MangaDex -> 'Magician' score 1.00
+[CSV 988/995] (dry-run) would mark up to chapter 21.0
+[CSV 991/995] (dry-run) would mark up to chapter 25.0
+[CSV 992/995] Resolving 'Mugen no Skill Getter!' against Suwayomi sources...
+[CSV 992/995] (dry-run) would add 'Mugen no Skill Getter!' via MangaDex -> 'Mugen no Skill Getter!' score 1.00
+[CSV 993/995] (dry-run) would mark up to chapter 194.0
+[CSV 994/995] Resolving 'Hassai kara Hajimaru Kamigami no Shito no Tensei Seikatsu' against Suwayomi sources...
+[CSV 994/995] (dry-run) would add 'Hassai kara Hajimaru Kamigami no Shito no Tensei Seikatsu' via MangaDex -> 'Hassai kara Hajimaru Kamigami no Shito no Tensei Seikatsu' score 1.00
+Found 0 MangaDex IDs; Added: 0, Failed: 0
+CSV summary: rows=995, matched=995, unmatched=0
+CSV direct import: added=363, existing=632, failed=0
+CSV read progress applied=569, skipped=0

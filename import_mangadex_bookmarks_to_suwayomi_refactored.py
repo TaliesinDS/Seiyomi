@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import re
 import sys
 import json
@@ -10,6 +12,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Iterable, List, Optional, Tuple, Dict, Any, Set
 import math
+from urllib.parse import urlparse
 
 try:
     import pandas as pd  # Optional, only used for xlsx/csv convenience
@@ -17,6 +20,22 @@ except Exception:
     pd = None
 
 import requests
+
+# Ensure console printing never crashes on non-ASCII titles (common on Windows)
+try:
+    sys.stdout.reconfigure(errors="replace", line_buffering=True, write_through=True)  # type: ignore[attr-defined]
+except Exception:
+    try:
+        sys.stdout.flush()
+    except Exception:
+        pass
+try:
+    sys.stderr.reconfigure(errors="replace", line_buffering=True, write_through=True)  # type: ignore[attr-defined]
+except Exception:
+    try:
+        sys.stderr.flush()
+    except Exception:
+        pass
 
 # MangaDex API base (public)
 MANGADEX_API = "https://api.mangadex.org"
@@ -341,6 +360,470 @@ def _title_similarity(a: str, b: str) -> float:
     inter = ta & tb
     union = ta | tb
     return len(inter) / len(union) if union else 0.0
+
+
+def _gather_titles_from_library_entry(entry: Dict[str, Any]) -> List[str]:
+    titles: List[str] = []
+    for key in ("title", "name"):
+        val = entry.get(key)
+        if isinstance(val, str) and val.strip():
+            titles.append(val)
+    manga_info = entry.get('manga')
+    if isinstance(manga_info, dict):
+        for key in ("title", "name"):
+            val = manga_info.get(key)
+            if isinstance(val, str) and val.strip():
+                titles.append(val)
+    info = entry.get('info')
+    if isinstance(info, dict):
+        for key in ("title", "name"):
+            val = info.get(key)
+            if isinstance(val, str) and val.strip():
+                titles.append(val)
+    return titles
+
+
+def _register_library_title(
+    mapper: Dict[str, int],
+    internal_id: int,
+    title: str,
+    norms_map: Optional[Dict[int, Set[str]]] = None,
+    title_map: Optional[Dict[int, str]] = None,
+) -> None:
+    norm = " ".join(_normalize_title_tokens(title))
+    if norm and norm not in mapper:
+        mapper[norm] = internal_id
+    if norm and norms_map is not None:
+        norms_map.setdefault(internal_id, set()).add(norm)
+    if title_map is not None and title and title.strip():
+        title_map.setdefault(internal_id, title.strip())
+
+
+def _build_library_lookup(entries: List[Dict[str, Any]]) -> Tuple[Dict[str, int], Dict[int, Set[str]], Dict[int, str]]:
+    lookup: Dict[str, int] = {}
+    norms_by_id: Dict[int, Set[str]] = {}
+    title_by_id: Dict[int, str] = {}
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        raw_id = entry.get('id') or entry.get('mangaId') or entry.get('manga_id')
+        try:
+            internal_id = int(raw_id)
+        except Exception:
+            continue
+        for title in _gather_titles_from_library_entry(entry):
+            _register_library_title(lookup, internal_id, title, norms_by_id, title_by_id)
+    return lookup, norms_by_id, title_by_id
+
+
+def _slug_source(src: Dict[str, Any]) -> str:
+    base = (src.get('name') or src.get('apkName') or src.get('pkgName') or src.get('className') or "").lower()
+    return re.sub(r"[^a-z0-9]+", "", base)
+
+
+def _csv_item_source_hints(item: CsvItem) -> List[str]:
+    hints: List[str] = []
+    if item.source:
+        hints.append(item.source.lower())
+    for key, value in item.external_ids.items():
+        if key:
+            hints.append(str(key).lower())
+        if value:
+            val_lower = str(value).lower()
+            try:
+                parsed = urlparse(value)
+                if parsed.netloc:
+                    hints.append(parsed.netloc)
+            except Exception:
+                pass
+            for token in re.findall(r"[a-z0-9]+", val_lower):
+                if token in {"https", "http", "www", "com", "net", "org", "m", "app"}:
+                    continue
+                hints.append(token)
+    cleaned: List[str] = []
+    for hint in hints:
+        slug = re.sub(r"[^a-z0-9]+", "", hint)
+        if slug and slug not in cleaned:
+            cleaned.append(slug)
+    return cleaned
+
+
+def _select_candidate_sources(sources: List[Dict[str, Any]], item: CsvItem) -> List[Dict[str, Any]]:
+    if not sources:
+        return []
+    hints = _csv_item_source_hints(item)
+    if not hints:
+        return sources
+    primary: List[Dict[str, Any]] = []
+    for src in sources:
+        slug = _slug_source(src)
+        if not slug:
+            continue
+        if any(hint in slug for hint in hints):
+            primary.append(src)
+    return primary or sources
+
+
+def _score_source_candidate(item: CsvItem, candidate: Dict[str, Any], match_title: str) -> float:
+    score = _title_similarity(item.title, match_title)
+    for syn in item.synonyms:
+        score = max(score, _title_similarity(syn, match_title))
+    meta = " ".join(str(candidate.get(k, "")) for k in ("url", "link", "key", "sourceUrl", "source_url"))
+    meta = meta.lower()
+    for ext in item.external_ids.values():
+        if not ext:
+            continue
+        ext_norm = re.sub(r"[^a-z0-9]+", "", str(ext).lower())
+        if ext_norm and ext_norm in re.sub(r"[^a-z0-9]+", "", meta):
+            score += 0.4
+    return min(score, 1.0)
+
+
+def _find_best_source_candidate(
+    client: SuwayomiClient,
+    sources: List[Dict[str, Any]],
+    item: CsvItem,
+    show_progress: bool,
+    prefix: str,
+    title_threshold: float,
+    title_strict: bool,
+) -> Optional[Tuple[int, Dict[str, Any], str, float]]:
+    best: Optional[Tuple[int, Dict[str, Any], str, float]] = None
+    title_variants: List[str] = []
+
+    def _add_variant(text: str) -> None:
+        text = (text or "").strip()
+        if text and text not in title_variants:
+            title_variants.append(text)
+
+    _add_variant(item.title)
+    for syn in item.synonyms:
+        _add_variant(syn)
+    if item.title:
+        base = re.sub(r"[\(\[\{].*?[\)\]\}]", "", item.title)
+        base = re.sub(r"[^0-9A-Za-z\s]", " ", base)
+        _add_variant(base)
+
+    for src in sources:
+        sid = src.get('id')
+        try:
+            source_id = int(sid)
+        except Exception:
+            continue
+        for query in title_variants:
+            try:
+                resp = client.search_source(source_id, query, page=1)
+            except Exception as exc:
+                if show_progress:
+                    print(f"{prefix}WARN search {src.get('name') or sid}: {exc}")
+                continue
+            items = SuwayomiClient.normalize_search_items(resp)
+            for cand in items:
+                manga_id = SuwayomiClient.extract_manga_id(cand)
+                if manga_id is None:
+                    continue
+                cand_title = str(cand.get('title') or cand.get('name') or "")
+                if not cand_title:
+                    continue
+                compare_texts = [item.title] + [syn for syn in item.synonyms if syn]
+                if item.title:
+                    normalized_base = re.sub(r"[\(\[\{].*?[\)\]\}]", "", item.title)
+                    normalized_base = re.sub(r"[^0-9A-Za-z\s]", " ", normalized_base).strip()
+                    if normalized_base and normalized_base not in compare_texts:
+                        compare_texts.append(normalized_base)
+                sims = [_title_similarity(txt, cand_title) for txt in compare_texts if txt]
+                best_sim = max(sims) if sims else 0.0
+                passes = False
+                if title_strict:
+                    for txt in compare_texts:
+                        if txt and _is_title_match(txt, cand_title, threshold=max(0.0, min(1.0, title_threshold)), strict_exact=True):
+                            passes = True
+                            break
+                else:
+                    passes = best_sim >= max(0.0, min(1.0, title_threshold))
+                if not passes:
+                    continue
+                score = _score_source_candidate(item, cand, cand_title)
+                if best is None or score > best[3]:
+                    best = (int(manga_id), src, cand_title, score)
+            if best and best[3] >= 0.95:
+                return best
+    return best
+
+
+def _apply_status_category_direct(
+    client: SuwayomiClient,
+    internal_id: int,
+    status_value: Optional[str],
+    status_category_map: Dict[str, int],
+    status_default_category: Optional[int],
+    status_map_debug: bool,
+    prefix: str,
+    show_progress: bool,
+    dry_run: bool,
+) -> None:
+    status_norm = (status_value or "").strip().lower()
+    target_cat: Optional[int] = None
+    via = ''
+    if status_norm and status_category_map:
+        target_cat = status_category_map.get(status_norm)
+        via = 'map'
+    if target_cat is None and status_default_category is not None:
+        target_cat = status_default_category
+        via = 'default'
+    if target_cat is None:
+        if status_map_debug and show_progress:
+            display = status_value or '(none)'
+            print(f"{prefix}STATUS {display} -> no mapping applied")
+        return
+    if dry_run:
+        if status_map_debug and show_progress:
+            display = status_value or '(none)'
+            print(f"{prefix}STATUS {display} -> cat {target_cat} ({via}) (dry-run)")
+        return
+    try:
+        ok = client.add_manga_to_category(internal_id, target_cat)
+        if status_map_debug and show_progress:
+            display = status_value or '(none)'
+            print(f"{prefix}STATUS {display} -> cat {target_cat} ({via}) {'OK' if ok else 'FAIL'}")
+    except Exception as exc:
+        if status_map_debug and show_progress:
+            display = status_value or '(none)'
+            print(f"{prefix}STATUS {display} -> cat {target_cat} ERROR {exc}")
+
+
+def process_csv_direct_items(
+    client: SuwayomiClient,
+    items: List[CsvItem],
+    *,
+    dry_run: bool,
+    prefer_existing: bool,
+    no_add_library: bool,
+    status_category_map: Dict[str, int],
+    status_default_category: Optional[int],
+    status_map_debug: bool,
+    show_progress: bool,
+    apply_read_progress: bool,
+    chapter_sync_conf: Optional[Dict[str, Any]],
+    title_threshold: float,
+    title_strict: bool,
+) -> Tuple[List[Tuple[CsvItem, int, str]], List[Tuple[CsvItem, int, str]], List[Tuple[CsvItem, str]], int, int]:
+    if not items:
+        return [], [], [], 0, 0
+
+    if show_progress:
+        print(f"[CSV] Preparing library snapshot for {len(items)} CSV items...")
+    try:
+        library_entries = client.get_library_graphql() or client.get_library() or []
+    except Exception:
+        library_entries = []
+    if show_progress:
+        print(f"[CSV] Library snapshot loaded ({len(library_entries)} entries).")
+    lookup, norms_by_id, title_by_id = _build_library_lookup(library_entries)
+    if show_progress:
+        print("[CSV] Fetching configured sources from Suwayomi...")
+    try:
+        sources = client.get_sources()
+    except Exception:
+        sources = []
+    if show_progress:
+        print(f"[CSV] Source list ready ({len(sources)} entries).")
+
+    added: List[Tuple[CsvItem, int, str]] = []
+    matched_existing: List[Tuple[CsvItem, int, str]] = []
+    failures: List[Tuple[CsvItem, str]] = []
+    progress_applied = 0
+    progress_skipped = 0
+    rpm = 300
+    delay = 0.0
+    only_if_ahead = False
+    if chapter_sync_conf:
+        rpm = int(chapter_sync_conf.get('rpm', rpm))
+        delay = float(chapter_sync_conf.get('delay', delay) or 0.0)
+        only_if_ahead = bool(chapter_sync_conf.get('only_if_ahead'))
+
+    total = len(items)
+
+    def _apply_cross_source_progress(
+        primary_id: int,
+        target: float,
+        shared_norms: Set[str],
+        prefix: str,
+    ) -> None:
+        nonlocal progress_applied, progress_skipped
+        if not chapter_sync_conf or not chapter_sync_conf.get('across_sources'):
+            return
+        if not shared_norms:
+            return
+        seen_targets: Set[int] = set()
+        for other_id, other_norms in norms_by_id.items():
+            if other_id == primary_id:
+                continue
+            if other_id in seen_targets:
+                continue
+            if not other_norms or not shared_norms.intersection(other_norms):
+                continue
+            seen_targets.add(other_id)
+            label = title_by_id.get(other_id, f"id={other_id}")
+            if dry_run:
+                if show_progress:
+                    print(f"{prefix}(dry-run) would also mark '{label}' (id={other_id}) up to chapter {target} [cross-source]")
+                continue
+            if only_if_ahead:
+                current = _compute_entry_progress_by_number(client, other_id)
+                if current is not None and current >= target:
+                    progress_skipped += 1
+                    if show_progress:
+                        print(f"{prefix}SKIP cross-source '{label}' (id={other_id}) already at {current}")
+                    continue
+            try:
+                _mark_entry_up_to_number(client, other_id, target, rpm, dry_run=False)
+                progress_applied += 1
+                if show_progress:
+                    print(f"{prefix}Cross-source marked '{label}' (id={other_id}) up to chapter {target}")
+            except Exception as exc:
+                progress_skipped += 1
+                if show_progress:
+                    print(f"{prefix}WARN cross-source read-progress failed for '{label}' (id={other_id}): {exc}")
+
+    if show_progress and not items:
+        print("[CSV] No CSV rows to process after filtering.")
+    for idx, item in enumerate(items, 1):
+        prefix = f"[CSV {idx}/{total}] " if show_progress else ""
+        norm_candidates: List[str] = []
+        for label in [item.title] + list(item.synonyms):
+            norm = " ".join(_normalize_title_tokens(label))
+            if norm and norm not in norm_candidates:
+                norm_candidates.append(norm)
+        norm_set: Set[str] = set(norm_candidates)
+        internal_id = None
+        for norm in norm_candidates:
+            internal_id = lookup.get(norm)
+            if internal_id is not None:
+                break
+        if internal_id is not None:
+            _register_library_title(lookup, internal_id, item.title, norms_by_id, title_by_id)
+            for syn in item.synonyms:
+                _register_library_title(lookup, internal_id, syn, norms_by_id, title_by_id)
+            matched_existing.append((item, internal_id, 'existing'))
+            _apply_status_category_direct(
+                client=client,
+                internal_id=internal_id,
+                status_value=item.status,
+                status_category_map=status_category_map,
+                status_default_category=status_default_category,
+                status_map_debug=status_map_debug,
+                prefix=prefix,
+                show_progress=show_progress,
+                dry_run=dry_run,
+            )
+            if apply_read_progress and item.last_read_chapter:
+                target = _parse_chapter_hint_to_float(item.last_read_chapter)
+                if target is not None:
+                    if dry_run:
+                        progress_applied += 1
+                        if show_progress:
+                            print(f"{prefix}(dry-run) would mark up to chapter {target}")
+                        _apply_cross_source_progress(internal_id, target, norm_set, prefix)
+                    else:
+                        if delay > 0:
+                            time.sleep(delay)
+                        if only_if_ahead:
+                            current = _compute_entry_progress_by_number(client, internal_id)
+                            if current is not None and current >= target:
+                                progress_skipped += 1
+                                continue
+                        try:
+                            _mark_entry_up_to_number(client, internal_id, target, rpm, dry_run=False)
+                            progress_applied += 1
+                            _apply_cross_source_progress(internal_id, target, norm_set, prefix)
+                        except Exception as exc:
+                            progress_skipped += 1
+                            if show_progress:
+                                print(f"{prefix}WARN read-progress failed: {exc}")
+            continue
+        if prefer_existing:
+            failures.append((item, "no existing entry"))
+            if show_progress:
+                print(f"{prefix}SKIP '{item.title}' (prefer-existing)")
+            continue
+        if no_add_library:
+            failures.append((item, "--no-add-library"))
+            if show_progress:
+                print(f"{prefix}SKIP '{item.title}' (--no-add-library)")
+            continue
+        if show_progress:
+            print(f"{prefix}Resolving '{item.title}' against Suwayomi sources...")
+        candidate_sources = _select_candidate_sources(sources, item)
+        best = _find_best_source_candidate(
+            client,
+            candidate_sources,
+            item,
+            show_progress,
+            prefix,
+            title_threshold,
+            title_strict,
+        )
+        if not best:
+            failures.append((item, "no source candidate"))
+            if show_progress:
+                print(f"{prefix}FAIL '{item.title}' (no source match)")
+            continue
+        manga_id, src, cand_title, score = best
+        label = str(src.get('name') or src.get('apkName') or src.get('pkgName') or 'source')
+        if dry_run:
+            added.append((item, manga_id, label))
+            if show_progress:
+                print(f"{prefix}(dry-run) would add '{item.title}' via {label} -> '{cand_title}' score {score:.2f}")
+            if apply_read_progress and item.last_read_chapter:
+                target = _parse_chapter_hint_to_float(item.last_read_chapter)
+                if target is not None:
+                    _apply_cross_source_progress(manga_id, target, norm_set, prefix)
+            continue
+        ok = False
+        try:
+            ok = client.add_to_library(manga_id)
+        except Exception as exc:
+            failures.append((item, f"add failed: {exc}"))
+            if show_progress:
+                print(f"{prefix}FAIL add '{item.title}': {exc}")
+            continue
+        if not ok:
+            failures.append((item, "add returned false"))
+            if show_progress:
+                print(f"{prefix}FAIL add '{item.title}' (returned False)")
+            continue
+        added.append((item, manga_id, label))
+        # update lookup for subsequent matches in this run
+        _register_library_title(lookup, manga_id, cand_title, norms_by_id, title_by_id)
+        _register_library_title(lookup, manga_id, item.title, norms_by_id, title_by_id)
+        for syn in item.synonyms:
+            _register_library_title(lookup, manga_id, syn, norms_by_id, title_by_id)
+        _apply_status_category_direct(
+            client=client,
+            internal_id=manga_id,
+            status_value=item.status,
+            status_category_map=status_category_map,
+            status_default_category=status_default_category,
+            status_map_debug=status_map_debug,
+            prefix=prefix,
+            show_progress=show_progress,
+            dry_run=dry_run,
+        )
+        if apply_read_progress and item.last_read_chapter:
+            target = _parse_chapter_hint_to_float(item.last_read_chapter)
+            if target is not None:
+                if delay > 0:
+                    time.sleep(delay)
+                try:
+                    _mark_entry_up_to_number(client, manga_id, target, rpm, dry_run=False)
+                    progress_applied += 1
+                    _apply_cross_source_progress(manga_id, target, norm_set, prefix)
+                except Exception as exc:
+                    progress_skipped += 1
+                    if show_progress:
+                        print(f"{prefix}WARN read-progress failed: {exc}")
+    return added, matched_existing, failures, progress_applied, progress_skipped
 
 def _is_title_match(a: str, b: str, threshold: float = 0.6, strict_exact: bool = False) -> bool:
     na = " ".join(_normalize_title_tokens(a))
@@ -1676,28 +2159,14 @@ def fetch_all_statuses(session_token: str) -> Dict[str, str]:
         if r.status_code != 200:
             return {}
         raw = r.json().get('statuses') or {}
-        out: Dict[str, str] = {}
-        for k, v in raw.items():
-            if isinstance(v, str):
-                out[k] = v.lower()
-            elif isinstance(v, dict):
-                sv = v.get('status') or v.get('readingStatus') or v.get('value')
-                if isinstance(sv, str):
-                    out[k] = sv.lower()
-        return out
+        return raw
     except Exception:
         return {}
 
 
 def fetch_suwayomi_chapters(client: SuwayomiClient, manga_internal_id: int) -> List[Dict[str, Any]]:
     try:
-        r = client.request("GET", f"/api/v1/manga/{manga_internal_id}/chapters")
-        if r.status_code != 200:
-            return []
-        js = r.json()
-        # adaptive: look for list keys
-        if isinstance(js, list):
-            return js
+        js = client.request("GET", f"/api/v1/manga/{manga_internal_id}/chapters").json()
         for key in ("chapters", "chapterList", "data"):
             if key in js and isinstance(js[key], list):
                 return js[key]
@@ -2239,6 +2708,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     p.add_argument("--csv-status-to-category", help="Map CSV status values to category IDs (e.g. reading=5,completed=9).")
     p.add_argument("--csv-title-threshold", type=float, default=0.6, help="Similarity threshold (0..1) when matching CSV rows to MangaDex titles (default 0.6).")
     p.add_argument("--csv-title-strict", action="store_true", help="Require near-exact normalized title matches for CSV rows (disables fuzzy-only matches).")
+    p.add_argument("--csv-no-mangadex", action="store_true", help="Skip MangaDex lookup when importing CSV rows and work directly with Suwayomi sources.")
     p.add_argument("--csv-apply-read-progress", action="store_true", help="Record last read chapter hints from CSV rows for later read-sync attempts.")
     p.add_argument("--csv-prefer-existing", action=argparse.BooleanOptionalAction, default=False, help="Skip CSV rows when a matching title already exists in Suwayomi (default: off). Use --csv-prefer-existing to enable or --no-csv-prefer-existing to disable explicitly.")
     p.add_argument("--base-url", required=True, help="Suwayomi base URL, e.g. http://localhost:4567")
@@ -2362,6 +2832,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     csv_progress_map: Dict[str, str] = {}
     csv_resolution_failures: List[Tuple[CsvItem, str]] = []
     csv_resolved_source: Dict[str, CsvItem] = {}
+    csv_direct_items: List[CsvItem] = []
     if getattr(args, 'csv_files', None):
         for csv_path in args.csv_files:
             try:
@@ -2465,27 +2936,30 @@ def main(argv: Optional[List[str]] = None) -> int:
             return 3
 
     if csv_items:
-        seen_ids: Set[str] = set(ids)
-        threshold = max(0.0, min(1.0, float(getattr(args, 'csv_title_threshold', 0.6))))
-        for item in csv_items:
-            match = find_mangadex_match_for_item(item, threshold=threshold, strict_exact=bool(args.csv_title_strict))
-            if match is None:
-                csv_resolution_failures.append((item, "no match above threshold"))
-                continue
-            md_id, matched_title, score = match
-            csv_resolved_source[md_id] = item
-            if item.status:
-                csv_status_map[md_id] = item.status.lower()
-            if args.csv_apply_read_progress and item.last_read_chapter:
-                csv_progress_map[md_id] = item.last_read_chapter
-            if md_id not in seen_ids:
-                ids.append(md_id)
-                seen_ids.add(md_id)
-            if READ_SYNC_DEBUG:
-                try:
-                    print(f"[csv-debug] matched '{item.title}' -> {md_id} ({matched_title}) score={score:.2f}")
-                except Exception:
-                    pass
+        if getattr(args, 'csv_no_mangadex', False):
+            csv_direct_items.extend(csv_items)
+        else:
+            seen_ids: Set[str] = set(ids)
+            threshold = max(0.0, min(1.0, float(getattr(args, 'csv_title_threshold', 0.6))))
+            for item in csv_items:
+                match = find_mangadex_match_for_item(item, threshold=threshold, strict_exact=bool(args.csv_title_strict))
+                if match is None:
+                    csv_resolution_failures.append((item, "no match above threshold"))
+                    continue
+                md_id, matched_title, score = match
+                csv_resolved_source[md_id] = item
+                if item.status:
+                    csv_status_map[md_id] = item.status.lower()
+                if args.csv_apply_read_progress and item.last_read_chapter:
+                    csv_progress_map[md_id] = item.last_read_chapter
+                if md_id not in seen_ids:
+                    ids.append(md_id)
+                    seen_ids.add(md_id)
+                if READ_SYNC_DEBUG:
+                    try:
+                        print(f"[csv-debug] matched '{item.title}' -> {md_id} ({matched_title}) score={score:.2f}")
+                    except Exception:
+                        pass
 
     # Optionally merge or replace with all-statuses library set
     library_statuses_all: Dict[str, str] = {}
@@ -2515,7 +2989,14 @@ def main(argv: Optional[List[str]] = None) -> int:
             print(f"[read-debug] merged ids total: {len(ids)}")
         except Exception:
             pass
-    if not ids and not args.list_categories and not args.migrate_library and not getattr(args, 'prune_zero_duplicates', False) and not getattr(args, 'prune_nonpreferred_langs', False):
+    if (
+        not ids
+        and not csv_direct_items
+        and not args.list_categories
+        and not args.migrate_library
+        and not getattr(args, 'prune_zero_duplicates', False)
+        and not getattr(args, 'prune_nonpreferred_langs', False)
+    ):
         print("No MangaDex IDs to process (empty file and no follows fetched). Use --migrate-library or a prune mode to operate only on Suwayomi.")
         return 1
 
@@ -2820,42 +3301,8 @@ def main(argv: Optional[List[str]] = None) -> int:
     csv_existing_skips: List[Tuple[str, str]] = []
     csv_existing_internal: Dict[str, int] = {}
     if csv_resolved_source and getattr(args, 'csv_prefer_existing', False):
-        existing_entries: List[Dict[str, Any]] = []
-        try:
-            existing_entries = client.get_library_graphql() or client.get_library() or []
-        except Exception as e:
-            if READ_SYNC_DEBUG:
-                print(f"[csv-debug] existing library fetch failed: {e}")
-            existing_entries = []
-        normalized_existing: Set[str] = set()
-        existing_by_norm: Dict[str, int] = {}
-
-        def _register_existing_entry(payload: Dict[str, Any]) -> None:
-            raw_id = payload.get('id') or payload.get('mangaId') or payload.get('manga_id')
-            try:
-                mid_int = int(raw_id)
-            except Exception:
-                return
-            titles: List[str] = []
-            for key in ("title", "name"):
-                val = payload.get(key)
-                if isinstance(val, str) and val.strip():
-                    titles.append(val)
-            manga_info = payload.get('manga')
-            if isinstance(manga_info, dict):
-                for key in ("title", "name"):
-                    val = manga_info.get(key)
-                    if isinstance(val, str) and val.strip():
-                        titles.append(val)
-            for title in titles:
-                norm = " ".join(_normalize_title_tokens(title))
-                if norm:
-                    normalized_existing.add(norm)
-                    existing_by_norm.setdefault(norm, mid_int)
-
-        for entry in existing_entries:
-            if isinstance(entry, dict):
-                _register_existing_entry(entry)
+        normalized_existing: Set[str] = set(lookup.keys())
+        existing_by_norm: Dict[str, int] = dict(lookup)
         if normalized_existing:
             filtered_ids: List[str] = []
             for md in ids:
@@ -3633,6 +4080,29 @@ def main(argv: Optional[List[str]] = None) -> int:
             } if args.rehoming_enabled else None,
         )
 
+    direct_added: List[Tuple[CsvItem, int, str]] = []
+    direct_existing: List[Tuple[CsvItem, int, str]] = []
+    direct_failures: List[Tuple[CsvItem, str]] = []
+    direct_progress_applied = 0
+    direct_progress_skipped = 0
+    if csv_direct_items:
+        print(f"CSV direct import mode: {len(csv_direct_items)} rows queued (CSV-only={bool(getattr(args, 'csv_no_mangadex', False))}, MangaDex IDs={len(ids)}).")
+        direct_added, direct_existing, direct_failures, direct_progress_applied, direct_progress_skipped = process_csv_direct_items(
+            client=client,
+            items=csv_direct_items,
+            dry_run=bool(args.dry_run),
+            prefer_existing=bool(getattr(args, 'csv_prefer_existing', False)),
+            no_add_library=bool(args.no_add_library),
+            status_category_map=status_map,
+            status_default_category=args.status_default_category,
+            status_map_debug=bool(args.status_map_debug),
+            show_progress=not args.no_progress,
+            apply_read_progress=bool(args.csv_apply_read_progress),
+            chapter_sync_conf=chapter_sync_conf,
+            title_threshold=max(0.0, min(1.0, float(getattr(args, 'csv_title_threshold', 0.6) or 0.0))),
+            title_strict=bool(getattr(args, 'csv_title_strict', False)),
+        )
+
     print(f"Found {len(ids)} MangaDex IDs; Added: {added}, Failed: {failed}")
     if failures:
         print("Failures:")
@@ -3641,8 +4111,12 @@ def main(argv: Optional[List[str]] = None) -> int:
         if len(failures) > 50:
             print(f"  ... and {len(failures) - 50} more")
 
+    if direct_failures:
+        for item, reason in direct_failures:
+            csv_resolution_failures.append((item, reason))
+
     if csv_total_rows:
-        matched = len(csv_resolved_source)
+        matched = len(csv_resolved_source) + len(direct_added) + len(direct_existing)
         unmatched = max(0, csv_total_rows - matched)
         print(f"CSV summary: rows={csv_total_rows}, matched={matched}, unmatched={unmatched}")
         if csv_existing_skips:
@@ -3653,6 +4127,8 @@ def main(argv: Optional[List[str]] = None) -> int:
                 print(f"  {item.title}: {reason}")
             if len(csv_resolution_failures) > 10:
                 print(f"  ... and {len(csv_resolution_failures) - 10} more")
+        if csv_direct_items:
+            print(f"CSV direct import: added={len(direct_added)}, existing={len(direct_existing)}, failed={len(direct_failures)}")
 
     csv_progress_applied = 0
     csv_progress_skipped = 0
@@ -3735,8 +4211,10 @@ def main(argv: Optional[List[str]] = None) -> int:
                 csv_progress_skipped += 1
                 if READ_SYNC_DEBUG:
                     print(f"[csv-progress] failed for {md_key}: {exc}")
-        if csv_progress_applied or csv_progress_skipped:
-            print(f"CSV read progress applied={csv_progress_applied}, skipped={csv_progress_skipped}")
+    csv_progress_applied += direct_progress_applied
+    csv_progress_skipped += direct_progress_skipped
+    if args.csv_apply_read_progress and (csv_progress_applied or csv_progress_skipped):
+        print(f"CSV read progress applied={csv_progress_applied}, skipped={csv_progress_skipped}")
 
     if READ_SYNC_DEBUG:
         try:

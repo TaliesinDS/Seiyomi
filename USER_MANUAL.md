@@ -20,10 +20,10 @@ It can:
 
 ### CSV Bookmark Imports (Comick / Manganato)
 
-- Open the new **CSV Import** tab in the GUI to add one or more bookmarks CSV exports alongside MangaDex data. Use **Add...** to load files and the check-box to enable or disable the batch.
-- Optional controls let you override column names (`--csv-col-map`), map CSV reading statuses to Suwayomi categories (`--csv-status-to-category`), adjust title matching (`--csv-title-threshold`, `--csv-title-strict`), prefer existing library copies (`--csv-prefer-existing`), and apply per-title read hints from the CSV (`--csv-apply-read-progress`).
-- The GUI mirrors the CLI flags: each CSV file results in a `--from-csv <path>` argument. Kind detection matches automatically, but you can force `comick` or `manganato` via the drop-down (`--csv-kind`). Separate multiple column overrides with semicolons or newlines (each becomes its own `--csv-col-map` argument).
-- CSV progress hints target the Suwayomi library both for newly added entries and ones you already have; skipped rows report to the console so you can adjust mappings if needed.
+ - Use **Apply CSV read progress hints** when you want the importer to mark chapters based on CSV columns such as “Last read” (no MangaDex login required). Enable **Import reading statuses (apply status map)** when you have a status→category mapping and want CSV rows (and MangaDex follows, if enabled) to land in the right Suwayomi categories. The **Import read chapters (MangaDex session)** checkbox is optional and only needed when you also log into MangaDex to mirror its read history; leave it off for pure CSV workflows.
+- CSV imports always run in direct-to-Suwayomi mode (`--csv-no-mangadex` is enabled automatically), so every row is matched against your local sources without requiring MangaDex IDs or credentials.
+ - MangaDex-dependent read-sync controls now live exclusively under **Chapter Read Sync** on the main tab; keep them disabled for pure CSV workflows unless you are also logging into MangaDex.
+ - The **Across sources** and **Only if ahead** toggles in **Chapter Read Sync** apply to CSV read-progress hints as well, letting you mirror progress across duplicate sources while preventing regressions.
 
 It does **not**:
 
@@ -371,6 +371,7 @@ Notes:
 - Use `--migrate-remove-if-duplicate` if you want to only remove the zero‑chapter one when a duplicate already exists.
 - --migrate-remove is ON by default in these examples (the script default). Use `--no-migrate-remove` if you prefer to keep the original after adding the alternative (optional).
 - Add `--exclude-sources "comick,hitomi"` if you don’t want those mirrors.
+- Always list a few high-quality targets in `--migrate-sources` (and consider `--migrate-preferred-only`) so the tool focuses on reliable sources first instead of probing the entire source catalog—this keeps searches fast and avoids hitting the per-title timeout.
 - For a search-free cleanup, use the hard prune command above; it keeps the title variant with the most chapters and removes other zero-chapter variants.
 - Only migrate specific categories: add `--migrate-include-categories "Reading,On Hold"` or by id `--migrate-include-categories "5,7"`. To skip categories instead use `--migrate-exclude-categories`.
 - Favor likely-original scanlator sources by boosting their score: `--prefer-sources "asura,flame,genz,utoons" --prefer-boost 3`.

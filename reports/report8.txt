@@ -1,0 +1,1268 @@
+CSV direct import mode: 995 rows queued (CSV-only=True, MangaDex IDs=0).
+[CSV] Preparing library snapshot for 995 CSV items...
+[CSV] Library snapshot loaded (3734 entries).
+[CSV] Fetching configured sources from Suwayomi...
+[CSV] Source list ready (377 entries).
+Mark summary: applied 0 chapters on entry 25199 up to 39.0
+[CSV 2/995] Resolving 'The Returning Devil Lives a Good Life' against Suwayomi sources...
+[CSV 3/995] Resolving 'Hello, Mr. Veterinarian!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 18027 up to 6.0
+Mark summary: applied 0 chapters on entry 25447 up to 365.0
+Mark summary: applied 0 chapters on entry 7052 up to 61.0
+Mark summary: applied 0 chapters on entry 8648 up to 173.0
+Mark summary: applied 0 chapters on entry 25851 up to 39.0
+Mark summary: applied 0 chapters on entry 25602 up to 49.0
+Mark summary: applied 0 chapters on entry 25479 up to 51.0
+[CSV 13/995] Resolving 'Your Talent is Mine' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37432 up to 47.0
+Mark summary: applied 0 chapters on entry 212 up to 103.0
+Mark summary: applied 0 chapters on entry 25384 up to 131.0
+Mark summary: applied 0 chapters on entry 14984 up to 226.0
+Mark summary: applied 0 chapters on entry 162 up to 138.0
+Mark summary: applied 0 chapters on entry 203 up to 37.0
+Mark summary: applied 0 chapters on entry 6084 up to 97.0
+[CSV 20/995] Resolving 'Isekai Shachuuhaku Monogatari - Outrunner PHEV' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37439 up to 8.0
+Mark summary: applied 0 chapters on entry 25323 up to 36.0
+Mark summary: applied 0 chapters on entry 6881 up to 102.0
+[CSV 23/995] Resolving 'My Brother and His Gift' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37440 up to 63.0
+Mark summary: applied 0 chapters on entry 198 up to 24.0
+Mark summary: applied 0 chapters on entry 24970 up to 19.0
+Mark summary: applied 0 chapters on entry 978 up to 43.0
+Mark summary: applied 0 chapters on entry 25763 up to 15.0
+[CSV 28/995] Resolving 'Surviving a Fantasy Adventure Comic' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37442 up to 52.0
+[CSV 29/995] Resolving 'Zensei de Tsurai Omoi o Shita no de, Kamisama ga Shazai ni Kimashita' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 31586 up to 22.0
+Mark summary: applied 0 chapters on entry 6819 up to 43.0
+[CSV 31/995] Resolving 'ChronoGo' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37443 up to 161.0
+[CSV 32/995] Resolving 'Ruri Dragon' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37444 up to 27.0
+Mark summary: applied 0 chapters on entry 25851 up to 24.0
+Mark summary: applied 0 chapters on entry 8462 up to 163.0
+[CSV 35/995] Resolving 'The Wicked Little Princess' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 7602 up to 147.0
+[CSV 36/995] Resolving 'Second Life of a Trash Princess' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 9501 up to 40.0
+Mark summary: applied 0 chapters on entry 25357 up to 30.0
+Mark summary: applied 0 chapters on entry 129 up to 167.0
+Mark summary: applied 0 chapters on entry 762 up to 67.0
+[CSV 40/995] Resolving 'Isekai de Slow Life wo (Ganbou)' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 40332 up to 45.0
+[CSV 41/995] Resolving 'Ao no Hako' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37449 up to 181.0
+Mark summary: applied 0 chapters on entry 279 up to 85.0
+Mark summary: applied 0 chapters on entry 176 up to 75.0
+Mark summary: applied 0 chapters on entry 125 up to 80.0
+Mark summary: applied 0 chapters on entry 9758 up to 44.0
+Mark summary: applied 0 chapters on entry 8678 up to 24.0
+[CSV 47/995] Resolving 'Countach' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 26872 up to 71.0
+Mark summary: applied 0 chapters on entry 17498 up to 47.0
+Mark summary: applied 0 chapters on entry 25262 up to 75.0
+Mark summary: applied 0 chapters on entry 289 up to 199.0
+[CSV 51/995] Resolving 'Azure Legacy' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37453 up to 120.0
+Mark summary: applied 0 chapters on entry 17170 up to 243.0
+[CSV 53/995] Resolving 'I, The Invincible Villain Master With My Apprentices' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 7053 up to 32.0
+Mark summary: applied 0 chapters on entry 7697 up to 42.0
+Mark summary: applied 0 chapters on entry 25279 up to 99.0
+[CSV 56/995] Resolving 'The Baengri Clan's Unwanted Granddaughter' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37454 up to 87.0
+Mark summary: applied 0 chapters on entry 1677 up to 134.0
+Mark summary: applied 0 chapters on entry 25523 up to 79.0
+Mark summary: applied 0 chapters on entry 280 up to 80.0
+Mark summary: applied 0 chapters on entry 9143 up to 168.0
+Mark summary: applied 0 chapters on entry 1074 up to 36.0
+Mark summary: applied 0 chapters on entry 838 up to 17.0
+Mark summary: applied 0 chapters on entry 123 up to 16.0
+[CSV 64/995] Resolving 'Monogatari no Kuromaku ni Tensei shite' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 7745 up to 13.0
+Mark summary: applied 0 chapters on entry 25374 up to 58.0
+[CSV 66/995] Resolving 'Villainesses Have More Fun' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 10332 up to 49.0
+[CSV 67/995] Resolving 'The Ghost Doctor' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 11084 up to 166.0
+Mark summary: applied 0 chapters on entry 1037 up to 32.0
+Mark summary: applied 0 chapters on entry 1055 up to 143.0
+Mark summary: applied 0 chapters on entry 25541 up to 105.0
+Mark summary: applied 0 chapters on entry 18345 up to 72.0
+Mark summary: applied 0 chapters on entry 8934 up to 16.0
+Mark summary: applied 0 chapters on entry 30182 up to 38.0
+[CSV 74/995] Resolving 'Return of the Scholar' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 10958 up to 178.0
+[CSV 75/995] Resolving 'Reborn to be a Supreme Emperor' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37457 up to 161.0
+[CSV 76/995] Resolving 'Kojiin Tamer' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 6759 up to 19.0
+Mark summary: applied 0 chapters on entry 8673 up to 15.0
+Mark summary: applied 0 chapters on entry 163 up to 55.0
+Mark summary: applied 0 chapters on entry 9158 up to 20.2
+[CSV 80/995] Resolving 'Wo, Jinhua, Emo' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 10253 up to 44.0
+Mark summary: applied 0 chapters on entry 9692 up to 78.0
+Mark summary: applied 0 chapters on entry 178 up to 222.0
+Mark summary: applied 0 chapters on entry 13520 up to 60.0
+Mark summary: applied 0 chapters on entry 9378 up to 106.0
+Mark summary: applied 0 chapters on entry 10565 up to 26.1
+Mark summary: applied 0 chapters on entry 1804 up to 36.0
+Mark summary: applied 0 chapters on entry 9400 up to 68.0
+Mark summary: applied 0 chapters on entry 8804 up to 178.5
+[CSV 89/995] Resolving 'Futari Solo Camp' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37458 up to 26.0
+Mark summary: applied 0 chapters on entry 21204 up to 95.0
+Mark summary: applied 0 chapters on entry 25415 up to 119.0
+Mark summary: applied 0 chapters on entry 8728 up to 25.0
+Mark summary: applied 0 chapters on entry 145 up to 54.0
+Mark summary: applied 0 chapters on entry 25740 up to 41.0
+Mark summary: applied 0 chapters on entry 10354 up to 93.3
+Mark summary: applied 0 chapters on entry 132 up to 40.0
+[CSV 97/995] Resolving 'Unnamed Memory' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37459 up to 9.0
+Mark summary: applied 0 chapters on entry 1813 up to 119.0
+Mark summary: applied 0 chapters on entry 6952 up to 434.0
+Mark summary: applied 0 chapters on entry 7897 up to 101.0
+[CSV 101/995] Resolving 'Taida na Akujoku Kizoku ni Tensei Shita Ore, Scenario o Bukkowa Shitara Kikaku-gai no Maryoku de Saikyou ni Natta' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 40343 up to 3.0
+Mark summary: applied 0 chapters on entry 26133 up to 21.0
+Mark summary: applied 0 chapters on entry 624 up to 49.0
+[CSV 105/995] Resolving 'Two Moon' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 26745 up to 32.0
+[CSV 107/995] Resolving 'Absolute Resonance' against Suwayomi sources...
+[CSV 108/995] Resolving 'Don't Mind Me, Daddy' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37463 up to 12.0
+Mark summary: applied 0 chapters on entry 528 up to 23.0
+[CSV 110/995] Resolving 'Living a Laid-Back Second Life on the Island of the Strongest Species (Official)' against Suwayomi sources...
+[CSV 111/995] Resolving 'Trauma Center: Dr. Baek' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37466 up to 21.0
+[CSV 112/995] Resolving 'Star of Beethoven' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37467 up to 8.0
+Mark summary: applied 0 chapters on entry 1006 up to 25.0
+Mark summary: applied 0 chapters on entry 543 up to 21.0
+Mark summary: applied 0 chapters on entry 217 up to 12.0
+Mark summary: applied 0 chapters on entry 552 up to 12.0
+Mark summary: applied 0 chapters on entry 653 up to 20.0
+[CSV 119/995] Resolving 'My Marriage to Saneka' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37468 up to 7.0
+Mark summary: applied 0 chapters on entry 26756 up to 206.0
+[CSV 121/995] Resolving 'Eiyuu to Kenja no Tensei Kon' against Suwayomi sources...
+[CSV 122/995] Resolving 'The Coppersmith's Bride' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37483 up to 32.0
+[CSV 123/995] Resolving 'Night of the Soulless Heathens' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37484 up to 22.0
+[CSV 124/995] Resolving 'Kunigei - Okuni University Art Department Film Program' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37485 up to 28.0
+[CSV 125/995] Resolving 'Girl Meets Rock!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37486 up to 53.5
+[CSV 126/995] Resolving 'My Mom's a Superstar' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 40362 up to 37.5
+[CSV 127/995] Resolving 'Girl Crush' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37490 up to 74.0
+[CSV 128/995] Resolving 'Tomehane!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37497 up to 108.0
+[CSV 129/995] Resolving 'Akane-banashi' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37498 up to 143.0
+[CSV 130/995] Resolving 'Street Workout' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37499 up to 47.0
+[CSV 131/995] Resolving 'Let's Play' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 40364 up to 177.0
+[CSV 132/995] Resolving 'Hajirau Kimi ga Mitainda' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 41602 up to 76.1
+[CSV 133/995] Resolving 'Monochrome Days' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37518 up to 18.5
+Mark summary: applied 0 chapters on entry 999 up to 13.0
+Mark summary: applied 0 chapters on entry 25298 up to 22.0
+Mark summary: applied 0 chapters on entry 24902 up to 12.0
+Mark summary: applied 0 chapters on entry 993 up to 28.0
+Mark summary: applied 0 chapters on entry 223 up to 17.0
+Mark summary: applied 0 chapters on entry 1356 up to 29.0
+Mark summary: applied 0 chapters on entry 1017 up to 21.0
+[CSV 142/995] Resolving 'Black Fox: Sword Master of Mount Kunlun' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37519 up to 30.0
+[CSV 143/995] Resolving 'Frozen Warrior' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37520 up to 13.0
+Mark summary: applied 0 chapters on entry 25351 up to 17.0
+Mark summary: applied 0 chapters on entry 1024 up to 15.0
+Mark summary: applied 0 chapters on entry 25261 up to 20.0
+Mark summary: applied 0 chapters on entry 302 up to 16.0
+[CSV 148/995] Resolving 'The Genius Prismatic Mage' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37521 up to 24.0
+Mark summary: applied 0 chapters on entry 1176 up to 7.0
+[CSV 155/995] Resolving 'Dungeon-tou de Yadoya wo Yarou!: Souzou Mahou wo Moratta Ore no Hosoude Hanjouki' against Suwayomi sources...
+[CSV 157/995] Resolving 'Joban de Shinu Saikyou no Sub Chara ni Tensei Shita no de, Game Chishiki de Musou Suru' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 24805 up to 5.0
+Mark summary: applied 0 chapters on entry 1653 up to 207.0
+[CSV 164/995] Resolving 'VTuber Legend: How I Went Viral after Forgetting to Turn Off My Stream' against Suwayomi sources...
+[CSV 166/995] Resolving 'Wind Breaker' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 10032 up to 63.0
+Mark summary: applied 0 chapters on entry 108 up to 66.0
+Mark summary: applied 0 chapters on entry 134 up to 25.0
+Mark summary: applied 0 chapters on entry 25304 up to 15.0
+[CSV 173/995] Resolving 'I'm Not the Villain' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 54880 up to 24.0
+[CSV 174/995] Resolving 'Sekai Saikyou no Kishi wa, Kanarazu Shinu Heroine wo Sukuu Tame Isekai Demo Saikyou no Kishi to Naru ~Ryoutei ni Hana wo, Ryoute ni Ken wo~' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 6996 up to 10.0
+[CSV 175/995] Resolving 'Food Truck "Deli-joy" - Shasou Kara Isekai e Umaimono Mitsuyu Hanbaichuu!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37543 up to 9.0
+Mark summary: applied 0 chapters on entry 33864 up to 9.0
+Mark summary: applied 0 chapters on entry 22609 up to 43.0
+Mark summary: applied 0 chapters on entry 608 up to 100.0
+Mark summary: applied 0 chapters on entry 1681 up to 87.0
+Mark summary: applied 0 chapters on entry 107 up to 172.0
+Mark summary: applied 0 chapters on entry 25498 up to 139.0
+Mark summary: applied 0 chapters on entry 288 up to 80.0
+Mark summary: applied 0 chapters on entry 25280 up to 46.0
+Mark summary: applied 0 chapters on entry 7892 up to 38.0
+Mark summary: applied 0 chapters on entry 6943 up to 107.0
+[CSV 186/995] Resolving 'Nimotsu Mochi no Noukin Musou' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37544 up to 15.2
+[CSV 187/995] Resolving 'S-geup Hunter-neun Agyeong Gongnyeoga Doegi Silseumnida' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 8298 up to 18.0
+Mark summary: applied 0 chapters on entry 128 up to 50.0
+Mark summary: applied 0 chapters on entry 25426 up to 12.0
+Mark summary: applied 0 chapters on entry 9861 up to 175.0
+Mark summary: applied 0 chapters on entry 25345 up to 151.0
+Mark summary: applied 0 chapters on entry 155 up to 78.0
+Mark summary: applied 0 chapters on entry 11023 up to 356.0
+Mark summary: applied 0 chapters on entry 25631 up to 26.0
+Mark summary: applied 0 chapters on entry 25236 up to 22.0
+Mark summary: applied 0 chapters on entry 16757 up to 90.0
+Mark summary: applied 0 chapters on entry 9517 up to 98.0
+Mark summary: applied 0 chapters on entry 22987 up to 51.0
+[CSV 199/995] Resolving 'Best Teacher Baek' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37546 up to 84.0
+Mark summary: applied 0 chapters on entry 25205 up to 90.0
+Mark summary: applied 0 chapters on entry 25452 up to 370.0
+Mark summary: applied 0 chapters on entry 182 up to 61.0
+Mark summary: applied 0 chapters on entry 179 up to 67.0
+Mark summary: applied 0 chapters on entry 9418 up to 490.0
+[CSV 205/995] Resolving 'Nise Seijo Kuso of the Year - Risou no Seijo? Zannen, Nise Seijo deshita!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37547 up to 21.2
+[CSV 206/995] Resolving 'Return of the Calamity-Class Death Knight' against Suwayomi sources...
+[CSV 210/995] Resolving 'The S-Rank Hunter's Healing Life with Monsters' against Suwayomi sources...
+[CSV 213/995] Resolving 'Qußnzhφ JuΘx?ng' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 25847 up to 31.0
+Mark summary: applied 0 chapters on entry 160 up to 61.0
+Mark summary: applied 0 chapters on entry 1786 up to 152.5
+Mark summary: applied 0 chapters on entry 25568 up to 54.0
+Mark summary: applied 0 chapters on entry 175 up to 67.0
+Mark summary: applied 0 chapters on entry 1049 up to 83.0
+Mark summary: applied 0 chapters on entry 25539 up to 57.0
+Mark summary: applied 0 chapters on entry 192 up to 117.0
+Mark summary: applied 0 chapters on entry 7567 up to 126.0
+Mark summary: applied 0 chapters on entry 1002 up to 56.0
+[CSV 225/995] Resolving 'My Farm by the Palace' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37551 up to 63.0
+Mark summary: applied 0 chapters on entry 25212 up to 125.0
+Mark summary: applied 0 chapters on entry 1252 up to 122.0
+[CSV 228/995] Resolving 'Biography of Hwiyeong Sword' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37553 up to 57.0
+Mark summary: applied 0 chapters on entry 1009 up to 36.0
+Mark summary: applied 0 chapters on entry 25746 up to 82.0
+[CSV 231/995] Resolving 'I Wasn't the Cinderella' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37554 up to 36.0
+[CSV 232/995] Resolving 'Log into the Future' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37570 up to 76.0
+Mark summary: applied 0 chapters on entry 25243 up to 129.0
+Mark summary: applied 0 chapters on entry 1023 up to 42.0
+Mark summary: applied 0 chapters on entry 1001 up to 79.0
+Mark summary: applied 0 chapters on entry 10917 up to 214.0
+Mark summary: applied 0 chapters on entry 29837 up to 205.0
+Mark summary: applied 0 chapters on entry 149 up to 184.0
+Mark summary: applied 0 chapters on entry 18139 up to 37.0
+Mark summary: applied 0 chapters on entry 9417 up to 141.0
+Mark summary: applied 0 chapters on entry 1971 up to 69.0
+Mark summary: applied 0 chapters on entry 979 up to 18.1
+Mark summary: applied 0 chapters on entry 18040 up to 94.0
+[CSV 244/995] Resolving 'Road to Stardom' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37576 up to 101.0
+Mark summary: applied 0 chapters on entry 20522 up to 276.0
+Mark summary: applied 0 chapters on entry 7037 up to 132.0
+Mark summary: applied 0 chapters on entry 25409 up to 281.0
+Mark summary: applied 0 chapters on entry 9754 up to 116.0
+Mark summary: applied 0 chapters on entry 1007 up to 46.0
+Mark summary: applied 0 chapters on entry 981 up to 35.0
+Mark summary: applied 0 chapters on entry 7599 up to 134.0
+Mark summary: applied 0 chapters on entry 25365 up to 69.0
+Mark summary: applied 0 chapters on entry 1013 up to 35.0
+[CSV 255/995] Resolving 'Ultimate Son-in-law' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37577 up to 85.0
+Mark summary: applied 0 chapters on entry 25773 up to 42.0
+Mark summary: applied 0 chapters on entry 112 up to 48.0
+Mark summary: applied 0 chapters on entry 25622 up to 142.0
+Mark summary: applied 0 chapters on entry 152 up to 131.0
+Mark summary: applied 0 chapters on entry 133 up to 51.0
+Mark summary: applied 0 chapters on entry 7743 up to 7.0
+Mark summary: applied 0 chapters on entry 299 up to 28.0
+[CSV 263/995] Resolving 'Dragon Master' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 41605 up to 404.0
+[CSV 264/995] Resolving 'The Legendary Beasts Animal Hospital' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37599 up to 130.0
+Mark summary: applied 0 chapters on entry 961 up to 50.0
+[CSV 266/995] Resolving 'The Archduke's Adopted Saint' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37600 up to 32.0
+Mark summary: applied 0 chapters on entry 768 up to 31.0
+Mark summary: applied 0 chapters on entry 114 up to 27.0
+Mark summary: applied 0 chapters on entry 8862 up to 22.0
+Mark summary: applied 0 chapters on entry 7259 up to 113.0
+[CSV 271/995] Resolving 'I'm a Part-Timer for the Gods' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37603 up to 68.0
+Mark summary: applied 0 chapters on entry 13506 up to 75.0
+[CSV 273/995] Resolving 'The Silent Warrior' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37604 up to 18.0
+Mark summary: applied 0 chapters on entry 9300 up to 48.0
+Mark summary: applied 0 chapters on entry 180 up to 80.0
+[CSV 276/995] Resolving 'Scoring the Sacred Body of the Ancients from the Get-go' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37605 up to 65.0
+[CSV 277/995] Resolving 'Life Changer Voice Phishing' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37606 up to 19.0
+[CSV 278/995] Resolving 'Ie ga Moete Jinsei Dou Demo Yoku Natta kara, Nokotta Nakenashi no Kin de Dark Elf no Dorei o Katta.' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 41628 up to 6.1
+Mark summary: applied 0 chapters on entry 12092 up to 260.0
+Mark summary: applied 0 chapters on entry 8774 up to 33.0
+Mark summary: applied 0 chapters on entry 6199 up to 57.0
+Mark summary: applied 0 chapters on entry 969 up to 47.0
+Mark summary: applied 0 chapters on entry 148 up to 83.0
+[CSV 284/995] Resolving 'Nebula's Civilization' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37607 up to 55.0
+Mark summary: applied 0 chapters on entry 9055 up to 8.1
+[CSV 286/995] Resolving 'IÆm the Girl With the Hacks!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37608 up to 151.0
+Mark summary: applied 0 chapters on entry 25793 up to 106.0
+Mark summary: applied 0 chapters on entry 25820 up to 70.0
+Mark summary: applied 0 chapters on entry 9622 up to 144.0
+[CSV 290/995] Resolving 'Hima-Ten!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37613 up to 25.0
+Mark summary: applied 0 chapters on entry 54880 up to 152.0
+[CSV 292/995] Resolving 'Yuusha Party wo Tsuihousareta Shiro Madoushi, S Rank Boukensha ni Hirowareru ~Kono Shiro Madoushi ga Kikakugai Sugiru~' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 41667 up to 13.0
+[CSV 293/995] Resolving 'Get Schooled' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37632 up to 15.0
+Mark summary: applied 0 chapters on entry 208 up to 144.0
+Mark summary: applied 0 chapters on entry 10115 up to 93.0
+Mark summary: applied 0 chapters on entry 21392 up to 105.0
+Mark summary: applied 0 chapters on entry 773 up to 126.0
+Mark summary: applied 0 chapters on entry 25729 up to 28.0
+Mark summary: applied 0 chapters on entry 25205 up to 61.0
+[CSV 300/995] Resolving 'Villain to Kill' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37633 up to 101.0
+Mark summary: applied 0 chapters on entry 172 up to 62.0
+Mark summary: applied 0 chapters on entry 7937 up to 108.0
+Mark summary: applied 0 chapters on entry 18043 up to 85.0
+Mark summary: applied 0 chapters on entry 7540 up to 7.0
+Mark summary: applied 0 chapters on entry 761 up to 34.0
+Mark summary: applied 0 chapters on entry 1898 up to 66.0
+Mark summary: applied 0 chapters on entry 7468 up to 95.0
+Mark summary: applied 0 chapters on entry 25196 up to 298.0
+Mark summary: applied 0 chapters on entry 25192 up to 91.0
+Mark summary: applied 0 chapters on entry 731 up to 340.0
+Mark summary: applied 0 chapters on entry 25392 up to 23.0
+[CSV 312/995] Resolving 'TenPuru -No One Can Live on Loneliness-' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37635 up to 44.0
+Mark summary: applied 0 chapters on entry 25501 up to 17.0
+Mark summary: applied 0 chapters on entry 21475 up to 101.0
+Mark summary: applied 0 chapters on entry 25725 up to 42.0
+[CSV 316/995] Resolving 'Paranoid Mage' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37636 up to 40.0
+Mark summary: applied 0 chapters on entry 25647 up to 26.0
+Mark summary: applied 0 chapters on entry 17700 up to 243.0
+Mark summary: applied 0 chapters on entry 25617 up to 66.0
+[CSV 320/995] Resolving 'The Blood Princess and the Knight' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37637 up to 107.0
+[CSV 321/995] Resolving 'The Diary of a Middle-Aged Teacher's Carefree Life in Another World' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 9345 up to 70.0
+Mark summary: applied 0 chapters on entry 18024 up to 71.0
+Mark summary: applied 0 chapters on entry 27383 up to 183.0
+[CSV 324/995] Resolving 'THE ISEKAI DOCTOR?Any sufficiently advanced medical science is indistinguishable from magic.' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37646 up to 20.0
+[CSV 325/995] Resolving 'Ore Dake Saikyou Chouetsusha - Zen Sekai no Cheat Shishou ni Mitomerareta' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 6077 up to 108.0
+Mark summary: applied 0 chapters on entry 639 up to 42.0
+[CSV 328/995] Resolving 'Blooming Love' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37647 up to 42.0
+[CSV 329/995] Resolving 'Yoku Wakaranai Keredo Isekai ni Tensei Shiteita You Desu' against Suwayomi sources...
+[CSV 329/995] WARN search MangaBuddy: HTTPConnectionPool(host='127.0.0.1', port=4567): Read timed out. (read timeout=12.0)
+[CSV 329/995] WARN search MangaBuddy: HTTPConnectionPool(host='127.0.0.1', port=4567): Read timed out. (read timeout=12.0)
+[CSV 329/995] WARN search MangaBuddy: HTTPConnectionPool(host='127.0.0.1', port=4567): Read timed out. (read timeout=12.0)
+[CSV 329/995] WARN search MangaBuddy: HTTPConnectionPool(host='127.0.0.1', port=4567): Read timed out. (read timeout=12.0)
+[CSV 329/995] WARN search MangaBuddy: HTTPConnectionPool(host='127.0.0.1', port=4567): Read timed out. (read timeout=12.0)
+[CSV 329/995] WARN search MangaBuddy: HTTPConnectionPool(host='127.0.0.1', port=4567): Read timed out. (read timeout=12.0)
+Mark summary: applied 0 chapters on entry 55046 up to 98.0
+Mark summary: applied 0 chapters on entry 25350 up to 30.0
+Mark summary: applied 0 chapters on entry 24305 up to 83.0
+Mark summary: applied 0 chapters on entry 9160 up to 30.1
+Mark summary: applied 0 chapters on entry 13385 up to 33.0
+Mark summary: applied 0 chapters on entry 25267 up to 175.0
+Mark summary: applied 0 chapters on entry 7427 up to 31.0
+[CSV 336/995] Resolving 'Cassmire: The Loyal Sword' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37653 up to 23.0
+Mark summary: applied 0 chapters on entry 25612 up to 150.0
+Mark summary: applied 0 chapters on entry 25578 up to 47.0
+[CSV 339/995] Resolving 'M?njφ Chu?nyuΦ de W? WΦishΘnme Sh∞ M∙sh? Xi?oji? a' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37655 up to 12.0
+Mark summary: applied 0 chapters on entry 1066 up to 41.0
+Mark summary: applied 0 chapters on entry 276 up to 97.0
+Mark summary: applied 0 chapters on entry 9447 up to 29.0
+Mark summary: applied 0 chapters on entry 25436 up to 92.0
+[CSV 344/995] Resolving 'Sigrid' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37656 up to 30.0
+Mark summary: applied 0 chapters on entry 10195 up to 29.0
+Mark summary: applied 0 chapters on entry 30671 up to 154.0
+Mark summary: applied 0 chapters on entry 1051 up to 22.0
+Mark summary: applied 0 chapters on entry 16642 up to 133.0
+Mark summary: applied 0 chapters on entry 25450 up to 33.0
+[CSV 350/995] Resolving 'Keikenchi Chochiku de Nonbiri Shoushin Ryokou: Yuusha to Koibito ni Tsuihou Sareta Senshi no Mujikaku Zamaa' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 45186 up to 17.0
+Mark summary: applied 0 chapters on entry 25497 up to 58.0
+Mark summary: applied 0 chapters on entry 25837 up to 54.0
+Mark summary: applied 0 chapters on entry 6077 up to 21.0
+Mark summary: applied 0 chapters on entry 12936 up to 35.0
+Mark summary: applied 0 chapters on entry 13601 up to 224.0
+[CSV 356/995] Resolving 'The Unholy Paladin (Official)' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 45248 up to 60.0
+[CSV 357/995] Resolving 'Second Try Idol' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37659 up to 114.0
+Mark summary: applied 0 chapters on entry 304 up to 86.0
+[CSV 359/995] Resolving 'Philomel the Fake' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37660 up to 44.0
+Mark summary: applied 0 chapters on entry 1062 up to 62.0
+Mark summary: applied 0 chapters on entry 25851 up to 97.0
+Mark summary: applied 0 chapters on entry 33271 up to 2.0
+Mark summary: applied 0 chapters on entry 184 up to 128.0
+[CSV 364/995] Resolving 'The Baby Divine Beast' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37661 up to 22.0
+Mark summary: applied 0 chapters on entry 130 up to 114.0
+[CSV 366/995] Resolving 'The Status Window to the Soul' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37670 up to 49.0
+Mark summary: applied 0 chapters on entry 25838 up to 75.0
+Mark summary: applied 0 chapters on entry 10373 up to 48.0
+Mark summary: applied 0 chapters on entry 24306 up to 121.0
+Mark summary: applied 0 chapters on entry 25866 up to 296.0
+Mark summary: applied 0 chapters on entry 26927 up to 138.0
+Mark summary: applied 0 chapters on entry 11695 up to 454.0
+Mark summary: applied 0 chapters on entry 6762 up to 13.0
+Mark summary: applied 0 chapters on entry 6896 up to 115.0
+[CSV 375/995] Resolving 'The Male LeadÆs Little Lion Daughter' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 7879 up to 72.0
+Mark summary: applied 0 chapters on entry 25290 up to 32.0
+Mark summary: applied 0 chapters on entry 1048 up to 44.0
+Mark summary: applied 0 chapters on entry 18203 up to 132.0
+Mark summary: applied 0 chapters on entry 618 up to 61.0
+[CSV 380/995] Resolving 'There Are No Bad Warriors in This World' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 843 up to 484.0
+Mark summary: applied 0 chapters on entry 24830 up to 1.0
+Mark summary: applied 0 chapters on entry 10203 up to 282.0
+Mark summary: applied 0 chapters on entry 25499 up to 136.0
+Mark summary: applied 0 chapters on entry 18363 up to 208.0
+[CSV 386/995] Resolving 'The Dawn in Moscow' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37673 up to 114.0
+Mark summary: applied 0 chapters on entry 25867 up to 77.0
+Mark summary: applied 0 chapters on entry 301 up to 32.0
+Mark summary: applied 0 chapters on entry 25270 up to 24.0
+Mark summary: applied 0 chapters on entry 746 up to 38.0
+Mark summary: applied 0 chapters on entry 10153 up to 88.0
+Mark summary: applied 0 chapters on entry 157 up to 96.0
+[CSV 393/995] Resolving 'Super God System' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37682 up to 92.0
+Mark summary: applied 0 chapters on entry 9225 up to 137.0
+Mark summary: applied 0 chapters on entry 849 up to 32.0
+Mark summary: applied 0 chapters on entry 559 up to 18.0
+[CSV 397/995] Resolving 'The Archvillain's Daughter-in-Law' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 9354 up to 48.0
+Mark summary: applied 0 chapters on entry 8026 up to 34.0
+[CSV 399/995] Resolving 'Stellar Mom' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37688 up to 48.0
+Mark summary: applied 0 chapters on entry 8825 up to 30.0
+Mark summary: applied 0 chapters on entry 9578 up to 76.0
+[CSV 402/995] Resolving 'Your Majesty, Please Spare Me This Time' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37689 up to 41.0
+Mark summary: applied 0 chapters on entry 25435 up to 57.0
+Mark summary: applied 0 chapters on entry 25801 up to 52.0
+Mark summary: applied 0 chapters on entry 199 up to 106.0
+Mark summary: applied 0 chapters on entry 1102 up to 48.0
+Mark summary: applied 0 chapters on entry 9790 up to 53.0
+Mark summary: applied 0 chapters on entry 25448 up to 8.0
+Mark summary: applied 0 chapters on entry 596 up to 16.0
+Mark summary: applied 0 chapters on entry 7196 up to 143.0
+Mark summary: applied 0 chapters on entry 25687 up to 27.0
+Mark summary: applied 0 chapters on entry 6823 up to 21.5
+[CSV 413/995] Resolving 'Cultivation Chat Group' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37690 up to 615.0
+Mark summary: applied 0 chapters on entry 25638 up to 86.0
+Mark summary: applied 0 chapters on entry 287 up to 63.0
+[CSV 416/995] Resolving '"SHOPSKILL" Sae Areba, Dungeon ka Sita Sekaidemo Rakusyou da ~Hakugai Sareta Shounen no Saikyou Zamaa Life~' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 9194 up to 19.0
+Mark summary: applied 0 chapters on entry 1188 up to 187.0
+Mark summary: applied 0 chapters on entry 18273 up to 134.0
+Mark summary: applied 0 chapters on entry 640 up to 103.0
+[CSV 420/995] Resolving 'The Blue Flowers, and the Ceramic Forest' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37691 up to 29.0
+[CSV 421/995] Resolving 'Aura of a Genius Actor' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37692 up to 62.0
+Mark summary: applied 0 chapters on entry 6250 up to 114.0
+[CSV 423/995] Resolving 'The Perks of Being a Villainess' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 8847 up to 31.0
+Mark summary: applied 0 chapters on entry 37525 up to 359.0
+Mark summary: applied 0 chapters on entry 22797 up to 17.0
+[CSV 426/995] Resolving 'Becoming Overpowered by Solo Eating' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37694 up to 20.0
+[CSV 427/995] Resolving 'The Genius Assassin Who Takes It All' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 8946 up to 39.0
+[CSV 429/995] Resolving 'Secret Lady' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37695 up to 23.0
+Mark summary: applied 0 chapters on entry 25803 up to 11.0
+[CSV 431/995] Resolving 'Demon in Mount Hua' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37704 up to 58.0
+Mark summary: applied 0 chapters on entry 8178 up to 10.0
+[CSV 433/995] Resolving 'The Ember Knight' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37706 up to 97.0
+Mark summary: applied 0 chapters on entry 9444 up to 26.0
+Mark summary: applied 0 chapters on entry 142 up to 129.0
+Mark summary: applied 0 chapters on entry 10187 up to 67.0
+Mark summary: applied 0 chapters on entry 25291 up to 178.0
+Mark summary: applied 0 chapters on entry 1768 up to 58.0
+Mark summary: applied 0 chapters on entry 607 up to 16.0
+[CSV 440/995] Resolving 'Swallowed Star' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37707 up to 144.0
+[CSV 441/995] Resolving 'The Invincible Banished Shadow Archer' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37709 up to 30.0
+Mark summary: applied 0 chapters on entry 1363 up to 107.0
+Mark summary: applied 0 chapters on entry 13522 up to 89.0
+Mark summary: applied 0 chapters on entry 25372 up to 51.0
+[CSV 445/995] Resolving 'Resurrected Demon King' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 195 up to 56.0
+Mark summary: applied 0 chapters on entry 558 up to 80.0
+Mark summary: applied 0 chapters on entry 8663 up to 109.0
+[CSV 449/995] Resolving 'Goblin's Ascent: From Loser to Winner' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37711 up to 27.0
+[CSV 450/995] Resolving 'Chairman Kang, the New Employee' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37712 up to 40.0
+Mark summary: applied 0 chapters on entry 25839 up to 32.0
+Mark summary: applied 0 chapters on entry 12891 up to 92.0
+Mark summary: applied 0 chapters on entry 147 up to 84.0
+Mark summary: applied 0 chapters on entry 9009 up to 65.0
+Mark summary: applied 0 chapters on entry 7064 up to 47.0
+Mark summary: applied 0 chapters on entry 13501 up to 62.0
+Mark summary: applied 0 chapters on entry 25315 up to 409.0
+Mark summary: applied 0 chapters on entry 26119 up to 33.0
+Mark summary: applied 0 chapters on entry 29817 up to 109.0
+Mark summary: applied 0 chapters on entry 7740 up to 209.0
+Mark summary: applied 0 chapters on entry 25605 up to 76.0
+Mark summary: applied 0 chapters on entry 9818 up to 21.0
+[CSV 463/995] Resolving 'The Curious Case of Chronicle' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37713 up to 51.0
+Mark summary: applied 0 chapters on entry 25305 up to 56.0
+[CSV 465/995] Resolving 'Precious Daughter of the Greatest Martial Arts Villain' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 8553 up to 75.0
+Mark summary: applied 0 chapters on entry 9698 up to 9.1
+Mark summary: applied 0 chapters on entry 585 up to 25.0
+Mark summary: applied 0 chapters on entry 605 up to 34.0
+[CSV 469/995] Resolving 'Teihen Boukensha Dakedo Mahou wo Kiwamete Miru Koto ni Shita ~Munou Skill kara Kami Skill ni Shinka Shita "Mahou Souzou" to "Item Sakusei" de Musou Suru~' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37714 up to 18.2
+[CSV 470/995] Resolving 'Act Like a Boss Monster, Mr. Swallow!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 9204 up to 34.0
+Mark summary: applied 0 chapters on entry 8869 up to 189.0
+Mark summary: applied 0 chapters on entry 967 up to 42.0
+Mark summary: applied 0 chapters on entry 25510 up to 91.0
+[CSV 474/995] Resolving 'Fushi no Kami: Rebuilding Civilization Starts with a Village' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37715 up to 40.0
+Mark summary: applied 0 chapters on entry 25597 up to 66.0
+[CSV 476/995] Resolving 'Senmetsumadou no Saikyou Kenja - Musai no Kenja, Madou wo Kiwame Saikyou e Itaru' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37716 up to 13.0
+Mark summary: applied 0 chapters on entry 985 up to 48.0
+[CSV 478/995] Resolving 'Good Doctor' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37717 up to 3.0
+Mark summary: applied 0 chapters on entry 563 up to 89.0
+Mark summary: applied 0 chapters on entry 33271 up to 15.0
+[CSV 481/995] Resolving 'The Self-Disciplined Me Is Practically Invincible' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37723 up to 42.0
+Mark summary: applied 0 chapters on entry 9010 up to 9.0
+Mark summary: applied 0 chapters on entry 1305 up to 163.0
+Mark summary: applied 0 chapters on entry 154 up to 120.0
+[CSV 485/995] Resolving 'Ochikobore Kuni o Deru: Jitsu wa Sekai de 4-ninme no Fuyojutsushi datta Ken ni Tsuite' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 8063 up to 12.0
+[CSV 486/995] Resolving 'Tensei Shite High Elf ni Narimashitaga, Slow Life wa 120-nen de Akimashita - Highelf with a Long Life' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 7757 up to 21.0
+Mark summary: applied 0 chapters on entry 25587 up to 25.0
+Mark summary: applied 0 chapters on entry 620 up to 155.0
+Mark summary: applied 0 chapters on entry 1012 up to 30.0
+[CSV 490/995] Resolving 'Hilde Takes House Arpeggio' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37724 up to 20.0
+Mark summary: applied 0 chapters on entry 7668 up to 58.0
+[CSV 492/995] Resolving 'Yuusha Shoukan ni Makikomareta kedo, Isekai wa Heiwa deshita' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 45257 up to 40.0
+[CSV 493/995] Resolving 'My Insanely Strong Henchmen' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37725 up to 57.0
+[CSV 494/995] Resolving 'Even with a Magical Power of 0.06, the Strongest Hunter Proves His Greatness with the Slingshot' against Suwayomi sources...
+[CSV 495/995] Resolving 'I Became a Ruined Character in a Dark Fantasy' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 8547 up to 40.0
+Mark summary: applied 0 chapters on entry 9375 up to 102.0
+[CSV 497/995] Resolving 'Maou to Yuusha no Tatakai no Ura de' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 10694 up to 16.0
+Mark summary: applied 0 chapters on entry 33548 up to 7.0
+Mark summary: applied 0 chapters on entry 12886 up to 21.0
+Mark summary: applied 0 chapters on entry 1824 up to 60.0
+[CSV 502/995] Resolving 'The Evil Princess Dreams of a Gingerbread House' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 10331 up to 51.0
+Mark summary: applied 0 chapters on entry 25265 up to 82.0
+Mark summary: applied 0 chapters on entry 9157 up to 8.0
+[CSV 505/995] Resolving 'An Extraordinary Guardian' against Suwayomi sources...
+[CSV 506/995] Resolving 'King of the Labyrinth' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37727 up to 9.3
+Mark summary: applied 0 chapters on entry 7583 up to 34.0
+Mark summary: applied 0 chapters on entry 33271 up to 24.0
+[CSV 509/995] Resolving 'The Hero's Ready to Retire' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37737 up to 27.0
+Mark summary: applied 0 chapters on entry 25422 up to 99.0
+[CSV 511/995] Resolving 'The Time of Rebirth' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 45306 up to 102.0
+Mark summary: applied 0 chapters on entry 6899 up to 13.0
+[CSV 513/995] Resolving 'Gendai Shakai de Otome Game no Akuyaku Reijou wo Suru no wa Chotto Taihen' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 11320 up to 18.0
+[CSV 514/995] Resolving 'Drunken D-Rank Pulls Out the Legendary Sword (Official)' against Suwayomi sources...
+[CSV 514/995] WARN search MangaBuddy: HTTPConnectionPool(host='127.0.0.1', port=4567): Read timed out. (read timeout=12.0)
+[CSV 514/995] WARN search MangaBuddy: HTTPConnectionPool(host='127.0.0.1', port=4567): Read timed out. (read timeout=12.0)
+[CSV 514/995] WARN search Mangakakalot: 500 Server Error: Server Error for url: http://127.0.0.1:4567/api/v1/source/2528986671771677900/search?searchTerm=%E4%B8%87%E5%B9%B4D%E7%BA%A7%E7%9A%84%E4%B8%AD%E5%B9%B4%E5%86%92%E9%99%A9%E8%80%85%E3%80%81%E5%80%9F%E7%9D%80%E9%85%92%E5%8A%BF%E6%8B%94%E5%87%BA%E4%BA%86%E4%BC%A0%E8%AF%B4%E4%B9%8B%E5%89%91&pageNum=1
+[CSV 514/995] WARN search Mangakakalot: 500 Server Error: Server Error for url: http://127.0.0.1:4567/api/v1/source/2528986671771677900/search?searchTerm=Drunken+D+Rank+Pulls+Out+the+Legendary+Sword&pageNum=1
+[CSV 514/995] WARN search Manganato: 500 Server Error: Server Error for url: http://127.0.0.1:4567/api/v1/source/1024627298672457456/search?searchTerm=%E4%B8%87%E5%B9%B4D%E3%83%A9%E3%83%B3%E3%82%AF%E3%81%AE%E4%B8%AD%E5%B9%B4%E5%86%92%E9%99%BA%E8%80%85%E3%80%81%E9%85%94%E3%81%A3%E3%81%9F%E5%8B%A2%E3%81%84%E3%81%A7%E4%BC%9D%E8%AA%AC%E3%81%AE%E5%89%A3%E3%82%92%E5%BC%95%E3%81%A3%E3%81%93%E6%8A%9C%E3%81%8F&pageNum=1
+[CSV 514/995] WARN search Manganato: 500 Server Error: Server Error for url: http://127.0.0.1:4567/api/v1/source/1024627298672457456/search?searchTerm=%E4%B8%87%E5%B9%B4D%E7%BA%A7%E7%9A%84%E4%B8%AD%E5%B9%B4%E5%86%92%E9%99%A9%E8%80%85%E3%80%81%E5%80%9F%E7%9D%80%E9%85%92%E5%8A%BF%E6%8B%94%E5%87%BA%E4%BA%86%E4%BC%A0%E8%AF%B4%E4%B9%8B%E5%89%91&pageNum=1
+[CSV 514/995] WARN search Manganato: 500 Server Error: Server Error for url: http://127.0.0.1:4567/api/v1/source/1024627298672457456/search?searchTerm=Drunken+D+Rank+Pulls+Out+the+Legendary+Sword&pageNum=1
+Mark summary: applied 0 chapters on entry 45490 up to 16.1
+Mark summary: applied 0 chapters on entry 25543 up to 30.0
+Mark summary: applied 0 chapters on entry 7690 up to 55.0
+[CSV 517/995] Resolving 'The Princess in the Attic' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 9584 up to 37.0
+Mark summary: applied 0 chapters on entry 8820 up to 16.0
+Mark summary: applied 0 chapters on entry 18382 up to 5.5
+Mark summary: applied 0 chapters on entry 9558 up to 160.0
+[CSV 521/995] Resolving 'Isekai de Mizu no Dai Seirei Yattemasu' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 11644 up to 10.0
+[CSV 522/995] Resolving 'Karsearin: Adventures of a Red Dragon' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37740 up to 18.0
+Mark summary: applied 0 chapters on entry 9459 up to 15.1
+Mark summary: applied 0 chapters on entry 25836 up to 45.0
+[CSV 525/995] Resolving 'Space Brothers' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37741 up to 375.0
+Mark summary: applied 0 chapters on entry 17163 up to 26.0
+Mark summary: applied 0 chapters on entry 25519 up to 50.0
+Mark summary: applied 0 chapters on entry 37483 up to 505.0
+Mark summary: applied 0 chapters on entry 13633 up to 24.0
+[CSV 531/995] Resolving 'Chouetsu-sha to Natta Ossan wa My Pace ni Isekai wo Sansaku Suru' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37752 up to 23.0
+[CSV 532/995] Resolving 'There's Something Wrong With this Account' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37753 up to 136.0
+[CSV 533/995] Resolving 'Drawing: Saikyou Mangaka wa Oekaki Skill de Isekai Musou Suru!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 11697 up to 98.0
+[CSV 534/995] Resolving 'How to Clear a Dating Sim as a Side Character' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37756 up to 44.0
+[CSV 535/995] Resolving 'Toaru Chiisana Mura no Cheat na Kajiya-san' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37758 up to 12.0
+[CSV 536/995] Resolving 'Souzou Renkinjutsushi wa Jiyuu wo Ouka suru: Kokyou wo Tsuihou saretara, Maou no Ohizamoto de Chouzetsu Kouka no Magic Item Tsukuri-houdai ni Narimashita' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 9855 up to 8.1
+[CSV 537/995] Resolving 'Respawn: Usurping the Imperial Throne with my Extra Lives' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 45511 up to 6.0
+[CSV 538/995] Resolving 'I Was Called Inept at Home, but Turns Out I'm Super Adept Compared to the Rest of the World' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 45513 up to 22.0
+Mark summary: applied 0 chapters on entry 25697 up to 72.0
+[CSV 540/995] Resolving 'Tensei Babaa wa Misugosenai! Moto Akutoku Jotei no Nishuume Life' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 581 up to 59.0
+[CSV 542/995] Resolving 'I'm the Tyrant's Secretary' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37761 up to 22.0
+[CSV 543/995] Resolving 'Sasen Sareta Saikyou Kenja, Kyoushi ni Natte Muteki no Class wo Tsukuriageru' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37766 up to 38.0
+Mark summary: applied 0 chapters on entry 25073 up to 42.0
+Mark summary: applied 0 chapters on entry 573 up to 45.0
+Mark summary: applied 0 chapters on entry 25754 up to 36.0
+Mark summary: applied 0 chapters on entry 10564 up to 31.0
+Mark summary: applied 0 chapters on entry 26553 up to 17.0
+Mark summary: applied 0 chapters on entry 1832 up to 55.0
+[CSV 550/995] Resolving 'Bannou "Murazukuri" Cheat de Otegaru Slow Life: Mura desu ga Nani ka?' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 8068 up to 46.0
+[CSV 551/995] Resolving 'I Can Do It' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37767 up to 38.0
+Mark summary: applied 0 chapters on entry 25827 up to 39.0
+Mark summary: applied 0 chapters on entry 191 up to 76.0
+Mark summary: applied 0 chapters on entry 1544 up to 18.0
+[CSV 555/995] Resolving 'Infinite Devouring: From Zero to Hero' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37786 up to 156.0
+Mark summary: applied 0 chapters on entry 193 up to 34.0
+Mark summary: applied 0 chapters on entry 7800 up to 68.0
+Mark summary: applied 0 chapters on entry 25935 up to 17.0
+[CSV 559/995] Resolving 'Blue Orchestra' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37787 up to 33.0
+Mark summary: applied 0 chapters on entry 575 up to 90.0
+[CSV 561/995] Resolving 'Bad Guy' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37788 up to 92.0
+Mark summary: applied 0 chapters on entry 9116 up to 109.0
+Mark summary: applied 0 chapters on entry 9615 up to 27.0
+[CSV 564/995] Resolving 'The Beloved Fake Saint' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37793 up to 26.0
+Mark summary: applied 0 chapters on entry 10375 up to 22.0
+Mark summary: applied 0 chapters on entry 611 up to 16.0
+Mark summary: applied 0 chapters on entry 8687 up to 14.1
+[CSV 569/995] Resolving 'Hottoite kudasai - Juma to Cheat Life Tanoshimitai!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37803 up to 25.0
+Mark summary: applied 0 chapters on entry 41 up to 133.0
+[CSV 571/995] Resolving 'Bouken-sha wo Kubi ni Nattanode, Renkinjutsu-shi to Shite Denaoshimasu! - Henkyou Kaitaku? Yoshi, Ore ni Makase Toke!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37804 up to 31.0
+Mark summary: applied 0 chapters on entry 20629 up to 104.0
+Mark summary: applied 0 chapters on entry 8705 up to 120.0
+Mark summary: applied 0 chapters on entry 24885 up to 58.0
+Mark summary: applied 0 chapters on entry 9189 up to 40.0
+Mark summary: applied 0 chapters on entry 10379 up to 40.0
+[CSV 577/995] Resolving 'My Blade Will Lead the Way! Abandoned in a Labyrinth as a Directionally Challenged S-Rank Swordsman' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37816 up to 23.0
+Mark summary: applied 0 chapters on entry 25729 up to 32.0
+Mark summary: applied 0 chapters on entry 10108 up to 28.0
+[CSV 580/995] Resolving 'Dangerous Dungeon Escape' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37817 up to 41.0
+[CSV 581/995] Resolving 'Moon Slayer' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37818 up to 36.0
+[CSV 582/995] Resolving 'After Ten Years of Chopping Wood, Immortals Begged To Become My Disciples' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 12119 up to 18.0
+Mark summary: applied 0 chapters on entry 20841 up to 65.0
+Mark summary: applied 0 chapters on entry 9527 up to 32.0
+Mark summary: applied 0 chapters on entry 25729 up to 63.0
+Mark summary: applied 0 chapters on entry 186 up to 31.0
+[CSV 587/995] Resolving 'The Exiled Duke Wanted to Take it Easy On the Frontier and Work the Fields.' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 46493 up to 3.1
+Mark summary: applied 0 chapters on entry 283 up to 139.0
+Mark summary: applied 0 chapters on entry 30718 up to 13.0
+[CSV 590/995] Resolving 'Osananajimi no S-kyuu Party kara Tsuihou sareta Seijuutsukai.: Bannou Shien Mahou to Nakama wo Fuyashite Saikyou e!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37820 up to 17.0
+Mark summary: applied 0 chapters on entry 9096 up to 163.0
+Mark summary: applied 0 chapters on entry 6338 up to 113.0
+Mark summary: applied 0 chapters on entry 13519 up to 169.0
+Mark summary: applied 0 chapters on entry 8823 up to 64.3
+[CSV 595/995] Resolving 'The Blood KnightÆs Villains' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37821 up to 26.0
+Mark summary: applied 0 chapters on entry 25727 up to 23.0
+Mark summary: applied 0 chapters on entry 8823 up to 84.0
+[CSV 598/995] Resolving 'Regenerate Top Players' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37823 up to 10.0
+Mark summary: applied 0 chapters on entry 10960 up to 98.0
+Mark summary: applied 0 chapters on entry 308 up to 51.0
+Mark summary: applied 0 chapters on entry 25315 up to 41.0
+Mark summary: applied 0 chapters on entry 18048 up to 66.0
+Mark summary: applied 0 chapters on entry 34509 up to 41.0
+[CSV 604/995] Resolving 'Cultivator Against Hero Society' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37825 up to 177.0
+Mark summary: applied 0 chapters on entry 204 up to 119.0
+[CSV 606/995] Resolving 'Takane no Hana wa Midaresaki' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 25360 up to 29.0
+[CSV 608/995] Resolving 'The Ten Thousand Clans Invasion: Guardian of the Rear' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 46500 up to 35.0
+Mark summary: applied 0 chapters on entry 6764 up to 94.0
+[CSV 610/995] Resolving 'Office Worker Who Sees Fate' against Suwayomi sources...
+[CSV 615/995] Resolving 'Monarch of Death' against Suwayomi sources...
+[CSV 616/995] Resolving 'The Legendary Hunter Becomes Young Again' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37831 up to 15.0
+[CSV 618/995] Resolving ''Cause Calypso Can' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 962 up to 50.0
+Mark summary: applied 0 chapters on entry 25559 up to 38.0
+[CSV 623/995] Resolving 'Dead Mount Death Play' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37833 up to 114.0
+Mark summary: applied 0 chapters on entry 13513 up to 139.0
+[CSV 625/995] Resolving 'The Son of the First Emperor Kills Enemies and Becomes a God' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 46501 up to 131.0
+[CSV 626/995] Resolving 'Dai Dark' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37838 up to 21.0
+Mark summary: applied 0 chapters on entry 9705 up to 180.0
+[CSV 629/995] Resolving 'I'm Really Not Targeting the Mages' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37533 up to 63.0
+[CSV 630/995] Resolving 'God's Gambit' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37839 up to 41.0
+Mark summary: applied 0 chapters on entry 1631 up to 148.0
+Mark summary: applied 0 chapters on entry 24823 up to 49.0
+[CSV 633/995] Resolving 'Shokubutsu Monster Musume Nikki ~Seijo datta Watashi ga Uragirareta Hate ni Aruraune ni Tensei Shite Shimatta node, kore kara wa Kougousei wo Shinagara Shizuka ni Shokubutsu Life wo Sugoshimasu~' against Suwayomi sources...
+[CSV 634/995] Resolving 'The Flower Dances and the Wind Sings' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37841 up to 52.0
+[CSV 635/995] Resolving 'I Can See Your Death' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37842 up to 29.0
+Mark summary: applied 0 chapters on entry 6908 up to 53.0
+[CSV 637/995] Resolving 'Mother's Contract Marriage' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37850 up to 28.0
+Mark summary: applied 0 chapters on entry 9054 up to 24.2
+Mark summary: applied 0 chapters on entry 37689 up to 63.0
+Mark summary: applied 0 chapters on entry 25640 up to 92.0
+Mark summary: applied 0 chapters on entry 9511 up to 15.4
+[CSV 642/995] Resolving 'The Red Knight Seeks No Reward' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37852 up to 57.0
+Mark summary: applied 0 chapters on entry 9451 up to 5.3
+[CSV 644/995] Resolving 'Zombie Fight' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37853 up to 28.0
+[CSV 645/995] Resolving 'Eternal Club' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37854 up to 282.0
+Mark summary: applied 0 chapters on entry 9627 up to 72.0
+[CSV 647/995] Resolving 'The Tomb of Famed Swords' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 46503 up to 86.0
+[CSV 648/995] Resolving 'TomorrowÆs Disaster' against Suwayomi sources...
+[CSV 649/995] Resolving 'Genius Corpse-Collecting Warrior' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37856 up to 38.0
+Mark summary: applied 0 chapters on entry 11180 up to 80.0
+Mark summary: applied 0 chapters on entry 7238 up to 53.0
+[CSV 653/995] Resolving 'This Game Is Too Realistic' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37857 up to 48.0
+[CSV 654/995] Resolving 'Legendary RankerÆs Comeback' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37858 up to 46.0
+Mark summary: applied 0 chapters on entry 7246 up to 6.0
+Mark summary: applied 0 chapters on entry 7396 up to 17.0
+Mark summary: applied 0 chapters on entry 274 up to 87.0
+Mark summary: applied 0 chapters on entry 324 up to 89.0
+[CSV 659/995] Resolving 'Jukokuin no Tensei Boukensha: Saikyou Kenja, Jiyuu ni Ikiru' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37859 up to 16.3
+[CSV 660/995] Resolving 'Book Eater' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37860 up to 107.0
+[CSV 661/995] Resolving 'My Favorite Novel Has a Weird Epilogue' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37861 up to 38.0
+Mark summary: applied 0 chapters on entry 171 up to 45.0
+[CSV 664/995] Resolving 'Young Master Is Too Righteous' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37862 up to 147.0
+Mark summary: applied 0 chapters on entry 29837 up to 76.0
+Mark summary: applied 0 chapters on entry 9661 up to 84.0
+[CSV 667/995] Resolving 'The Little Lady Behind the Villain' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 8819 up to 35.0
+[CSV 668/995] Resolving 'Second Life Millionaire' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 9499 up to 63.0
+[CSV 669/995] Resolving 'Star Player Supporter' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37877 up to 58.0
+Mark summary: applied 0 chapters on entry 25508 up to 33.0
+Mark summary: applied 0 chapters on entry 25624 up to 16.0
+Mark summary: applied 0 chapters on entry 9756 up to 30.0
+[CSV 673/995] Resolving 'Rebirth of the Strongest Sword God' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 8160 up to 33.0
+[CSV 674/995] Resolving 'Over the Top' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37878 up to 14.0
+Mark summary: applied 0 chapters on entry 7182 up to 12.0
+Mark summary: applied 0 chapters on entry 8438 up to 165.0
+[CSV 677/995] Resolving 'Ya Boy Kongming!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37880 up to 139.5
+[CSV 678/995] Resolving 'Point Gifter "Keikenchi Bunpai Nouryokusha" no Isekai Saikyou Solo Life' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 6993 up to 8.1
+Mark summary: applied 0 chapters on entry 17713 up to 19.0
+Mark summary: applied 0 chapters on entry 31357 up to 67.0
+Mark summary: applied 0 chapters on entry 7233 up to 97.0
+[CSV 682/995] Resolving 'Rise From the Rubble' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37881 up to 122.0
+Mark summary: applied 0 chapters on entry 8534 up to 106.0
+[CSV 684/995] Resolving 'Dark and Light Martial Emperor' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37886 up to 50.0
+[CSV 685/995] Resolving 'Survive on a Deserted Island with Beautiful Girls' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 7823 up to 119.0
+[CSV 686/995] Resolving 'Egret: The Great Sage' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37887 up to 94.0
+Mark summary: applied 0 chapters on entry 296 up to 71.0
+[CSV 688/995] Resolving 'Storm Inn' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37896 up to 97.0
+Mark summary: applied 0 chapters on entry 19036 up to 53.0
+[CSV 690/995] Resolving 'Hunter AcademyÆs Strongest Battle God' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37901 up to 22.0
+[CSV 691/995] Resolving 'One Step Forward to the Flower Path' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 9906 up to 40.0
+Mark summary: applied 0 chapters on entry 11432 up to 90.0
+Mark summary: applied 0 chapters on entry 8954 up to 73.0
+Mark summary: applied 0 chapters on entry 8953 up to 22.0
+Mark summary: applied 0 chapters on entry 146 up to 142.0
+Mark summary: applied 0 chapters on entry 10311 up to 53.0
+[CSV 697/995] Resolving 'This Martial Saint Is Way Too Generous' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37903 up to 87.0
+Mark summary: applied 0 chapters on entry 25470 up to 64.0
+[CSV 699/995] Resolving 'Zatsuyou Fuyo Jutsushi ga Jibun no Saikyou ni Kizuku made' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37904 up to 20.0
+Mark summary: applied 0 chapters on entry 10438 up to 96.0
+Mark summary: applied 0 chapters on entry 18128 up to 73.0
+[CSV 702/995] Resolving 'Log in With Max Level' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 8449 up to 92.0
+[CSV 703/995] Resolving 'Assassin in Another World' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 7580 up to 62.0
+Mark summary: applied 0 chapters on entry 150 up to 66.0
+[CSV 705/995] Resolving '"Hon'yaku" no Sainou de Ore Dake ga Sekai o Kaihen Dekiru Ken: Hazure Sainou "Hon'yaku" de Kizukeba Sekai Saikyou ni Nattemashita' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37907 up to 23.1
+Mark summary: applied 0 chapters on entry 8482 up to 268.0
+[CSV 707/995] Resolving 'The Supreme Way' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37908 up to 90.0
+[CSV 708/995] Resolving 'Lucky Striker' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37909 up to 75.0
+Mark summary: applied 0 chapters on entry 170 up to 114.0
+Mark summary: applied 0 chapters on entry 7671 up to 168.0
+Mark summary: applied 0 chapters on entry 25718 up to 46.0
+Mark summary: applied 0 chapters on entry 25315 up to 48.0
+[CSV 713/995] Resolving 'The Iron-Blooded Necromancer Has Returned' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 46506 up to 40.0
+Mark summary: applied 0 chapters on entry 9267 up to 35.0
+[CSV 715/995] Resolving 'Estio' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37911 up to 71.0
+[CSV 716/995] Resolving 'The 6-Year-Old Sage Wants to Hide in the Shadows (Official)' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37913 up to 16.0
+[CSV 717/995] Resolving 'Lu Bu's Life Simulator' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37914 up to 96.0
+[CSV 718/995] Resolving 'Paying Cash to Become Immortal' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37915 up to 90.0
+[CSV 719/995] Resolving 'My 1000th lifetime as a furnace' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37916 up to 39.0
+[CSV 720/995] Resolving 'The Martial Emperor's Life After Seclusion' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37917 up to 203.0
+Mark summary: applied 0 chapters on entry 76 up to 159.0
+[CSV 722/995] Resolving 'A True Martial World' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37918 up to 33.0
+[CSV 723/995] Resolving 'Soul of Burning Steel' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37921 up to 32.0
+[CSV 724/995] Resolving 'Mage Again' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37922 up to 28.0
+Mark summary: applied 0 chapters on entry 8875 up to 39.0
+Mark summary: applied 0 chapters on entry 15736 up to 176.0
+Mark summary: applied 0 chapters on entry 144 up to 60.0
+[CSV 728/995] Resolving 'Everyone Regressed Except Me' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37927 up to 37.0
+[CSV 729/995] Resolving 'Above Ten Thousand People' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37930 up to 303.0
+[CSV 730/995] Resolving 'L.A.G' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 47378 up to 105.0
+Mark summary: applied 0 chapters on entry 9969 up to 448.0
+[CSV 732/995] Resolving 'Real World Mobile' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 8209 up to 75.0
+[CSV 733/995] Resolving 'Success Rate' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 47379 up to 168.0
+Mark summary: applied 0 chapters on entry 15309 up to 10.0
+Mark summary: applied 0 chapters on entry 118 up to 53.0
+[CSV 736/995] Resolving 'Library of Heaven's Path' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37934 up to 324.0
+Mark summary: applied 0 chapters on entry 6193 up to 38.0
+[CSV 738/995] Resolving 'The Housekeeper of the Dungeon' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37937 up to 33.0
+Mark summary: applied 0 chapters on entry 9469 up to 99.0
+[CSV 740/995] Resolving 'Big Spender in a Busted Game' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37944 up to 30.0
+[CSV 741/995] Resolving 'Absolute Master of the Senate' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37945 up to 44.0
+[CSV 742/995] Resolving 'All Rounder' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 9033 up to 12.5
+[CSV 744/995] Resolving 'The Exclusive Contractor's Quitting Chronicles' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37951 up to 29.0
+[CSV 745/995] Resolving 'Beyond the Sky' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37952 up to 99.0
+[CSV 746/995] Resolving 'I Upgrade by Rewarding Apprentices' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37956 up to 88.0
+[CSV 747/995] Resolving 'I Am the Dengle' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37957 up to 13.0
+[CSV 748/995] Resolving 'Picked up From Another World' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37969 up to 181.0
+[CSV 749/995] Resolving 'Denounce' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37971 up to 59.0
+Mark summary: applied 0 chapters on entry 11648 up to 178.0
+[CSV 751/995] Resolving 'Was Manager Seo Disposed of as an Industrial Accident?' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37973 up to 21.0
+Mark summary: applied 0 chapters on entry 1014 up to 63.0
+[CSV 753/995] Resolving 'Monster Hunter' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37974 up to 27.0
+[CSV 754/995] Resolving 'The Healing Solaris Cleric' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37986 up to 61.0
+[CSV 755/995] Resolving 'The Book of Lagier' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37987 up to 68.0
+[CSV 756/995] Resolving 'Superstar Associate Manager' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 55049 up to 90.0
+Mark summary: applied 0 chapters on entry 25766 up to 50.0
+[CSV 758/995] Resolving 'My Cultivator Girlfriend' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 47383 up to 807.0
+[CSV 759/995] Resolving 'I Just Want to Game in Peace' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38007 up to 91.0
+Mark summary: applied 0 chapters on entry 8773 up to 7.2
+Mark summary: applied 0 chapters on entry 117 up to 79.0
+[CSV 762/995] Resolving 'Martial God Asura' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38008 up to 393.0
+[CSV 763/995] Resolving 'Off to an Invincible Start' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38009 up to 65.0
+[CSV 764/995] Resolving 'Shadow Hack' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38010 up to 107.0
+Mark summary: applied 0 chapters on entry 6853 up to 84.0
+Mark summary: applied 0 chapters on entry 7337 up to 187.0
+[CSV 767/995] Resolving 'Yi Gwol: The Grand Commander' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38011 up to 108.0
+[CSV 768/995] Resolving 'Five-Dimensional Zone' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38012 up to 48.0
+[CSV 769/995] Resolving 'I Get Stronger By Doing Nothing' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38013 up to 30.0
+[CSV 770/995] Resolving 'You Didn't Say the Start of the Regression Was a Gate' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 165 up to 49.0
+Mark summary: applied 0 chapters on entry 168 up to 47.0
+[CSV 773/995] Resolving 'Time Roulette' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38016 up to 61.0
+[CSV 774/995] Resolving 'My Sister is a Big Star' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 7778 up to 209.0
+Mark summary: applied 0 chapters on entry 6893 up to 197.0
+[CSV 776/995] Resolving 'Master of the Martial Arts Library' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 11143 up to 38.0
+Mark summary: applied 0 chapters on entry 9344 up to 26.0
+[CSV 778/995] Resolving 'Story of a "Jobless" Champion and a Princess Who Together Find Their Happiness' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38020 up to 5.1
+Mark summary: applied 0 chapters on entry 37689 up to 73.0
+[CSV 780/995] Resolving 'Devil Sword King' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38021 up to 26.0
+[CSV 781/995] Resolving 'Climbing the Tower That Even the Regressor Couldn't' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38022 up to 37.0
+[CSV 782/995] Resolving 'Keyboard Immortal' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38023 up to 38.0
+[CSV 783/995] Resolving 'Doctor Player' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 10968 up to 64.0
+Mark summary: applied 0 chapters on entry 10399 up to 160.0
+Mark summary: applied 0 chapters on entry 12365 up to 115.0
+[CSV 786/995] Resolving 'Hazure Aka Madoushi wa Kenja Time ni Musou Suru' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 47391 up to 8.0
+[CSV 788/995] Resolving 'Apocalyptic Forecast' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38024 up to 20.0
+Mark summary: applied 0 chapters on entry 786 up to 164.0
+[CSV 790/995] Resolving 'Shachiku, Dungeon Darake no Sekai de Koyuu Skill "Gouyoku" wo Te ni Irete Saikyou no Balance Breaker ni Naru' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 7436 up to 13.0
+[CSV 791/995] Resolving 'A Sword's Evolution Begins From Killing' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38025 up to 68.0
+[CSV 792/995] Resolving 'The Last Cultivator' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 109 up to 43.0
+[CSV 794/995] Resolving 'A Monstrous First Day' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38027 up to 44.0
+[CSV 795/995] Resolving 'Useless Wizard' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38031 up to 27.0
+Mark summary: applied 0 chapters on entry 131 up to 45.0
+Mark summary: applied 0 chapters on entry 331 up to 46.0
+[CSV 798/995] Resolving 'Holy Chef, Crazy Empress' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38032 up to 263.0
+Mark summary: applied 0 chapters on entry 9646 up to 43.0
+[CSV 800/995] Resolving 'Celebrating the Remaining Life' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 47438 up to 26.0
+Mark summary: applied 0 chapters on entry 7549 up to 27.1
+Mark summary: applied 0 chapters on entry 7632 up to 476.0
+[CSV 803/995] Resolving 'My Senior Brother Is Too Steady' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38033 up to 113.0
+[CSV 804/995] Resolving 'Eternal Kingdom (2022)' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38034 up to 70.0
+[CSV 805/995] Resolving 'Mushroom Hero' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38036 up to 76.0
+Mark summary: applied 0 chapters on entry 37916 up to 26.3
+Mark summary: applied 0 chapters on entry 25727 up to 28.0
+[CSV 808/995] Resolving 'This Human Immortal Is Too Serious' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38038 up to 33.0
+[CSV 809/995] Resolving 'Please Repent, Your Grace!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38039 up to 39.0
+[CSV 810/995] Resolving 'Botsuraku Kizoku no Ore ga Hazure (?) Skill Cho Kiyo Binbo de Dai-Kenja to Yobareru made' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 37895 up to 3.0
+[CSV 811/995] Resolving 'The Unyielding Ancient Cultivator' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 7535 up to 65.0
+[CSV 812/995] Resolving 'Shaman' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38041 up to 36.0
+[CSV 813/995] Resolving 'Lose Control of Myself' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 47954 up to 37.0
+Mark summary: applied 0 chapters on entry 8285 up to 30.0
+[CSV 815/995] Resolving 'Udon no Kuni no Kin'iro Kemari' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38061 up to 2.0
+[CSV 816/995] Resolving 'Return of the Youngest Grandmaster' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 49954 up to 61.0
+Mark summary: applied 0 chapters on entry 1458 up to 197.0
+[CSV 818/995] Resolving 'Dawn Empire' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38063 up to 18.0
+[CSV 819/995] Resolving 'Three Kingdoms' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 8548 up to 36.0
+[CSV 820/995] Resolving 'Emperor LingTian' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38073 up to 207.0
+[CSV 821/995] Resolving 'Magic Scholar' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38074 up to 27.0
+Mark summary: applied 0 chapters on entry 9783 up to 77.0
+[CSV 823/995] Resolving 'Return Survival' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38075 up to 103.0
+[CSV 824/995] Resolving 'Return of the Elemental Lord' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38076 up to 37.0
+[CSV 825/995] Resolving 'Legend Reboot' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38079 up to 100.0
+[CSV 826/995] Resolving 'Cat System: The Emperor Is a Cat Lover' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 49955 up to 47.0
+Mark summary: applied 0 chapters on entry 9027 up to 296.0
+Mark summary: applied 0 chapters on entry 9017 up to 34.0
+[CSV 829/995] Resolving 'Dungeon Athlete' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38081 up to 18.0
+[CSV 830/995] Resolving 'The Devil Ring' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38082 up to 77.0
+[CSV 831/995] Resolving 'The Millennium Alchemist' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 49957 up to 71.0
+Mark summary: applied 0 chapters on entry 45306 up to 288.0
+[CSV 833/995] Resolving 'The Long Way of the Warrior' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38085 up to 98.0
+Mark summary: applied 0 chapters on entry 20139 up to 13.0
+[CSV 835/995] Resolving 'Immortal WorldÆs First Undercover Agent' against Suwayomi sources...
+[CSV 836/995] Resolving 'Asirhart Kingdom Aide' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38089 up to 38.0
+Mark summary: applied 0 chapters on entry 13524 up to 88.0
+[CSV 838/995] Resolving 'IÆm the Only One Loved by the Constellations!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38090 up to 53.0
+[CSV 839/995] Resolving 'Hitman' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 52400 up to 80.0
+[CSV 840/995] Resolving 'Kuro no Senki: Isekai Teni Shita Boku ga Saikyou na no wa Bed no Ue dake no You desu' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 54224 up to 5.2
+[CSV 841/995] Resolving 'Teenage Swordsman' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38108 up to 53.0
+[CSV 842/995] Resolving 'Marginal Operation' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38109 up to 54.0
+[CSV 843/995] Resolving 'The WorldÆs Finest Escort Bureau' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38111 up to 49.0
+Mark summary: applied 0 chapters on entry 7754 up to 38.0
+[CSV 845/995] Resolving 'Snake Immortal: The Tale of a Snake's Cultivation to Immortality' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38112 up to 10.0
+[CSV 846/995] Resolving 'My [Repair] Skill Became a Versatile Cheat, So I Think IÆll Open a Weapon Shop' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38113 up to 30.0
+[CSV 847/995] Resolving 'The Heavenly Demon Will Turn the World Upside Down' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38114 up to 40.0
+Mark summary: applied 0 chapters on entry 216 up to 35.0
+Mark summary: applied 0 chapters on entry 31150 up to 47.0
+[CSV 850/995] Resolving 'Shattering the Laws of Plot Armor!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38115 up to 9.2
+[CSV 851/995] Resolving 'The Enchanting Villainess' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38116 up to 107.0
+[CSV 852/995] Resolving 'A Tidal Wave of Glory' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38117 up to 60.0
+Mark summary: applied 0 chapters on entry 18147 up to 48.0
+Mark summary: applied 0 chapters on entry 7892 up to 13.0
+[CSV 855/995] Resolving 'Ore wa Seikan Kokka no Akutoku Ryoshu!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38118 up to 33.2
+Mark summary: applied 0 chapters on entry 8943 up to 21.0
+Mark summary: applied 0 chapters on entry 24397 up to 68.0
+Mark summary: applied 0 chapters on entry 7381 up to 15.3
+Mark summary: applied 0 chapters on entry 968 up to 55.0
+Mark summary: applied 0 chapters on entry 23012 up to 50.0
+[CSV 861/995] Resolving 'Abnormal Immortal Record of Spooky Daoist' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 54657 up to 21.0
+Mark summary: applied 0 chapters on entry 9498 up to 129.0
+[CSV 863/995] Resolving 'Way To Heaven' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38120 up to 153.0
+Mark summary: applied 0 chapters on entry 1781 up to 222.0
+Mark summary: applied 0 chapters on entry 10386 up to 38.0
+Mark summary: applied 0 chapters on entry 9944 up to 13.2
+Mark summary: applied 0 chapters on entry 25486 up to 96.0
+Mark summary: applied 0 chapters on entry 1057 up to 99.0
+Mark summary: applied 0 chapters on entry 970 up to 87.0
+Mark summary: applied 0 chapters on entry 22871 up to 51.0
+Mark summary: applied 0 chapters on entry 997 up to 62.0
+Mark summary: applied 0 chapters on entry 8074 up to 13.2
+Mark summary: applied 0 chapters on entry 717 up to 22.0
+Mark summary: applied 0 chapters on entry 8533 up to 35.0
+Mark summary: applied 0 chapters on entry 531 up to 38.0
+Mark summary: applied 0 chapters on entry 25699 up to 68.0
+Mark summary: applied 0 chapters on entry 25400 up to 62.0
+Mark summary: applied 0 chapters on entry 1005 up to 76.0
+Mark summary: applied 0 chapters on entry 986 up to 76.0
+Mark summary: applied 0 chapters on entry 25561 up to 138.0
+Mark summary: applied 0 chapters on entry 1040 up to 170.0
+Mark summary: applied 0 chapters on entry 732 up to 58.0
+Mark summary: applied 0 chapters on entry 6356 up to 124.0
+[CSV 884/995] Resolving 'Sweet Reincarnation' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38121 up to 50.6
+Mark summary: applied 0 chapters on entry 33271 up to 8.0
+[CSV 886/995] Resolving 'Life, Once Again!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38124 up to 50.0
+Mark summary: applied 0 chapters on entry 7099 up to 19.0
+[CSV 888/995] Resolving 'Cheat Mode Farming in Another World (Official)' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 31762 up to 25.0
+Mark summary: applied 0 chapters on entry 609 up to 210.0
+[CSV 890/995] Resolving 'The Heavenly Demon's Descendant' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 11918 up to 39.0
+[CSV 891/995] Resolving 'X Ten' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 113 up to 46.0
+Mark summary: applied 0 chapters on entry 1020 up to 175.0
+Mark summary: applied 0 chapters on entry 5920 up to 70.0
+Mark summary: applied 0 chapters on entry 10284 up to 53.0
+[CSV 896/995] Resolving 'The Genius Prince's Way to Raising a Nation Out of Debt (Official)' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 54818 up to 79.0
+[CSV 897/995] Resolving 'I Am the Rising Villain' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 8377 up to 14.0
+[CSV 898/995] Resolving 'Isekai Saikyou no Daimaou, Tensei Shi Boukensha ni Naru' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 11775 up to 17.0
+[CSV 899/995] Resolving 'Tyranny of the Gale' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38142 up to 38.0
+Mark summary: applied 0 chapters on entry 156 up to 50.0
+Mark summary: applied 0 chapters on entry 7124 up to 11.0
+Mark summary: applied 0 chapters on entry 8562 up to 28.0
+Mark summary: applied 0 chapters on entry 25765 up to 100.0
+[CSV 907/995] Resolving 'MagiLumiere Co., Ltd.' against Suwayomi sources...
+[CSV 909/995] Resolving 'Sasaki to Pii-chan: Isekai de Slow Life wo Tanoshimou to Shitara, Gendai de Inou Battle ni Makikomareta Ken - Mahou Shoujo ga Up wo Hajimeta you desu' against Suwayomi sources...
+[CSV 910/995] Resolving 'Warrior Executioner' against Suwayomi sources...
+[CSV 911/995] Resolving 'Hana wa Saku, Shura no Gotoku' against Suwayomi sources...
+[CSV 912/995] Resolving 'Iken Senki V÷lundio' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38156 up to 64.0
+[CSV 913/995] Resolving 'The Primordial World: Starting by Taking the Minghe as My Adopted Stepdaughter' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38157 up to 23.0
+Mark summary: applied 0 chapters on entry 1026 up to 29.0
+[CSV 915/995] Resolving 'Reincarnation Coliseum: The Weakest Skill Conquers the Strongest Women and Creates a Harem' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 249 up to 20.0
+Mark summary: applied 0 chapters on entry 25451 up to 25.0
+Mark summary: applied 0 chapters on entry 205 up to 25.0
+Mark summary: applied 0 chapters on entry 25502 up to 6.0
+[CSV 920/995] Resolving 'The Death-Returning Demon King-Class Player: Lost Man' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 54889 up to 18.0
+Mark summary: applied 0 chapters on entry 25344 up to 36.0
+Mark summary: applied 0 chapters on entry 8073 up to 32.0
+Mark summary: applied 0 chapters on entry 25292 up to 38.0
+Mark summary: applied 0 chapters on entry 25471 up to 33.0
+[CSV 925/995] Resolving 'I Raided the Demon God's Treasure Trove' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 847 up to 51.0
+Mark summary: applied 0 chapters on entry 18105 up to 27.0
+[CSV 928/995] Resolving 'Growth-Type Superhero' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38158 up to 36.0
+Mark summary: applied 0 chapters on entry 25607 up to 116.0
+Mark summary: applied 0 chapters on entry 8137 up to 56.0
+Mark summary: applied 0 chapters on entry 31309 up to 67.0
+Mark summary: applied 0 chapters on entry 25533 up to 57.0
+Mark summary: applied 0 chapters on entry 25676 up to 36.0
+[CSV 934/995] Resolving 'Centuria' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38159 up to 47.0
+Mark summary: applied 0 chapters on entry 25293 up to 36.0
+Mark summary: applied 0 chapters on entry 557 up to 34.0
+Mark summary: applied 0 chapters on entry 8737 up to 36.0
+Mark summary: applied 0 chapters on entry 25185 up to 25.0
+Mark summary: applied 0 chapters on entry 538 up to 21.0
+Mark summary: applied 0 chapters on entry 25851 up to 23.0
+Mark summary: applied 0 chapters on entry 539 up to 40.0
+Mark summary: applied 0 chapters on entry 7041 up to 44.0
+Mark summary: applied 0 chapters on entry 18090 up to 32.0
+Mark summary: applied 0 chapters on entry 25750 up to 29.0
+[CSV 948/995] Resolving 'The Legendary Assassin Reincarnated as the Beloved Youngest Daughter of a Royal Family' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 25429 up to 15.0
+Mark summary: applied 0 chapters on entry 25230 up to 20.0
+Mark summary: applied 0 chapters on entry 25325 up to 16.0
+[CSV 952/995] Resolving 'The Birth of Ramen' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 26732 up to 12.0
+[CSV 955/995] Resolving 'Everyone Loves Her' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38178 up to 7.0
+[CSV 957/995] Resolving 'Martial Evolution: Start by Awakening the King of Monsters' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38179 up to 8.0
+[CSV 958/995] Resolving 'Invincible Starts with a Severed Hand' against Suwayomi sources...
+[CSV 959/995] Resolving 'Everyone Was Obsessed With Me After I Became the Youngest Princess' Favourite' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38181 up to 21.0
+Mark summary: applied 0 chapters on entry 546 up to 19.0
+Mark summary: applied 0 chapters on entry 19901 up to 284.0
+Mark summary: applied 0 chapters on entry 206 up to 43.0
+[CSV 966/995] Resolving 'The Students of Illip Arts High' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38182 up to 27.0
+Mark summary: applied 0 chapters on entry 25256 up to 39.0
+[CSV 969/995] Resolving 'The Fake Master Who Accidentally Became the Strongest' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 988 up to 27.0
+[CSV 971/995] Resolving 'King of Gacha ~GodÆs Gamer~' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38184 up to 37.0
+Mark summary: applied 0 chapters on entry 33271 up to 10.0
+[CSV 973/995] Resolving 'The Demon Lord Reincarnated as a Slave ~Rising to the Top to Rewrite History~' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 6830 up to 35.0
+Mark summary: applied 0 chapters on entry 995 up to 193.0
+Mark summary: applied 0 chapters on entry 846 up to 21.0
+[CSV 981/995] Resolving 'Apocalypse: Cockroaches Gives Me Buff' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 137 up to 6.0
+Mark summary: applied 0 chapters on entry 18278 up to 90.0
+Mark summary: applied 0 chapters on entry 25377 up to 20.0
+[CSV 987/995] Resolving 'Magician' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 25380 up to 21.0
+Mark summary: applied 0 chapters on entry 8538 up to 25.0
+[CSV 992/995] Resolving 'Mugen no Skill Getter!' against Suwayomi sources...
+Mark summary: applied 0 chapters on entry 38204 up to 31.0
+Mark summary: applied 0 chapters on entry 25570 up to 194.0
+[CSV 994/995] Resolving 'Hassai kara Hajimaru Kamigami no Shito no Tensei Seikatsu' against Suwayomi sources...
+Found 0 MangaDex IDs; Added: 0, Failed: 0
+CSV summary: rows=995, matched=995, unmatched=0
+CSV direct import: added=357, existing=638, failed=0
+CSV read progress applied=889, skipped=0

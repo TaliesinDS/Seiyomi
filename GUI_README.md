@@ -30,7 +30,9 @@ All options generate an exact command in the Command Preview so you can run the 
 ## Tabs at a glance
 
 - MangaDex Import: log in and pull follows/statuses/read markers
+- CSV Import: add Comick/Manganato CSV files, set per-file options, and everything auto-matches directly against Suwayomi sources (MangaDex lookup is always skipped)
 - Migrate: add better sources for thin/zero‑chapter entries; title matching and language preferences supported
+	- Tip: list a few high-quality sites in “Preferred sources” (and optionally enable “Preferred only”) so migrations stay focused and skip the long tail of low-quality mirrors.
 - Prune: clean duplicates and non‑preferred‑language entries
 - Suwayomi Database: base URL, auth, list categories, open UI
 - Settings: presets and debug output
