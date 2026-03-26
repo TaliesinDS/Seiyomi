@@ -1,0 +1,366 @@
+--import-read-chapters requires a MangaDex session (use --from-follows or --md-login-only). Disabling.
+[1/89] FAIL ad65d0cb-30ee-47f0-acb8-8fbec89f132c
+[2/89] FAIL a53b32db-cfd0-42aa-83b4-69ddb13983d6
+[3/89] FAIL 9d6fce2b-3a2c-4f8e-853c-a6eadba713cd
+[4/89] FAIL 66542ad9-bfc4-4953-9941-c359e513d6fe
+[5/89] FAIL 8aff30d8-e62a-495e-8b0a-47b251e246d0
+[6/89] FAIL 76a2c911-e3af-4852-b03d-f062f1c497f5
+[7/89] FAIL 9cc793af-a7f5-4b74-9e5e-8ba6454cd3aa
+[8/89] FAIL 743d35db-0c0a-4e4b-86e4-b300e39e85df
+[9/89] FAIL 141609b6-cf86-4266-904c-6648f389cdc9
+[10/89] FAIL 2b3ca0e3-4d7f-4f45-9b2e-ccfa51caddec
+[11/89] FAIL dcd728f8-4617-428c-bb86-16edc5e7b0de
+[12/89] FAIL 544240b7-557d-4f86-bcc0-28ad5fa99795
+[13/89] FAIL ed5dddc0-999d-4fd2-a702-9fef1ec2c955
+[14/89] FAIL a8e9045f-dbf2-474e-927c-9b0616eedfb9
+[15/89] FAIL 0e0d657c-342f-4282-b9c6-d7baaf47dbfd
+[16/89] FAIL ae2d8e06-0717-44b8-b424-c4abe5f91665
+[17/89] FAIL 55a1aba6-967c-4967-a1d0-ad0f52332be0
+[18/89] FAIL 39c9c088-3a83-4e61-a129-35fe299bbe3c
+[19/89] FAIL 067b49dd-c8f7-4faf-b3a7-de5cb5bdfdfb
+[20/89] FAIL 44284460-1639-41e2-81ba-a2c3bd5a8b1f
+[21/89] FAIL 7e1c6acc-347c-4fca-b170-30790727af43
+[22/89] FAIL 4fb7cd1e-5f51-4e1c-a318-b32770d1c61f
+[23/89] FAIL 05c2917a-e0a4-4c55-abac-8be0f8b213e4
+[24/89] FAIL fcb7f53f-fd9d-4dfe-a764-20b12d61391a
+[25/89] FAIL ec30192e-87df-47da-bfda-cc9a282bc51c
+[26/89] FAIL 636933aa-976e-4455-8082-36751a554be0
+[27/89] FAIL b0dc2f88-4e89-4e30-8d68-20116db788ff
+[28/89] FAIL f5d19c6e-f5d6-4960-9c3b-8a8fe8fdb5da
+[29/89] FAIL 5ac45000-7df6-4fb4-b482-3a6cbf942e07
+[30/89] FAIL 760dd05d-1668-4603-9a87-16634b95494a
+[31/89] FAIL ce2f8671-cbc0-4cb1-ba62-558b363893ea
+[32/89] FAIL 201e6054-8ac8-4ffc-9eda-c3c8bfeef212
+[33/89] FAIL 57a5e9fb-7d1a-43e3-8f17-a33feb426606
+[34/89] FAIL b35489a5-15ec-465f-94b9-60e8a442b130
+[35/89] FAIL 9478665e-412b-4e08-9844-5c07a732a71b
+[36/89] FAIL eeea01ed-4838-45ca-8e90-88d6f6e95603
+[37/89] FAIL d1b64e08-7be6-4082-a370-e235b133515a
+[38/89] FAIL a6612b6b-8a6e-424b-8997-6fa70ef72f40
+[39/89] FAIL 7b727ae2-2842-4c46-af8b-9162b7806659
+[40/89] FAIL f157eb1e-3468-4abc-9541-472e59633ced
+[41/89] FAIL 0fb8ef3e-794a-4bdd-9d3c-6566d63a785b
+[42/89] FAIL 0925b477-9e72-4b40-8488-afb7aab4583f
+[43/89] FAIL 792e28fb-27be-425d-b92a-64e2d5474657
+[44/89] FAIL 0432556a-9c13-40f6-9647-fa3d1ac60924
+[45/89] FAIL c7ec2aa6-a64e-45a9-9052-f03dd2d7aa56
+[46/89] FAIL 05bd710c-d94a-45eb-be99-2109d58f1006
+[47/89] FAIL 4604db12-cafd-4572-a9f8-68525fb1b167
+[48/89] FAIL 6c491ed0-1027-499b-83d4-c6ba248599d2
+[49/89] FAIL a1bfa8a2-70cb-41da-92ec-08f4a88e67cb
+[50/89] FAIL bfe454a8-5ea1-4463-b0e3-036dca8915cd
+[51/89] FAIL 45d3ebca-8d74-4e51-be90-8582e4756cbd
+[52/89] FAIL a065cc09-cc6a-472c-8ea8-b9e538bacaa4
+[53/89] FAIL 02a1bddd-e27e-422c-98a8-990dd5fb990b
+[54/89] FAIL 9eb78304-0436-484d-9a79-a925b45e2731
+[55/89] FAIL 3695436d-5fa3-43ce-98ed-bd05438a4157
+[56/89] FAIL b97a30e0-58da-41ac-bba5-f200f49525f3
+[57/89] FAIL 241a4cf7-3c7f-4444-9cc4-18762c6f3ec1
+[58/89] FAIL 9dbd08c3-a4ed-4fa3-82e2-18a400f80627
+[59/89] FAIL d76a350d-c6b5-42bb-bfba-e521a3964a6a
+[60/89] FAIL 914c97e0-2623-4f06-9c0e-664393a15424
+[61/89] FAIL 6440a4b0-2fdc-4a99-9378-f53e5ee6c90e
+[62/89] FAIL 6fa61a0f-95c5-453e-a410-0f458955e0a3
+[63/89] FAIL 07007563-5533-44ec-8269-aba1f47cc3d7
+[64/89] FAIL 6fc3bb28-6c67-4345-8088-ec3c856e9b36
+[65/89] FAIL dec01127-4dd4-4208-8a25-4e604bf2b2eb
+[66/89] FAIL ef84c4a4-d27c-4920-a3ab-48e806191131
+[67/89] FAIL 80024c98-4498-4fa6-8328-61ceed882267
+[68/89] FAIL f11d9d5c-bc4c-4552-8ac1-33e158c5a2c2
+[69/89] FAIL a620308e-2272-4a0d-b7fa-b9bfbb269f67
+[70/89] FAIL 2004b225-bae8-43ca-92ad-ebae1ce6498e
+[71/89] FAIL fb881573-0fad-4fac-83bf-a1bc7a17637c
+[72/89] FAIL 7b29f645-7dbf-46b1-8534-b70b5859c49a
+[73/89] FAIL c68e79bd-af1a-4522-91f8-332c3b15323e
+[74/89] FAIL 0a5d1769-7401-43fb-9b0e-26f3be6ca6ba
+[75/89] FAIL 3aa95b12-36f5-4172-8589-62df32fa2c6d
+[76/89] FAIL 3befc8bb-21f1-4440-8d22-c587b559aca9
+[77/89] FAIL f78519ca-5cc2-4f80-835e-466d722cae09
+[78/89] FAIL c0d75ac6-04e6-413b-a494-42d0e7de7e99
+[79/89] FAIL a684ea2e-5cf6-40b4-ae82-4010d6d3df2c
+[80/89] FAIL 971fb926-e2c7-40da-be30-59e540aeb013
+[81/89] FAIL a3aaa930-cebf-4f08-a63e-5eb535c89607
+[82/89] FAIL d587a5c2-842a-4fc5-a323-cddb5e41a2cb
+[83/89] FAIL c268a95f-e3d6-4414-981b-6c83c6447f5a
+[84/89] FAIL 94e6f5a4-a215-4f5b-ae82-febc560be66d
+[85/89] FAIL b9b2fbc4-e351-406c-a468-799be14033df
+[86/89] FAIL 7d15d24e-3929-4f8f-813c-5a8d074b46a5
+[87/89] FAIL 394398f2-6287-48c7-9713-cd1759c97291
+[88/89] FAIL 5ad23128-34e8-408c-a08f-004be955e5e1
+[89/89] FAIL 1aad07fb-3ec1-4acf-8c5b-d8f5f5929a5d
+Found 89 MangaDex IDs; Added: 0, Failed: 89
+Failures:
+  ad65d0cb-30ee-47f0-acb8-8fbec89f132c: not found (uuid + title fallback failed)
+  a53b32db-cfd0-42aa-83b4-69ddb13983d6: not found (uuid + title fallback failed)
+  9d6fce2b-3a2c-4f8e-853c-a6eadba713cd: not found (uuid + title fallback failed)
+  66542ad9-bfc4-4953-9941-c359e513d6fe: not found (uuid + title fallback failed)
+  8aff30d8-e62a-495e-8b0a-47b251e246d0: not found (uuid + title fallback failed)
+  76a2c911-e3af-4852-b03d-f062f1c497f5: not found (uuid + title fallback failed)
+  9cc793af-a7f5-4b74-9e5e-8ba6454cd3aa: not found (uuid + title fallback failed)
+  743d35db-0c0a-4e4b-86e4-b300e39e85df: not found (uuid + title fallback failed)
+  141609b6-cf86-4266-904c-6648f389cdc9: not found (uuid + title fallback failed)
+  2b3ca0e3-4d7f-4f45-9b2e-ccfa51caddec: not found (uuid + title fallback failed)
+  dcd728f8-4617-428c-bb86-16edc5e7b0de: not found (uuid + title fallback failed)
+  544240b7-557d-4f86-bcc0-28ad5fa99795: not found (uuid + title fallback failed)
+  ed5dddc0-999d-4fd2-a702-9fef1ec2c955: not found (uuid + title fallback failed)
+  a8e9045f-dbf2-474e-927c-9b0616eedfb9: not found (uuid + title fallback failed)
+  0e0d657c-342f-4282-b9c6-d7baaf47dbfd: not found (uuid + title fallback failed)
+  ae2d8e06-0717-44b8-b424-c4abe5f91665: not found (uuid + title fallback failed)
+  55a1aba6-967c-4967-a1d0-ad0f52332be0: not found (uuid + title fallback failed)
+  39c9c088-3a83-4e61-a129-35fe299bbe3c: not found (uuid + title fallback failed)
+  067b49dd-c8f7-4faf-b3a7-de5cb5bdfdfb: not found (uuid + title fallback failed)
+  44284460-1639-41e2-81ba-a2c3bd5a8b1f: not found (uuid + title fallback failed)
+  7e1c6acc-347c-4fca-b170-30790727af43: not found (uuid + title fallback failed)
+  4fb7cd1e-5f51-4e1c-a318-b32770d1c61f: not found (uuid + title fallback failed)
+  05c2917a-e0a4-4c55-abac-8be0f8b213e4: not found (uuid + title fallback failed)
+  fcb7f53f-fd9d-4dfe-a764-20b12d61391a: not found (uuid + title fallback failed)
+  ec30192e-87df-47da-bfda-cc9a282bc51c: not found (uuid + title fallback failed)
+  636933aa-976e-4455-8082-36751a554be0: not found (uuid + title fallback failed)
+  b0dc2f88-4e89-4e30-8d68-20116db788ff: not found (uuid + title fallback failed)
+  f5d19c6e-f5d6-4960-9c3b-8a8fe8fdb5da: not found (uuid + title fallback failed)
+  5ac45000-7df6-4fb4-b482-3a6cbf942e07: not found (uuid + title fallback failed)
+  760dd05d-1668-4603-9a87-16634b95494a: not found (uuid + title fallback failed)
+  ce2f8671-cbc0-4cb1-ba62-558b363893ea: not found (uuid + title fallback failed)
+  201e6054-8ac8-4ffc-9eda-c3c8bfeef212: not found (uuid + title fallback failed)
+  57a5e9fb-7d1a-43e3-8f17-a33feb426606: not found (uuid + title fallback failed)
+  b35489a5-15ec-465f-94b9-60e8a442b130: not found (uuid + title fallback failed)
+  9478665e-412b-4e08-9844-5c07a732a71b: not found (uuid + title fallback failed)
+  eeea01ed-4838-45ca-8e90-88d6f6e95603: not found (uuid + title fallback failed)
+  d1b64e08-7be6-4082-a370-e235b133515a: not found (uuid + title fallback failed)
+  a6612b6b-8a6e-424b-8997-6fa70ef72f40: not found (uuid + title fallback failed)
+  7b727ae2-2842-4c46-af8b-9162b7806659: not found (uuid + title fallback failed)
+  f157eb1e-3468-4abc-9541-472e59633ced: not found (uuid + title fallback failed)
+  0fb8ef3e-794a-4bdd-9d3c-6566d63a785b: not found (uuid + title fallback failed)
+  0925b477-9e72-4b40-8488-afb7aab4583f: not found (uuid + title fallback failed)
+  792e28fb-27be-425d-b92a-64e2d5474657: not found (uuid + title fallback failed)
+  0432556a-9c13-40f6-9647-fa3d1ac60924: not found (uuid + title fallback failed)
+  c7ec2aa6-a64e-45a9-9052-f03dd2d7aa56: not found (uuid + title fallback failed)
+  05bd710c-d94a-45eb-be99-2109d58f1006: not found (uuid + title fallback failed)
+  4604db12-cafd-4572-a9f8-68525fb1b167: not found (uuid + title fallback failed)
+  6c491ed0-1027-499b-83d4-c6ba248599d2: not found (uuid + title fallback failed)
+  a1bfa8a2-70cb-41da-92ec-08f4a88e67cb: not found (uuid + title fallback failed)
+  bfe454a8-5ea1-4463-b0e3-036dca8915cd: not found (uuid + title fallback failed)
+  ... and 39 more
+CSV summary: rows=995, matched=320, unmatched=675
+CSV entries already present in library (skipped add): 231
+CSV resolution failures:
+  Reincarnation of the Fist King: no match above threshold
+  A Cadet Becomes a Prophet?!: no match above threshold
+  The Strongest Heretic Plant User: no match above threshold
+  Ie ga Moete Jinsei Dou Demo Yoku Natta kara, Nokotta Nakenashi no Kin de Dark Elf no Dorei o Katta.: no match above threshold
+  Ore Dake Saikyou Chouetsusha - Zen Sekai no Cheat Shishou ni Mitomerareta: no match above threshold
+  Backstabbed in a Backwater Dungeon: My Party Tried to Kill Me, But Thanks to an Infinite Gacha I Got LVL 9999 Friends and am Out for Revenge: no match above threshold
+  Artifact Reading Appraiser: no match above threshold
+  Blooming Love: no match above threshold
+  Yoku Wakaranai Keredo Isekai ni Tensei Shiteita You Desu: no match above threshold
+  The Genius Wants an Ordinary Life: no match above threshold
+  ... and 665 more
+[csv-progress] (dry-run) would mark ece206e2-1199-48e4-a88c-1f99af3d5378 up to chapter 39
+[csv-progress] (dry-run) would mark b15c94f0-232d-4fe7-9da8-4dbb25dafbb6 up to chapter 365
+[csv-progress] (dry-run) would mark 15d88ad6-19e7-48b6-b5db-8107fcccb220 up to chapter 61
+[csv-progress] (dry-run) would mark b407de00-75a5-415a-a001-585fb41b9cf2 up to chapter 173
+[csv-progress] (dry-run) would mark 3599c6fe-f3b5-48b7-a551-dd0531df1015 up to chapter 39
+[csv-progress] (dry-run) would mark 1be53773-752f-4dc7-b540-03bb99b46cd7 up to chapter 49
+[csv-progress] (dry-run) would mark 2db02ba8-8dfe-477b-bd48-6724fc533baf up to chapter 51
+[csv-progress] (dry-run) would mark 1eaf0d33-35ba-469e-a73a-d7f6e3c154e5 up to chapter 103
+[csv-progress] (dry-run) would mark 707a112b-55cb-41a5-afe1-601d3e52e9a8 up to chapter 131
+[csv-progress] (dry-run) would mark 246f2c0c-4c50-4ef4-b292-c17f0f68a17c up to chapter 226
+[csv-progress] (dry-run) would mark 26c8f00a-3925-4f22-ac21-83145be2b733 up to chapter 138
+[csv-progress] (dry-run) would mark 114ddfec-a260-4871-a5e5-4cb0333c4826 up to chapter 37
+[csv-progress] (dry-run) would mark f89ed57a-e4c0-48f5-b664-8ef88aa87fd9 up to chapter 97
+[csv-progress] (dry-run) would mark 6acd22d3-7df9-4a49-a774-2f6dfb9c2a0c up to chapter 36
+[csv-progress] (dry-run) would mark ec96fc62-975a-4abf-83e3-d2426ca8fbe6 up to chapter 102
+[csv-progress] (dry-run) would mark 23884738-3dc3-4479-a502-f5b2fb3214c5 up to chapter 24
+[csv-progress] (dry-run) would mark 0fea4e84-6cde-45f3-8924-2a09f6c4820f up to chapter 19
+[csv-progress] (dry-run) would mark 7d8f9bf4-5595-419b-adfa-8c0e6a8b94c3 up to chapter 43
+[csv-progress] (dry-run) would mark 5c4f6f85-049b-400b-b515-5b90433421e3 up to chapter 15
+[csv-progress] (dry-run) would mark 0855e750-6ada-4c22-bfc5-fa63b1118bda up to chapter 43
+[csv-progress] (dry-run) would mark 3252e3bb-dd50-4092-aa74-5ba58574fb87 up to chapter 24
+[csv-progress] (dry-run) would mark 5c0a6150-502b-4d88-a46e-50b83768fe8f up to chapter 163
+[csv-progress] (dry-run) would mark 36ff6c07-809a-43b9-815a-e9fd0d9a72bf up to chapter 30
+[csv-progress] (dry-run) would mark 3faa91a8-795c-4625-b9d2-1ce516d56cfc up to chapter 167
+[csv-progress] (dry-run) would mark 33d43bb9-da74-43f7-b5a7-bb597c19406a up to chapter 67
+[csv-progress] (dry-run) would mark 8cfccbc9-1b2a-4e90-a691-aa43be33136b up to chapter 85
+[csv-progress] (dry-run) would mark 54e1b971-fe2c-4720-b96b-4dc049863ae7 up to chapter 75
+[csv-progress] (dry-run) would mark 55fe7e05-6c8e-4164-bd42-4ecfb76c5715 up to chapter 80
+[csv-progress] (dry-run) would mark c9aaa96b-36fc-41c5-a427-6e39c26b7720 up to chapter 44
+[csv-progress] (dry-run) would mark 6cf34aaa-0799-48b6-a392-dcc5b1c9b8fc up to chapter 24
+[csv-progress] (dry-run) would mark 25ce6f0e-51ae-467e-8519-fe90060586dc up to chapter 47
+[csv-progress] (dry-run) would mark 9342c30d-2f4b-4527-a66e-08616f348038 up to chapter 75
+[csv-progress] (dry-run) would mark dcdcc8c7-932e-4f60-a900-5f19934eb6cf up to chapter 199
+[csv-progress] (dry-run) would mark 775c91ea-8b2d-4e3b-b724-2721955e07fe up to chapter 243
+[csv-progress] (dry-run) would mark 896a437a-6f12-4728-a6c7-2961b1e300c6 up to chapter 42
+[csv-progress] (dry-run) would mark fd8b0527-770a-4941-a8e1-c0acffb97a47 up to chapter 99
+[csv-progress] (dry-run) would mark 9ecd208c-c592-4462-9f57-4d7d4a9f956f up to chapter 134
+[csv-progress] (dry-run) would mark e0966537-58a1-421b-8ea9-3e7f02d703c4 up to chapter 79
+[csv-progress] (dry-run) would mark 633d470a-4146-4dd3-b841-93dd648c23a5 up to chapter 80
+[csv-progress] (dry-run) would mark 9d685cb5-594b-4891-9f98-e50bfee0ffa4 up to chapter 168
+[csv-progress] (dry-run) would mark 5a9aa4d4-3d76-45a2-bf10-3311a7e4bf6a up to chapter 36
+[csv-progress] (dry-run) would mark e4d71290-b3c7-46b5-804e-a1e7b9519af0 up to chapter 17
+[csv-progress] (dry-run) would mark abfdb82c-568b-47da-9e61-7868c7389243 up to chapter 16
+[csv-progress] (dry-run) would mark 059977a8-b192-43c7-aa90-a903f6aae536 up to chapter 58
+[csv-progress] (dry-run) would mark 4ec3dcd1-62da-4712-a0f7-b2509d61a36b up to chapter 32
+[csv-progress] (dry-run) would mark 7c3ddd1e-4c7e-4983-be12-4db0d8011d5e up to chapter 143
+[csv-progress] (dry-run) would mark 1849fc45-8c4c-4d29-9242-5f35ea689023 up to chapter 105
+[csv-progress] (dry-run) would mark 2819c65c-f277-4ca9-bc88-6068d1abb23d up to chapter 72
+[csv-progress] (dry-run) would mark 888b469a-2903-4a03-b19b-f11a1c899862 up to chapter 16
+[csv-progress] (dry-run) would mark 949b20c3-de22-4e7b-989f-b26a8cdf7ecb up to chapter 38
+[csv-progress] (dry-run) would mark 6c079564-363d-4d95-9410-4a841e6a33fb up to chapter 15
+[csv-progress] (dry-run) would mark a3db9212-7e87-44ea-8264-23f914671444 up to chapter 55
+[csv-progress] (dry-run) would mark 9ef7698f-9a77-4622-bd7c-a73fcbbc03af up to chapter 20.2
+[csv-progress] (dry-run) would mark bd1bf883-c7d4-4f4d-857c-29e2470cb693 up to chapter 78
+[csv-progress] (dry-run) would mark 6ef19044-70d3-4e87-994b-4cc07ccd0810 up to chapter 222
+[csv-progress] (dry-run) would mark 4ffd1f8f-ab82-4de4-9dea-e0608c043d7b up to chapter 60
+[csv-progress] (dry-run) would mark b3a76028-8968-4112-bef3-57a64e5d60c3 up to chapter 106
+[csv-progress] (dry-run) would mark d7d6829b-ceab-4346-a033-22387aeff297 up to chapter 26.1
+[csv-progress] (dry-run) would mark 1de0715a-ba15-4250-8eb9-0149be0ac76e up to chapter 36
+[csv-progress] (dry-run) would mark af78e5b6-2a61-4645-a0ca-4887c40dea23 up to chapter 68
+[csv-progress] (dry-run) would mark 7bf163e3-123a-41c1-b2bc-8254dbe5a09b up to chapter 178.5
+[csv-progress] (dry-run) would mark cafd8f00-32c4-4fd2-b44f-0e25b9ff024b up to chapter 95
+[csv-progress] (dry-run) would mark 79469364-39c5-4f70-8af8-f5e1c9894aa7 up to chapter 119
+[csv-progress] (dry-run) would mark 79a9cce8-26f8-457b-935d-437149682855 up to chapter 25
+[csv-progress] (dry-run) would mark 5bad4a36-31a3-491d-a63c-2640f08f0cba up to chapter 54
+[csv-progress] (dry-run) would mark e5b1b58d-e1eb-43fd-a36a-6e5785526196 up to chapter 41
+[csv-progress] (dry-run) would mark eb26ab13-148d-48e1-bff4-dcf59c4986a0 up to chapter 93.3
+[csv-progress] (dry-run) would mark 7f15e45c-b7fd-4164-8d8e-ede14a817f0d up to chapter 40
+[csv-progress] (dry-run) would mark 09656afb-aaf9-4f9b-95fd-873cb537ddc3 up to chapter 119
+[csv-progress] (dry-run) would mark 06d22615-4713-43dd-985d-377301758d69 up to chapter 434
+[csv-progress] (dry-run) would mark 4a973243-952e-44d7-a50f-883b4b7c9cc2 up to chapter 101
+[csv-progress] (dry-run) would mark e232df0d-804d-4220-84e3-75855bf0e8da up to chapter 21
+[csv-progress] (dry-run) would mark 11747dc3-dece-43d7-9df5-c1154bfc4640 up to chapter 49
+[csv-progress] (dry-run) would mark ae7f16da-8783-4067-9605-6cebcab6be7f up to chapter 32
+[csv-progress] (dry-run) would mark e39521d2-7afc-4557-979f-42f1048efc8d up to chapter 23
+[csv-progress] (dry-run) would mark 0ead4844-8061-4d5e-b490-2fbf88b4cd03 up to chapter 25
+[csv-progress] (dry-run) would mark f8c98885-7da1-4a6f-9954-74cd8350c9e4 up to chapter 21
+[csv-progress] (dry-run) would mark ad00b12d-7c28-4371-8459-1814bee092e9 up to chapter 12
+[csv-progress] (dry-run) would mark 8efe7908-ce0d-4462-8766-b8fbbfa39dad up to chapter 12
+[csv-progress] (dry-run) would mark cdff1217-6dde-4224-9c47-f8e15bcfd870 up to chapter 20
+[csv-progress] (dry-run) would mark 163306e6-1700-42a4-882f-26db124cbec2 up to chapter 206
+[csv-progress] (dry-run) would mark aacfd2c5-4faa-44d2-9673-42dab6edd0b1 up to chapter 13
+[csv-progress] (dry-run) would mark 54df3c9f-7363-4057-abc9-2464a144f268 up to chapter 22
+[csv-progress] (dry-run) would mark 9774842c-6582-4727-9f4a-8b65587a1497 up to chapter 12
+[csv-progress] (dry-run) would mark be67deb6-2635-4e95-b18f-bdde9352f8f8 up to chapter 28
+[csv-progress] (dry-run) would mark 91ccce69-925a-4c75-abaa-716dd7e168de up to chapter 17
+[csv-progress] (dry-run) would mark 4aa9bdd1-76de-462c-91e4-32a40a87fe62 up to chapter 29
+[csv-progress] (dry-run) would mark 343cb4bf-fe01-4f7a-91af-abb9b08eb20e up to chapter 21
+[csv-progress] (dry-run) would mark aaa3d9f9-c31b-42e6-95a0-17e861668e2b up to chapter 17
+[csv-progress] (dry-run) would mark 3ca5dc75-ae58-4162-a1c5-26d73110e338 up to chapter 15
+[csv-progress] (dry-run) would mark 71de8cca-26a1-428d-855b-364b334c2eee up to chapter 20
+[csv-progress] (dry-run) would mark 96221045-e1f0-4449-9a76-a9df885e8bf0 up to chapter 16
+[csv-progress] (dry-run) would mark 0da358e6-37b7-4068-b1d7-100e4344485d up to chapter 7
+[csv-progress] (dry-run) would mark f30a1d56-f3a4-4848-8cf2-b4369e784dcb up to chapter 207
+[csv-progress] (dry-run) would mark df5f8e3d-64a1-4287-8f08-4a732e9cb757 up to chapter 63
+[csv-progress] (dry-run) would mark 514f1a94-b09f-4331-8cf9-0f01d06d3b80 up to chapter 66
+[csv-progress] (dry-run) would mark 384308ae-cf17-490c-9a9e-8bb0db90c3e6 up to chapter 25
+[csv-progress] (dry-run) would mark 1832ba7f-328d-4d53-84a8-4411afb953f2 up to chapter 15
+[csv-progress] (dry-run) would mark 9c5b745a-e5a7-45da-a5e0-8bdffee6016a up to chapter 9
+[csv-progress] (dry-run) would mark e024f80e-b849-49d2-a032-da7dd8a3825c up to chapter 43
+[csv-progress] (dry-run) would mark d3de0128-f60b-4fd2-acc6-fa4735659a34 up to chapter 100
+[csv-progress] (dry-run) would mark f461e344-2385-46b5-83b8-8776f5ea65d0 up to chapter 87
+[csv-progress] (dry-run) would mark d7f56ace-cd30-48b9-8b64-afeca0077fca up to chapter 172
+[csv-progress] (dry-run) would mark a253e13a-2b41-4f7d-915e-1e31a3f5d31d up to chapter 139
+[csv-progress] (dry-run) would mark c730e74b-cd7c-4a41-bbc6-ffb4693404dc up to chapter 80
+[csv-progress] (dry-run) would mark a98d039a-da7f-46ec-aef4-f4bd03d0d925 up to chapter 46
+[csv-progress] (dry-run) would mark 56b74325-7c41-4ad8-bbb2-480259192616 up to chapter 38
+[csv-progress] (dry-run) would mark 0139a824-a758-44f8-a841-2c247ebe4588 up to chapter 107
+[csv-progress] (dry-run) would mark 4dfb6202-8f0d-4b79-8e8f-4798306d7513 up to chapter 50
+[csv-progress] (dry-run) would mark 831a55aa-1402-4e18-9db9-404926b72862 up to chapter 12
+[csv-progress] (dry-run) would mark d3e8cfb4-da3a-4baf-87d0-2dceb3c6ca90 up to chapter 175
+[csv-progress] (dry-run) would mark 946ff973-95b5-4f57-8e81-7c4674ea50dc up to chapter 151
+[csv-progress] (dry-run) would mark f019b88d-d1c9-461c-851a-7690df063496 up to chapter 78
+[csv-progress] (dry-run) would mark 5de9ad6a-9ba5-4cc3-b5d0-a5cc9554e3d6 up to chapter 356
+[csv-progress] (dry-run) would mark edb33ccd-4218-4581-ac56-037d8daa2e86 up to chapter 26
+[csv-progress] (dry-run) would mark 8e1d71d1-0503-4128-9b74-7f7860e71f5a up to chapter 22
+[csv-progress] (dry-run) would mark 10b4c1bb-f6bd-4dd7-a0aa-c895ad8c840d up to chapter 90
+[csv-progress] (dry-run) would mark bdf9539e-c5f0-4ac1-b893-d862f1e83a53 up to chapter 98
+[csv-progress] (dry-run) would mark 99795adf-96d0-476a-aee1-75830bd1dd8d up to chapter 51
+[csv-progress] (dry-run) would mark a08f45d1-788a-4b7c-b1c4-b87b083e1b59 up to chapter 90
+[csv-progress] (dry-run) would mark 17a56d33-9443-433a-9e0d-70459893ed8f up to chapter 370
+[csv-progress] (dry-run) would mark 7f491e32-3934-4e1a-a8b5-2510aecd40d9 up to chapter 61
+[csv-progress] (dry-run) would mark 14b81959-13ed-46eb-a277-da66f672acb5 up to chapter 67
+[csv-progress] (dry-run) would mark aafb046c-9de4-4c3d-990c-6d75b079c0b9 up to chapter 490
+[csv-progress] (dry-run) would mark 14b3961b-8566-450f-b51f-31a258367388 up to chapter 31
+[csv-progress] (dry-run) would mark 365d291e-277e-45fd-b364-956d0c6b11c8 up to chapter 61
+[csv-progress] (dry-run) would mark dbbca2b5-bdd1-4f2b-8b2e-d72bf7fd89a0 up to chapter 152.5
+[csv-progress] (dry-run) would mark 6f3a90c2-7525-4d96-82e8-1136caddc3dc up to chapter 54
+[csv-progress] (dry-run) would mark 0c3e20da-6f48-468f-bf92-755ee46e05ec up to chapter 67
+[csv-progress] (dry-run) would mark 38ba5ae8-5f2f-4fb4-b77c-d2137d27c931 up to chapter 83
+[csv-progress] (dry-run) would mark 18eb505a-f64f-480c-9cc1-04a1c09e3d0c up to chapter 57
+[csv-progress] (dry-run) would mark b2379cf4-3915-4577-b4df-329fc9900620 up to chapter 117
+[csv-progress] (dry-run) would mark 33dd7bb4-6209-4002-b8fb-5c739e0f0308 up to chapter 126
+[csv-progress] (dry-run) would mark dc541cb9-0037-45ac-a3e9-4189a42afb6c up to chapter 56
+[csv-progress] (dry-run) would mark 58167656-a065-4b49-b499-bd73d00555d5 up to chapter 125
+[csv-progress] (dry-run) would mark 1a008e7e-0885-4830-92c6-16b3bbe4f5d4 up to chapter 122
+[csv-progress] (dry-run) would mark dd2d2132-7afb-4c43-87ff-8567c707848e up to chapter 36
+[csv-progress] (dry-run) would mark 16cca793-cda3-4f9f-a179-12c75b168242 up to chapter 82
+[csv-progress] (dry-run) would mark e64b54c4-5ef4-44d3-85db-09fe0d3e513c up to chapter 129
+[csv-progress] (dry-run) would mark 4ea47849-e06a-4dd8-921c-3330487454e1 up to chapter 42
+[csv-progress] (dry-run) would mark 9bca0dbd-607f-49ec-bf33-017a74c12cff up to chapter 79
+[csv-progress] (dry-run) would mark 879af0bb-ce30-47e4-a74e-cd1ce874c6e3 up to chapter 214
+[csv-progress] (dry-run) would mark 298cb7b7-4a1a-407f-b479-d157a9b33d9a up to chapter 205
+[csv-progress] (dry-run) would mark 6e4805a6-75ab-462d-883c-4ddedb8e4df6 up to chapter 184
+[csv-progress] (dry-run) would mark bb6b8c27-3f08-490d-82c5-853f5c371027 up to chapter 37
+[csv-progress] (dry-run) would mark a796fb50-cdc9-4c15-a48d-bc1d733d89b2 up to chapter 141
+[csv-progress] (dry-run) would mark 1e7a444d-6f33-410d-97bc-92c01906bde1 up to chapter 69
+[csv-progress] (dry-run) would mark f13cf3f1-3b54-4808-aa20-571207040e55 up to chapter 18.1
+[csv-progress] (dry-run) would mark 69fdf64b-683c-4957-805c-e47dc758cb1b up to chapter 94
+[csv-progress] (dry-run) would mark ca3692c0-2abe-4fba-91f4-1c76611539c6 up to chapter 276
+[csv-progress] (dry-run) would mark 13f3dbaa-8d1e-493d-935a-7dccb06e5792 up to chapter 132
+[csv-progress] (dry-run) would mark bf713abe-b415-45ac-8fd1-653dba578e0f up to chapter 281
+[csv-progress] (dry-run) would mark cbf53f02-9594-42e7-9dbf-8ae1c783466f up to chapter 116
+[csv-progress] (dry-run) would mark 6f710505-960f-47fb-a34e-b424601e5e22 up to chapter 46
+[csv-progress] (dry-run) would mark 2c33f5d0-e900-44b7-b560-877e834a9cc9 up to chapter 35
+[csv-progress] (dry-run) would mark 412ab8fe-eca9-47c9-8f5c-f6deb75622e9 up to chapter 134
+[csv-progress] (dry-run) would mark 0153e96a-fb57-4665-a988-754b4f3aa744 up to chapter 69
+[csv-progress] (dry-run) would mark c13cb760-b00c-41a7-b17e-7aca5fe3e8b2 up to chapter 35
+[csv-progress] (dry-run) would mark 116c5999-170b-4b6b-b511-70d42a293d39 up to chapter 42
+[csv-progress] (dry-run) would mark abe0bb3b-a05e-4602-aa4f-578e0b962cf9 up to chapter 48
+[csv-progress] (dry-run) would mark 87eab128-54a8-4fcf-a5e2-016a39413216 up to chapter 142
+[csv-progress] (dry-run) would mark 9debf709-4d0a-47f8-aa1a-b656bcd54727 up to chapter 131
+[csv-progress] (dry-run) would mark db1f4c31-f92f-4f4f-a8c6-fc898e432888 up to chapter 51
+[csv-progress] (dry-run) would mark 418be4a0-a376-4a7e-aa34-51576b2e6fa7 up to chapter 7
+[csv-progress] (dry-run) would mark 274827f3-99da-4f73-b324-b740a828d422 up to chapter 28
+[csv-progress] (dry-run) would mark c636d2b5-2ba7-423b-b5ec-3c8984dfc366 up to chapter 50
+[csv-progress] (dry-run) would mark 5f6de04c-8465-4bb1-81a6-c71f8ccbd08e up to chapter 31
+[csv-progress] (dry-run) would mark 53f1ec5e-058b-4d18-a23b-2a7dbca5669f up to chapter 27
+[csv-progress] (dry-run) would mark 8c17c213-c1fb-4f9b-ad4e-813a2daeea59 up to chapter 22
+[csv-progress] (dry-run) would mark 743311af-58a8-482d-b771-892830457057 up to chapter 113
+[csv-progress] (dry-run) would mark 71437871-33f5-4b07-8e98-eb08cce65c73 up to chapter 75
+[csv-progress] (dry-run) would mark a8c7db6f-6151-445c-bbad-70b1341580f0 up to chapter 48
+[csv-progress] (dry-run) would mark 4d97b35d-2d9f-4369-964f-3b0ce2c7fbbc up to chapter 80
+[csv-progress] (dry-run) would mark de471fb4-80d0-406f-a5e3-1bfa88a15136 up to chapter 260
+[csv-progress] (dry-run) would mark 830b4cdd-df77-4a48-975a-aa2bc0684738 up to chapter 33
+[csv-progress] (dry-run) would mark ef42b96c-a05e-4950-8e9c-8a58da3b7ff7 up to chapter 57
+[csv-progress] (dry-run) would mark e7b98e78-0db0-4c36-b851-987d5c218721 up to chapter 47
+[csv-progress] (dry-run) would mark 825eb50f-7331-4455-bb0e-c0d58fa9976a up to chapter 83
+[csv-progress] (dry-run) would mark a1c58fbc-d805-4964-99fb-12b8fd07ec53 up to chapter 8.1
+[csv-progress] (dry-run) would mark 15319114-712b-4645-a9df-4bbe7fb6ac06 up to chapter 106
+[csv-progress] (dry-run) would mark e2cb9f20-ac70-4d0a-9c4a-299a001908ab up to chapter 70
+[csv-progress] (dry-run) would mark fef2e4da-36f9-48e9-8317-2516f4b6ab14 up to chapter 144
+[csv-progress] (dry-run) would mark 8892dc05-867f-4fff-823b-47210a6746bb up to chapter 144
+[csv-progress] (dry-run) would mark dd390a8e-1db0-48cb-b660-bceee2ef37d8 up to chapter 93
+[csv-progress] (dry-run) would mark c322dbd7-bf69-468a-b6c8-41e110e1e0ff up to chapter 105
+[csv-progress] (dry-run) would mark b3438cf5-06f1-4990-b25d-f46c2faa9ad3 up to chapter 126
+[csv-progress] (dry-run) would mark 8f7a6741-57b2-4969-b19c-f4cd781db709 up to chapter 28
+[csv-progress] (dry-run) would mark 97f21bb2-4331-46a2-8307-483eb3370019 up to chapter 61
+[csv-progress] (dry-run) would mark 6f18c4ef-3eb6-40ee-98a4-507343f05855 up to chapter 62
+[csv-progress] (dry-run) would mark 4b2e5feb-6137-4be9-a73d-add5e27263e7 up to chapter 108
+[csv-progress] (dry-run) would mark 10263dc2-dd53-4099-bf57-cad6c4acc14b up to chapter 85
+[csv-progress] (dry-run) would mark 395d14e7-5555-4995-9faf-7f1495754fba up to chapter 7
+[csv-progress] (dry-run) would mark dd993f93-af18-41e4-91b8-3b6a93dde176 up to chapter 34
+[csv-progress] (dry-run) would mark bb96fbca-403f-4801-bd66-b4a6926c23b0 up to chapter 66
+[csv-progress] (dry-run) would mark 3000502f-cedb-4c5a-9273-98f6af5991c0 up to chapter 95
+[csv-progress] (dry-run) would mark 2707b1cc-05b9-455f-ae6f-f351dd9f8741 up to chapter 298
+[csv-progress] (dry-run) would mark c1117e35-23ca-4096-8b92-2340d11913d5 up to chapter 91
+[csv-progress] (dry-run) would mark 7e544761-7d3d-4fce-8137-719814d7d138 up to chapter 340
+[csv-progress] (dry-run) would mark 3bd65a09-dec5-4c0a-a34f-b07a9cc53aae up to chapter 23
+[csv-progress] (dry-run) would mark 56691e99-ca6d-4360-bae1-0a0dfb85866b up to chapter 17
+[csv-progress] (dry-run) would mark f81ad5fe-8a3f-4f30-8f7e-5f755af48a52 up to chapter 101
+[csv-progress] (dry-run) would mark 643297aa-670a-4a84-9653-3586da00721c up to chapter 42
+[csv-progress] (dry-run) would mark a81acdb2-ebb8-49e4-9deb-a354e7a93311 up to chapter 26
+[csv-progress] (dry-run) would mark d993f789-e7e5-4832-92fd-37614220b427 up to chapter 243
+[csv-progress] (dry-run) would mark fcfb101b-eae6-40af-9d1b-636bb6e5d17a up to chapter 66
+[csv-progress] (dry-run) would mark 00296c8d-a815-4fdd-b4b8-c79c550ee875 up to chapter 71
+[csv-progress] (dry-run) would mark d15c5412-dfb3-4e4e-bfcf-0f62ef7bc6c9 up to chapter 183
+CSV read progress applied=207, skipped=77
+Missing-chapters report written to C:\Users\akortekaas\Documents\GitHub\Seiyomi\reports\md_missing_reads.csv (0 rows)
