@@ -57,7 +57,7 @@ def rehome_entry(
                 logger.info(f"{prefix}REHOME skip {src.get('name')!r} (outside preferred list)")
             continue
         try:
-            rid = int(src.get("id"))
+            rid = int(src.get("id") or 0)
         except Exception:
             continue
         try:

@@ -301,7 +301,7 @@ def sync_read_chapters_by_uuid(
     for ch in su_chapters:
         cid = ch.get("id") or ch.get("chapterId") or ch.get("chapter_id")
         try:
-            cid_int = int(cid)
+            cid_int = int(cid or 0)
         except Exception:
             continue
         uuid = extract_chapter_uuid_from_item(ch)

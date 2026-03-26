@@ -11,7 +11,20 @@ from tkinter import ttk, filedialog, messagebox
 from tkinter import scrolledtext
 import tkinter.font as tkfont
 
-# Optional Markdown/HTML rendering support
+# ── Phase 3 redirect ──────────────────────────────────────────────────────
+# Boot the new SeiyomiApp GUI by default.  Set SEIYOMI_OLD_GUI=1 to revert
+# to the legacy interface during the transition period.
+
+if __name__ == "__main__" and not os.environ.get("SEIYOMI_OLD_GUI"):
+    try:
+        from seiyomi.gui.app import launch as _launch
+        _launch()
+        sys.exit(0)
+    except Exception as _e:
+        # Fall through to legacy GUI if new GUI fails to import/launch
+        print(f"[WARNING] New GUI failed to start ({_e}), falling back to legacy interface.", file=sys.stderr)
+
+# ── Legacy GUI (kept for fallback / SEIYOMI_OLD_GUI=1) ───────────────────
 try:
     from tkhtmlview import HTMLScrolledText  # type: ignore
     _HAS_HTML = True

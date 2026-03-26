@@ -135,7 +135,7 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
     lib_ids: Set[int] = set()
     for _e in library:
         try:
-            lib_ids.add(int(_e.get("id") or _e.get("mangaId") or _e.get("manga_id")))
+            lib_ids.add(int(_e.get("id") or _e.get("mangaId") or _e.get("manga_id") or 0))
         except Exception:
             pass
 
@@ -206,7 +206,7 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
     for idx, entry in enumerate(library, 1):
         mid = entry.get("id") or entry.get("mangaId") or entry.get("manga_id")
         try:
-            mid_int = int(mid)
+            mid_int = int(mid or 0)
         except Exception:
             continue
 
@@ -259,7 +259,7 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
         for src in sorted_sources:
             nm = (src.get("name") or src.get("apkName") or "").lower()
             try:
-                sid = int(src.get("id"))
+                sid = int(src.get("id") or 0)
             except Exception:
                 continue
             skey = site_key(src)
@@ -306,6 +306,7 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
             alt_id = None
             if args.best_source:
                 best_count = -1
+                raw_score: int = 0
                 limit = max(1, int(args.best_source_candidates))
                 for cand in got_items[:limit]:
                     cid = SuwayomiClient.extract_manga_id(cand)
@@ -333,24 +334,24 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
                         if prefer_frags and any(f in nm for f in prefer_frags):
                             ccount += int(args.prefer_boost)
                         try:
-                            raw = (
+                            raw_score = (
                                 client.get_manga_chapters_canonical_count(cid)
                                 if args.best_source_canonical
                                 else client.get_manga_chapters_count(cid)
                             )
                         except Exception:
-                            raw = 0
+                            raw_score = 0
                     except Exception:
                         ccount = 0
-                        raw = 0
+                        raw_score = 0
                     if args.debug_library and not args.no_progress:
                         ctitle = str(cand.get("title") or cand.get("name") or "")
                         logger.info(f"[{idx}]     cand id={cid} site='{nm}' score={ccount} title='{ctitle[:60]}'")
                     if ccount >= max(0, int(args.min_chapters_per_alt)) and ccount > best_count:
                         best_count = ccount
                         alt_id = cid
-                    if args.best_source_global and (global_raw_max is None or raw > global_raw_max[0]):
-                        global_raw_max = (raw, cid, src)
+                    if args.best_source_global and (global_raw_max is None or raw_score > global_raw_max[0]):
+                        global_raw_max = (raw_score, cid, src)
                 if args.best_source_global and alt_id is not None:
                     score_val = best_count
                     if global_best is None or score_val > global_best[0]:
