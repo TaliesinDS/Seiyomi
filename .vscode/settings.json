@@ -19,5 +19,18 @@
       ]
     }
   },
-  "terminal.integrated.defaultProfile.windows": "PowerShell"
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "cSpell.words": [
+    "comick",
+    "dataclass",
+    "mangadex",
+    "manganato",
+    "mangas",
+    "mangaupdates",
+    "pytest",
+    "rehome",
+    "rehoming",
+    "seiyomi",
+    "Suwayomi"
+  ]
 }

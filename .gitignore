@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Installer bootstrap (shouldn't be in repo)
+get-pip.py
+
+# PyInstaller
+*.spec.bak
+*.manifest
+
+# OS
+.DS_Store
+Thumbs.db

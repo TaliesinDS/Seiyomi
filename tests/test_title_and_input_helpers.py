@@ -5,11 +5,13 @@ from pathlib import Path
 
 import pytest
 
+from seiyomi.matching.titles import (
+    normalize_title_tokens as _normalize_title_tokens,
+    title_similarity as _title_similarity,
+    is_title_match as _is_title_match,
+)
 from import_mangadex_bookmarks_to_suwayomi_refactored import (
     SuwayomiClient,
-    _normalize_title_tokens,
-    _title_similarity,
-    _is_title_match,
     extract_mangadex_ids,
     read_any,
 )
@@ -118,6 +120,10 @@ class DummyClient(SuwayomiClient):
         super().__init__(base_url="http://dummy")
         self._items = list(items)
 
+    def get_chapters(self, manga_id: int):  # type: ignore[override]
+        return list(self._items)
+
+    # Keep old override name so any legacy callers also work
     def get_manga_chapters_entries(self, manga_id: int):  # type: ignore[override]
         return list(self._items)
 

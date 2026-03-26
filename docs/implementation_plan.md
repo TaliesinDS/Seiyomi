@@ -220,13 +220,13 @@ This is mechanical but touches many lines. Do it in one focused commit.
 
 ### Phase 0 Gate — STOP here until ALL of these are true
 
-- [ ] `python -m seiyomi --help` runs and prints help text
-- [ ] `python -m seiyomi --list-categories --base-url http://127.0.0.1:4567` returns categories (tests SuwayomiClient rewrite)
-- [ ] `python -m seiyomi --from-csv comick.csv --base-url ...` imports WITHOUT calling `api.mangadex.org` (tests MangaDex decoupling)
-- [ ] `python -m seiyomi --list-library-titles --base-url ...` works without an input file (tests gate bug fix)
-- [ ] No `print()` calls remain in the refactored script (all replaced with `logging`)
-- [ ] `pytest` passes with no failures
-- [ ] The original `import_mangadex_bookmarks_to_suwayomi.py` is deleted or archived
+- [x] `python -m seiyomi --help` runs and prints help text
+- [x] `python -m seiyomi --list-categories --base-url http://127.0.0.1:4567` returns categories (tests SuwayomiClient rewrite)
+- [x] `python -m seiyomi --from-csv comick.csv --base-url ...` imports WITHOUT calling `api.mangadex.org` (tests MangaDex decoupling)
+- [x] `python -m seiyomi --list-library-titles --base-url ...` works without an input file (tests gate bug fix)
+- [x] No `print()` calls remain in the refactored script (all replaced with `logging`)
+- [x] `pytest` passes with no failures — 66 tests, 0 failures
+- [x] The original `import_mangadex_bookmarks_to_suwayomi.py` is deleted or archived
 
 **Do NOT proceed to Phase 1 until all boxes are checked.** Phase 0 is the foundation — extracting modules from broken code just moves the bugs around.
 

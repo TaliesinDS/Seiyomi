@@ -272,7 +272,7 @@ def build_args(v: dict) -> List[str]:
         if v.get('rehoming_skip_ge') and v['rehoming_skip_ge'].get().strip() and v['rehoming_skip_ge'].get().strip() != '1':
             args += ["--rehoming-skip-if-chapters-ge", v['rehoming_skip_ge'].get().strip()]
         if v.get('rehoming_remove_mangadex') and v['rehoming_remove_mangadex'].get():
-            args += ["--rehoming-remove-mangadex"]
+            args += ["--rehoming-remove-source"]
         # Reuse title-matching options when rehoming is enabled
         if v.get('migrate_title_threshold') and v['migrate_title_threshold'].get().strip() and v['migrate_title_threshold'].get().strip() != '0.6':
             args += ["--migrate-title-threshold", v['migrate_title_threshold'].get().strip()]
@@ -452,7 +452,15 @@ def apply_preset(v: dict, name: str):
 
 def _config_dir() -> Path:
     base = Path(os.getenv('APPDATA') or Path.home())
-    return base / 'MangaDex_Suwayomi'
+    new_dir = base / 'Seiyomi'
+    old_dir = base / 'MangaDex_Suwayomi'
+    if not new_dir.exists() and old_dir.exists():
+        import shutil
+        try:
+            shutil.copytree(str(old_dir), str(new_dir))
+        except Exception:
+            pass  # migration best-effort
+    return new_dir
 
 
 def _load_config() -> dict:
@@ -1054,7 +1062,7 @@ def main():
     csv_tab.grid_columnconfigure(1, weight=1)
     r = 0
     desc_csv = ttk.Frame(csv_tab); desc_csv.grid(row=r, column=0, columnspan=4, sticky='we', pady=(4, 6))
-    ttk.Label(desc_csv, text='Import bookmark CSV exports (Comick, Manganato) and merge with MangaDex lookups and Suwayomi library.', foreground='#444').pack(side='left')
+    ttk.Label(desc_csv, text='Import bookmark CSV exports (Comick, Manganato) into your Suwayomi library. Use --csv-via-mangadex to resolve titles via MangaDex.', foreground='#444').pack(side='left')
     ttk.Button(desc_csv, text='Help', width=5, command=lambda: (_save_config({**_load_config(), 'manual_find_text': 'CSV Import'}), show_manual_popup())).pack(side='right'); r += 1
     cb_csv_enable = ttk.Checkbutton(csv_tab, text='Enable CSV Import', variable=vals['csv_enabled'])
     cb_csv_enable.grid(row=r, column=0, sticky='w'); r += 1
@@ -1193,7 +1201,7 @@ def main():
     r = 0
     # Tab description + help
     desc_m = ttk.Frame(mig); desc_m.grid(row=r, column=0, columnspan=4, sticky='we', pady=(4, 6))
-    ttk.Label(desc_m, text='Migrate titles between sources within Suwayomi (e.g., from MangaDex to alternatives), not exporting your database.', foreground='#444').pack(side='left')
+    ttk.Label(desc_m, text='Migrate titles between sources within Suwayomi (find alternatives for low-chapter entries).', foreground='#444').pack(side='left')
     ttk.Button(desc_m, text='Help', width=5, command=lambda: (_save_config({**_load_config(), 'manual_find_text': 'Migration'}), show_manual_popup())).pack(side='right')
     r += 1
     cb_mig_lib = ttk.Checkbutton(mig, text='Migrate library', variable=vals['migrate_lib'])
@@ -1287,8 +1295,8 @@ def main():
     attach_tip(en_rh_src, 'Ordered list of alternative sources to try (e.g. mangasee,comick).')
     ttk.Label(rh, text='Skip if MD chapters >= ').grid(row=rr, column=0, sticky='w'); en_rh_skip = ttk.Entry(rh, textvariable=vals['rehoming_skip_ge'], width=6); en_rh_skip.grid(row=rr, column=1, sticky='w')
     attach_tip(en_rh_skip, 'If the MangaDex entry already has at least this many chapters, skip rehoming.')
-    cb_rh_rm = ttk.Checkbutton(rh, text='Remove MangaDex entry after rehome (destructive)', variable=vals['rehoming_remove_mangadex'], style='Danger.TCheckbutton'); cb_rh_rm.grid(row=rr, column=2, sticky='w'); rr+=1
-    attach_tip(cb_rh_rm, 'Destructive: after a successful rehome, remove the original MangaDex entry (if supported).')
+    cb_rh_rm = ttk.Checkbutton(rh, text='Remove source entry after rehome (destructive)', variable=vals['rehoming_remove_mangadex'], style='Danger.TCheckbutton'); cb_rh_rm.grid(row=rr, column=2, sticky='w'); rr+=1
+    attach_tip(cb_rh_rm, 'Destructive: after a successful rehome, remove the original source entry.')
  
     # Prune tab
     pr = ttk.Frame(nb)
@@ -1442,9 +1450,9 @@ def main():
     about = ttk.Frame(nb)
     nb.add(about, text='About')
     ar = 0
-    ab_hdr = ttk.Label(about, text='Seiyomi — Suwayomi Database Tool', font=('Segoe UI', 12, 'bold'))
+    ab_hdr = ttk.Label(about, text='Seiyomi — Suwayomi Library Manager', font=('Segoe UI', 12, 'bold'))
     ab_hdr.grid(row=ar, column=0, columnspan=3, sticky='w', padx=8, pady=(8, 4)); ar+=1
-    ab_desc = ttk.Label(about, text='A helper GUI to import from MangaDex, migrate between sources, and prune duplicates in Suwayomi — now branded Seiyomi (整読み, “organize reading”).', wraplength=780, justify='left')
+    ab_desc = ttk.Label(about, text='Seiyomi (整読み, "organize reading") — import, migrate, and clean up your Suwayomi library. MangaDex import is one of several supported workflows.', wraplength=780, justify='left')
     ab_desc.grid(row=ar, column=0, columnspan=3, sticky='w', padx=8); ar+=1
     # Environment
     try:
@@ -1548,7 +1556,7 @@ def main():
         if vals['remove_original'].get():
             destructive_flags.append('Remove original after migration')
         if vals.get('rehoming_remove_mangadex') and vals['rehoming_remove_mangadex'].get():
-            destructive_flags.append('Remove MangaDex entry after rehome')
+            destructive_flags.append('Remove source entry after rehome')
         if vals.get('prune_zero') and vals['prune_zero'].get():
             destructive_flags.append('Prune zero/low‑chapter duplicates')
         if vals.get('prune_nonpref') and vals['prune_nonpref'].get():
