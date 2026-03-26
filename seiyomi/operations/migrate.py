@@ -10,6 +10,7 @@ import time
 from typing import Any, Dict, List, Optional, Set, Tuple
 
 from seiyomi.clients.suwayomi import SuwayomiClient
+from seiyomi.utils.checkpoint import Checkpoint
 
 logger = logging.getLogger("seiyomi.migrate")
 
@@ -203,11 +204,28 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
             if s.strip()
         }
 
+    # Resumable checkpoint: load when --resume is set
+    _resume = getattr(args, "resume", False)
+    cp = Checkpoint("migrate")
+    if _resume:
+        cp.load()
+    elif cp.path.exists():
+        logger.info(
+            "[checkpoint] A previous migrate checkpoint exists "
+            f"({cp.path}). Use --resume to continue from where it left off, "
+            "or delete the file to start fresh."
+        )
+
     for idx, entry in enumerate(library, 1):
         mid = entry.get("id") or entry.get("mangaId") or entry.get("manga_id")
         try:
             mid_int = int(mid or 0)
         except Exception:
+            continue
+
+        # Skip already-completed entries when resuming
+        if _resume and cp.done(mid_int):
+            skipped += 1
             continue
 
         if include_cat_tokens or exclude_cat_tokens:
@@ -372,6 +390,47 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
                 per_site_counts[skey] = cnt + 1
                 continue
 
+            # ── Interactive pick ───────────────────────────────────────────
+            if getattr(args, "interactive", False) and got_items:
+                limit = max(1, min(int(args.best_source_candidates), len(got_items)))
+                cands = got_items[:limit]
+                print(f"\n[{idx}] '{title}' — {len(cands)} result(s) in '{nm}':")
+                for ci, cand in enumerate(cands, 1):
+                    cid_c = SuwayomiClient.extract_manga_id(cand)
+                    ctitle = str(cand.get("title") or cand.get("name") or "?")
+                    try:
+                        ch_c = client.get_manga_chapters_count(cid_c) if cid_c else 0
+                    except Exception:
+                        ch_c = 0
+                    star = " *" if cid_c == alt_id else ""
+                    print(f"  {ci}. {ctitle} ({ch_c} ch) [id={cid_c}]{star}")
+                _interactive_choice = None
+                while _interactive_choice is None:
+                    try:
+                        _raw = input(f"  Choose [1-{len(cands)} / s=skip / a=auto / q=quit]: ").strip().lower()
+                    except (EOFError, KeyboardInterrupt):
+                        _raw = "q"
+                    if _raw == "q":
+                        return 0  # user quit cleanly
+                    elif _raw == "s":
+                        _interactive_choice = "skip"
+                    elif _raw in ("a", ""):
+                        _interactive_choice = "auto"
+                    elif _raw.isdigit() and 1 <= int(_raw) <= len(cands):
+                        _interactive_choice = int(_raw) - 1
+                    else:
+                        print(f"  Enter 1–{len(cands)}, 's', 'a', or 'q'")
+                if _interactive_choice == "skip":
+                    per_site_counts[skey] = cnt + 1
+                    continue
+                elif isinstance(_interactive_choice, int):
+                    alt_id = SuwayomiClient.extract_manga_id(cands[_interactive_choice])
+                # else "auto" — keep existing alt_id
+
+            if alt_id is None:
+                per_site_counts[skey] = cnt + 1
+                continue
+
             if not args.dry_run and args.migrate_remove_if_duplicate and alt_id and alt_id in lib_ids and alt_id != mid_int:
                 try:
                     alt_ch = client.get_manga_chapters_count(alt_id)
@@ -413,6 +472,8 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
                     pass
             if added_any:
                 migrated += 1
+                if not args.dry_run:
+                    cp.mark_done(mid_int)
                 break
 
         # Global-best: add the single winner after scanning all sources
@@ -463,6 +524,8 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
 
             if added_any:
                 migrated += 1
+                if not args.dry_run:
+                    cp.mark_done(mid_int)
                 if args.migrate_keep_both and global_raw_max is not None:
                     raw_count, raw_alt_id, raw_src = global_raw_max
                     if raw_alt_id and raw_alt_id != best_alt_id:
@@ -498,4 +561,7 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
                                 logger.info(f"[{idx}] ALSO KEEP '{title}' via '{raw_src.get('name')}' (raw-max) -> {'OK' if ok2 else 'FAIL'}")
 
     logger.info(f"Migrate summary: migrated={migrated} skipped={skipped} failed={failed}")
+    # Clear checkpoint on clean completion (no failures means we're done)
+    if failed == 0 and not args.dry_run:
+        cp.clear()
     return 0 if failed == 0 else 6

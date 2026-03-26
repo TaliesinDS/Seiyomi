@@ -7,9 +7,12 @@ from __future__ import annotations
 import json
 import logging
 import re
+import time
 from typing import Any, Dict, List, Optional, Set
 
 import requests
+
+from seiyomi.utils.rate_limiter import RateLimiter
 
 logger = logging.getLogger("seiyomi")
 
@@ -29,6 +32,7 @@ class SuwayomiClient:
         token: Optional[str] = None,
         verify_tls: bool = True,
         request_timeout: float = 12.0,
+        rpm: int = 0,
     ) -> None:
         self.base_url = base_url.rstrip("/")
         self.auth_mode = auth_mode
@@ -40,6 +44,7 @@ class SuwayomiClient:
         self._sess = requests.Session()
         self._extra_headers: Dict[str, str] = {}
         self._server_version: Optional[str] = None
+        self._limiter = RateLimiter(rpm=rpm)
 
     # ── Auth ──────────────────────────────────────────────────────────────────
 
@@ -83,7 +88,21 @@ class SuwayomiClient:
         headers = dict(self._extra_headers)
         headers.update(kwargs.pop("headers", {}) or {})
         kwargs.setdefault("timeout", self.timeout)
-        resp = self._sess.request(method, url, headers=headers, verify=self.verify, **kwargs)
+        # Rate limit: honour configured rpm before every request
+        self._limiter.wait()
+        # Retry-with-backoff for transient failures (3 attempts, exponential backoff)
+        last_exc: Optional[Exception] = None
+        for attempt in range(3):
+            try:
+                resp = self._sess.request(method, url, headers=headers, verify=self.verify, **kwargs)
+                break
+            except (requests.ConnectionError, requests.Timeout) as exc:
+                last_exc = exc
+                if attempt < 2:
+                    time.sleep(2.0 ** attempt)
+                continue
+        else:
+            raise last_exc  # type: ignore[misc]
         # Auto-retry on 401 in "auto" mode with simple login
         if resp.status_code == 401 and self.auth_mode == "auto" and self.username and self.password:
             login = self._sess.post(

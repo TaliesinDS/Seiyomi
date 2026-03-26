@@ -4,6 +4,12 @@ from __future__ import annotations
 import re
 from typing import List
 
+try:
+    from rapidfuzz import fuzz as _rfuzz  # type: ignore[import]
+    _HAS_RAPIDFUZZ = True
+except ImportError:
+    _HAS_RAPIDFUZZ = False
+
 _STOPWORDS = {
     'a', 'an', 'the', 'and', 'or', 'of', 'in', 'on', 'to', 'for',
     'by', 'with', 'as', 'at', 'from', 'now', 'i', 'you', 'we',
@@ -31,7 +37,13 @@ def normalize_title_tokens(s: str) -> List[str]:
 
 
 def title_similarity(a: str, b: str) -> float:
-    """Token Jaccard similarity between two titles after normalization."""
+    """Similarity score between 0 and 1 for two title strings.
+
+    Uses ``rapidfuzz.fuzz.token_sort_ratio`` when the library is installed
+    (faster, higher quality).  Falls back to token Jaccard similarity.
+    """
+    if _HAS_RAPIDFUZZ:
+        return _rfuzz.token_sort_ratio(a or "", b or "") / 100.0
     ta = set(normalize_title_tokens(a))
     tb = set(normalize_title_tokens(b))
     if not ta or not tb:

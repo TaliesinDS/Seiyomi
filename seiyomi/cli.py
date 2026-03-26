@@ -78,6 +78,10 @@ def _build_parser() -> argparse.ArgumentParser:
                      help="Only process titles containing this substring")
     mig.add_argument("--timeout", dest="migrate_timeout", type=float, default=20.0,
                      help="Max seconds per title (default: 20)")
+    mig.add_argument("--interactive", "-i", action="store_true",
+                     help="Prompt before committing each match")
+    mig.add_argument("--resume", action="store_true",
+                     help="Skip entries completed in a previous interrupted run")
 
     # ── import ──
     imp = sub.add_parser("import", help="Import manga into Suwayomi")

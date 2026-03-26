@@ -12,6 +12,8 @@ import re
 import time
 from typing import Any, Dict, List, Optional, Set
 
+from seiyomi.utils.rate_limiter import RateLimiter
+
 from seiyomi.clients.suwayomi import SuwayomiClient
 
 logger = logging.getLogger("seiyomi.read_sync")
@@ -204,8 +206,7 @@ def mark_entry_up_to_number(
     items = fetch_suwayomi_chapters(client, manga_internal_id) or []
     nums = [n for n in (_parse_chapter_number(it) for it in items) if n is not None]
     frac_map = _build_fraction_map(nums)
-    min_interval = 60.0 / rpm if rpm > 0 else 0
-    last = 0.0
+    limiter = RateLimiter(rpm=rpm)
     applied = 0
     attempted_ids: List[int] = []
     for it in items:
@@ -223,11 +224,7 @@ def mark_entry_up_to_number(
             if dry_run:
                 logger.info(f"[DRY] Mark read by number <= {up_to}: chapter {n} (id={cid})")
             else:
-                if min_interval:
-                    now = time.time()
-                    if last and now - last < min_interval:
-                        time.sleep(min_interval - (now - last))
-                    last = time.time()
+                limiter.wait()
                 try:
                     ok = mark_chapter_read(client, cid)
                     if ok:
@@ -308,8 +305,7 @@ def sync_read_chapters_by_uuid(
         if uuid:
             uuid_to_internal[uuid.lower()] = cid_int
 
-    min_interval = 60.0 / rpm if rpm > 0 else 0
-    last_time = 0.0
+    limiter = RateLimiter(rpm=rpm)
     marked = 0
     missing = 0
     for uuid in md_read_uuids:
@@ -320,11 +316,8 @@ def sync_read_chapters_by_uuid(
         if dry_run:
             marked += 1
             continue
-        now = time.time()
-        if min_interval > 0 and (now - last_time) < min_interval:
-            time.sleep(min_interval - (now - last_time))
+        limiter.wait()
         ok = mark_chapter_read(client, internal)
-        last_time = time.time()
         if ok:
             marked += 1
 

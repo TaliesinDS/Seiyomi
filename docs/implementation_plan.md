@@ -677,6 +677,8 @@ On first launch, check for old directory. If found: copy profiles to new locatio
 
 ## Phase 4 — Quality of Life
 
+> **Status: 4.1–4.5 complete.** `seiyomi/utils/rate_limiter.py` — thread-safe token-bucket `RateLimiter`; injected into `SuwayomiClient` (`rpm=` param) and replacing inline `min_interval` loops in `read_sync.py`. `SuwayomiClient._request` gains retry-with-backoff (3 attempts, 2× exponential, `ConnectionError`/`Timeout` only). `seiyomi/matching/titles.py` uses `rapidfuzz.fuzz.token_sort_ratio` when installed, Jaccard when not. `seiyomi migrate --interactive` prompts before each commit. `seiyomi/utils/checkpoint.py` — JSON checkpoint for `migrate --resume`. 244 tests, 0 failures.
+
 These are independent improvements that can be done in any order after Phase 1.
 
 ### 4.1 Centralized rate limiter
