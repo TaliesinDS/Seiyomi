@@ -1,263 +1,371 @@
-# Seiyomi — Suwayomi Database Tool (with GUI)
+# Seiyomi — Suwayomi Library Manager
 
 <div align="center">
 
 <img src="assets/icon_256.png" alt="Seiyomi icon (整)" width="128" height="128" />
 
-</div>
-
-A desktop helper for Suwayomi that brings together:
-
-- MangaDex import (follows, statuses, custom lists, read chapters)
-- Library migration between sources (rehoming, best-source selection)
-- Library pruning (duplicates, non-preferred languages)
-- Suwayomi connection utilities (auth modes, categories, throttling)
-
-It includes a Tkinter-based GUI with live command preview and presets, plus a direct command-line interface for automation.
-
----
-
-## Preview (Migrate tab)
-
-<div align="center">
-
-<img src="assets/image.png" alt="Seiyomi Migrate tab preview" style="max-width: 100%; border: 1px solid #ddd; border-radius: 6px;" />
+**Import, migrate, and clean up your Suwayomi manga library.**
 
 </div>
 
 ---
 
-## System Requirements
+## What It Does
 
-- Windows 10/11 (official support; packaged EXE available)
-- Suwayomi server reachable (e.g., `http://127.0.0.1:4567`)
-- Python 3.11+ if running scripts directly
-- Optional: PowerShell 7 (`pwsh`) for opening an external terminal from the GUI (quiet mode doesn’t require it)
+- **Import** — add manga from CSV exports (Comick, Manganato) or MangaDex follows
+- **Migrate** — find better sources for zero/low-chapter entries across all installed Suwayomi extensions
+- **Prune** — remove duplicate entries and non-preferred-language variants
+- **List** — inspect your library, categories, and installed sources
+- **Sync** — mirror MangaDex read progress into Suwayomi (including cross-source by chapter number)
 
-## Why “Seiyomi”?
-
-- Name: Seiyomi (整読み) combines 整 (sei, “organize/order”) with 読み (yomi, “reading”).
-- Meaning: “Organize reading” — a nod to how this tool manages, migrates, and tidies your Suwayomi library.
-- Icon: A white 整 glyph on black with a light‑blue ring, optimized to scale cleanly as a 16–256 px app icon.
-
-This mirrors the tradition of names like Tachiyomi (立ち読み, “stand and read”) and Suwayomi (座り読み, “sit and read”). Seiyomi focuses on organizing and curating your library.
+All operations are non-destructive by default. Use `--dry-run` to preview any command before committing.
 
 ---
 
-## Features
+## Requirements
 
-- GUI with tabs for Migrate, Prune, MangaDex Import, Suwayomi Database, Settings, and About
-- Command Preview: see the exact command that will run (including log piping)
-- General controls on a unified bottom bar: Dry run, Save log, Log path, Run, Reset, Exit
-- Per‑tab description and Help button (opens in-app manual viewer)
-- Tooltips on nearly every option explaining what to enter and what it does
-- Presets for common workflows (e.g., Prefer English Migration)
-- Works with packaged EXE or Python script directly
+| What | Version |
+|------|---------|
+| Python | 3.10+ |
+| Suwayomi server | Running and reachable (default `http://127.0.0.1:4567`) |
+| OS | Windows 10/11 (tested), macOS/Linux (should work) |
 
----
-
-## Install / Run
-
-- Requirements: Python 3.11+ (or use provided EXE if available), a running Suwayomi server (e.g. <http://127.0.0.1:4567>)
-- Windows: double‑click the GUI script, or run from PowerShell:
-  
-  ```powershell
-  # In repo root
-  .\.venv\Scripts\python.exe .\gui_launcher_tk.py
-  ```
-
-- Or run the CLI directly:
-  
-  ```powershell
-  python import_mangadex_bookmarks_to_suwayomi.py --help
-  ```
-
-See the full user manual in `USER_MANUAL.md` for step-by-step guides and copy/paste command examples.
+Optional: `rapidfuzz` (installed by default) for faster title matching. Falls back to Jaccard similarity if absent.
 
 ---
 
-## Tabs Overview
-
-- Migrate
-  - Migrate titles between sources within Suwayomi, pick best alternatives by chapter coverage, optionally keep both
-  - Includes rehoming for zero‑chapter entries
-- Prune
-  - Remove zero/low‑chapter duplicates and entries without preferred‑language chapters
-- MangaDex Import
-  - Login, fetch follows, import statuses and read chapters, map statuses to categories, import custom lists
-- Suwayomi Database
-  - Connect to Suwayomi (auth modes: auto/basic/simple/bearer), list categories, open UI, set timeouts/throttle
-- Settings
-  - Debug output and presets
-- About
-  - App summary, environment info, quick links (README, Manual, Project Folder)
-
-Each tab starts with a short description and a Help button that opens the manual to the relevant section.
-
----
-
-## Command Preview and Logging
-
-- Command Preview updates live as you change fields
-- Bottom bar controls apply to all tabs:
-  - Dry run: simulate without changing your library
-  - Save log to file: tee console output to a file (pick a path)
-  - Run Script: executes the previewed command
-  - Reset: restores defaults
-
----
-
-## CLI Quick Examples
-
-List categories
+## Install
 
 ```powershell
-python import_mangadex_bookmarks_to_suwayomi.py --base-url http://127.0.0.1:4567 --list-categories
+git clone https://github.com/yourusername/Seiyomi.git
+cd Seiyomi
+python -m venv .venv
+.venv\Scripts\activate        # Windows
+# source .venv/bin/activate   # macOS/Linux
+pip install -r requirements.txt
 ```
 
-Import follows + statuses + read chapters (dry run)
+Verify:
 
 ```powershell
-python import_mangadex_bookmarks_to_suwayomi.py `
-  --base-url http://127.0.0.1:4567 `
-  --from-follows `
-  --md-username USER `
-  --md-password PASS `
-  --import-reading-status `
-  --status-category-map completed=5,reading=2,on_hold=7,dropped=8,plan_to_read=9 `
-  --import-read-chapters `
-  --read-sync-delay 1 `
-  --dry-run
+python -m seiyomi --help
 ```
-
-Import read chapters across sources (apply by chapter number when ahead) and write a live missing report
-
-```powershell
-python import_mangadex_bookmarks_to_suwayomi.py `
-  --base-url http://127.0.0.1:4567 `
-  --from-follows `
-  --md-username USER `
-  --md-password PASS `
-  --import-read-chapters `
-  --read-sync-number-fallback `
-  --read-sync-across-sources `
-  --read-sync-only-if-ahead `
-  --read-sync-delay 2 `
-  --max-read-requests-per-minute 240 `
-  --missing-report .\reports\md_missing_reads.csv
-```
-
-Flags added for read sync
-
-- `--import-read-chapters`: Fetch MangaDex read chapter UUIDs and mark them in Suwayomi (MangaDex source).
-- `--read-sync-number-fallback`: When UUIDs don’t match (e.g., migrated to other sources), mark chapters by chapter number.
-- `--read-sync-across-sources`: Apply read marks to same‑title entries under other sources too (normalized title match).
-- `--read-sync-only-if-ahead`: Only mark if MangaDex progress is ahead of the target entry’s current read progress.
-- `--read-sync-delay <sec>`: Wait after adding a manga before syncing reads (let chapters populate).
-- `--max-read-requests-per-minute <n>`: Throttle read mark API calls.
-- `--missing-report <path.csv>`: Write a CSV of titles that have missing chapters (or chapters not yet loaded). The file is created up‑front with a header and updated live as the run progresses.
-
-Notes
-
-- Chapter-number matching uses canonical fractional rules: `.1–.4` are canonical; `.5` is canonical only if splits exist for the base chapter; `.6+` canonical when present; title hints like “extra/omake/special” are excluded.
-- The missing report includes only rows with `missing > 0` or `unknown` (no chapters loaded yet). Don’t keep the CSV open in Excel during the run or appends may fail due to file locking.
-
-Migrate existing library (rehoming preferred sources)
-
-```powershell
-python import_mangadex_bookmarks_to_suwayomi.py `
-  --base-url http://127.0.0.1:4567 `
-  --migrate-library `
-  --migrate-threshold-chapters 1 `
-  --migrate-sources "bato.to,mangabuddy,weeb central,mangapark" `
-  --exclude-sources "comick,hitomi" `
-  --migrate-title-threshold 0.7 `
-  --best-source `
-  --best-source-canonical `
-  --best-source-candidates 4 `
-  --min-chapters-per-alt 5 `
-  --migrate-max-sources-per-site 3 `
-  --migrate-timeout 25 `
-  --migrate-remove-if-duplicate
-```
-
-Quiet read-sync (no debug/logging)
-
-If you only want to sync MangaDex read markers into Suwayomi without extra output, use one of these minimal commands:
-
-```powershell
-# Sync ALL follows from MangaDex (quiet)
-python import_mangadex_bookmarks_to_suwayomi.py `
-  --base-url http://127.0.0.1:4567 `
-  --from-follows `
-  --md-username YOUR_USER `
-  --md-password YOUR_PASS `
-  --no-add-library `
-  --import-read-chapters `
-  --read-sync-number-fallback `
-  --max-read-requests-per-minute 240 `
-  --no-progress
-
-# Or: sync only IDs from a file (one MangaDex UUID per line)
-python import_mangadex_bookmarks_to_suwayomi.py `
-  --base-url http://127.0.0.1:4567 `
-  .\ids.txt `
-  --md-login-only `
-  --md-username YOUR_USER `
-  --md-password YOUR_PASS `
-  --no-add-library `
-  --import-read-chapters `
-  --read-sync-number-fallback `
-  --max-read-requests-per-minute 240 `
-  --no-progress
-```
-
-How read marks are applied
-
-- The tool sets chapter read flags via GraphQL mutations (the same path the WebUI uses): `updateChapters` (batch) and `updateChapter` (single).
-- REST write endpoints are not required and may be disabled on some servers; GraphQL is sufficient provided your auth mode permits it.
-- If marks don’t stick, ensure your server’s GraphQL endpoint is reachable and that your auth mode (auto/basic/simple/bearer) allows write mutations.
 
 ---
 
-## Web UI Userscripts (Optional)
+## Quick Start
 
-See `userscripts/README.md` for a Tampermonkey/Violentmonkey script that adds a “Sort: Recently Published” button to the Suwayomi web UI, so you can order titles by the latest published chapter date rather than database added date. Adjust selectors as needed for your UI version.
+### List your Suwayomi categories
+
+```powershell
+seiyomi list categories --base-url http://127.0.0.1:4567
+```
+
+### Import a Comick CSV export (dry run first)
+
+```powershell
+seiyomi import csv --file comick-mylist-2025-09-23.csv --base-url http://127.0.0.1:4567 --dry-run
+```
+
+### Migrate zero-chapter entries to better sources
+
+```powershell
+seiyomi migrate --to "bato.to,mangabuddy,weeb central" --base-url http://127.0.0.1:4567 --dry-run
+```
+
+### Remove duplicate entries
+
+```powershell
+seiyomi prune duplicates --base-url http://127.0.0.1:4567 --dry-run
+```
+
+### Launch the GUI
+
+```powershell
+seiyomi gui
+```
+
+Remove `--dry-run` from any command when you're satisfied with the preview.
+
+> **Tip:** `python -m seiyomi` works the same as `seiyomi` if the package isn't installed system-wide.
+
+---
+
+## CLI Reference
+
+### Shared flags (all commands)
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--base-url URL` | `http://127.0.0.1:4567` | Suwayomi server address |
+| `--auth MODE` | `auto` | Auth: `none`, `basic`, `bearer`, `simple`, `auto` |
+| `--user USER` | | Username for basic/simple auth |
+| `--password PASS` | | Password |
+| `--token TOKEN` | | Bearer token |
+| `--dry-run` | off | Simulate without making changes |
+| `-v, --verbose` | off | Show debug output |
+| `--no-progress` | off | Suppress per-item progress lines |
+
+---
+
+### `seiyomi migrate`
+
+Find better sources for library entries that have zero or few chapters.
+
+```powershell
+seiyomi migrate [options]
+```
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--to SOURCES` | | Preferred target sources (comma-separated fragments, e.g. `"bato.to,mangabuddy"`) |
+| `--exclude SOURCES` | `comick,hitomi` | Skip these sources during search |
+| `--lang LANGS` | `en` | Preferred language codes (comma-separated) |
+| `--threshold N` | `1` | Only migrate entries with fewer than N chapters |
+| `--remove-old` | off | Remove original after successful migration (destructive) |
+| `--candidates N` | `5` | Max candidates to score per title |
+| `--filter TEXT` | | Only process titles containing this substring |
+| `--timeout SECS` | `20` | Max seconds per title |
+| `--interactive, -i` | off | Prompt before each migration |
+| `--resume` | off | Continue from where a previous run was interrupted |
+
+Smart defaults are baked in: best-source scoring, canonical chapter counting, and second-page search are all enabled automatically.
+
+**Examples:**
+
+```powershell
+# Interactive migration to English sources
+seiyomi migrate --to "bato.to,mangabuddy,weeb central" --lang en -i
+
+# Resume an interrupted run
+seiyomi migrate --to "mangapark,weeb central" --resume
+
+# Migrate and remove originals
+seiyomi migrate --to "bato.to" --remove-old
+```
+
+---
+
+### `seiyomi import csv`
+
+Import manga from a CSV export file (Comick, Manganato, or custom format).
+
+```powershell
+seiyomi import csv --file PATH [options]
+```
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--file PATH` | required | CSV file path (repeatable: `--file a.csv --file b.csv`) |
+| `--threshold N` | `0.6` | Title match threshold 0–1 |
+| `--strict` | off | Require near-exact title match only |
+| `--status-map MAP` | | Map CSV status to category: `Reading=2,Completed=5` |
+| `--apply-progress` | off | Mark chapters read up to CSV last-read hint |
+| `--prefer-existing` | off | Skip rows when title already exists in library |
+
+CSV format is auto-detected by column headers. See [CSV_IMPORT.md](CSV_IMPORT.md) for schema details.
+
+**Examples:**
+
+```powershell
+# Import with status mapping
+seiyomi import csv --file comick.csv --status-map "Reading=2,Completed=5"
+
+# Strict matching, skip duplicates
+seiyomi import csv --file manganato.csv --strict --prefer-existing --dry-run
+```
+
+---
+
+### `seiyomi import follows`
+
+Import your MangaDex followed manga into Suwayomi.
+
+```powershell
+seiyomi import follows --md-user USER --md-pass PASS [options]
+```
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--md-user USER` | | MangaDex username |
+| `--md-pass PASS` | | MangaDex password |
+| `--import-status` | off | Map MangaDex statuses to Suwayomi categories |
+| `--import-read` | off | Sync MangaDex read progress |
+| `--status-map MAP` | | Status→category mapping: `reading=2,completed=5` |
+
+---
+
+### `seiyomi import ids`
+
+Import specific MangaDex manga from a text file (one ID or URL per line).
+
+```powershell
+seiyomi import ids FILE [options]
+```
+
+---
+
+### `seiyomi prune duplicates`
+
+Remove library entries with zero chapters when a better copy of the same title exists.
+
+```powershell
+seiyomi prune duplicates [options]
+```
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--threshold N` | `0` | Remove entries with fewer than N chapters |
+| `--filter TEXT` | | Only consider titles matching this substring |
+
+---
+
+### `seiyomi prune languages`
+
+Remove entries that have no chapters in your preferred language.
+
+```powershell
+seiyomi prune languages [options]
+```
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--lang LANGS` | `en` | Languages to keep (comma-separated) |
+| `--min-chapters N` | `1` | Min preferred-language chapters required |
+| `--filter TEXT` | | Only consider titles matching this substring |
+
+---
+
+### `seiyomi list`
+
+```powershell
+seiyomi list categories                   # Show category IDs and names
+seiyomi list library                      # Print all library entries (id: title)
+seiyomi list library --filter "berserk"   # Filter by substring
+seiyomi list sources                      # Show installed source extensions
+```
+
+---
+
+### `seiyomi sync reads`
+
+Sync MangaDex read progress into Suwayomi.
+
+```powershell
+seiyomi sync reads --md-user USER --md-pass PASS [options]
+```
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--only-if-ahead` | off | Only mark chapters when MangaDex is ahead of Suwayomi |
+
+---
+
+### `seiyomi gui`
+
+Launch the graphical interface. See [GUI_README.md](GUI_README.md).
+
+---
+
+## Backward Compatibility
+
+Old flat-flag commands still work automatically:
+
+| Old syntax | New equivalent |
+|------------|----------------|
+| `--migrate-library` | `migrate` |
+| `--prune-zero-duplicates` | `prune duplicates` |
+| `--prune-nonpreferred-langs` | `prune languages` |
+| `--list-categories` | `list categories` |
+| `--list-library-titles` | `list library` |
+| `--from-follows` | `import follows` |
+| `--from-csv FILE` | `import csv --file FILE` |
+
+A deprecation notice is logged when the old format is detected. Update your scripts at your convenience.
+
+---
+
+## GUI
+
+The GUI provides the same operations through a tabbed interface:
+
+| Tab | What it does |
+|-----|-------------|
+| Home | Connection status and quick-start workflow cards |
+| Migrate | Source migration with live output |
+| Import CSV | CSV file import with format auto-detection |
+| Import MangaDex | Follows, statuses, and read chapter sync |
+| Cleanup | Prune duplicates and language variants |
+| Settings | Connection config, auth mode, presets |
+| Advanced | Full flag access for power users |
+
+All mutations run through the CLI subprocess — the GUI never modifies your library directly.
+
+See [GUI_README.md](GUI_README.md) for the full guide.
 
 ---
 
 ## Troubleshooting
 
-- Use Dry run + Command Preview to validate before running
-- Turn on Debug output in Settings for verbose logs
-- If auth fails: try different auth modes (auto/basic/simple/bearer) and tokens
-- If migration returns few results: raise best‑source candidates and timeout, and consider Preferred only off
-- If migration/rehoming picks the wrong title: tune title matching with `--migrate-title-threshold` (default 0.6), or enforce strict matches via `--migrate-title-strict`
-- Status mapping issues: enable Map debug and Print status summary
-
-For details, open the in‑app manual (Help button on each tab).
-
----
-
-## Safety & Defaults
-
-- Non-destructive by default: migrations do not remove originals unless you explicitly enable removal.
-- Destructive options in the GUI are marked in red with “(destructive)” labels.
-- The first time you enable any destructive action, the GUI shows a confirmation dialog with a “Don’t show again” option.
+| Problem | Fix |
+|---------|-----|
+| Auth fails | Try `--auth basic` or `--auth simple` |
+| Migration finds few results | Increase `--candidates` and `--timeout`; add more sources to `--to` |
+| Wrong title matched | Lower `--threshold` or use `--strict` |
+| Chapters not marking as read | Ensure GraphQL is enabled on your server |
+| `--dry-run` looks good but real run fails | Check connectivity; use `-v` for debug output |
 
 ---
 
-## Title Matching (Migration & Rehoming)
+## Project Structure
 
-Some sources return popular/new lists even for specific searches. To prevent unrelated picks:
+```
+seiyomi/
+├── cli.py              # Subcommand entry point
+├── config.py           # Config dataclasses
+├── compat.py           # Old-flag translation layer
+├── clients/
+│   ├── suwayomi.py     # Suwayomi REST/GraphQL client
+│   └── mangadex.py     # MangaDex API client
+├── importers/
+│   └── csv_import.py   # CSV parsing (Comick, Manganato, custom)
+├── matching/
+│   └── titles.py       # Title similarity (rapidfuzz / Jaccard fallback)
+├── operations/
+│   ├── migrate.py      # Library migration
+│   ├── prune.py        # Duplicate & language pruning
+│   ├── read_sync.py    # Read-progress sync
+│   ├── import_csv.py   # CSV import operation
+│   ├── import_follows.py
+│   └── rehome.py
+├── utils/
+│   ├── rate_limiter.py # Thread-safe rate limiter
+│   └── checkpoint.py   # Resumable operation state
+└── gui/                # Tkinter GUI
+```
 
-- `--migrate-title-threshold <0..1>`: Require a minimum normalized title similarity (Jaccard over cleaned tokens). Default: `0.6`.
-- `--migrate-title-strict`: Require normalized exact/containment matches; disables fuzzy-only matches.
+---
 
-These checks are applied before selecting candidates for both migration and rehoming. If no candidates pass, that source is skipped.
+## Safety
+
+- **Non-destructive by default.** No entry is removed unless you explicitly pass `--remove-old` or similar.
+- **Always dry-run first.** Every command supports `--dry-run`.
+- Destructive options in the GUI are marked in red.
+
+---
+
+## Web UI Userscripts
+
+See `userscripts/README.md` for a Tampermonkey script that adds "Sort by Publish Date" to the Suwayomi web UI.
+
+---
+
+## Why "Seiyomi"?
+
+Seiyomi (整読み) = 整 (sei, "organize") + 読み (yomi, "reading"). Following the tradition of Tachiyomi (立ち読み, "stand and read") and Suwayomi (座り読み, "sit and read").
 
 ---
 
 ## License
 
-MIT. Respect site policies and support authors/artists.
+MIT. Respect site policies and support manga authors and artists.

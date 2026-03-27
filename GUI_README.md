@@ -1,152 +1,122 @@
-# Seiyomi GUI — Quick Guide
+# Seiyomi GUI Guide
 
-This is a short guide for the desktop GUI that ships with Seiyomi. For the full project documentation, see `README.md` and `USER_MANUAL.md`.
-
----
-
-## What the GUI does
-
-- Import from MangaDex (follows, statuses, read chapters, custom lists)
-- Migrate within your Suwayomi library (rehoming and best-source picking)
-- Prune duplicates and non‑preferred languages
-- Run general Suwayomi utilities (auth, list categories, open UI)
-
-All options generate an exact command in the Command Preview so you can run the same task from the CLI later.
+The Seiyomi GUI is a Tkinter desktop interface that wraps the CLI. Every operation runs as a CLI subprocess — the GUI never modifies your Suwayomi library directly.
 
 ---
 
 ## Launching
 
-- With Python:
-
 ```powershell
-.\.venv\Scripts\python.exe .\gui_launcher_tk.py
+# Via subcommand
+seiyomi gui
+
+# Or directly
+python gui_launcher_tk.py
+
+# Or with venv
+.venv\Scripts\python.exe gui_launcher_tk.py
 ```
 
-- Packaged EXE (if present): `MangaDex_Suwayomi_ControlPanel.exe`
+---
+
+## Tabs
+
+### Home
+
+Landing screen with workflow summary cards. Shows connection status and quick links to common tasks.
+
+### Import CSV
+
+Import manga from Comick or Manganato CSV exports.
+
+- **File picker** — select one or more CSV files
+- **Status map** — map CSV status columns to Suwayomi category IDs (e.g. `Reading=2,Completed=5`)
+- **Threshold** — title match similarity (default 0.6)
+- **Strict** — require near-exact title matches only
+- **Apply progress** — mark chapters read up to the CSV's last-read hint
+- **Prefer existing** — skip rows when the title is already in your library
+
+### Import Follows (MangaDex)
+
+Import your MangaDex followed manga.
+
+- **MangaDex credentials** — username and password
+- **Import statuses** — map MangaDex reading statuses to Suwayomi categories
+- **Import read chapters** — sync your MangaDex read progress
+- **Status map** — `reading=2,completed=5,on_hold=7,...`
+
+### Migrate Library
+
+Find better sources for zero/low-chapter entries.
+
+- **Target sources** — comma-separated source name fragments (e.g. `bato.to,mangabuddy`)
+- **Exclude sources** — skip these (default: `comick,hitomi`)
+- **Language** — preferred language codes (default: `en`)
+- **Threshold** — only migrate entries with fewer than N chapters
+- **Remove old** — delete the original entry after migration (destructive, marked in red)
+- **Interactive** — prompt before each migration commit
+- **Resume** — continue from a previous interrupted run
+
+### Prune Library (Cleanup)
+
+Remove unwanted entries.
+
+- **Prune duplicates** — remove entries with zero chapters when a better copy exists
+- **Prune languages** — remove entries with no chapters in your preferred language
+- **Filter** — target a specific title by substring match
+
+### Settings
+
+- **Server URL** — Suwayomi base URL (default: `http://127.0.0.1:4567`)
+- **Auth mode** — none, basic, bearer, simple, auto
+- **Credentials** — username, password, or bearer token
+- **Test connection** — verify connectivity before running operations
+
+### Advanced
+
+Full CLI argument builder for power users. Type any combination of flags and the GUI builds the command for you. This is the escape hatch for flags not exposed in the other tabs.
 
 ---
 
-## Tabs at a glance
+## Controls
 
-- MangaDex Import: log in and pull follows/statuses/read markers
-- CSV Import: add Comick/Manganato CSV files, set per-file options, and everything auto-matches directly against Suwayomi sources (MangaDex lookup is always skipped)
-- Migrate: add better sources for thin/zero‑chapter entries; title matching and language preferences supported
-	- Tip: list a few high-quality sites in “Preferred sources” (and optionally enable “Preferred only”) so migrations stay focused and skip the long tail of low-quality mirrors.
-- Prune: clean duplicates and non‑preferred‑language entries
-- Suwayomi Database: base URL, auth, list categories, open UI
-- Settings: presets and debug output
-- About: app info, links, environment details
+The bottom bar is shared across all tabs:
 
-Each tab has a “Help” button to open the relevant section in the user manual.
+| Control | What it does |
+|---------|-------------|
+| **Dry Run** | Toggle to simulate without making changes |
+| **Run** | Execute the current operation |
+| **Cancel** | Stop a running operation (sends SIGTERM) |
+| **Output panel** | Shows live CLI output as lines stream in |
 
 ---
 
-## Command Preview & Run
+## Destructive Actions
 
-- The bottom panel shows the exact command that will run
-- Toggle `Dry run` to simulate without changing your library
-- `Save log to file` tees the output to a chosen path
-- By default, runs quietly without opening a PowerShell window
-- Check `Open in external terminal` to watch live output in a PowerShell window
+- Marked in **red** with "(destructive)" label
+- First use triggers a confirmation dialog with "Don't show again" option
+- Reset confirmations by deleting the config file (see below)
 
 ---
 
-## Presets
+## Config Location
 
-- Prefer English Migration
-- Cleanup Non‑English
-- Keep Both (Quality+Coverage)
+Settings are stored in:
 
-Use Settings → Apply Preset to quickly prime common workflows.
+- Windows: `%APPDATA%\Seiyomi\config.json`
+- macOS/Linux: `~/.config/Seiyomi/config.json`
 
----
-
-## Title Matching (for migration & rehoming)
-
-- `Similarity threshold (0..1)`: minimum score (default 0.6)
-- `Strict` mode: accept only normalized exact/containment matches
-
-These settings are used when Migrate or Rehoming is enabled.
-
----
-
-## About panel
-
-- Shows version, license, author, environment
-- Buttons to open: GUI README (viewer), full README, Manual, Project Folder, LICENSE, Repository
+On first launch, if an old `MangaDex_Suwayomi` config directory is found, settings are automatically migrated.
 
 ---
 
 ## Troubleshooting
 
-- If commands don’t run, check Base URL and auth in Suwayomi Database tab
-- Use `Dry run` first; enable `Debug output` (Settings) for verbose logs
-- If markdown doesn’t render in viewers, ensure `markdown` and `tkhtmlview` are installed (bundled via `requirements.txt`)
+| Problem | Fix |
+|---------|-----|
+| Commands don't run | Check server URL and auth in Settings tab |
+| No output appears | Make sure your venv is activated; check Python is 3.10+ |
+| Markdown doesn't render | Install `markdown` and `tkhtmlview` (`pip install markdown tkhtmlview`) |
+| Connection test fails | Verify Suwayomi is running and the URL is correct |
 
----
-
-## Safety & Defaults
-
-- Non-destructive by default: migration keeps the original entry unless you explicitly enable removal.
-- Destructive actions are labeled “(destructive)” in red throughout the GUI.
-- When a destructive action is enabled, a confirmation dialog appears (once) with an option to “Don’t show again”.
-
----
-
-## System Requirements
-
-- Windows 10/11 (official support; packaged EXE available)
-- Suwayomi server reachable (e.g., `http://127.0.0.1:4567`)
-- Either Python 3.11+ (to run the script) or the packaged EXE
-- Markdown viewer uses `markdown` + `tkhtmlview` (included via `requirements.txt`/EXE)
-- macOS/Linux: works with Python 3.11+ and Tkinter; the optional `Open in external terminal` feature requires PowerShell 7 (`pwsh`), otherwise run quietly and use logs
-
----
-
-## Settings & Data
-
-- Config: `%APPDATA%\MangaDex_Suwayomi\config.json`
-- Reset config: close the app and delete that file
-- Logs: when “Save log to file” is enabled, output is written to the chosen path
-
----
-
-## Privacy & Security
-
-- Credentials/tokens are used only to talk to Suwayomi/MangaDex and aren’t stored
-- Logs may include titles/URLs but never passwords—review before sharing
-
----
-
-## Extra Troubleshooting
-
-- Windows SmartScreen: packaged EXE is unsigned; click “More info → Run anyway” (or build locally)
-- Markdown not rendering: toggle “Rendered Markdown” off in the viewer if needed
-- Networking: if requests time out, raise “Request timeout (s)” or add a small `Throttle` in the Suwayomi Database tab
-- Collect info for issues: use About → “Copy Environment Info”, include Command Preview + last 50 log lines
-
----
-
-## Support / Issues
-
-- Open an issue: https://github.com/TaliesinDS/Seiyomi/issues
-- Please attach: the Command Preview command, last ~50 lines of the log, and the About environment string
-
----
-
-## What’s New (GUI)
-
-- In‑app Markdown viewer for Manual/README with dark mode and search
-- Title Matching controls for migration/rehoming (threshold, strict)
-- About tab shows version/license/author and has quick links (GUI README, Manual, Repo, LICENSE)
-
----
-
-## Known Limitations
-
-- Windows‑first UI; portable mode not supported (config stored in AppData)
-- Markdown renderer is simple; complex HTML/CSS may not render perfectly
-- Opening external files uses your OS default app (e.g., VS Code if set for `.md`)
-
-MIT License. Respect site policies and support authors/artists.
+Use **Dry Run** first. Enable `-v` (verbose) in Advanced tab for debug output.
