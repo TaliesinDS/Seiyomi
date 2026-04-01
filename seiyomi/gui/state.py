@@ -54,6 +54,7 @@ class MigrateState:
     enabled: bool = False
     sources: str = ""
     exclude_sources: str = "comick,hitomi"
+    from_source: str = ""
     threshold_chapters: int = 1
     remove_original: bool = False
     best_source: bool = True
@@ -71,6 +72,9 @@ class MigrateState:
     timeout: float = 20.0
     max_sources_per_site: int = 3
     try_second_page: bool = True
+    workers: int = 0
+    comick_prefilter: bool = False
+    rejects_file: str = "rejects.csv"
     filter_title: str = ""
     title_threshold: float = 0.6
     title_strict: bool = False

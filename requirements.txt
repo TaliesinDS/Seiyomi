@@ -1,3 +1,5 @@
 requests>=2.28.0
 # Optional: faster + higher-quality title matching. Falls back to Jaccard if absent.
 rapidfuzz>=3.0.0
+# Optional: bypass Cloudflare TLS fingerprinting for Comick.dev API access.
+curl_cffi>=0.5.0

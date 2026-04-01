@@ -21,11 +21,13 @@ class MigrateView(ttk.Frame):
         self._vars = {
             "sources":         tk.StringVar(value=m.sources),
             "exclude_sources": tk.StringVar(value=m.exclude_sources),
+            "from_source":     tk.StringVar(value=m.from_source),
             "threshold":       tk.StringVar(value=str(m.threshold_chapters)),
             "preferred_langs": tk.StringVar(value=m.preferred_langs),
             "filter_title":    tk.StringVar(value=m.filter_title),
             "timeout":         tk.StringVar(value=str(m.timeout)),
             "candidates":      tk.StringVar(value=str(m.best_candidates)),
+            "workers":         tk.StringVar(value=str(m.workers)),
             "include_cat":     tk.StringVar(value=m.include_categories),
             "exclude_cat":     tk.StringVar(value=m.exclude_categories),
             "title_threshold": tk.StringVar(value=str(m.title_threshold)),
@@ -39,6 +41,8 @@ class MigrateView(ttk.Frame):
             "title_strict":    tk.BooleanVar(value=m.title_strict),
             "keep_both":       tk.BooleanVar(value=m.keep_both),
             "remove_if_dup":   tk.BooleanVar(value=m.remove_if_duplicate),
+            "comick_prefilter": tk.BooleanVar(value=m.comick_prefilter),
+            "rejects_file":   tk.StringVar(value=m.rejects_file),
         }
 
         ttk.Label(self, text="Migrate Library", font=("Segoe UI", 11, "bold")).pack(anchor="w", pady=(0, 8))
@@ -49,6 +53,8 @@ class MigrateView(ttk.Frame):
                      tooltip="Comma-separated source name fragments to prefer (leave blank = any)").pack(fill="x", pady=2)
         LabeledEntry(self, "Exclude sources", self._vars["exclude_sources"], width=45,
                      tooltip="Comma-separated source fragments to always skip (default: comick,hitomi)").pack(fill="x", pady=2)
+        LabeledEntry(self, "From source", self._vars["from_source"], width=45,
+                     tooltip="Only migrate entries FROM this source (e.g. 'bato'). Leave blank to use threshold.").pack(fill="x", pady=2)
         LabeledEntry(self, "Chapter threshold", self._vars["threshold"], width=8,
                      tooltip="Migrate entries with fewer chapters than this (default: 1)").pack(fill="x", pady=2)
         LabeledEntry(self, "Preferred languages", self._vars["preferred_langs"], width=20,
@@ -58,6 +64,8 @@ class MigrateView(ttk.Frame):
         LabeledEntry(self, "Timeout per title (s)", self._vars["timeout"], width=8).pack(fill="x", pady=2)
         LabeledEntry(self, "Max candidates", self._vars["candidates"], width=8,
                      tooltip="Max source candidates to score per title (default: 5)").pack(fill="x", pady=2)
+        LabeledEntry(self, "Parallel workers", self._vars["workers"], width=8,
+                     tooltip="Parallel source searches per title (0 = auto: 4 when From source is set, 1 otherwise)").pack(fill="x", pady=2)
         LabeledEntry(self, "Title threshold", self._vars["title_threshold"], width=8,
                      tooltip="Minimum title similarity score 0..1 (default: 0.6)").pack(fill="x", pady=2)
         LabeledEntry(self, "Include categories", self._vars["include_cat"], width=40,
@@ -94,6 +102,12 @@ class MigrateView(ttk.Frame):
         ttk.Checkbutton(r3, text="Keep both (add new, don't remove old)",
                         variable=self._vars["keep_both"]).pack(side="left")
 
+        r4 = ttk.Frame(flags); r4.pack(fill="x", pady=4)
+        ttk.Checkbutton(r4, text="Comick.dev pre-filter & scoring",
+                        variable=self._vars["comick_prefilter"]).pack(side="left", padx=(0, 12))
+        LabeledEntry(r4, "Rejects file", self._vars["rejects_file"], width=20,
+                     tooltip="CSV file for titles that couldn't be matched").pack(side="left")
+
     def get_args(self) -> List[str]:
         self.flush_to_state()
         m = self._state.migrate
@@ -102,6 +116,8 @@ class MigrateView(ttk.Frame):
             args += ["--to", m.sources]
         if m.exclude_sources:
             args += ["--exclude", m.exclude_sources]
+        if m.from_source:
+            args += ["--from", m.from_source]
         if m.threshold_chapters != 1:
             args += ["--threshold", str(m.threshold_chapters)]
         if m.preferred_langs and m.preferred_langs != "en":
@@ -112,14 +128,21 @@ class MigrateView(ttk.Frame):
             args += ["--timeout", str(m.timeout)]
         if m.best_candidates != 5:
             args += ["--candidates", str(m.best_candidates)]
+        if m.workers != 0:
+            args += ["--workers", str(m.workers)]
         if m.remove_original:
             args += ["--remove-old"]
+        if m.comick_prefilter:
+            args += ["--comick-prefilter"]
+        if m.rejects_file and m.rejects_file != "rejects.csv":
+            args += ["--rejects-file", m.rejects_file]
         return args
 
     def flush_to_state(self) -> None:
         m = self._state.migrate
         m.sources = self._vars["sources"].get().strip()
         m.exclude_sources = self._vars["exclude_sources"].get().strip()
+        m.from_source = self._vars["from_source"].get().strip()
         try:
             m.threshold_chapters = int(self._vars["threshold"].get())
         except ValueError:
@@ -135,6 +158,10 @@ class MigrateView(ttk.Frame):
         except ValueError:
             m.best_candidates = 5
         try:
+            m.workers = int(self._vars["workers"].get())
+        except ValueError:
+            m.workers = 0
+        try:
             m.title_threshold = float(self._vars["title_threshold"].get())
         except ValueError:
             m.title_threshold = 0.6
@@ -149,3 +176,5 @@ class MigrateView(ttk.Frame):
         m.title_strict = bool(self._vars["title_strict"].get())
         m.keep_both = bool(self._vars["keep_both"].get())
         m.remove_if_duplicate = bool(self._vars["remove_if_dup"].get())
+        m.comick_prefilter = bool(self._vars["comick_prefilter"].get())
+        m.rejects_file = self._vars["rejects_file"].get().strip() or "rejects.csv"

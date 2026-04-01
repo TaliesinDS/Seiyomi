@@ -41,13 +41,18 @@ def title_similarity(a: str, b: str) -> float:
 
     Uses ``rapidfuzz.fuzz.token_sort_ratio`` when the library is installed
     (faster, higher quality).  Falls back to token Jaccard similarity.
+
+    Both paths operate on **normalized** tokens so bracketed noise like
+    ``(Official)`` or ``[Color]`` is stripped before comparison.
     """
-    if _HAS_RAPIDFUZZ:
-        return _rfuzz.token_sort_ratio(a or "", b or "") / 100.0
-    ta = set(normalize_title_tokens(a))
-    tb = set(normalize_title_tokens(b))
-    if not ta or not tb:
+    na = " ".join(normalize_title_tokens(a))
+    nb = " ".join(normalize_title_tokens(b))
+    if not na or not nb:
         return 0.0
+    if _HAS_RAPIDFUZZ:
+        return _rfuzz.token_sort_ratio(na, nb) / 100.0
+    ta = set(na.split())
+    tb = set(nb.split())
     union = ta | tb
     return len(ta & tb) / len(union) if union else 0.0
 

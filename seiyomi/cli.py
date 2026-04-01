@@ -47,6 +47,8 @@ def _add_shared(p: argparse.ArgumentParser) -> None:
                    help="Enable debug logging")
     p.add_argument("--no-progress", action="store_true",
                    help="Suppress per-item progress lines")
+    p.add_argument("--log-file", dest="log_file", default="",
+                   help="Also write log output to this file (easy to scroll/search)")
 
 
 # ── Parser factory ─────────────────────────────────────────────────────────
@@ -74,6 +76,8 @@ def _build_parser() -> argparse.ArgumentParser:
                      help="Remove original entry after successful migration")
     mig.add_argument("--candidates", dest="best_source_candidates", type=int, default=5,
                      help="Max candidates to score per title (default: 5)")
+    mig.add_argument("--from", dest="migrate_from_source", default="",
+                     help="Only migrate entries FROM this source (name fragment, e.g. 'bato')")
     mig.add_argument("--filter", dest="migrate_filter_title", default="",
                      help="Only process titles containing this substring")
     mig.add_argument("--timeout", dest="migrate_timeout", type=float, default=20.0,
@@ -82,6 +86,12 @@ def _build_parser() -> argparse.ArgumentParser:
                      help="Prompt before committing each match")
     mig.add_argument("--resume", action="store_true",
                      help="Skip entries completed in a previous interrupted run")
+    mig.add_argument("--workers", dest="migrate_workers", type=int, default=0,
+                     help="Parallel source searches per title (default: 1, or 4 when --from is used)")
+    mig.add_argument("--comick-prefilter", dest="comick_prefilter", action="store_true",
+                     help="Query Comick.dev for canonical chapter counts to pre-filter and score candidates")
+    mig.add_argument("--rejects-file", dest="rejects_file", default="rejects.csv",
+                     help="Path for the rejects bin CSV (default: rejects.csv)")
 
     # ── import ──
     imp = sub.add_parser("import", help="Import manga into Suwayomi")
@@ -198,6 +208,10 @@ def _fill(ns: argparse.Namespace, **defaults) -> None:
 
 def _fill_migrate_defaults(args: argparse.Namespace) -> None:
     _fill(args,
+          migrate_from_source="",
+          migrate_workers=0,
+          comick_prefilter=False,
+          rejects_file="rejects.csv",
           rehoming_sources="",
           migrate_remove_if_duplicate=False,
           debug_library=False,
@@ -236,6 +250,17 @@ def _fill_prune_defaults(args: argparse.Namespace) -> None:
 def _dispatch_migrate(args: argparse.Namespace) -> int:
     from seiyomi.operations.migrate import migrate_library
     _fill_migrate_defaults(args)
+    # --from: auto-enable global-best and parallel to find the best replacement
+    if getattr(args, "migrate_from_source", ""):
+        if not args.best_source_global:
+            args.best_source_global = True
+        if args.migrate_workers == 0:
+            args.migrate_workers = 4
+        if args.migrate_timeout <= 20.0:
+            args.migrate_timeout = 60.0
+    # Default workers to 1 (sequential) when not auto-set
+    if args.migrate_workers == 0:
+        args.migrate_workers = 1
     return migrate_library(_make_client(args), args)
 
 
@@ -357,6 +382,19 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     if getattr(args, "verbose", False):
         logging.getLogger().setLevel(logging.DEBUG)
+        # Keep urllib3/requests noise to WARNING even in verbose mode —
+        # otherwise every HTTP connection prints "Starting new HTTP
+        # connection" lines that drown out useful output.
+        logging.getLogger("urllib3").setLevel(logging.WARNING)
+        logging.getLogger("requests").setLevel(logging.WARNING)
+
+    # Optional file handler — lets user scroll/search output after the run.
+    log_file = getattr(args, "log_file", "")
+    if log_file:
+        fh = logging.FileHandler(log_file, mode="w", encoding="utf-8")
+        fh.setFormatter(logging.Formatter("%(message)s"))
+        fh.setLevel(logging.getLogger().level)
+        logging.getLogger().addHandler(fh)
 
     cmd = getattr(args, "command", None)
 

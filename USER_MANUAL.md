@@ -229,6 +229,30 @@ See [CSV_IMPORT.md](CSV_IMPORT.md) for details on supported CSV formats and colu
 
 Migrate titles that have zero (or few) chapters to better alternatives from other installed sources.
 
+### Migrate everything from a dead source
+
+When a source shuts down (e.g. Bato.to), migrate all entries from that source to the best available alternatives:
+
+```powershell
+seiyomi migrate `
+  --from "bato" `
+  --to "mangabuddy,weeb central,mangapark" `
+  --base-url http://127.0.0.1:4567 `
+  --dry-run
+```
+
+`--from` filters your library to only entries belonging to the named source (matched by name fragment). When `--from` is used, the chapter threshold is automatically raised so **all** entries from that source are considered, not just zero-chapter ones.
+
+Combine with `--remove-old` to clean up the dead entries after migration:
+
+```powershell
+seiyomi migrate `
+  --from "bato" `
+  --to "mangabuddy,weeb central,mangapark" `
+  --remove-old `
+  --base-url http://127.0.0.1:4567
+```
+
 ### How it works
 
 1. Scans your Suwayomi library for entries below the chapter threshold (default: 1)

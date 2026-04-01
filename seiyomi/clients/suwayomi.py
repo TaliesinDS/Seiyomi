@@ -159,7 +159,7 @@ class SuwayomiClient:
         q = """
         query {
           mangas(condition: { inLibrary: true }) {
-            nodes { id title }
+            nodes { id title sourceId }
           }
         }
         """
@@ -214,6 +214,33 @@ class SuwayomiClient:
             logger.debug("get_chapter_count gql error: %s", exc)
         # Fallback: count from REST list
         return len(self.get_chapters(manga_id))
+
+    def fetch_chapter_count(self, manga_id: int) -> int:
+        """Trigger Suwayomi to fetch chapters from the source, return the count.
+
+        Uses the ``fetchChapters`` GQL mutation which makes Suwayomi pull
+        the chapter list from the remote source.  Returns the length of the
+        returned chapters array.
+        """
+        mutation = (
+            "mutation($input: FetchChaptersInput!) {"
+            "  fetchChapters(input: $input) {"
+            "    chapters { id }"
+            "  }"
+            "}"
+        )
+        try:
+            resp = self.graphql(mutation, variables={"input": {"mangaId": manga_id}})
+            if resp and isinstance(resp.get("data"), dict):
+                chapters = (resp["data"].get("fetchChapters") or {}).get("chapters")
+                if isinstance(chapters, list):
+                    return len(chapters)
+            if resp and resp.get("errors"):
+                logger.debug("fetch_chapter_count(%d): %s", manga_id, resp["errors"][0].get("message", ""))
+        except Exception as exc:
+            logger.debug("fetch_chapter_count(%d): %s", manga_id, exc)
+        # Fallback: read from DB (may still be 0 if fetch failed)
+        return self.get_chapter_count(manga_id)
 
     def mark_chapters_read(self, chapter_ids: List[int]) -> bool:
         """POST /api/v1/chapter/batch — mark chapter database IDs as read.
