@@ -155,6 +155,10 @@ class OutputText(tk.Frame):
         self._text.delete("1.0", "end")
         self._text.configure(state="disabled")
 
+    def get_text(self) -> str:
+        """Return the full contents of the output buffer."""
+        return self._text.get("1.0", "end-1c")
+
 
 # ── WarningBanner ─────────────────────────────────────────────────────────
 

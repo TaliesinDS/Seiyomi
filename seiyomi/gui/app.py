@@ -12,7 +12,7 @@ from __future__ import annotations
 import sys
 import tkinter as tk
 from pathlib import Path
-from tkinter import messagebox, ttk
+from tkinter import filedialog, messagebox, ttk
 from typing import List, Optional
 
 from typing import Any, cast
@@ -82,6 +82,8 @@ class SeiyomiApp(tk.Tk):
         self._cancel_btn.pack(side="left", padx=(0, 16))
 
         ttk.Button(ctrl, text="Clear output", command=self._output.clear).pack(side="left")
+
+        ttk.Button(ctrl, text="Save log", command=self._save_log).pack(side="left", padx=(8, 0))
 
         # ── Status bar ──
         status_bar = ttk.Frame(self, relief="sunken")
@@ -213,6 +215,24 @@ class SeiyomiApp(tk.Tk):
         self._run_btn.configure(state="normal")
         self._cancel_btn.configure(state="disabled")
         self._output.append("\n[Cancelled]")
+
+    def _save_log(self) -> None:
+        text = self._output.get_text()
+        if not text.strip():
+            messagebox.showinfo("Nothing to save", "The output log is empty.")
+            return
+        path = filedialog.asksaveasfilename(
+            defaultextension=".log",
+            filetypes=[("Log files", "*.log"), ("Text files", "*.txt"), ("All files", "*.*")],
+            title="Save log output",
+        )
+        if not path:
+            return
+        try:
+            Path(path).write_text(text, encoding="utf-8")
+            self._output.append(f"\nLog saved to {path}")
+        except OSError as e:
+            messagebox.showerror("Save failed", str(e))
 
     # ── Connection test ────────────────────────────────────────────────────
 

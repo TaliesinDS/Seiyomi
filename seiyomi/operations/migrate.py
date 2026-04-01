@@ -315,6 +315,16 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
         ]
     sorted_sources = sorted(sources, key=score_source)
 
+    def _resort_sources() -> List[Dict[str, Any]]:
+        """Re-sort sources, boosting those that have won in this session."""
+        if not source_wins:
+            return sorted_sources
+        # Two-level sort: first by win count (descending), then original pref order.
+        return sorted(
+            sorted_sources,
+            key=lambda src: (-source_wins.get(int(src.get("id") or 0), 0), score_source(src)),
+        )
+
     def site_key(src: Dict[str, Any]) -> str:
         nm = (src.get("name") or src.get("apkName") or "").lower()
         return re.sub(r"[^a-z]+", "", nm)[:32]
@@ -343,6 +353,9 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
     # Session-level set of source IDs that consistently fail — skip them
     # for subsequent titles to avoid wasting time on dead sources.
     dead_sources: Set[int] = set()
+    # Session-level win tracker: source_id → number of times it was picked
+    # as the winning source.  Used to prioritize proven sources first.
+    source_wins: Dict[int, int] = {}
     threshold = max(0, args.migrate_threshold_chapters)
     filter_sub = (args.migrate_filter_title or "").strip().lower()
 
@@ -467,13 +480,16 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
         start_ts = time.time()
         per_site_counts: Dict[str, int] = {}
         cap_announced: Dict[str, bool] = {}
-        global_best: Optional[Tuple[int, int, Dict[str, Any]]] = None
+        global_best: Optional[Tuple[int, int, Dict[str, Any], str]] = None
         global_raw_max: Optional[Tuple[int, int, Dict[str, Any]]] = None
         prefer_frags = [
             s.strip().lower()
             for s in (args.prefer_sources.split(",") if args.prefer_sources else [])
             if s.strip()
         ]
+
+        # Re-sort sources based on session win history
+        _active_sources = _resort_sources()
 
         # Pre-filter sources for per-site caps (needed for parallel search)
         workers = max(1, int(getattr(args, "migrate_workers", 1) or 1))
@@ -482,7 +498,7 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
             cap = max(1, int(args.migrate_max_sources_per_site)) if args.migrate_max_sources_per_site else 999
             pre_counts: Dict[str, int] = {}
             capped_sources: List[Dict[str, Any]] = []
-            for src in sorted_sources:
+            for src in _active_sources:
                 sk = site_key(src)
                 c = pre_counts.get(sk, 0)
                 if c < cap:
@@ -504,7 +520,7 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
             if not args.no_progress:
                 logger.info(f"[{idx}] Found results in {len(search_cache)} source(s)")
 
-        for src in sorted_sources:
+        for src in _active_sources:
             nm = (src.get("name") or src.get("apkName") or "").lower()
             try:
                 sid = int(src.get("id") or 0)
@@ -582,6 +598,8 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
                 continue
 
             alt_id = None
+            alt_title = ""
+            early_accepted = False
             if args.best_source:
                 best_count = -1
                 raw_score: int = 0
@@ -599,6 +617,7 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
                     except Exception:
                         pass
                     ccount = 0
+                    canon = 0
                     try:
                         if pref_langs:
                             if args.best_source_canonical:
@@ -621,6 +640,13 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
                         # mutation's direct count instead.
                         if ccount == 0 and fetched_count > 0:
                             ccount = fetched_count
+                        # Always get canonical count for Comick comparison
+                        try:
+                            canon = client.get_manga_chapters_canonical_count(cid)
+                        except Exception:
+                            canon = ccount
+                        if canon == 0 and fetched_count > 0:
+                            canon = fetched_count
                         if prefer_frags and any(f in nm for f in prefer_frags):
                             ccount += int(args.prefer_boost)
                         try:
@@ -635,51 +661,68 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
                             raw_score = fetched_count
                     except Exception:
                         ccount = 0
+                        canon = 0
                         raw_score = 0
                     if args.debug_library and not args.no_progress:
                         ctitle = str(cand.get("title") or cand.get("name") or "")
-                        logger.info(f"[{idx}]     cand id={cid} site='{nm}' score={ccount} title='{ctitle[:60]}'")
-                    # Comick sanity check: reject candidates with implausible
-                    # chapter counts.  Comick is the ground truth; a source
-                    # should have at most a couple of chapters more.  However,
-                    # some sources split chapters into sub-parts (4.1, 4.2 …)
-                    # which inflates the raw count — allow up to ~3× for that.
+                        logger.info(f"[{idx}]     cand id={cid} site='{nm}' score={ccount} canonical={canon} title='{ctitle[:60]}'")
+                    # ── Comick sanity check ─────────────────────────────────
+                    # Use the *canonical* count (de-duped by integer chapter
+                    # number) against Comick — this catches false matches even
+                    # when the raw count looks plausible due to sub-chapters.
                     if comick_canonical is not None and comick_canonical > 0:
-                        hard_ceiling = comick_canonical + 2        # normal tolerance
-                        sub_ch_ceiling = comick_canonical * 3 + 2  # sub-chapter tolerance
-                        if ccount > sub_ch_ceiling:
-                            # Way too many — definitely a false match
+                        comick_int = int(comick_canonical)
+                        if canon > comick_int + 2:
+                            # Canonical count exceeds Comick by more than 2 —
+                            # allow up to 3× for genuine chapter renumbering /
+                            # multi-season sources, otherwise reject.
+                            if canon > comick_int * 3 + 2:
+                                if not args.no_progress:
+                                    ctitle = str(cand.get("title") or cand.get("name") or "")
+                                    logger.info(
+                                        f"[{idx}]     REJECTED cand id={cid} "
+                                        f"canonical={canon} vs Comick {comick_int} — false match"
+                                    )
+                                continue
+                            else:
+                                if not args.no_progress:
+                                    ctitle = str(cand.get("title") or cand.get("name") or "")
+                                    logger.info(
+                                        f"[{idx}]     ACCEPTED cand id={cid} has {ccount} ch "
+                                        f"(canonical {canon}) vs Comick {comick_int} "
+                                        f"— {ccount - canon} sub-chapters"
+                                    )
+                        elif canon >= comick_int - 2:
+                            # Canonical count is close to Comick — perfect match.
+                            # Early-accept: no need to evaluate more candidates.
                             if not args.no_progress:
-                                ctitle = str(cand.get("title") or cand.get("name") or "")
                                 logger.info(
-                                    f"[{idx}]     REJECTED cand id={cid} claims {ccount} ch "
-                                    f"but Comick says {comick_canonical:.0f} — false match"
+                                    f"[{idx}]     MATCH cand id={cid} "
+                                    f"canonical={canon} ≈ Comick {comick_int} — early accept"
                                 )
-                            continue
-                        elif ccount > hard_ceiling:
-                            # Plausible sub-chapter split — accept but note it
-                            if not args.no_progress:
-                                # Get canonical (de-duped by integer chapter number)
-                                # count to confirm sub-chapters exist.
-                                try:
-                                    canon = client.get_manga_chapters_canonical_count(cid)
-                                except Exception:
-                                    canon = ccount
-                                ctitle = str(cand.get("title") or cand.get("name") or "")
-                                logger.info(
-                                    f"[{idx}]     ACCEPTED cand id={cid} has {ccount} ch "
-                                    f"(canonical {canon}) vs Comick {comick_canonical:.0f} "
-                                    f"— {ccount - canon} sub-chapters"
-                                )
+                            alt_id = cid
+                            alt_title = str(cand.get("title") or cand.get("name") or "")
+                            best_count = ccount
+                            if args.best_source_global:
+                                if global_best is None or ccount > global_best[0]:
+                                    global_best = (ccount, cid, src, alt_title)
+                                if global_raw_max is None or raw_score > global_raw_max[0]:
+                                    global_raw_max = (raw_score, cid, src)
+                            early_accepted = True
+                            break
                     if ccount >= max(0, int(args.min_chapters_per_alt)) and ccount > best_count:
                         best_count = ccount
                         alt_id = cid
+                        alt_title = str(cand.get("title") or cand.get("name") or "")
                     if args.best_source_global and (global_raw_max is None or raw_score > global_raw_max[0]):
                         global_raw_max = (raw_score, cid, src)
+                if early_accepted:
+                    # Skip remaining sources — we have a confirmed match
+                    break
                 if args.best_source_global and alt_id is not None:
                     score_val = best_count
                     if global_best is None or score_val > global_best[0]:
-                        global_best = (score_val, alt_id, src)
+                        global_best = (score_val, alt_id, src, alt_title)
                     per_site_counts[skey] = cnt + 1
                     continue
             else:
@@ -757,7 +800,7 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
             if args.dry_run:
                 added_any = True
                 if not args.no_progress:
-                    logger.info(f"[{idx}] MIGRATE '{title}' via '{src.get('name')}' ({best_count} ch) -> OK (dry-run)")
+                    logger.info(f"[{idx}] MIGRATE '{title}' -> '{alt_title}' via '{src.get('name')}' ({best_count} ch) -> OK (dry-run)")
             else:
                 try:
                     added_any = client.add_to_library(alt_id)
@@ -766,7 +809,7 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
                         logger.error(f"[{idx}]   add_to_library error for id={alt_id}: {e}")
                     added_any = False
                 if not args.no_progress:
-                    logger.info(f"[{idx}] MIGRATE '{title}' via '{src.get('name')}' ({best_count} ch) -> {'OK' if added_any else 'FAIL'}")
+                    logger.info(f"[{idx}] MIGRATE '{title}' -> '{alt_title}' via '{src.get('name')}' ({best_count} ch) -> {'OK' if added_any else 'FAIL'}")
 
             per_site_counts[skey] = cnt + 1
             if added_any and args.migrate_remove and not args.dry_run:
@@ -778,13 +821,20 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
                     pass
             if added_any:
                 migrated += 1
+                # Track the winning source for adaptive ordering
+                try:
+                    _win_sid = int(src.get("id") or 0)
+                    if _win_sid:
+                        source_wins[_win_sid] = source_wins.get(_win_sid, 0) + 1
+                except Exception:
+                    pass
                 if not args.dry_run:
                     cp.mark_done(mid_int)
                 break
 
         # Global-best: add the single winner after scanning all sources
         if not added_any and args.best_source_global and global_best is not None:
-            best_score, best_alt_id, src_best = global_best
+            best_score, best_alt_id, src_best, best_alt_title = global_best
             if not args.dry_run and args.migrate_remove_if_duplicate and best_alt_id and best_alt_id in lib_ids and best_alt_id != mid_int:
                 try:
                     best_ch = client.get_manga_chapters_count(best_alt_id)
@@ -806,7 +856,7 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
             elif args.dry_run:
                 added_any = True
                 if not args.no_progress:
-                    logger.info(f"[{idx}] MIGRATE '{title}' via '{src_best.get('name')}' ({best_score} ch, global-best) -> OK (dry-run)")
+                    logger.info(f"[{idx}] MIGRATE '{title}' -> '{best_alt_title}' via '{src_best.get('name')}' ({best_score} ch, global-best) -> OK (dry-run)")
             else:
                 try:
                     added_any = client.add_to_library(best_alt_id)
@@ -816,7 +866,7 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
                     added_any = False
                 if not args.no_progress:
                     logger.info(
-                        f"[{idx}] MIGRATE '{title}' via '{src_best.get('name')}' ({best_score} ch, global-best) -> "
+                        f"[{idx}] MIGRATE '{title}' -> '{best_alt_title}' via '{src_best.get('name')}' ({best_score} ch, global-best) -> "
                         f"{'OK' if added_any else 'FAIL'}"
                     )
 
@@ -830,6 +880,13 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
 
             if added_any:
                 migrated += 1
+                # Track the winning source for adaptive ordering
+                try:
+                    _win_sid = int(src_best.get("id") or 0)
+                    if _win_sid:
+                        source_wins[_win_sid] = source_wins.get(_win_sid, 0) + 1
+                except Exception:
+                    pass
                 if not args.dry_run:
                     cp.mark_done(mid_int)
                 if args.migrate_keep_both and global_raw_max is not None:
