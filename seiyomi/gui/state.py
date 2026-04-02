@@ -125,6 +125,17 @@ class SyncReadsState:
 
 
 @dataclass
+class LedgerState:
+    action: str = "auto"  # snapshot / apply / auto / show / export
+    include_orphans: bool = True
+    full_scan: bool = False
+    filter_title: str = ""
+    ledger_db: str = ""
+    show_query: str = ""
+    export_output: str = "ledger_export.csv"
+
+
+@dataclass
 class AppState:
     connection: ConnectionState = field(default_factory=ConnectionState)
     migrate: MigrateState = field(default_factory=MigrateState)
@@ -132,6 +143,7 @@ class AppState:
     mangadex: MangaDexState = field(default_factory=MangaDexState)
     prune: PruneState = field(default_factory=PruneState)
     sync_reads: SyncReadsState = field(default_factory=SyncReadsState)
+    ledger: LedgerState = field(default_factory=LedgerState)
     dry_run: bool = False
     verbose: bool = False
 
@@ -169,6 +181,11 @@ class AppState:
             for k, v in prune.items():
                 if hasattr(s.prune, k):
                     setattr(s.prune, k, v)
+        ledger = d.get("ledger", {})
+        if ledger:
+            for k, v in ledger.items():
+                if hasattr(s.ledger, k):
+                    setattr(s.ledger, k, v)
         s.dry_run = bool(d.get("dry_run", False))
         s.verbose = bool(d.get("verbose", False))
         return s

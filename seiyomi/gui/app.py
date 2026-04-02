@@ -99,6 +99,7 @@ class SeiyomiApp(tk.Tk):
         from seiyomi.gui.views.import_md import ImportMangaDexView
         from seiyomi.gui.views.cleanup import CleanupView
         from seiyomi.gui.views.advanced import AdvancedView
+        from seiyomi.gui.views.ledger import LedgerView
 
         _tabs = [
             ("home",        "Home",            HomeView(self._nb, on_navigate=self._navigate)),
@@ -106,6 +107,7 @@ class SeiyomiApp(tk.Tk):
             ("import_csv",  "Import CSV",      ImportCsvView(self._nb, self._state)),
             ("import_md",   "Import MangaDex", ImportMangaDexView(self._nb, self._state)),
             ("cleanup",     "Prune",           CleanupView(self._nb, self._state)),
+            ("ledger",      "Ledger",          LedgerView(self._nb, self._state)),
             ("advanced",    "Advanced",        AdvancedView(self._nb, self._state)),
             ("settings",    "Settings",        SettingsView(
                 self._nb, self._state, on_test=self._test_connection_from_settings

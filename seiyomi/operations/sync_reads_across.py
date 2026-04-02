@@ -131,7 +131,7 @@ def sync_reads_across_sources(
             logger.error(f"No sources matched '--from {from_source}'.")
             return 1
         # Deduplicate names for display
-        matched_names = sorted({s.get("name") for s in sources if int(s.get("id") or 0) in from_source_ids})
+        matched_names = sorted(s.get("name") or "" for s in sources if int(s.get("id") or 0) in from_source_ids)
         logger.info(f"Donor sources: {', '.join(matched_names)} ({len(from_source_ids)} source IDs)")
 
     # 3. Build library lookup

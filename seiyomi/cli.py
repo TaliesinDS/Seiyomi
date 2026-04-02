@@ -194,6 +194,62 @@ def _build_parser() -> argparse.ArgumentParser:
                          action="store_false",
                          help="Do not scan removed/orphaned entries")
 
+    # ── ledger ──
+    ledger_p = sub.add_parser("ledger", help="Manage the local read-progress ledger")
+    ledger_sub = ledger_p.add_subparsers(dest="ledger_command", metavar="ACTION")
+
+    lsnap = ledger_sub.add_parser("snapshot",
+                                   help="Scan Suwayomi and record progress in the ledger")
+    _add_shared(lsnap)
+    lsnap.add_argument("--include-orphans", dest="ledger_include_orphans",
+                       action="store_true", default=True,
+                       help="Also scan removed/orphaned entries (default: yes)")
+    lsnap.add_argument("--no-include-orphans", dest="ledger_include_orphans",
+                       action="store_false",
+                       help="Skip orphaned entries")
+    lsnap.add_argument("--ledger-db", dest="ledger_db", default="",
+                       help="Path to the ledger SQLite file (default: ~/.seiyomi/read_ledger.db)")
+    lsnap.add_argument("--full", dest="ledger_full_scan", action="store_true",
+                       help="Force a full rescan instead of incremental (default: incremental)")
+
+    lapply = ledger_sub.add_parser("apply",
+                                    help="Push ledger progress to Suwayomi entries that are behind")
+    _add_shared(lapply)
+    lapply.add_argument("--filter", dest="ledger_filter", default="",
+                        help="Only process titles containing this substring")
+    lapply.add_argument("--ledger-db", dest="ledger_db", default="",
+                        help="Path to the ledger SQLite file")
+
+    lauto = ledger_sub.add_parser("auto",
+                                   help="Snapshot then apply (combined)")
+    _add_shared(lauto)
+    lauto.add_argument("--include-orphans", dest="ledger_include_orphans",
+                       action="store_true", default=True)
+    lauto.add_argument("--no-include-orphans", dest="ledger_include_orphans",
+                       action="store_false")
+    lauto.add_argument("--filter", dest="ledger_filter", default="",
+                       help="Only apply to titles containing this substring")
+    lauto.add_argument("--ledger-db", dest="ledger_db", default="",
+                       help="Path to the ledger SQLite file")
+    lauto.add_argument("--full", dest="ledger_full_scan", action="store_true",
+                       help="Force a full rescan instead of incremental")
+
+    lshow = ledger_sub.add_parser("show",
+                                   help="Display ledger entries (stats or search)")
+    _add_shared(lshow)
+    lshow.add_argument("query", nargs="?", default="",
+                       help="Title substring to search for (omit for stats)")
+    lshow.add_argument("--ledger-db", dest="ledger_db", default="",
+                       help="Path to the ledger SQLite file")
+
+    lexport = ledger_sub.add_parser("export",
+                                     help="Export the ledger to CSV")
+    _add_shared(lexport)
+    lexport.add_argument("--output", dest="ledger_export_output", default="ledger_export.csv",
+                         help="Output CSV path (default: ledger_export.csv)")
+    lexport.add_argument("--ledger-db", dest="ledger_db", default="",
+                         help="Path to the ledger SQLite file")
+
     # ── gui ──
     sub.add_parser("gui", help="Launch the graphical interface")
 
@@ -322,6 +378,93 @@ def _dispatch_list_sources(args: argparse.Namespace) -> int:
 def _dispatch_sync_reads_across(args: argparse.Namespace) -> int:
     from seiyomi.operations.sync_reads_across import sync_reads_across_sources
     return sync_reads_across_sources(_make_client(args), args)
+
+
+def _make_ledger_db(args: argparse.Namespace):
+    from seiyomi.ledger.db import LedgerDB
+    db_path = getattr(args, "ledger_db", "") or ""
+    if db_path:
+        from pathlib import Path as _P
+        return LedgerDB(_P(db_path))
+    return LedgerDB()
+
+
+def _dispatch_ledger_snapshot(args: argparse.Namespace) -> int:
+    from seiyomi.ledger.snapshot import snapshot
+    db = _make_ledger_db(args)
+    try:
+        summary = snapshot(
+            client=_make_client(args),
+            db=db,
+            include_orphans=getattr(args, "ledger_include_orphans", True),
+            incremental=not getattr(args, "ledger_full_scan", False),
+        )
+        return 1 if summary.get("error") else 0
+    finally:
+        db.close()
+
+
+def _dispatch_ledger_apply(args: argparse.Namespace) -> int:
+    from seiyomi.ledger.apply import apply_ledger
+    db = _make_ledger_db(args)
+    try:
+        summary = apply_ledger(
+            client=_make_client(args),
+            db=db,
+            dry_run=getattr(args, "dry_run", False),
+            filter_title=getattr(args, "ledger_filter", ""),
+        )
+        return 1 if summary.get("error") else 0
+    finally:
+        db.close()
+
+
+def _dispatch_ledger_auto(args: argparse.Namespace) -> int:
+    from seiyomi.ledger.snapshot import snapshot
+    from seiyomi.ledger.apply import apply_ledger
+    db = _make_ledger_db(args)
+    client = _make_client(args)
+    try:
+        snap = snapshot(
+            client=client, db=db,
+            include_orphans=getattr(args, "ledger_include_orphans", True),
+            incremental=not getattr(args, "ledger_full_scan", False),
+        )
+        if snap.get("error"):
+            return 1
+        result = apply_ledger(
+            client=client, db=db,
+            dry_run=getattr(args, "dry_run", False),
+            filter_title=getattr(args, "ledger_filter", ""),
+        )
+        return 1 if result.get("error") else 0
+    finally:
+        db.close()
+
+
+def _dispatch_ledger_show(args: argparse.Namespace) -> int:
+    from seiyomi.ledger.show import show_stats, show_title
+    db = _make_ledger_db(args)
+    try:
+        query = getattr(args, "query", "") or ""
+        if query:
+            print(show_title(db, query))
+        else:
+            print(show_stats(db))
+        return 0
+    finally:
+        db.close()
+
+
+def _dispatch_ledger_export(args: argparse.Namespace) -> int:
+    from seiyomi.ledger.show import export_csv
+    db = _make_ledger_db(args)
+    try:
+        path = export_csv(db, Path(getattr(args, "ledger_export_output", "ledger_export.csv")))
+        print(f"Exported to {path}")
+        return 0
+    finally:
+        db.close()
 
 
 def _dispatch_import_csv(args: argparse.Namespace) -> int:
@@ -455,6 +598,21 @@ def main(argv: Optional[List[str]] = None) -> int:
             return _dispatch_sync_reads_across(args)
         # Other sync subcommands — delegate to monolith
         return _delegate_to_monolith(raw_argv)
+
+    if cmd == "ledger":
+        ledger_cmd = getattr(args, "ledger_command", None)
+        if ledger_cmd == "snapshot":
+            return _dispatch_ledger_snapshot(args)
+        if ledger_cmd == "apply":
+            return _dispatch_ledger_apply(args)
+        if ledger_cmd == "auto":
+            return _dispatch_ledger_auto(args)
+        if ledger_cmd == "show":
+            return _dispatch_ledger_show(args)
+        if ledger_cmd == "export":
+            return _dispatch_ledger_export(args)
+        parser.parse_args(["ledger", "--help"])
+        return 1
 
     if cmd == "gui":
         from seiyomi.gui.app import launch
