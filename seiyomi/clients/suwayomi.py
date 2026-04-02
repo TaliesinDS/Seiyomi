@@ -200,6 +200,28 @@ class SuwayomiClient:
                 pass
         return []
 
+    def get_chapters_graphql(self, manga_id: int) -> List[Dict[str, Any]]:
+        """Fetch chapters via GQL — reads directly from DB, works even for dead sources."""
+        q = """
+        query($id: Int!) {
+          manga(id: $id) {
+            chapters {
+              nodes { id chapterNumber name isRead }
+            }
+          }
+        }
+        """
+        try:
+            resp = self.graphql(q.strip(), variables={"id": manga_id})
+            if resp and isinstance(resp.get("data"), dict):
+                manga_node = resp["data"].get("manga") or {}
+                nodes = (manga_node.get("chapters") or {}).get("nodes") or []
+                if isinstance(nodes, list):
+                    return nodes
+        except Exception as exc:
+            logger.debug("get_chapters_graphql(%d): %s", manga_id, exc)
+        return []
+
     def get_chapter_count(self, manga_id: int) -> int:
         """Return chapter count via GQL ``manga(id:N) { chapters { totalCount } }``."""
         q = "query($id:Int!){ manga(id:$id){ chapters { totalCount } } }"

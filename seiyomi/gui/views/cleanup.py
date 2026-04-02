@@ -1,4 +1,4 @@
-"""CleanupView — prune duplicates and non-preferred languages."""
+"""CleanupView — prune duplicates, non-preferred languages, and sync reads across sources."""
 from __future__ import annotations
 
 import tkinter as tk
@@ -18,6 +18,7 @@ class CleanupView(ttk.Frame):
 
     def _build(self) -> None:
         p = self._state.prune
+        sr = self._state.sync_reads
         self._vars = {
             "zero_duplicates":  tk.BooleanVar(value=p.zero_duplicates),
             "prune_threshold":  tk.StringVar(value=str(p.prune_threshold)),
@@ -26,6 +27,10 @@ class CleanupView(ttk.Frame):
             "keep_most":        tk.BooleanVar(value=p.keep_most),
             "filter_title":     tk.StringVar(value=p.filter_title),
             "preferred_langs":  tk.StringVar(value=self._state.migrate.preferred_langs),
+            # sync reads across
+            "sync_reads":       tk.BooleanVar(value=sr.enabled),
+            "sr_from_source":   tk.StringVar(value=sr.from_source),
+            "sr_filter_title":  tk.StringVar(value=sr.filter_title),
         }
 
         ttk.Label(self, text="Prune Library", font=("Segoe UI", 11, "bold")).pack(anchor="w", pady=(0, 8))
@@ -50,12 +55,25 @@ class CleanupView(ttk.Frame):
 
         ttk.Separator(self).pack(fill="x", pady=8)
 
-        LabeledEntry(self, "Filter title", self._vars["filter_title"], width=45,
+        sr = ttk.LabelFrame(self, text="Sync read progress across sources", padding=8)
+        sr.pack(fill="x", pady=4)
+        ttk.Checkbutton(sr, text="Enabled", variable=self._vars["sync_reads"]).pack(anchor="w")
+        ttk.Label(sr, text="Copy read progress from old entries to matching entries on other sources.",
+                  foreground="#6b7280", font=("Segoe UI", 8)).pack(anchor="w", pady=(0, 4))
+        LabeledEntry(sr, "Donor source (--from)", self._vars["sr_from_source"], width=30,
+                     tooltip="Only read progress from entries of this source (e.g. 'bato'). Leave blank to use highest across all.").pack(fill="x", pady=2)
+        LabeledEntry(sr, "Filter title", self._vars["sr_filter_title"], width=40,
+                     tooltip="Only sync titles containing this substring").pack(fill="x", pady=2)
+
+        ttk.Separator(self).pack(fill="x", pady=8)
+
+        LabeledEntry(self, "Filter title (prune)", self._vars["filter_title"], width=45,
                      tooltip="Only process entries whose title contains this substring").pack(fill="x", pady=2)
 
     def get_args(self) -> List[str]:
         self.flush_to_state()
         p = self._state.prune
+        sr = self._state.sync_reads
         # We call the subcommands separately; the runner handles one argv at a time.
         # The view returns whichever is enabled (prefer duplicates first).
         if p.zero_duplicates:
@@ -73,12 +91,20 @@ class CleanupView(ttk.Frame):
             if p.filter_title:
                 args += ["--filter", p.filter_title]
             return args
+        if sr.enabled:
+            args = ["sync", "reads-across"]
+            if sr.from_source:
+                args += ["--from", sr.from_source]
+            if sr.filter_title:
+                args += ["--filter", sr.filter_title]
+            return args
         return []
 
     def get_all_args(self) -> List[List[str]]:
         """Return one argv list per enabled prune operation."""
         self.flush_to_state()
         p = self._state.prune
+        sr = self._state.sync_reads
         result = []
         if p.zero_duplicates:
             args = ["prune", "duplicates"]
@@ -94,6 +120,13 @@ class CleanupView(ttk.Frame):
                 args += ["--min-chapters", str(p.lang_threshold)]
             if p.filter_title:
                 args += ["--filter", p.filter_title]
+            result.append(args)
+        if sr.enabled:
+            args = ["sync", "reads-across"]
+            if sr.from_source:
+                args += ["--from", sr.from_source]
+            if sr.filter_title:
+                args += ["--filter", sr.filter_title]
             result.append(args)
         return result
 
@@ -112,3 +145,7 @@ class CleanupView(ttk.Frame):
         p.keep_most = bool(self._vars["keep_most"].get())
         p.filter_title = self._vars["filter_title"].get().strip()
         self._state.migrate.preferred_langs = self._vars["preferred_langs"].get().strip()
+        sr = self._state.sync_reads
+        sr.enabled = bool(self._vars["sync_reads"].get())
+        sr.from_source = self._vars["sr_from_source"].get().strip()
+        sr.filter_title = self._vars["sr_filter_title"].get().strip()

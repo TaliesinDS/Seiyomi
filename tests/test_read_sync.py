@@ -93,6 +93,7 @@ def test_fetch_suwayomi_chapters_data_key():
 def test_fetch_suwayomi_chapters_empty_on_exception():
     client = MagicMock()
     client.request.side_effect = ConnectionError("nope")
+    client.get_chapters_graphql.return_value = []
     result = fetch_suwayomi_chapters(client, 1)
     assert result == []
 
@@ -170,19 +171,16 @@ def test_mark_entry_up_to_number_skips_already_read():
     # First call: get chapters; subsequent calls: mark_chapter_read responses
     resp_chapters = MagicMock()
     resp_chapters.json.return_value = {"chapters": chapters}
-    resp_mark = MagicMock()
-    resp_mark.status_code = 200
-    resp_verify = MagicMock()
-    resp_verify.json.return_value = {"chapters": [{"id": 11, "isRead": True}]}
-    client.request.side_effect = [resp_chapters, resp_mark, resp_verify]
+    client.request.return_value = resp_chapters
+    # GQL is tried first now — make it succeed for chapter 11
+    client.graphql.return_value = {"data": {"updateChapter": {"chapter": {"id": 11, "isRead": True}}}}
+    client.get_chapters_graphql.return_value = []
     mark_entry_up_to_number(client, 1, up_to=2.0, rpm=600, dry_run=False)
-    # mark_chapter_read tries POST for chapter 11 only
-    post_calls = [
-        c for c in client.request.call_args_list
-        if c[0][0] == "POST"
-    ]
-    assert len(post_calls) >= 1
-    assert "/11/" in post_calls[0][0][1] or "11" in str(post_calls[0])
+    # mark_chapter_read now uses GQL — verify graphql was called
+    gql_calls = client.graphql.call_args_list
+    assert len(gql_calls) >= 1
+    # Verify chapter 11 was in a GQL call
+    assert any("11" in str(c) for c in gql_calls)
 
 
 # ---------------------------------------------------------------------------

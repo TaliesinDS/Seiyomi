@@ -42,6 +42,7 @@ class MigrateView(ttk.Frame):
             "keep_both":       tk.BooleanVar(value=m.keep_both),
             "remove_if_dup":   tk.BooleanVar(value=m.remove_if_duplicate),
             "comick_prefilter": tk.BooleanVar(value=m.comick_prefilter),
+            "sync_reads":      tk.BooleanVar(value=m.sync_reads),
             "rejects_file":   tk.StringVar(value=m.rejects_file),
         }
 
@@ -105,6 +106,8 @@ class MigrateView(ttk.Frame):
         r4 = ttk.Frame(flags); r4.pack(fill="x", pady=4)
         ttk.Checkbutton(r4, text="Comick.dev pre-filter & scoring",
                         variable=self._vars["comick_prefilter"]).pack(side="left", padx=(0, 12))
+        ttk.Checkbutton(r4, text="Sync read progress to new entry",
+                        variable=self._vars["sync_reads"]).pack(side="left", padx=(0, 12))
         LabeledEntry(r4, "Rejects file", self._vars["rejects_file"], width=20,
                      tooltip="CSV file for titles that couldn't be matched").pack(side="left")
 
@@ -134,6 +137,8 @@ class MigrateView(ttk.Frame):
             args += ["--remove-old"]
         if m.comick_prefilter:
             args += ["--comick-prefilter"]
+        if m.sync_reads:
+            args += ["--sync-reads"]
         if m.rejects_file and m.rejects_file != "rejects.csv":
             args += ["--rejects-file", m.rejects_file]
         return args
@@ -177,4 +182,5 @@ class MigrateView(ttk.Frame):
         m.keep_both = bool(self._vars["keep_both"].get())
         m.remove_if_duplicate = bool(self._vars["remove_if_dup"].get())
         m.comick_prefilter = bool(self._vars["comick_prefilter"].get())
+        m.sync_reads = bool(self._vars["sync_reads"].get())
         m.rejects_file = self._vars["rejects_file"].get().strip() or "rejects.csv"

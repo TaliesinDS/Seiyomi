@@ -80,6 +80,7 @@ class MigrateState:
     title_strict: bool = False
     include_categories: str = ""
     exclude_categories: str = ""
+    sync_reads: bool = False
 
 
 @dataclass
@@ -117,12 +118,20 @@ class PruneState:
 
 
 @dataclass
+class SyncReadsState:
+    enabled: bool = False
+    from_source: str = ""
+    filter_title: str = ""
+
+
+@dataclass
 class AppState:
     connection: ConnectionState = field(default_factory=ConnectionState)
     migrate: MigrateState = field(default_factory=MigrateState)
     csv: CsvImportState = field(default_factory=CsvImportState)
     mangadex: MangaDexState = field(default_factory=MangaDexState)
     prune: PruneState = field(default_factory=PruneState)
+    sync_reads: SyncReadsState = field(default_factory=SyncReadsState)
     dry_run: bool = False
     verbose: bool = False
 

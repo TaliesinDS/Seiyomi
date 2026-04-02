@@ -13,11 +13,38 @@ from typing import Any, Dict, List, Optional, Set, Tuple
 
 from seiyomi.clients.suwayomi import SuwayomiClient
 from seiyomi.matching.titles import is_title_match
+from seiyomi.operations.read_sync import compute_entry_progress_by_number, mark_entry_up_to_number
 from seiyomi.utils.checkpoint import Checkpoint
 
 logger = logging.getLogger("seiyomi.migrate")
 
 _FATAL_HTTP_CODES = {400, 403, 404, 405, 410, 500, 502, 503}
+
+
+def _sync_read_progress(
+    client: SuwayomiClient,
+    old_id: int,
+    new_id: int,
+    idx: int,
+    title: str,
+    args: Any,
+    log: logging.Logger,
+) -> None:
+    """Copy read progress from *old_id* to *new_id* by chapter number."""
+    try:
+        progress = compute_entry_progress_by_number(client, old_id)
+    except Exception:
+        progress = 0.0
+    if progress <= 0:
+        return
+    if not args.no_progress:
+        log.info(f"[{idx}] SYNC-READS '{title}' up to ch {progress:.0f} (old={old_id} -> new={new_id})")
+    if args.dry_run:
+        return
+    try:
+        mark_entry_up_to_number(client, new_id, progress, rpm=120, dry_run=False)
+    except Exception as exc:
+        log.debug(f"[{idx}] sync-reads error: {exc}")
 
 
 def _is_fatal_http_error(exc: BaseException) -> bool:
@@ -821,6 +848,9 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
                     pass
             if added_any:
                 migrated += 1
+                # Sync read progress from old entry to new one
+                if getattr(args, "migrate_sync_reads", False) and alt_id and alt_id != mid_int:
+                    _sync_read_progress(client, mid_int, alt_id, idx, title, args, logger)
                 # Track the winning source for adaptive ordering
                 try:
                     _win_sid = int(src.get("id") or 0)
@@ -880,6 +910,9 @@ def migrate_library(client: SuwayomiClient, args: Any) -> int:
 
             if added_any:
                 migrated += 1
+                # Sync read progress from old entry to new one
+                if getattr(args, "migrate_sync_reads", False) and best_alt_id and best_alt_id != mid_int:
+                    _sync_read_progress(client, mid_int, best_alt_id, idx, title, args, logger)
                 # Track the winning source for adaptive ordering
                 try:
                     _win_sid = int(src_best.get("id") or 0)

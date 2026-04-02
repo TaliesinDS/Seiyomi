@@ -29,15 +29,20 @@ _MD_CHAPTER_UUID_RE = re.compile(
 # ---------------------------------------------------------------------------
 
 def fetch_suwayomi_chapters(client: SuwayomiClient, manga_internal_id: int) -> List[Dict[str, Any]]:
-    """Fetch chapter list for a manga from Suwayomi."""
+    """Fetch chapter list for a manga from Suwayomi.
+
+    Tries the REST endpoint first, then falls back to GraphQL which reads
+    directly from the DB and works even for dead/removed sources.
+    """
     try:
         js = client.request("GET", f"/api/v1/manga/{manga_internal_id}/chapters").json()
         for key in ("chapters", "chapterList", "data"):
-            if key in js and isinstance(js[key], list):
+            if key in js and isinstance(js[key], list) and js[key]:
                 return js[key]
-        return []
     except Exception:
-        return []
+        pass
+    # REST returned empty or failed — try GQL (reads from DB directly)
+    return client.get_chapters_graphql(manga_internal_id)
 
 
 def extract_chapter_uuid_from_item(item: Dict[str, Any]) -> Optional[str]:
@@ -53,73 +58,59 @@ def extract_chapter_uuid_from_item(item: Dict[str, Any]) -> Optional[str]:
 
 
 def mark_chapter_read(client: SuwayomiClient, chapter_internal_id: int) -> bool:
-    """Mark a single chapter as read via Suwayomi (REST then GraphQL fallback).
+    """Mark a single chapter as read via Suwayomi (GraphQL first, REST fallback).
 
-    Returns True when a write-like endpoint confirmed success (200/204).
+    Returns True when the chapter was successfully marked as read.
     """
-    paths_to_try = [
-        ("POST", f"/api/v1/chapter/{chapter_internal_id}/read", None),
-        ("POST", f"/api/v1/chapters/{chapter_internal_id}/read", None),
-        ("PATCH", f"/api/v1/chapter/{chapter_internal_id}", {"read": True}),
-        ("PATCH", f"/api/v1/chapters/{chapter_internal_id}", {"read": True}),
-        ("PUT", f"/api/v1/chapter/{chapter_internal_id}/read", None),
-        ("PUT", f"/api/v1/chapters/{chapter_internal_id}/read", None),
-        ("POST", "/api/v1/chapter/read", {"ids": [chapter_internal_id], "read": True}),
-        ("POST", "/api/v1/chapters/read", {"ids": [chapter_internal_id], "read": True}),
-        ("POST", "/api/v1/chapter/batch/read", {"ids": [chapter_internal_id], "read": True}),
-        ("GET", f"/api/v1/chapter/read?id={chapter_internal_id}", None),
-        ("POST", f"/api/v1/chapter/read?id={chapter_internal_id}", None),
-        ("GET", f"/api/v1/chapter/{chapter_internal_id}/read", None),
-    ]
-    for method, path, body in paths_to_try:
-        try:
-            kwargs: Dict[str, Any] = {}
-            if body is not None:
-                kwargs["json"] = body
-            r = client.request(method, path, **kwargs)
-            code = r.status_code
-            logger.debug(f"[read-debug] mark attempt {method} {path} -> {code}")
-            if method in ("POST", "PATCH", "PUT") and code in (200, 204):
-                return True
-            if method == "GET" and code == 204:
-                return True
-        except Exception:
-            continue
-    # GraphQL fallback
+    # GraphQL — preferred, works on all modern Suwayomi builds
     try:
-        logger.debug(f"[read-debug] graphql attempt: updateChapters ids=[{chapter_internal_id}] isRead=true")
-        mut_uc = """
-        mutation UpdateChapters($ids: [Int!]!, $patch: UpdateChapterPatchInput!) {
-          updateChapters(input: { ids: $ids, patch: $patch }) {
-            chapters { nodes { id isRead } }
-          }
-        }
-        """
-        d_uc = client.graphql(
-            mut_uc,
-            {"ids": [int(chapter_internal_id)], "patch": {"isRead": True, "lastPageRead": 0}},
-        )
-        if d_uc and isinstance(d_uc, dict) and (d_uc.get("data") or {}).get("updateChapters"):
-            logger.debug(f"[read-debug] graphql updateChapters ok for {chapter_internal_id}")
-            return True
-
-        logger.debug(f"[read-debug] graphql attempt: updateChapter id={chapter_internal_id} isRead=true")
-        mut_uc1 = """
+        mut = """
         mutation UpdateChapter($id: Int!, $patch: UpdateChapterPatchInput!) {
           updateChapter(input: { id: $id, patch: $patch }) {
             chapter { id isRead }
           }
         }
         """
-        d_uc1 = client.graphql(
-            mut_uc1,
+        resp = client.graphql(
+            mut,
             {"id": int(chapter_internal_id), "patch": {"isRead": True, "lastPageRead": 0}},
         )
-        if d_uc1 and isinstance(d_uc1, dict) and (d_uc1.get("data") or {}).get("updateChapter"):
-            logger.debug(f"[read-debug] graphql updateChapter ok for {chapter_internal_id}")
+        if resp and isinstance(resp, dict) and (resp.get("data") or {}).get("updateChapter"):
+            return True
+
+        # Try plural mutation variant
+        mut2 = """
+        mutation UpdateChapters($ids: [Int!]!, $patch: UpdateChapterPatchInput!) {
+          updateChapters(input: { ids: $ids, patch: $patch }) {
+            chapters { nodes { id isRead } }
+          }
+        }
+        """
+        resp2 = client.graphql(
+            mut2,
+            {"ids": [int(chapter_internal_id)], "patch": {"isRead": True, "lastPageRead": 0}},
+        )
+        if resp2 and isinstance(resp2, dict) and (resp2.get("data") or {}).get("updateChapters"):
             return True
     except Exception:
-        logger.debug(f"[read-debug] graphql error for {chapter_internal_id}")
+        pass
+
+    # REST fallback — for older builds without GraphQL
+    rest_paths = [
+        ("PATCH", f"/api/v1/manga/0/chapter/{chapter_internal_id}", {"read": True}),
+        ("POST", f"/api/v1/chapter/{chapter_internal_id}/read", None),
+        ("PUT", f"/api/v1/chapter/{chapter_internal_id}/read", None),
+    ]
+    for method, path, body in rest_paths:
+        try:
+            kwargs: Dict[str, Any] = {}
+            if body is not None:
+                kwargs["json"] = body
+            r = client.request(method, path, **kwargs)
+            if r.status_code in (200, 204):
+                return True
+        except Exception:
+            continue
     return False
 
 

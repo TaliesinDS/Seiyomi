@@ -92,6 +92,8 @@ def _build_parser() -> argparse.ArgumentParser:
                      help="Query Comick.dev for canonical chapter counts to pre-filter and score candidates")
     mig.add_argument("--rejects-file", dest="rejects_file", default="rejects.csv",
                      help="Path for the rejects bin CSV (default: rejects.csv)")
+    mig.add_argument("--sync-reads", dest="migrate_sync_reads", action="store_true",
+                     help="Copy read progress from the old entry to the new one (by chapter number)")
 
     # ── import ──
     imp = sub.add_parser("import", help="Import manga into Suwayomi")
@@ -177,6 +179,20 @@ def _build_parser() -> argparse.ArgumentParser:
     reads_p.add_argument("--md-pass", dest="md_password", default="")
     reads_p.add_argument("--only-if-ahead", dest="read_sync_only_if_ahead",
                          action="store_true")
+
+    xread_p = sync_sub.add_parser("reads-across",
+                                  help="Copy read progress between duplicate library entries (cross-source)")
+    _add_shared(xread_p)
+    xread_p.add_argument("--from", dest="sync_reads_from", default="",
+                         help="Only use entries from this source as the donor (e.g. 'bato')")
+    xread_p.add_argument("--filter", dest="sync_reads_filter", default="",
+                         help="Only process titles containing this substring")
+    xread_p.add_argument("--include-removed", dest="sync_reads_include_removed",
+                         action="store_true", default=None,
+                         help="Also recover progress from removed/orphaned DB entries (default when --from is set)")
+    xread_p.add_argument("--no-include-removed", dest="sync_reads_include_removed",
+                         action="store_false",
+                         help="Do not scan removed/orphaned entries")
 
     # ── gui ──
     sub.add_parser("gui", help="Launch the graphical interface")
@@ -301,6 +317,11 @@ def _dispatch_list_sources(args: argparse.Namespace) -> int:
     for src in (client.get_sources() or []):
         print(f"{src.get('id', '?')}: {src.get('name', '?')}")
     return 0
+
+
+def _dispatch_sync_reads_across(args: argparse.Namespace) -> int:
+    from seiyomi.operations.sync_reads_across import sync_reads_across_sources
+    return sync_reads_across_sources(_make_client(args), args)
 
 
 def _dispatch_import_csv(args: argparse.Namespace) -> int:
@@ -429,7 +450,10 @@ def main(argv: Optional[List[str]] = None) -> int:
         return _delegate_to_monolith(raw_argv)
 
     if cmd == "sync":
-        # delegate to monolith (not yet fully extracted)
+        sync_cmd = getattr(args, "sync_command", None)
+        if sync_cmd == "reads-across":
+            return _dispatch_sync_reads_across(args)
+        # Other sync subcommands — delegate to monolith
         return _delegate_to_monolith(raw_argv)
 
     if cmd == "gui":
